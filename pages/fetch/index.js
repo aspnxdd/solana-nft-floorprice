@@ -2,7 +2,7 @@ import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
+const NEXT_PUBLIC_STATIC_URL = "https://nftfloorprice.vercel.app";
 const Styles = styled.div`
   padding: 1rem;
 
@@ -35,13 +35,13 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STATIC_URL}/api/dbcon`);
+  const res = await fetch(`${NEXT_PUBLIC_STATIC_URL}/api/dbcon`);
   const { data } = await res.json();
   return data;
 }
 
 async function savePriceFloor() {
-  await fetch(`${process.env.NEXT_PUBLIC_STATIC_URL}/api/dbcon`, {
+  await fetch(`${NEXT_PUBLIC_STATIC_URL}/api/dbcon`, {
     method: "POST",
   });
 }
