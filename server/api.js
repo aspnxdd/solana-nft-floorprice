@@ -41,7 +41,7 @@ async function save() {
       "https://offers.solarians.click/api/offers"
     );
     collectionsAddress.forEach(
-      (coll = () => {
+      (async function(coll) {
         let prices = solarianData.map(function (e) {
           //for DogesNFT
           if (e.Creators[0]?.Address == coll.address) {
@@ -58,7 +58,7 @@ async function save() {
         const date = new Date();
         let today = date.toUTCString();
         // save in DB
-        const data = await datafetched.create({
+        await datafetched.create({
           floorprice: floorPrice,
           time: today,
           collectionname: coll.name,
