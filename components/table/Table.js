@@ -1,6 +1,7 @@
 import React from "react";
-import { IoCaretForwardOutline,IoCaretBackOutline} from "react-icons/io5";
-import { AiFillForward,AiFillBackward } from "react-icons/ai";
+
+import { FiChevronsLeft,FiChevronLeft,FiChevronRight,FiChevronsRight } from "react-icons/fi";
+
 
 
 
@@ -72,18 +73,20 @@ export default function Table({ columns, data }) {
       </tbody>
     </table>
     <div className="pagination">
-        <AiFillBackward onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+    <div className="pagination-buttons">
+        <FiChevronsLeft onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
-        </AiFillBackward>{' '}
-        <IoCaretBackOutline onClick={() => previousPage()} disabled={!canPreviousPage}>
+        </FiChevronsLeft>{' '}
+        <FiChevronLeft onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
-        </IoCaretBackOutline>{' '}
-        <IoCaretForwardOutline onClick={() => nextPage()} disabled={!canNextPage}>
+        </FiChevronLeft>{' '}
+        <FiChevronRight onClick={() => nextPage()} disabled={!canNextPage}>
           {'>'}
-        </IoCaretForwardOutline>{' '}
-        <AiFillForward onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        </FiChevronRight>{' '}
+        <FiChevronsRight onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {'>>'}
-        </AiFillForward>{' '} &nbsp;
+        </FiChevronsRight>{' '} &nbsp;
+    </div>
         <span>
           Page{' '}
           <strong>

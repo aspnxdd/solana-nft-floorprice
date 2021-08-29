@@ -1,28 +1,24 @@
-
 import Time from "../../components/currentTime/CurrentTime";
 import React from "react";
+import TitleWelcome from "../../components/common/TitleWelcome";
+import InfoTwoHours from "../../components/common/InfoTwoHours";
 
-
-
-import Links from "../../components/links/Links"
-
-
-
+import Links from "../../components/links/Links";
 
 function Data() {
   return (
     <div>
-      <h1>Welcome to NFT Floor Price</h1>
+      <TitleWelcome />
       <h3>
         Here you can track the history of Floor Price for the collections from{" "}
         <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
-          DigitalEyes
+          &nbsp;DigitalEyes
         </a>
       </h3>
+      <InfoTwoHours />
       <Time />
-      <h4>It is being updated every 2 hours</h4>
       <Links></Links>
-      </div>
+    </div>
   );
 }
 export default Data;

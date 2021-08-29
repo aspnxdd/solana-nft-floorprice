@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
+import TitleWelcome from "../../components/common/TitleWelcome";
+import InfoTwoHours from "../../components/common/InfoTwoHours";
 
 const Styles = styled.div`
   table {
@@ -37,7 +39,6 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices(id) {
- 
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
@@ -74,7 +75,6 @@ function Data() {
   const [loading, setLoading] = useState(false);
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
- 
     getFloorPrices(router.query.id).then((data) => {
       setData(data);
     });
@@ -92,21 +92,21 @@ function Data() {
     solanadogesnfts: "SolanaDoges",
     thugbirdz: "Thugbirdz",
     degenapes: "Degen Ape Academy",
-    abstratica: "Abstratica"
+    abstratica: "Abstratica",
   };
-  
+
   return (
     <div>
-      <h1>Welcome to NFT Floor Price</h1>
+      <TitleWelcome />
       <h3>
-        Here you can track the history of Floor Price for {collectionNames[router.query.id]}{" "}
-        in{" "}
+        Here you can track the history of Floor Price for{" "}
+        {collectionNames[router.query.id]} in{" "}
         <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
-          DigitalEyes
+          &nbsp;DigitalEyes
         </a>
       </h3>
+      <InfoTwoHours />
       <Time />
-      <h4>It is being updated every 2 hours</h4>
       <div style={{ display: "flex", marginBottom: "1rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update
