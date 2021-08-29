@@ -28,9 +28,37 @@ h3 {
 
 button {
   margin-left: 2rem;
+  height: 2rem;
+  width: 5rem;
 }
 
 .current-time {
   margin-left: 2rem;
   margin-bottom: 2rem;
+}
+
+.pagination {
+  margin-left: 2rem;
+  display: flex;
+}
+
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  margin-left: 3rem;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

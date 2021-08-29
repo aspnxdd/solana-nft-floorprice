@@ -1,7 +1,13 @@
 import React from "react";
+import { IoCaretForwardOutline,IoCaretBackOutline} from "react-icons/io5";
+import { AiFillForward,AiFillBackward } from "react-icons/ai";
+
+
 
 import { useTable, useSortBy, usePagination } from "react-table";
 import Time from "../currentTime/CurrentTime";
+
+
 
 export default function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -65,19 +71,19 @@ export default function Table({ columns, data }) {
         })}
       </tbody>
     </table>
-    <div >
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+    <div className="pagination">
+        <AiFillBackward onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
-        </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        </AiFillBackward>{' '}
+        <IoCaretBackOutline onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        </IoCaretBackOutline>{' '}
+        <IoCaretForwardOutline onClick={() => nextPage()} disabled={!canNextPage}>
           {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        </IoCaretForwardOutline>{' '}
+        <AiFillForward onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {'>>'}
-        </button>{' '}
+        </AiFillForward>{' '} &nbsp;
         <span>
           Page{' '}
           <strong>
@@ -85,7 +91,7 @@ export default function Table({ columns, data }) {
           </strong>{' '}
         </span>
         <span>
-          | Go to page:{' '}
+          &nbsp;- Go to page:{' '}
           <input
             type="number"
             defaultValue={pageIndex + 1}

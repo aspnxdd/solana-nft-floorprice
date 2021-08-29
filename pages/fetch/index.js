@@ -2,15 +2,16 @@ import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-const NEXT_PUBLIC_STATIC_URL = "https://nftfloorprice.vercel.app";
-const Styles = styled.div`
-  padding: 1rem;
+import { GrUpdate } from "react-icons/gr";
+import Spinner from "../../components/spinner/Spinner";
 
+const Styles = styled.div`
   table {
     border-spacing: 0;
     border: 1px solid #c4c4c4;
     margin-left: 2rem;
-    margin-top: 2rem;
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
 
     tr {
       :last-child {
@@ -35,13 +36,13 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices() {
-  const res = await fetch(`${NEXT_PUBLIC_STATIC_URL}/api/dbcon`);
+  const res = await fetch(`${location.origin}/api/dbcon`);
   const { data } = await res.json();
   return data;
 }
 
 async function savePriceFloor() {
-  await fetch(`${NEXT_PUBLIC_STATIC_URL}/api/dbcon`, {
+  await fetch(`${location.origin}/api/dbcon`, {
     method: "POST",
   });
 }
@@ -58,8 +59,9 @@ function Data() {
     },
   ]);
 
+  // setData modifica valor de data
   const [data, setData] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices().then((data) => {
@@ -73,14 +75,16 @@ function Data() {
   }, []);
 
   function updateData() {
+    setLoading(true);
     getFloorPrices().then((data) => {
+      setLoading(false);
       setData(data);
     });
   }
 
   return (
     <div>
-      <h1>Welcome to FloorPrices</h1>
+      <h1>Welcome to NFT Floor Price</h1>
       <h3>
         Here you can track the history of Floor Price for SolanaDoges in{" "}
         <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
@@ -88,7 +92,13 @@ function Data() {
         </a>
       </h3>
       <Time />
-      <button onClick={updateData}>🔄 Update</button>
+      <div style={{ display: "flex", "margin-bottom": "1rem", height: "2rem" }}>
+        <button onClick={updateData}>
+          <GrUpdate /> Update
+        </button>
+        {loading && <Spinner />}
+      </div>
+
       <Styles>
         <Table columns={columns} data={data} />
       </Styles>
