@@ -5,6 +5,7 @@ const connection = {};
 const dev = process.env.NODE_ENV !== 'production'
 const datafetched =require("../models/datafetched");
 const server = express()
+var axios = require('axios');
 require('dotenv').config();
 
 dbConnect();
@@ -27,7 +28,7 @@ server.get('/load', cors(), async(req, res) => {
 server.post('/save', cors(), async(req, res) => {
     
     try {
-        const solarianRes = await fetch(
+        const solarianRes = await axios(
             "https://offers.solarians.click/api/offers"
         );
         const solarianData = await solarianRes.json();
