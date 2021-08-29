@@ -1,18 +1,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
-var cors = require("cors");
+let cors = require("cors");
 const connection = {};
 const dev = process.env.NODE_ENV !== "production";
 const datafetched = require("../models/datafetched");
 const server = express();
 var axios = require("axios");
 require("dotenv").config();
+let corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 dbConnect();
 
-server.get("/load", cors(), async (req, res) => {
+server.use(cors(corsOptions))
+
+server.get("/load", async (req, res) => {
+    const {id} =req.headers;
+  console.log("ss", id);
   try {
-    const data = await datafetched.find({});
+    const data = await datafetched.find({collectionname: id});
     return res.status(200).json({
       success: true,
       data: data,
@@ -40,31 +48,29 @@ async function save() {
     const { data: solarianData } = await axios(
       "https://offers.solarians.click/api/offers"
     );
-    collectionsAddress.forEach(
-      (async function(coll) {
-        let prices = solarianData.map(function (e) {
-          //for DogesNFT
-          if (e.Creators[0]?.Address == coll.address) {
-            return e.Price / 1000000000;
-          }
-        });
-        // wipe the undefined values
-        prices = prices.filter(function (el) {
-          return el != undefined;
-        });
-        // obtain floor price
-        const floorPrice = Math.min.apply(Math, prices);
+    collectionsAddress.forEach(async function (coll) {
+      let prices = solarianData.map(function (e) {
+        //for DogesNFT
+        if (e.Creators[0]?.Address == coll.address) {
+          return e.Price / 1000000000;
+        }
+      });
+      // wipe the undefined values
+      prices = prices.filter(function (el) {
+        return el != undefined;
+      });
+      // obtain floor price
+      const floorPrice = Math.min.apply(Math, prices);
 
-        const date = new Date();
-        let today = date.toUTCString();
-        // save in DB
-        await datafetched.create({
-          floorprice: floorPrice,
-          time: today,
-          collectionname: coll.name,
-        });
-      })
-    );
+      const date = new Date();
+      let today = date.toUTCString();
+      // save in DB
+      await datafetched.create({
+        floorprice: floorPrice,
+        time: today,
+        collectionname: coll.name,
+      });
+    });
 
     return;
   } catch (error) {

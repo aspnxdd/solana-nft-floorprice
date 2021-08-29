@@ -14,7 +14,7 @@ function Data() {
     <div>
       <h1>Welcome to NFT Floor Price</h1>
       <h3>
-        Here you can track the history of Floor Price for SolanaDoges in{" "}
+        Here you can track the history of Floor Price for the collections from{" "}
         <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
           DigitalEyes
         </a>
