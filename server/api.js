@@ -56,6 +56,7 @@ server.post('/save', cors(), async(req, res) => {
         const data = await datafetched.create({
             floorprice: floorPrice,
             time: today,
+            collectionname: "doge"
         });
 
         console.log("data", data);
