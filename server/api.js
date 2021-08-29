@@ -5,6 +5,7 @@ const connection = {};
 const dev = process.env.NODE_ENV !== 'production'
 const datafetched =require("../models/datafetched");
 const server = express()
+require('dotenv').config()
 
 dbConnect();
 
