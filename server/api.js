@@ -29,7 +29,7 @@ const directions = {
     doges: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc"
 }
 
-function save(){
+async function save(){
     
     try {
         const { data: solarianData } = await axios(
