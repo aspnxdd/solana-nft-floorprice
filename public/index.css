@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Ubuntu, sans-serif;
+  background: rgb(255, 255, 255);
+}
+
+a {
+  color: #214a8f;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  color: #aaa;
+  margin-left: 2rem;
+}
+
+h1,
+h3 {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+button {
+  margin-left: 2rem;
+}
+
+.current-time {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
