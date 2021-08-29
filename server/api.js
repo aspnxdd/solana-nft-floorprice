@@ -64,15 +64,10 @@ async function save(){
         });
 
         console.log("data", data);
-        return status(201).json({
-            success: true,
-            data: data,
-        });
+        return;
     } catch (error) {
         console.log("error,", error);
-        status(400).json({
-            success: false,
-        });
+        return error;
     }
 }
 
