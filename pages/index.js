@@ -6,7 +6,7 @@ export default function Home() {
       <Link
         href={{
           pathname: "/fetch/solanadogesnfts",
-          query: { id: "solanadogesnfts" },
+          
         }}
       >
         solanadogesnfts

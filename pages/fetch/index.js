@@ -44,6 +44,10 @@ async function getFloorPrices() {
 async function savePriceFloor() {
   await fetch("https://nft-nextjs.herokuapp.com/save", {
     method: "POST",
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    }
   });
 }
 

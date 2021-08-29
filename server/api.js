@@ -64,13 +64,13 @@ async function save(){
         });
 
         console.log("data", data);
-        return res.status(201).json({
+        return status(201).json({
             success: true,
             data: data,
         });
     } catch (error) {
         console.log("error,", error);
-        res.status(400).json({
+        status(400).json({
             success: false,
         });
     }
