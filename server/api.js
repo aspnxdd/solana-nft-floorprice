@@ -31,7 +31,7 @@ server.post('/save', cors(), async(req, res) => {
         const { data: solarianData } = await axios(
             "https://offers.solarians.click/api/offers"
         );
-        console.log("id", id)
+        
         let prices = solarianData.map(function (e) {
             //for DogesNFT
             if (
@@ -83,7 +83,7 @@ async function dbConnect() {
     if (connection.isConnected) {
         return;
     }
-    const db = await mongoose.connect(process.env.NEXT_PUBLIC_DATABASE_URL || "", {
+    const db = await mongoose.connect(process.env.NEXT_PUBLIC_DATABASE_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
