@@ -7,7 +7,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const server = express()
 
 server.get('/load', cors(), (req, res) => {
-    await dbConnect();
+    dbConnect();
     try {
         const data = await datafetched.find({});
         return res.status(200).json({
@@ -22,7 +22,7 @@ server.get('/load', cors(), (req, res) => {
 })
 
 server.post('/save', cors(), (req, res) => {
-    await dbConnect();
+    dbConnect();
     try {
         const solarianRes = await fetch(
             "https://offers.solarians.click/api/offers"
