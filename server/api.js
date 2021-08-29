@@ -18,7 +18,7 @@ server.use(cors(corsOptions))
 
 server.get("/load", async (req, res) => {
     const {id} =req.headers;
-  console.log("ss", id);
+  
   try {
     const data = await datafetched.find({collectionname: id});
     return res.status(200).json({

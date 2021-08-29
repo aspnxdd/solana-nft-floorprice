@@ -37,16 +37,18 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices(id) {
-  let header = new Headers();
-  header.append("id", id);
-  console.log("header", header);
+  console.log(id)
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
         ? "http://localhost:8080"
         : "https://nft-nextjs.herokuapp.com"
     }/load`,
-    { headers: header }
+    {
+      headers: {
+        id,
+      },
+    }
   );
   const { data } = await res.json();
   return data;
@@ -55,8 +57,7 @@ async function getFloorPrices(id) {
 function Data() {
   //enviamos el id de la href "/fetch/xxxx"
   const router = useRouter();
-  const { id } = router.query;
- 
+
   const columns = React.useMemo(() => [
     {
       Header: "Floor Price",
@@ -73,28 +74,31 @@ function Data() {
   const [loading, setLoading] = useState(false);
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
-    getFloorPrices(id).then((data) => {
+ 
+    getFloorPrices(router.query.id).then((data) => {
       setData(data);
     });
-  }, []);
+  }, [router.query]);
 
   function updateData() {
     setLoading(true);
-    getFloorPrices(id).then((data) => {
+    getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
       setData(data);
     });
   }
 
-  const collectionNames ={
+  const collectionNames = {
     solanadogesnfts: "SolanaDoges",
-    thugbirdz: "Thugbirdz"
-  }
+    thugbirdz: "Thugbirdz",
+  };
+  
   return (
     <div>
       <h1>Welcome to NFT Floor Price</h1>
       <h3>
-        Here you can track the history of Floor Price for {collectionNames[id]} in{" "}
+        Here you can track the history of Floor Price for {collectionNames[router.query.id]}{" "}
+        in{" "}
         <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
           DigitalEyes
         </a>
