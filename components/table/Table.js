@@ -32,16 +32,16 @@ export default function Table({ columns, data }) {
     useSortBy,
     usePagination,
   );
-
+   
   // Render the UI for your table
   return (
     <>
     <table {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <tr key={headerGroup} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <th key={headerGroup} {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render("Header")}
                 {/* Add a sort direction indicator */}
                 <span>
@@ -56,9 +56,9 @@ export default function Table({ columns, data }) {
         {page.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr key={row}{...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return <td key={row}{...cell.getCellProps()}>{cell.render("Cell")}</td>;
               })}
             </tr>
           );
