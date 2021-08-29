@@ -14,13 +14,13 @@ let corsOptions = {
 
 dbConnect();
 
-server.use(cors(corsOptions))
+server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
-    const {id} =req.headers;
-  
+  const { id } = req.headers;
+
   try {
-    const data = await datafetched.find({collectionname: id});
+    const data = await datafetched.find({ collectionname: id });
     return res.status(200).json({
       success: true,
       data: data,
@@ -40,6 +40,14 @@ const collectionsAddress = [
   {
     name: "thugbirdz",
     address: "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
+  },
+  {
+    name: "degenapes",
+    address: "9BKWqDHfHZh9j39xakYVMdr6hXmCLHH5VfCpeq2idU9L",
+  },
+  {
+    name: "abstratica",
+    address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
   },
 ];
 
