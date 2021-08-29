@@ -39,13 +39,13 @@ const Styles = styled.div`
 
 async function getFloorPrices(req) {
   
-  const res = await fetch(`${location.origin}/api/dbcon`);
+  const res = await fetch("https://nft-nextjs.herokuapp.com/");
   const { data } = await res.json();
   return data;
 }
 
 async function savePriceFloor() {
-  await fetch(`${location.origin}/api/dbcon`, {
+  await fetch("https://nft-nextjs.herokuapp.com/", {
     method: "POST",
   });
 }
