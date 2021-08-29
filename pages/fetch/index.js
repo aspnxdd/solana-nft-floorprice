@@ -1,9 +1,10 @@
-import Table from "../../components/table/Table";
+
 import Time from "../../components/currentTime/CurrentTime";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { GrUpdate } from "react-icons/gr";
-import Spinner from "../../components/spinner/Spinner";
+
+
+import Links from "../../components/links/Links"
 
 const Styles = styled.div`
   table {
@@ -35,56 +36,47 @@ const Styles = styled.div`
   }
 `;
 
-async function getFloorPrices() {
-  const res = await fetch("https://nft-nextjs.herokuapp.com/load");
-  const { data } = await res.json();
-  return data;
-}
+// async function getFloorPrices() {
+//   const res = await fetch(`${env?.process?.NEXT_PUBLIC_SERVER || "http://localhost:8080"}/load`);
+//   const { data } = await res.json();
+//   return data;
+// }
 
-async function savePriceFloor() {
-  await fetch("https://nft-nextjs.herokuapp.com/save", {
-    method: "POST",
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-    }
-  });
-}
 
 function Data() {
-  const columns = React.useMemo(() => [
-    {
-      Header: "Floor Price",
-      accessor: "floorprice", //key in data
-    },
-    {
-      Header: "Time",
-      accessor: "time",
-    },
-  ]);
+//   const columns = React.useMemo(() => [
+//     {
+//       Header: "Floor Price",
+//       accessor: "floorprice", //key in data
+//     },
+//     {
+//       Header: "Time",
+//       accessor: "time",
+//     },
+//   ]);
 
-  // setData modifica valor de data
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  // quan es renderitza el  hook o pateix canvis
-  useEffect(() => {
-    getFloorPrices().then((data) => {
-      setData(data);
-    });
+//   // setData modifica valor de data
+//   const [data, setData] = useState([]);
+//   const [loading, setLoading] = useState(false);
+//   // quan es renderitza el  hook o pateix canvis
+//   useEffect(() => {
+//     getFloorPrices().then((data) => {
+//       setData(data);
+//     });
     
-    setInterval(() => {
-      savePriceFloor();
-      console.log("saving");
-    }, 2000); //2min
-  }, []);
+//     setInterval(() => {
+//       savePriceFloor();
+//       console.log("saving");
+//     }, 2000); //2min
+//   }, []);
 
-  function updateData() {
-    setLoading(true);
-    getFloorPrices().then((data) => {
-      setLoading(false);
-      setData(data);
-    });
-  }
+//   function updateData() {
+//     setLoading(true);
+//     getFloorPrices().then((data) => {
+//       setLoading(false);
+//       setData(data);
+//     });
+//   }
 
   return (
     <div>
@@ -96,17 +88,8 @@ function Data() {
         </a>
       </h3>
       <Time />
-      <div style={{ display: "flex", "margin-bottom": "1rem", height: "2rem" }}>
-        <button onClick={updateData}>
-          <GrUpdate /> Update
-        </button>
-        {loading && <Spinner />}
+      <Links></Links>
       </div>
-
-      <Styles>
-        <Table columns={columns} data={data} />
-      </Styles>
-    </div>
   );
 }
 export default Data;

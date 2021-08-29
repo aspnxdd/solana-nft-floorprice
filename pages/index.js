@@ -1,17 +1,8 @@
-import Link from "next/link";
+
+import Links from "../components/links/Links"
 
 export default function Home() {
   return (
-    <div className="main-links">
-      <Link
-        href={{
-          pathname: "/fetch/solanadogesnfts",
-          
-        }}
-      >
-        solanadogesnfts
-      </Link>
-      <Link href="/fetch/thugbirdz">thugbirdz</Link>
-    </div>
+    <Links></Links>
   );
 }

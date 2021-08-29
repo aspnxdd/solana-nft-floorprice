@@ -65,5 +65,6 @@ button {
 
 .main-links{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  margin-left: 2rem;
 }

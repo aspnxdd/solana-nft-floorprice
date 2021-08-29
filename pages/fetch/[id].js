@@ -5,8 +5,6 @@ import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 
-
-
 const Styles = styled.div`
   table {
     border-spacing: 0;
@@ -38,16 +36,15 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices(req) {
-  
-  const res = await fetch("https://nft-nextjs.herokuapp.com/load");
+  const res = await fetch(
+    `${
+      window.origin == "http://localhost:3000"
+        ? "http://localhost:8080"
+        : "https://nft-nextjs.herokuapp.com"
+    }/load`
+  );
   const { data } = await res.json();
   return data;
-}
-
-async function savePriceFloor() {
-  await fetch("https://nft-nextjs.herokuapp.com/save", {
-    method: "POST",
-  });
 }
 
 function Data() {
