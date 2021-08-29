@@ -10,6 +10,9 @@ a {
   color: #214a8f;
   text-decoration: none;
 }
+a:hover{
+  color: #5f7bac;
+}
 
 * {
   box-sizing: border-box;
@@ -21,7 +24,7 @@ p {
 }
 
 h1,
-h3 {
+h3,h4 {
   margin-left: 2rem;
   margin-top: 2rem;
 }

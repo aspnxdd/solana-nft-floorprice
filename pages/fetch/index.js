@@ -20,6 +20,7 @@ function Data() {
         </a>
       </h3>
       <Time />
+      <h4>It is being updated every 2 hours</h4>
       <Links></Links>
       </div>
   );

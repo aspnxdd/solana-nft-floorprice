@@ -37,7 +37,7 @@ const Styles = styled.div`
 `;
 
 async function getFloorPrices(id) {
-  console.log(id)
+ 
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
@@ -104,6 +104,7 @@ function Data() {
         </a>
       </h3>
       <Time />
+      <h4>It is being updated every 2 hours</h4>
       <div style={{ display: "flex", marginBottom: "1rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update

@@ -4,14 +4,8 @@ export default function Links() {
   return (
     <>
       <div className="main-links">
-        <Link
-          href={{
-            pathname: "/fetch/solanadogesnfts",
-          }}
-        >
-          solanadogesnfts
-        </Link>
-        <Link href="/fetch/thugbirdz">thugbirdz</Link>
+        <Link href="/fetch/solanadogesnfts">SolanaDoges</Link>
+        <Link href="/fetch/thugbirdz">Thugbirdz</Link>
       </div>
     </>
   );
