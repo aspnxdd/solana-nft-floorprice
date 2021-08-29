@@ -1,10 +1,17 @@
 import dbConnect from "../../../server/dbConnect";
 import datafetched from "../../../models/datafetched";
 
+const collections = {
+  solanadogesnfts: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
+  thugbirdz: "FMs48cUrEGq42coT2MQEkuH3ZRVMeUmmUqUFkXmsfvhC"
+}
+
 export default async (req, res) => {
   await dbConnect();
 
-  const { method } = req;
+  const {
+    method
+  } = req;
 
   switch (method) {
     case "GET":
@@ -22,16 +29,18 @@ export default async (req, res) => {
       break;
 
     case "POST":
+      console.log("id", id)
       try {
         const solarianRes = await fetch(
           "https://offers.solarians.click/api/offers"
         );
         const solarianData = await solarianRes.json();
+        console.log("id", id)
         let prices = solarianData.map(function (e) {
           //for DogesNFT
           if (
             e.Creators[0]?.Address ==
-            "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc"
+            collections.id
           ) {
             return e.Price / 1000000000;
           }

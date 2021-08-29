@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "heroku-postbuild":"node server/api.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "mongoose": "^6.0.2",
     "namor": "^2.0.3",
     "next": "11.1.0",

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const datafetched = new mongoose.Schema({
+
+    collectionname:{
+        type: String,
+    },
     floorprice: {
         type: Number, 
     },

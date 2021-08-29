@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 
+
+
 const Styles = styled.div`
   table {
     border-spacing: 0;
@@ -35,7 +37,8 @@ const Styles = styled.div`
   }
 `;
 
-async function getFloorPrices() {
+async function getFloorPrices(req) {
+  
   const res = await fetch(`${location.origin}/api/dbcon`);
   const { data } = await res.json();
   return data;
@@ -67,11 +70,11 @@ function Data() {
     getFloorPrices().then((data) => {
       setData(data);
     });
-    
+
     setInterval(() => {
       savePriceFloor();
       console.log("saving");
-    }, 2000); //2min
+    }, 120000); //2min
   }, []);
 
   function updateData() {
