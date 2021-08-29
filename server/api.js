@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var cors = require('cors')
 const connection = {};
 const dev = process.env.NODE_ENV !== 'production'
-
+const datafetched =require("../models/datafetched");
 const server = express()
 
 dbConnect();
@@ -81,7 +81,7 @@ async function dbConnect() {
     if (connection.isConnected) {
         return;
     }
-    const db = await mongoose.connect(process.env.NEXT_PUBLIC_DATABASE_URL, {
+    const db = await mongoose.connect(process.env.NEXT_PUBLIC_DATABASE_URL || "", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
