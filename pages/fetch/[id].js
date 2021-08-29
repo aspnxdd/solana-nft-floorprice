@@ -67,11 +67,6 @@ function Data() {
     getFloorPrices().then((data) => {
       setData(data);
     });
-
-    setInterval(() => {
-      savePriceFloor();
-      console.log("saving");
-    }, 120000); //2min
   }, []);
 
   function updateData() {
@@ -92,7 +87,7 @@ function Data() {
         </a>
       </h3>
       <Time />
-      <div style={{ display: "flex", "margin-bottom": "1rem", height: "2rem" }}>
+      <div style={{ display: "flex", marginBottom: "1rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update
         </button>
