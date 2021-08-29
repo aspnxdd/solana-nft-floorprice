@@ -25,7 +25,11 @@ server.get('/load', cors(), async(req, res) => {
     }
 })
 
-server.post('/save', cors(), async(req, res) => {
+const directions = {
+    doges: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc"
+}
+
+function save(){
     
     try {
         const { data: solarianData } = await axios(
@@ -70,12 +74,18 @@ server.post('/save', cors(), async(req, res) => {
             success: false,
         });
     }
+}
 
-})
 
-server.listen(process.env.PORT || 3000, (err) => {
+server.listen(process.env.PORT || 8080, (err) => {
     if (err) throw err
     console.log('> Ready on http://localhost:3000')
+
+
+    setInterval(() => {
+        save()
+    }, 120000)
+
 })
 
 
