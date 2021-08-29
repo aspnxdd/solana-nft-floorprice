@@ -91,6 +91,8 @@ function Data() {
   const collectionNames = {
     solanadogesnfts: "SolanaDoges",
     thugbirdz: "Thugbirdz",
+    degenapes: "Degen Ape Academy",
+    abstratica: "Abstratica"
   };
   
   return (
