@@ -6,6 +6,8 @@ export default function Links() {
       <div className="main-links">
         <Link href="/fetch/solanadogesnfts">SolanaDoges</Link>
         <Link href="/fetch/thugbirdz">Thugbirdz</Link>
+        <Link href="/fetch/degenapes">Degen Ape Academy</Link>
+        <Link href="/fetch/abstratica">Abstratica</Link>
       </div>
     </>
   );
