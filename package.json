@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "heroku-postbuild":"node server/api.js",
     "build": "next build",
-    "start": "next start",
+    "start": "node server/api.js",
     "lint": "next lint"
   },
   "dependencies": {
