@@ -1,13 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose');
 var cors = require('cors')
-
+const connection = {};
 const dev = process.env.NODE_ENV !== 'production'
 
 const server = express()
 
-server.get('/load', cors(), (req, res) => {
-    dbConnect();
+dbConnect();
+
+server.get('/load', cors(), async(req, res) => {
+  
     try {
         const data = await datafetched.find({});
         return res.status(200).json({
@@ -21,8 +23,8 @@ server.get('/load', cors(), (req, res) => {
     }
 })
 
-server.post('/save', cors(), (req, res) => {
-    dbConnect();
+server.post('/save', cors(), async(req, res) => {
+    
     try {
         const solarianRes = await fetch(
             "https://offers.solarians.click/api/offers"
@@ -32,8 +34,8 @@ server.post('/save', cors(), (req, res) => {
         let prices = solarianData.map(function (e) {
             //for DogesNFT
             if (
-                e.Creators[0]?.Address ==
-                collections.id
+                e.Creators[0]?.Address == "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc"
+                
             ) {
                 return e.Price / 1000000000;
             }
@@ -73,7 +75,8 @@ server.listen(process.env.PORT || 3000, (err) => {
     if (err) throw err
     console.log('> Ready on http://localhost:3000')
 })
-const connection = {};
+
+
 async function dbConnect() {
     if (connection.isConnected) {
         return;
