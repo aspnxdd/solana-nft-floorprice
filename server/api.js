@@ -28,10 +28,9 @@ server.get('/load', cors(), async(req, res) => {
 server.post('/save', cors(), async(req, res) => {
     
     try {
-        const solarianRes = await axios(
+        const { data: solarianData } = await axios(
             "https://offers.solarians.click/api/offers"
         );
-        const solarianData = await solarianRes.json();
         console.log("id", id)
         let prices = solarianData.map(function (e) {
             //for DogesNFT
