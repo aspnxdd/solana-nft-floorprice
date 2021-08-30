@@ -55,6 +55,11 @@ export default function Links() {
             <HiChevronRight /> Frakt{" "}
           </a>
         </Link>
+        <Link href="/fetch/solchihuahua">
+          <a>
+            <HiChevronRight /> SolChihuahua{" "}
+          </a>
+        </Link>
       </div>
     </>
   );

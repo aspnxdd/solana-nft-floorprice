@@ -73,6 +73,12 @@ const collectionsAddress = [
     name: "solpops",
     address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi"
   },
+  {
+    name: "solchihuahua",
+    address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt"
+  },
+
+  
   
   
 ];
@@ -119,7 +125,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   // cada 2h guarda en la DB
   setInterval(() => {
     save();
-  }, 7200000); //2h
+  }, 10000); //2h
 });
 
 async function dbConnect() {

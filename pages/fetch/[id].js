@@ -100,6 +100,7 @@ function Data() {
     solanimals: "Solanimals",
     pixelpenguin: "PixelPenguins",
     frakt: "Frakt",
+    solchihuahua: "SolChihuahua"
   };
 
   return (
