@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import TitleWelcome from "../../components/common/TitleWelcome";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
 import DonContainer from "../../components/donation/DonContainer";
+import LinkHome from "../../components/common/LinkHome";
 
 const Styles = styled.div`
   table {
@@ -106,6 +107,7 @@ function Data() {
 
   return (
     <div>
+    <LinkHome />
       <TitleWelcome />
       <h3>
         {" "}

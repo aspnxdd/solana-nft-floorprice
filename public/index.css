@@ -5,7 +5,14 @@ body {
   font-family: Ubuntu, sans-serif;
   background: rgb(255, 255, 255);
 }
-
+.home-link{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
 .a-link {
   color: #214a8f;
   text-decoration: none;
@@ -35,7 +42,13 @@ p {
   margin-left: 2rem;
 }
 
-h1,
+h1{
+  margin-left: 2rem;
+
+  display: flex;
+  align-items: center;
+}
+
 h3,
 h4 {
   margin-left: 2rem;
