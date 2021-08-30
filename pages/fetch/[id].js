@@ -100,20 +100,23 @@ function Data() {
     solanimals: "Solanimals",
     pixelpenguin: "PixelPenguins",
     frakt: "Frakt",
-    solchihuahua: "SolChihuahua"
+    solchihuahua: "SolChihuahua",
   };
 
   return (
     <div>
-    <DonContainer />
       <TitleWelcome />
       <h3>
-        Here you can track the history of Floor Price for{" "}
-        {collectionNames[router.query.id]} in{" "}
-        <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
-          &nbsp;DigitalEyes
-        </a>
+        {" "}
+        <div>
+          Here you can track the history of Floor Price for
+          {collectionNames[router.query.id]} in {" "}
+          <a href="https://digitaleyes.market/">
+            DigitalEyes
+          </a>
+        </div>
       </h3>
+      <DonContainer />
       <InfoTwoHours />
       <Time />
       <div style={{ display: "flex", marginBottom: "1rem", height: "2rem" }}>

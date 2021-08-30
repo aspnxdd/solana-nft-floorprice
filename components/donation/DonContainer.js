@@ -20,18 +20,16 @@ export default function DonContainer() {
   }
 
   return (
-    <div>
-      <Container>
-        <h1>Donations</h1>
-        <Title>If you have found NFT Floor Price app useful, please consider leaving a Solana tip.</Title>
-   
-        <Label>
-          <b>Solana Wallet address:</b> <Address onClick={copyToClipboard}>{address}</Address>{" "}
-          {copySuccess}{" "}
-        </Label>
-        <img className="qr" src="/static/images/qr.png" alt="qr" width="100" height="100"></img>
+    <Container>
+      <h1>Donations</h1>
+      <Title>If you have found NFT Floor Price app useful, please consider leaving a Solana tip.</Title>
 
-      </Container>
-    </div>
+      <Label>
+        <b>Solana Wallet address:</b> <Address onClick={copyToClipboard}>{address}</Address>{" "}
+        {copySuccess}{" "}
+      </Label>
+      <img className="qr" src="/static/images/qr.png" alt="qr" width="100" height="100"></img>
+
+    </Container>
   );
 }

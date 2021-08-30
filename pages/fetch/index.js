@@ -9,14 +9,16 @@ import Links from "../../components/links/Links";
 function Data() {
   return (
     <div>
-    <DonContainer />
       <TitleWelcome />
       <h3>
-        Here you can track the history of Floor Price for the collections from{" "}
-        <a href="https://digitaleyes.market/collections/SolanaDogeNFTs">
-          &nbsp;DigitalEyes
-        </a>
+        <div>
+          Here you can track the history of Floor Price for the collections from {" "}
+          <a href="https://digitaleyes.market/">
+            DigitalEyes
+          </a>
+        </div>
       </h3>
+      <DonContainer />
       <InfoTwoHours />
       <Time />
       <Links></Links>

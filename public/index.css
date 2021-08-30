@@ -6,12 +6,21 @@ body {
   background: rgb(255, 255, 255);
 }
 
-a {
+.a-link {
   color: #214a8f;
   text-decoration: none;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
+}
+.a-link:hover {
+  color: #5f7bac;
+}
+
+a {
+  color: #214a8f;
+  text-decoration: none;
+  
 }
 a:hover {
   color: #5f7bac;
@@ -103,11 +112,4 @@ button {
 
 .layer1 {
   background-image: url("./static/images/layer1.svg");
-}
-
-.qr{
-  margin-left: 9rem;
-  margin-top: 11rem;
-  position: absolute;
-
 }
