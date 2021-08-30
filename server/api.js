@@ -129,7 +129,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   // cada 2h guarda en la DB
   setInterval(() => {
     save();
-  }, 10000); //2h
+  }, 7200000); //2h
 });
 
 async function dbConnect() {
