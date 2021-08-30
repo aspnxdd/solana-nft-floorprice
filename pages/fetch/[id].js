@@ -93,6 +93,12 @@ function Data() {
     thugbirdz: "Thugbirdz",
     degenapes: "Degen Ape Academy",
     abstratica: "Abstratica",
+    solpops: "Solpops",
+    soliens: "Soliens",
+    soldalas: "Soldalas",
+    solanimals: "Solanimals",
+    pixelpenguin: "PixelPenguins",
+    frakt: "Frakt",
   };
 
   return (

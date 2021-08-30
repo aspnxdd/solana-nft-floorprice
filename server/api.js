@@ -49,6 +49,32 @@ const collectionsAddress = [
     name: "abstratica",
     address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
   },
+  {
+    name: "frakt",
+    address:"6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix"
+  },
+  {
+    name: "pixelpenguin",
+    address:"HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP"
+  },
+  {
+    name: "solanimals",
+    address:"5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn"
+  },
+  {
+    name: "soldalas",
+    address:"8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC"
+  },
+  {
+    name: "soliens",
+    address:"Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb"
+  },
+  {
+    name: "solpops",
+    address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi"
+  },
+  
+  
 ];
 
 async function save() {

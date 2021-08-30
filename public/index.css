@@ -104,3 +104,10 @@ button {
 .layer1 {
   background-image: url("./static/images/layer1.svg");
 }
+
+.qr{
+  margin-left: 9rem;
+  margin-top: 11rem;
+  position: absolute;
+
+}

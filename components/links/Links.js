@@ -16,13 +16,45 @@ export default function Links() {
           </a>
         </Link>
         <Link href="/fetch/degenapes">
-        <a>
+          <a>
             <HiChevronRight /> Degen Ape Academy{" "}
-          </a></Link>
+          </a>
+        </Link>
         <Link href="/fetch/abstratica">
-        <a>
+          <a>
             <HiChevronRight /> Abstratica{" "}
-          </a></Link>
+          </a>
+        </Link>
+        <Link href="/fetch/solpops">
+          <a>
+            <HiChevronRight /> Solpops{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/soliens">
+          <a>
+            <HiChevronRight /> Soliens{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/soldalas">
+          <a>
+            <HiChevronRight /> Soldalas{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/solanimals">
+          <a>
+            <HiChevronRight /> Solanimals{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/pixelpenguin">
+          <a>
+            <HiChevronRight /> PixelPenguins{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/frakt">
+          <a>
+            <HiChevronRight /> Frakt{" "}
+          </a>
+        </Link>
       </div>
     </>
   );
