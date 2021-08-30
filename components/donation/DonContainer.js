@@ -29,7 +29,7 @@ export default function DonContainer() {
           <b>Solana Wallet address:</b> <Address onClick={copyToClipboard}>{address}</Address>{" "}
           {copySuccess}{" "}
         </Label>
-        <img className="qr" src="static/images/qr.png" alt="qr" width="100" height="100"></img>
+        <img className="qr" src="/static/images/qr.png" alt="qr" width="100" height="100"></img>
 
       </Container>
     </div>
