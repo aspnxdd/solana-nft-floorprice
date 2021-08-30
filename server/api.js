@@ -36,6 +36,7 @@ const collectionsAddress = [
   {
     name: "solanadogesnfts",
     address: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
+    address2: "----"
   },
   {
     name: "thugbirdz",
@@ -45,42 +46,52 @@ const collectionsAddress = [
   {
     name: "degenapes",
     address: "9BKWqDHfHZh9j39xakYVMdr6hXmCLHH5VfCpeq2idU9L",
+    address2: "----"
   },
   {
     name: "abstratica",
     address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
+    address2: "----"
   },
   {
     name: "frakt",
-    address:"6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix"
+    address:"6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
+    address2: "----"
   },
   {
     name: "pixelpenguin",
-    address:"HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP"
+    address:"HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
+    address2: "----"
   },
   {
     name: "solanimals",
-    address:"5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn"
+    address:"5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
+    address2: "----"
   },
   {
     name: "soldalas",
-    address:"8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC"
+    address:"8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
+    address2: "----"
   },
   {
     name: "soliens",
-    address:"Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb"
+    address:"Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
+    address2: "----"
   },
   {
     name: "solpops",
-    address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi"
+    address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
+    address2: "----"
   },
   {
     name: "solchihuahua",
-    address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt"
+    address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
+    address2: "----"
   },
   {
     name: "smb",
-    address:"9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F"
+    address:"9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
+    address2: "----"
   },
   
   
@@ -130,7 +141,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   // cada 2h guarda en la DB
   setInterval(() => {
     save();
-  }, 5000); //2h
+  }, 3600000); //1h
 });
 
 async function dbConnect() {
