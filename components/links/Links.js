@@ -60,6 +60,11 @@ export default function Links() {
             <HiChevronRight /> SolChihuahua{" "}
           </a>
         </Link>
+        <Link href="/fetch/smb">
+          <a className="a-link">
+            <HiChevronRight /> SMB{" "}
+          </a>
+        </Link>
       </div>
     </>
   );

@@ -77,7 +77,11 @@ const collectionsAddress = [
     name: "solchihuahua",
     address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt"
   },
-
+  {
+    name: "smb",
+    address:"9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F"
+  },
+  
   
   
   
