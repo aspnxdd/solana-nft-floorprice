@@ -7,6 +7,7 @@ import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
 import TitleWelcome from "../../components/common/TitleWelcome";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
+import DonContainer from "../../components/donation/DonContainer";
 
 const Styles = styled.div`
   table {
@@ -103,6 +104,7 @@ function Data() {
 
   return (
     <div>
+    <DonContainer />
       <TitleWelcome />
       <h3>
         Here you can track the history of Floor Price for{" "}

@@ -9,7 +9,7 @@ import Links from "../../components/links/Links";
 function Data() {
   return (
     <div>
-    <DonContainer></DonContainer>
+    <DonContainer />
       <TitleWelcome />
       <h3>
         Here you can track the history of Floor Price for the collections from{" "}

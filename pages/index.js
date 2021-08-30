@@ -2,10 +2,12 @@ import Links from "../components/links/Links";
 import Time from "../components/currentTime/CurrentTime";
 import TitleWelcome from "../components/common/TitleWelcome";
 import InfoTwoHours from "../components/common/InfoTwoHours";
+import DonContainer from "../components/donation/DonContainer";
 
 export default function Home() {
   return (
     <div>
+    <DonContainer />
       <TitleWelcome />
       <h3>
         Here you can track the history of Floor Price for the collections from{" "}
