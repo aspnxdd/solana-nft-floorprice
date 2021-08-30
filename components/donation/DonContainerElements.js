@@ -10,12 +10,11 @@ export const Container = styled.div `
   flex-direction: column;
   align-content: flex-start;
   align-items: flex-start;
- 
-  height: 19.5rem;
   background: #d2bf39;
   color: #2f3f3;
+  top: 2rem;
   right: 20rem;
-  width: 30%;
+  width: 25%;
   height: auto;
   border-radius: 2rem;
   border: 15px solid white;
@@ -25,8 +24,8 @@ export const Container = styled.div `
   @media (max-width: 600px) {
      position: static;
      right: 0px;
-     width: 100%;
-     height: 22rem;
+     width: auto;
+     height: auto;
   }
 
   & > img {
@@ -41,6 +40,7 @@ export const Container = styled.div `
 export const Label = styled.label `
   margin-left: 2rem;
   margin-top: 1rem;
+  margin-right: 2rem;
   color: #285fc4;
 `;
 
@@ -51,6 +51,7 @@ export const Address = styled.label `
   &:hover {
     color: #fff;
   }
-
+  
+  margin-right: 2rem;
   
 `;
