@@ -40,6 +40,7 @@ const collectionsAddress = [
   {
     name: "thugbirdz",
     address: "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
+    address2: "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA"
   },
   {
     name: "degenapes",
@@ -95,7 +96,7 @@ async function save() {
     collectionsAddress.forEach(async function (coll) {
       let prices = solarianData.map(function (e) {
         //for DogesNFT
-        if (e.Creators[0]?.Address == coll.address) {
+        if (e.Creators[0]?.Address == coll.address || e.Creators[0]?.Address == coll.address2) {
           return e.Price / 1000000000;
         }
       });
@@ -129,7 +130,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   // cada 2h guarda en la DB
   setInterval(() => {
     save();
-  }, 7200000); //2h
+  }, 5000); //2h
 });
 
 async function dbConnect() {
