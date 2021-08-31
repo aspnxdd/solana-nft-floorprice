@@ -104,7 +104,7 @@ button {
 .main-links {
   display: flex;
   flex-direction: column;
-
+  margin-bottom: 2rem;
   align-items: flex-start;
   margin-left: 2rem;
 }
