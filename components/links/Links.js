@@ -70,6 +70,26 @@ export default function Links() {
             <HiChevronRight /> SolBear{" "}
           </a>
         </Link>
+        <Link href="/fetch/sollamas-gen2">
+          <a className="a-link">
+            <HiChevronRight /> Sollamas{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/boldbadgers">
+          <a className="a-link">
+            <HiChevronRight /> Boldbadgers{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/solpunks">
+          <a className="a-link">
+            <HiChevronRight /> Solpunks{" "}
+          </a>
+        </Link>
+        <Link href="/fetch/solarians">
+          <a className="a-link">
+            <HiChevronRight /> Solarians{" "}
+          </a>
+        </Link>
       </div>
     </>
   );

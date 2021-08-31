@@ -6,6 +6,8 @@ export const Title = styled.div `
 `;
 
 export const Container = styled.div `
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left: 1.5rem;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -18,7 +20,7 @@ export const Container = styled.div `
   width: 25rem;
   height: auto;
   border-radius: 2rem;
-  border: 15px solid white;
+  
   overflow-x: auto;
 
 
@@ -42,7 +44,7 @@ export const Label = styled.label `
   margin-left: 2rem;
   margin-top: 1rem;
   margin-right: 2rem;
-  color: #285fc4;
+  color: #000;
 `;
 
 export const Address = styled.label `

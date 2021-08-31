@@ -22,7 +22,7 @@ export default function DonContainer() {
   return (
     <Container>
       <h1>Donations</h1>
-      <Title>If you have found NFT Floor Price app useful, please consider leaving a Solana tip.</Title>
+      <Title>If you have found NFT Floor Price app useful, please consider leaving a <b>Solana</b> tip.</Title>
 
       <Label>
         <b>Solana Wallet address:</b> <Address onClick={copyToClipboard}>{address}</Address>

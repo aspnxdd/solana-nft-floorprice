@@ -68,7 +68,7 @@ const Styles = styled.div`
     }
   }
 `;
-
+// fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
   const res = await fetch(
     `${
@@ -82,6 +82,7 @@ async function getFloorPrices(id) {
       },
     }
   );
+  //
   let { data } = await res.json();
 
   console.log("data", data);
@@ -155,6 +156,9 @@ function Data() {
     solchihuahua: "SolChihuahua",
     smb: "SMB",
     solbear: "SolBear",
+    solarians: "Solarians",
+    boldbadgers:"Boldbadgers",
+    "sollamas-gen2": "Sollamas"
   };
 
   return (
@@ -165,13 +169,13 @@ function Data() {
         {" "}
         <div>
           Here you can track the history of Floor Price for{" "}
-          {collectionNames[router.query.id]} 
+          <b>{collectionNames[router.query.id]} </b>
         </div>
       </h3>
       <DonContainer />
       <InfoTwoHours />
       <Time />
-      <div style={{ display: "flex", marginBottom: "1rem", height: "2rem" }}>
+      <div style={{ display: "flex", marginBottom: "0rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update
         </button>
