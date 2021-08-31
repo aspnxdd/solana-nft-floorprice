@@ -65,6 +65,11 @@ export default function Links() {
             <HiChevronRight /> SMB{" "}
           </a>
         </Link>
+        <Link href="/fetch/solbear">
+          <a className="a-link">
+            <HiChevronRight /> SolBear{" "}
+          </a>
+        </Link>
       </div>
     </>
   );

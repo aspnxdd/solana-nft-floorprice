@@ -36,62 +36,80 @@ const collectionsAddress = [
   {
     name: "solanadogesnfts",
     address: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "thugbirdz",
     address: "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
-    address2: "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA"
+    address2: "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
+    uri:"@@@@@@@@"
   },
   {
     name: "degenapes",
     address: "9BKWqDHfHZh9j39xakYVMdr6hXmCLHH5VfCpeq2idU9L",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "abstratica",
     address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "frakt",
     address:"6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "pixelpenguin",
     address:"HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "solanimals",
     address:"5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "soldalas",
     address:"8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "soliens",
     address:"Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "solpops",
     address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "solchihuahua",
     address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
   },
   {
     name: "smb",
     address:"9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
-    address2: "----"
+    address2: "----",
+    uri:"@@@@@@@@"
+  },
+  {
+    name: "solbear",
+    address:"----",
+    address2: "----",
+    uri:"QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH"
   },
   
   
@@ -107,7 +125,8 @@ async function save() {
     collectionsAddress.forEach(async function (coll) {
       let prices = solarianData.map(function (e) {
         //for DogesNFT
-        if (e.Creators[0]?.Address == coll.address || e.Creators[0]?.Address == coll.address2) {
+        if (e.Creators[0]?.Address == coll.address || e.Creators[0]?.Address == coll.address2 || e?.URI.includes(coll.uri) ){
+          
           return e.Price / 1000000000;
         }
       });

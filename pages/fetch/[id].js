@@ -102,7 +102,8 @@ function Data() {
     pixelpenguin: "PixelPenguins",
     frakt: "Frakt",
     solchihuahua: "SolChihuahua",
-    smb: "SMB"
+    smb: "SMB",
+    solbear:"SolBear"
   };
 
   return (
