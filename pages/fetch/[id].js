@@ -158,7 +158,8 @@ function Data() {
     solbear: "SolBear",
     solarians: "Solarians",
     boldbadgers:"Boldbadgers",
-    "sollamas-gen2": "Sollamas"
+    "sollamas-gen2": "Sollamas",
+    tophatchicks:"TopHatChicks"
   };
 
   return (

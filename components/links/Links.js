@@ -90,6 +90,11 @@ export default function Links() {
             <HiChevronRight /> Solarians{" "}
           </a>
         </Link>
+        <Link href="/fetch/tophatchicks">
+          <a className="a-link">
+            <HiChevronRight /> TopHatChicks{" "}
+          </a>
+        </Link>
       </div>
     </>
   );

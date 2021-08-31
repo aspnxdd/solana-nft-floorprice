@@ -141,6 +141,14 @@ const collectionsAddressDigitalEyes = [
     address2: "@@@@@@@",
     uri: "https://solarians.click/api/metaplex-mints",
   },
+  {
+    name: "tophatchicks",
+    address: "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
+    address2: "@@@@@@@",
+    uri: "@@@@@@@@@@@@",
+  },
+
+  
 ];
 async function saveSolanart() {
   try {
