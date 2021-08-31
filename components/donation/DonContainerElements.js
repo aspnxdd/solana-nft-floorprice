@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Title = styled.div `
+export const Title = styled.div`
   margin-left: 2rem;
   margin-right: 2rem;
 `;
 
-export const Container = styled.div `
+export const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-left: 1.5rem;
   position: absolute;
@@ -20,15 +20,12 @@ export const Container = styled.div `
   width: 25rem;
   height: auto;
   border-radius: 2rem;
-  
   overflow-x: auto;
-
-
-  @media (max-width: 600px) {
-     position: static;
-     right: 0px;
-     width: auto;
-     height: auto;
+  @media (max-width: 981px) {
+    position: static;
+    right: 0px;
+    width: 24rem;
+    height: auto;
   }
 
   & > img {
@@ -37,24 +34,22 @@ export const Container = styled.div `
     height: 120px;
     width: 120px;
   }
-
 `;
 
-export const Label = styled.label `
+export const Label = styled.label`
   margin-left: 2rem;
   margin-top: 1rem;
   margin-right: 2rem;
   color: #000;
 `;
 
-export const Address = styled.label `
+export const Address = styled.label`
   cursor: pointer;
   color: #285fc4;
   word-break: break-all;
   &:hover {
     color: #fff;
   }
-  
+
   margin-right: 2rem;
-  
 `;
