@@ -11,6 +11,9 @@ const datafetched = new mongoose.Schema({
     time: {
         type: String,
     },
+    marketplace: {
+        type: String,
+    },
    
     
 })

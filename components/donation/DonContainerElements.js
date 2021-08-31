@@ -14,8 +14,8 @@ export const Container = styled.div `
   background: #d2bf39;
   color: #2f3f3;
   top: 2rem;
-  right: 20rem;
-  width: 25%;
+  right: 5rem;
+  width: 25rem;
   height: auto;
   border-radius: 2rem;
   border: 15px solid white;

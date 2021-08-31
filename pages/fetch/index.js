@@ -17,6 +17,9 @@ function Data() {
           Here you can track the history of Floor Price for the collections from {" "}
           <a href="https://digitaleyes.market/">
             DigitalEyes
+          </a> and {" "}
+          <a href="https://solanart.io/">
+            Solanart
           </a>
         </div>
       </h3>

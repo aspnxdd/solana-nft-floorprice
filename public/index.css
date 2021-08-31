@@ -44,12 +44,19 @@ p {
 
 h1{
   margin-left: 2rem;
-
+  
   display: flex;
   align-items: center;
 }
 
-h3,
+h3{
+  
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    width: 25rem;
+}
 h4 {
   margin-left: 2rem;
   margin-top: 2rem;
@@ -72,19 +79,7 @@ button {
   margin-bottom: 2rem;
 }
 
-.pagination {
-  margin-left: 2rem;
-  display: flex;
-}
 
-.pagination-buttons {
-  height: 1rem;
-  display: flex;
-  flex-direction: row;
-  margin-right: 2rem;
-  margin-left: 3rem;
-  font-size: 1.2rem;
-}
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);

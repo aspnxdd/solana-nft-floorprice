@@ -11,6 +11,35 @@ import DonContainer from "../../components/donation/DonContainer";
 import LinkHome from "../../components/common/LinkHome";
 
 const Styles = styled.div`
+  display: flex;
+  .table-container{
+    margin-right: 8rem;
+  }
+  .pagination-div {
+    display: flex;
+    position: relative;
+    top:1rem;
+  
+    left: 2rem;
+  }
+  .pagination-pages {
+    display: block;
+    right: 4rem;
+    & > span >input{
+      width:2rem;
+    }
+    & > select {
+      width: 6rem; 
+    }
+  }
+
+  .pagination-buttons {
+    height: 1rem;
+    display: block;
+    left: 8rem;
+    bottom: 1rem;
+    font-size: 1.2rem;
+  }
   table {
     border-spacing: 0;
     border: 1px solid #c4c4c4;
@@ -53,28 +82,50 @@ async function getFloorPrices(id) {
       },
     }
   );
-  const { data } = await res.json();
-  return data;
+  let { data } = await res.json();
+
+  console.log("data", data);
+  const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
+
+  const solanartData = data.filter((e) => e.marketplace === "solanart");
+
+  console.log("solanartData", solanartData);
+  console.log("digitalEyesData", digitalEyesData);
+  return {
+    digitalEyesData,
+    solanartData,
+  };
 }
 
 function Data() {
   //enviamos el id de la href "/fetch/xxxx"
   const router = useRouter();
 
-  const columns = React.useMemo(() => [
-    {
-      Header: "Floor Price",
-      accessor: "floorprice", //key in data
-    },
-    {
-      Header: "Time",
-      accessor: "time",
-    },
-  ]);
+  const columns = (title) => {
+    return [
+      {
+        Header: title,
+        columns: [
+          {
+            Header: "Floor Price",
+            accessor: "floorprice", //key in data
+          },
+          {
+            Header: "Time",
+            accessor: "time",
+          },
+        ],
+      },
+    ];
+  };
 
   // setData modifica valor de data
-  const [data, setData] = useState([]);
+  const [{ solanartData, digitalEyesData }, setData] = useState({
+    solanartData: [],
+    digitalEyesData: [],
+  });
   const [loading, setLoading] = useState(false);
+
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
@@ -103,21 +154,18 @@ function Data() {
     frakt: "Frakt",
     solchihuahua: "SolChihuahua",
     smb: "SMB",
-    solbear:"SolBear"
+    solbear: "SolBear",
   };
 
   return (
     <div>
-    <LinkHome />
+      <LinkHome />
       <TitleWelcome />
       <h3>
         {" "}
         <div>
-          Here you can track the history of Floor Price for
-          {collectionNames[router.query.id]} in {" "}
-          <a href="https://digitaleyes.market/">
-            DigitalEyes
-          </a>
+          Here you can track the history of Floor Price for{" "}
+          {collectionNames[router.query.id]} 
         </div>
       </h3>
       <DonContainer />
@@ -131,7 +179,12 @@ function Data() {
       </div>
 
       <Styles>
-        <Table columns={columns} data={data} />
+        {digitalEyesData.length > 1 && (
+          <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
+        )}
+        {solanartData.length > 1 && (
+          <Table columns={columns("Solanart")} data={solanartData} />
+        )}
       </Styles>
     </div>
   );

@@ -31,102 +31,165 @@ server.get("/load", async (req, res) => {
     });
   }
 });
+const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+const collectionsAddressSolanart = [
+  {
+    name:"degenapes",
+    collectionName:"degenape"
+  },
+  {
+    name:"solpunks",
+    collectionName:"solpunks"
+  },
+  {
+    name:"boldbadgers",
+    collectionName:"boldbadgers"
+  },
+  {
+    name:"sollamas-gen2",
+    collectionName:"sollamas-gen2"
+  },
+  {
+    name:"solanimals",
+    collectionName:"solanimals"
+  },
 
-const collectionsAddress = [
+];
+
+const collectionsAddressDigitalEyes = [
   {
     name: "solanadogesnfts",
     address: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "thugbirdz",
     address: "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
     address2: "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "degenapes",
-    address: "9BKWqDHfHZh9j39xakYVMdr6hXmCLHH5VfCpeq2idU9L",
+    address: "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "abstratica",
     address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "frakt",
-    address:"6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
+    address: "6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "pixelpenguin",
-    address:"HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
+    address: "HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "solanimals",
-    address:"5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
+    address: "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "soldalas",
-    address:"8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
+    address: "8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "soliens",
-    address:"Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
+    address: "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "solpops",
-    address:"Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
+    address: "Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "solchihuahua",
-    address:"5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
+    address: "5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "smb",
-    address:"9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
+    address: "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
     address2: "----",
-    uri:"@@@@@@@@"
+    uri: "@@@@@@@@",
   },
   {
     name: "solbear",
-    address:"----",
+    address: "----",
     address2: "----",
-    uri:"QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH"
+    uri: "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
   },
-  
-  
-  
-  
 ];
-
-async function save() {
+async function saveSolanart() {
   try {
+    // save the data in solarianData
+    collectionsAddressSolanart.forEach(async function(coll){
+      const { data: solanartData } = await axios(
+      `${SOLANART_URL}${coll.collectionName}`
+      );
+      let prices = solanartData.map(function (e) {
+        
+          return e.price 
+        
+      });
+      // wipe the undefined values
+      prices = prices.filter(function (el) {
+        return el != undefined;
+      });
+      // obtain floor price
+      const floorPrice = Math.min.apply(Math, prices);
+
+      const date = new Date();
+      let today = date.toUTCString();
+      // save in DB
+      await datafetched.create({
+        floorprice: floorPrice,
+        time: today,
+        collectionname: coll.name,
+        marketplace: "solanart"
+      });
+    })
+  
+    
+
+    return;
+  } catch (error) {
+    return error;
+  }
+}
+async function saveDigitalEyes() {
+  try {
+    // save the data in solarianData
     const { data: solarianData } = await axios(
       "https://offers.solarians.click/api/offers"
     );
-    collectionsAddress.forEach(async function (coll) {
+    //for each collection, query and return price
+    collectionsAddressDigitalEyes.forEach(async function (coll) {
+      //for each item in solarianData
       let prices = solarianData.map(function (e) {
-        //for DogesNFT
-        if (e.Creators[0]?.Address == coll.address || e.Creators[0]?.Address == coll.address2 || e?.URI.includes(coll.uri) ){
-          
+        
+        if (
+          (e.Creators[0]?.Address == coll.address && e.Creators[0]?.Verified ) ||
+          (e.Creators[4]?.Address == coll.address && e.Creators[4]?.Verified ) ||
+          (e.Creators[0]?.Address == coll.address2 && e.Creators[0]?.Verified) ||
+          e?.URI.includes(coll.uri) //for SolBears specially
+        ) {
           return e.Price / 1000000000;
         }
       });
@@ -144,6 +207,7 @@ async function save() {
         floorprice: floorPrice,
         time: today,
         collectionname: coll.name,
+        marketplace: "digitaleyes"
       });
     });
 
@@ -159,8 +223,9 @@ server.listen(process.env.PORT || 8080, (err) => {
 
   // cada 2h guarda en la DB
   setInterval(() => {
-    save();
-  }, 3600000); //1h
+    saveDigitalEyes();
+    saveSolanart();
+  }, 7200000); //1h
 });
 
 async function dbConnect() {
