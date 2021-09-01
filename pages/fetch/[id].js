@@ -161,7 +161,8 @@ function Data() {
     solarians: "Solarians",
     boldbadgers:"Boldbadgers",
     "sollamas-gen2": "Sollamas",
-    tophatchicks:"TopHatChicks"
+    tophatchicks:"TopHatChicks",
+    solpunks: "Solpunks"
   };
 
   return (
