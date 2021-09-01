@@ -9,9 +9,13 @@ var axios = require("axios");
 require("dotenv").config();
 let corsOptions = {
   origin: "*",
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200, // 
 };
-
+// declare const
+const collectionsAddressSolanart = require("./collectionsSolanart")
+const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes")
+const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+  
 dbConnect();
 
 server.use(cors(corsOptions));
@@ -31,125 +35,7 @@ server.get("/load", async (req, res) => {
     });
   }
 });
-const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
-const collectionsAddressSolanart = [
-  {
-    name:"degenapes",
-    collectionName:"degenape"
-  },
-  {
-    name:"solpunks",
-    collectionName:"solpunks"
-  },
-  {
-    name:"boldbadgers",
-    collectionName:"boldbadgers"
-  },
-  {
-    name:"sollamas-gen2",
-    collectionName:"sollamas-gen2"
-  },
-  {
-    name:"solanimals",
-    collectionName:"solanimals"
-  },
 
-];
-
-const collectionsAddressDigitalEyes = [
-  {
-    name: "solanadogesnfts",
-    address: "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "thugbirdz",
-    address: "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
-    address2: "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "degenapes",
-    address: "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "abstratica",
-    address: "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "frakt",
-    address: "6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "pixelpenguin",
-    address: "HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "solanimals",
-    address: "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "soldalas",
-    address: "8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "soliens",
-    address: "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "solpops",
-    address: "Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "solchihuahua",
-    address: "5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "smb",
-    address: "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@",
-  },
-  {
-    name: "solbear",
-    address: "@@@@@@@",
-    address2: "@@@@@@@",
-    uri: "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
-  },
-  {
-    name: "solarians",
-    address: "@@@@@@@",
-    address2: "@@@@@@@",
-    uri: "https://solarians.click/api/metaplex-mints",
-  },
-  {
-    name: "tophatchicks",
-    address: "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
-    address2: "@@@@@@@",
-    uri: "@@@@@@@@@@@@",
-  },
-
-  
-];
 async function saveSolanart() {
   try {
     // save the data in solarianData

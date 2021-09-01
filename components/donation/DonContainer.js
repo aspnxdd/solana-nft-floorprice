@@ -1,5 +1,6 @@
 import { Title, Container, Label, Address } from "./DonContainerElements";
 
+
 import { useState } from "react";
 
 export default function DonContainer() {
@@ -28,8 +29,12 @@ export default function DonContainer() {
         <b>Solana Wallet address:</b> <Address onClick={copyToClipboard}>{address}</Address>
         {copySuccess}{" "}
       </Label>
-      <img className="qr" src="/static/images/qr.png" alt="qr" width="100" height="100"></img>
+      <div className="images-donation">
 
+      <img className="sol-logo-donations" src="/static/images/solana.svg" alt="sol-logo"></img>
+      <img className="qr" src="/static/images/qr.png" alt="qr"></img>
+
+      </div>
     </Container>
   );
 }

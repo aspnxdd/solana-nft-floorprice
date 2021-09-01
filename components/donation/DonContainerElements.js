@@ -27,13 +27,7 @@ export const Container = styled.div`
     width: 24rem;
     height: auto;
   }
-
-  & > img {
-    margin-top: 1rem;
-    margin-left: 40%;
-    height: 120px;
-    width: 120px;
-  }
+ 
 `;
 
 export const Label = styled.label`

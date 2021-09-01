@@ -10,10 +10,14 @@ import InfoTwoHours from "../../components/common/InfoTwoHours";
 import DonContainer from "../../components/donation/DonContainer";
 import LinkHome from "../../components/common/LinkHome";
 
+
 const Styles = styled.div`
   display: flex;
   .table-container{
     margin-right: 8rem;
+    @media (max-width: 981px) {
+      margin-right: 1rem;
+  }
   }
   .pagination-div {
     display: flex;
@@ -85,13 +89,11 @@ async function getFloorPrices(id) {
   //
   let { data } = await res.json();
 
-  console.log("data", data);
+
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
 
-  console.log("solanartData", solanartData);
-  console.log("digitalEyesData", digitalEyesData);
   return {
     digitalEyesData,
     solanartData,

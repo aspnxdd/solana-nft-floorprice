@@ -1,100 +1,163 @@
 import Link from "next/link";
 import { HiChevronRight } from "react-icons/hi";
+import { useEffect, useState } from "react";
+
+import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
+import collectionsSolanart from "../../server/collectionsSolanart.json";
+
+let _collections = [
+  {
+    url: "solanadogesnfts",
+    name: "SolanaDoges",
+    marketplace: [],
+  },
+  {
+    url: "thugbirdz",
+    name: "Thugbirdz",
+    marketplace: [],
+  },
+  {
+    url: "degenapes",
+    name: "Degen Ape Academy",
+    marketplace: [],
+  },
+  {
+    url: "abstratica",
+    name: "Abstratica",
+    marketplace: [],
+  },
+  {
+    url: "solpops",
+    name: "Solpops",
+    marketplace: [],
+  },
+  {
+    url: "soliens",
+    name: "Soliens",
+    marketplace: [],
+  },
+  {
+    url: "soldalas",
+    name: "Soldalas",
+    marketplace: [],
+  },
+  {
+    url: "solanimals",
+    name: "Solanimals",
+    marketplace: [],
+  },
+  {
+    url: "pixelpenguin",
+    name: "PixelPenguins",
+    marketplace: [],
+  },
+  {
+    url: "frakt",
+    name: "Frakt",
+    marketplace: [],
+  },
+  {
+    url: "solchihuahua",
+    name: "SolChihuahua",
+    marketplace: [],
+  },
+  {
+    url: "smb",
+    name: "SMB",
+    marketplace: [],
+  },
+  {
+    url: "solbear",
+    name: "SolBear",
+    marketplace: [],
+  },
+  {
+    url: "sollamas-gen2",
+    name: "Sollamas",
+    marketplace: [],
+  },
+  {
+    url: "boldbadgers",
+    name: "Boldbadgers",
+    marketplace: [],
+  },
+  {
+    url: "solpunks",
+    name: "Solpunks",
+    marketplace: [],
+  },
+  {
+    url: "solarians",
+    name: "Solarians",
+    marketplace: [],
+  },
+  {
+    url: "tophatchicks",
+    name: "TopHatChicks",
+    marketplace: [],
+  },
+];
+
+// loop through the collections to add marketplace name to array
 
 export default function Links() {
+  function addMarketplace() {
+    for (let i = 0; i < _collections.length; i++) {
+      console.log(i);
+      collectionsDigitalEyes.forEach((col) => {
+        if (col.name == _collections[i].url) {
+          _collections[i].marketplace.push("digitaleyes");
+        }
+      });
+    }
+    for (let i = 0; i < _collections.length; i++) {
+      console.log(i);
+      collectionsSolanart.forEach((col) => {
+        if (col.name == _collections[i].url) {
+          _collections[i].marketplace.push("solanart");
+        }
+      });
+    }
+  }
+
+  const [marketplaceArr, setMarketplaceArr] = useState([]);
+
+  useEffect(() => {
+    addMarketplace();
+    setMarketplaceArr(_collections);
+    console.log("_collections", _collections);
+  }, []);
   return (
     <>
       <div className="main-links">
-        <Link href="/fetch/solanadogesnfts">
-          <a className="a-link">
-            <HiChevronRight /> SolanaDoges{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/thugbirdz">
-          <a className="a-link">
-            <HiChevronRight /> Thugbirdz{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/degenapes">
-          <a className="a-link">
-            <HiChevronRight /> Degen Ape Academy{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/abstratica">
-          <a className="a-link">
-            <HiChevronRight /> Abstratica{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solpops">
-          <a className="a-link">
-            <HiChevronRight /> Solpops{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/soliens">
-          <a className="a-link">
-            <HiChevronRight /> Soliens{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/soldalas">
-          <a className="a-link">
-            <HiChevronRight /> Soldalas{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solanimals">
-          <a className="a-link">
-            <HiChevronRight /> Solanimals{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/pixelpenguin">
-          <a className="a-link">
-            <HiChevronRight /> PixelPenguins{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/frakt">
-          <a className="a-link">
-            <HiChevronRight /> Frakt{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solchihuahua">
-          <a className="a-link">
-            <HiChevronRight /> SolChihuahua{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/smb">
-          <a className="a-link">
-            <HiChevronRight /> SMB{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solbear">
-          <a className="a-link">
-            <HiChevronRight /> SolBear{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/sollamas-gen2">
-          <a className="a-link">
-            <HiChevronRight /> Sollamas{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/boldbadgers">
-          <a className="a-link">
-            <HiChevronRight /> Boldbadgers{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solpunks">
-          <a className="a-link">
-            <HiChevronRight /> Solpunks{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/solarians">
-          <a className="a-link">
-            <HiChevronRight /> Solarians{" "}
-          </a>
-        </Link>
-        <Link href="/fetch/tophatchicks">
-          <a className="a-link">
-            <HiChevronRight /> TopHatChicks{" "}
-          </a>
-        </Link>
+        {marketplaceArr.map((e) => {
+          return (
+            <div key={e.name}>
+              <Link href={`/fetch/${e.url}`}>
+                <a className="a-link">
+                  <HiChevronRight /> {e.name} &nbsp;
+                  ({e.marketplace.includes("solanart") && (
+                    <img
+                      style={{ marginTop: "0.15rem" }}
+                      src="/static/images/digitaleyes.svg"
+                      alt="de-logo"
+                      width="40px"
+                    ></img>
+                  )}
+                  
+                  {e.marketplace.includes("digitaleyes") && (
+                    <img
+                    
+                      src="/static/images/solanart.svg"
+                      alt="so-logo"
+                      width="25px"
+                    ></img>
+                  )})
+                </a>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </>
   );

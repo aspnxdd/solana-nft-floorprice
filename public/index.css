@@ -5,6 +5,24 @@ body {
   font-family: Ubuntu, sans-serif;
   background: rgb(255, 255, 255);
 }
+.images-donation {
+  display: flex;
+  flex-direction: row;
+}
+.qr {
+  margin-top: 1rem;
+  margin-left: 4rem;
+  height: 120px;
+  width: 120px;
+}
+.sol-logo-donations {
+  margin-top: 3rem;
+  margin-left: 3rem;
+  height: 50px;
+  width: 50px;
+  animation: spin 5s infinite linear;
+
+}
 .home-link{
   display: flex;
   align-items: flex-start;
@@ -19,6 +37,7 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
+  font-size: 1.2rem;
 }
 .a-link:hover {
   color: #5f7bac;
@@ -77,6 +96,7 @@ button {
 .current-time {
   margin-left: 2rem;
   margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 
