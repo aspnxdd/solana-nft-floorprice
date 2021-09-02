@@ -96,6 +96,11 @@ let _collections = [
     name: "TopHatChicks",
     marketplace: [],
   },
+  {
+    url: "rox",
+    name: "Rox",
+    marketplace: [],
+  },
 ];
 
 // loop through the collections to add marketplace name to array
@@ -103,7 +108,7 @@ let _collections = [
 export default function Links() {
   function addMarketplace() {
     for (let i = 0; i < _collections.length; i++) {
-      console.log(i);
+      
       collectionsDigitalEyes.forEach((col) => {
         if (col.name == _collections[i].url) {
           _collections[i].marketplace.push("digitaleyes");
@@ -111,7 +116,7 @@ export default function Links() {
       });
     }
     for (let i = 0; i < _collections.length; i++) {
-      console.log(i);
+   
       collectionsSolanart.forEach((col) => {
         if (col.name == _collections[i].url) {
           _collections[i].marketplace.push("solanart");
@@ -125,7 +130,7 @@ export default function Links() {
   useEffect(() => {
     addMarketplace();
     setMarketplaceArr(_collections);
-    console.log("_collections", _collections);
+  
   }, []);
   return (
     <>

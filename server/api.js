@@ -22,9 +22,11 @@ server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
+    console.log("id",id)
 
   try {
     const data = await datafetched.find({ collectionname: id });
+    await console.log("object",data)
     return res.status(200).json({
       success: true,
       data: data,

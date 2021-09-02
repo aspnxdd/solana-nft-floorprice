@@ -88,6 +88,7 @@ async function getFloorPrices(id) {
   );
   //
   let { data } = await res.json();
+  console.log("data",data)
 
 
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
@@ -132,6 +133,7 @@ function Data() {
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
+      
       setData(data);
     });
   }, [router.query]);
@@ -141,6 +143,7 @@ function Data() {
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
       setData(data);
+      
     });
   }
 

@@ -89,7 +89,15 @@
       "address": "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
       "address2": "@@@@@@@",
       "uri": "@@@@@@@@@@@@"
+    },
+    {
+      "name": "rox",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "https://rox.cards/api/metaplex-mints"
     }
+
+   
   
   
 ]
