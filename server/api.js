@@ -9,24 +9,25 @@ var axios = require("axios");
 require("dotenv").config();
 let corsOptions = {
   origin: "*",
-  optionsSuccessStatus: 200, // 
+  optionsSuccessStatus: 200, //
 };
 // declare const
-const collectionsAddressSolanart = require("./collectionsSolanart")
-const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes")
-const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
-  
+const collectionsAddressSolanart = require("./collectionsSolanart");
+const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
+const SOLANART_URL =
+  "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+
 dbConnect();
 
 server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
-    console.log("id",id)
+  console.log("id", id);
 
   try {
     const data = await datafetched.find({ collectionname: id });
-    await console.log("object",data)
+    await console.log("object", data);
     return res.status(200).json({
       success: true,
       data: data,
@@ -41,14 +42,12 @@ server.get("/load", async (req, res) => {
 async function saveSolanart() {
   try {
     // save the data in solarianData
-    collectionsAddressSolanart.forEach(async function(coll){
+    collectionsAddressSolanart.forEach(async function (coll) {
       const { data: solanartData } = await axios(
-      `${SOLANART_URL}${coll.collectionName}`
+        `${SOLANART_URL}${coll.collectionName}`
       );
       let prices = solanartData.map(function (e) {
-        
-          return e.price 
-        
+        return e.price;
       });
       // wipe the undefined values
       prices = prices.filter(function (el) {
@@ -64,11 +63,9 @@ async function saveSolanart() {
         floorprice: floorPrice,
         time: today,
         collectionname: coll.name,
-        marketplace: "solanart"
+        marketplace: "solanart",
       });
-    })
-  
-    
+    });
 
     return;
   } catch (error) {
@@ -85,11 +82,11 @@ async function saveDigitalEyes() {
     collectionsAddressDigitalEyes.forEach(async function (coll) {
       //for each item in solarianData
       let prices = solarianData.map(function (e) {
-        
         if (
-          (e.Creators[0]?.Address == coll.address && e.Creators[0]?.Verified ) ||
-          (e.Creators[4]?.Address == coll.address && e.Creators[4]?.Verified ) ||
-          (e.Creators[0]?.Address == coll.address2 && e.Creators[0]?.Verified) ||
+          (e.Creators[0]?.Address == coll.address && e.Creators[0]?.Verified) ||
+          (e.Creators[4]?.Address == coll.address && e.Creators[4]?.Verified) ||
+          (e.Creators[0]?.Address == coll.address2 &&
+            e.Creators[0]?.Verified) ||
           e?.URI.includes(coll.uri) //for SolBears specially and solarians
         ) {
           return e.Price / 1000000000;
@@ -109,7 +106,7 @@ async function saveDigitalEyes() {
         floorprice: floorPrice,
         time: today,
         collectionname: coll.name,
-        marketplace: "digitaleyes"
+        marketplace: "digitaleyes",
       });
     });
 

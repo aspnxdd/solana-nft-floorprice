@@ -101,6 +101,12 @@ let _collections = [
     name: "Rox",
     marketplace: [],
   },
+  {
+    url: "aurory",
+    name: "❌Aurory",
+    marketplace: [],
+  }
+  
 ];
 
 // loop through the collections to add marketplace name to array

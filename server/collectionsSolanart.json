@@ -1,25 +1,30 @@
-   [
-    
-    {
-      "name":"degenapes",
-      "collectionName":"degenape"
-    },
-    {
-      "name":"solpunks",
-      "collectionName":"solpunks"
-    },
-    {
-      "name":"boldbadgers",
-      "collectionName":"boldbadgers"
-    },
-    {
-      "name":"sollamas-gen2",
-      "collectionName":"sollamas-gen2"
-    },
-    {
-      "name":"solanimals",
-      "collectionName":"solanimals"
-    }
-  
-  
+[
+  {
+    "name": "degenapes",
+    "collectionName": "degenape"
+  },
+  {
+    "name": "solpunks",
+    "collectionName": "solpunks"
+  },
+  {
+    "name": "boldbadgers",
+    "collectionName": "boldbadgers"
+  },
+  {
+    "name": "sollamas-gen2",
+    "collectionName": "sollamas-gen2"
+  },
+  {
+    "name": "solanimals",
+    "collectionName": "solanimals"
+  },
+  {
+    "name": "solbear",
+    "collectionName": "solbears"
+  },
+  {
+    "name": "aurory",
+    "collectionName": "aurory"
+  }
 ]

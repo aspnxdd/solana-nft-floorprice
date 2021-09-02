@@ -165,7 +165,9 @@ function Data() {
     boldbadgers:"Boldbadgers",
     "sollamas-gen2": "Sollamas",
     tophatchicks:"TopHatChicks",
-    solpunks: "Solpunks"
+    solpunks: "Solpunks",
+    rox:"Rox",
+    aurory:"Aurory"
   };
 
   return (
