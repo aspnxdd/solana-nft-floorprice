@@ -141,7 +141,7 @@ export default function Links() {
               <Link href={`/fetch/${e.url}`}>
                 <a className="a-link">
                   <HiChevronRight /> {e.name} &nbsp;
-                  ({e.marketplace.includes("solanart") && (
+                  ({e.marketplace.includes("digitaleyes") && (
                     <img
                       style={{ marginTop: "0.15rem" }}
                       src="/static/images/digitaleyes.svg"
@@ -150,7 +150,7 @@ export default function Links() {
                     ></img>
                   )}
                   
-                  {e.marketplace.includes("digitaleyes") && (
+                  {e.marketplace.includes("solanart") && (
                     <img
                     
                       src="/static/images/solanart.svg"
