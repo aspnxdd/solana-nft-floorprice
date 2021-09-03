@@ -12,7 +12,7 @@ const Time = () => {
   const [time, setTime] = React.useState(0);
   const currentCallback = useCurrentCallback(() => {
     const date = new Date();
-    setTime(date.toUTCString());
+    setTime(date.toLocaleString());
   });
   React.useEffect(() => {
     const handle = setInterval(currentCallback, 100);

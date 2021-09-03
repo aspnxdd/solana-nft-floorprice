@@ -16,16 +16,18 @@ export const Container = styled.div`
   background: #d2bf39;
   color: #2f3f3;
   top: 2rem;
-  right: 5rem;
+  right: 3rem;
   width: 25rem;
   height: auto;
   border-radius: 2rem;
   overflow-x: auto;
-  @media (max-width: 981px) {
+  @media (max-width: 956px) {
     position: static;
     right: 0px;
     width: 24rem;
     height: auto;
+    
+   
   }
  
 `;

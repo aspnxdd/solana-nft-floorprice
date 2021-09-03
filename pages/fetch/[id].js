@@ -9,31 +9,31 @@ import TitleWelcome from "../../components/common/TitleWelcome";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
 import DonContainer from "../../components/donation/DonContainer";
 import LinkHome from "../../components/common/LinkHome";
-
+import LineChart from "../../components/chart/LineChart";
 
 const Styles = styled.div`
   display: flex;
-  .table-container{
+  .table-container {
     margin-right: 8rem;
     @media (max-width: 981px) {
       margin-right: 1rem;
-  }
+    }
   }
   .pagination-div {
     display: flex;
     position: relative;
-    top:1rem;
-  
+    top: 1rem;
+
     left: 2rem;
   }
   .pagination-pages {
     display: block;
     right: 4rem;
-    & > span >input{
-      width:2rem;
+    & > span > input {
+      width: 2rem;
     }
     & > select {
-      width: 6rem; 
+      width: 6rem;
     }
   }
 
@@ -88,9 +88,12 @@ async function getFloorPrices(id) {
   );
   //
   let { data } = await res.json();
-  console.log("data",data)
 
-
+  // meanwhile to reconvert it to local string format
+  data.forEach((i) => {
+    i.time = i.time.toLocaleString();
+  });
+  console.log(data);
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
@@ -129,12 +132,29 @@ function Data() {
     digitalEyesData: [],
   });
   const [loading, setLoading] = useState(false);
+  const [dataForChart, setDataForChart] = useState({});
 
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
-      
       setData(data);
+      const dataForChart = {
+        dataSolanart: data.solanartData.map((e) => {
+          return e.floorprice;
+        }),
+        dataDigitalEyes: data.digitalEyesData.map((e) => {
+          return e.floorprice;
+        }),
+        timeSolanart: data.solanartData.map((e) => {
+          return e.time;
+        }),
+        timeDigitalEyes: data.digitalEyesData.map((e) => {
+          return e.time;
+        }),
+      };
+
+      console.log("dataForChart", dataForChart);
+      setDataForChart(dataForChart);
     });
   }, [router.query]);
 
@@ -143,7 +163,6 @@ function Data() {
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
       setData(data);
-      
     });
   }
 
@@ -162,14 +181,57 @@ function Data() {
     smb: "SMB",
     solbear: "SolBear",
     solarians: "Solarians",
-    boldbadgers:"Boldbadgers",
+    boldbadgers: "Boldbadgers",
     "sollamas-gen2": "Sollamas",
-    tophatchicks:"TopHatChicks",
+    tophatchicks: "TopHatChicks",
     solpunks: "Solpunks",
-    rox:"Rox",
-    aurory:"Aurory"
+    rox: "Rox",
+    aurory: "Aurory",
   };
+  const dataSolanart = {
+    label: "Solanart",
+    data: dataForChart.dataSolanart,
+    fill: false,
+    backgroundColor: "#ba49d6",
+    borderColor: "#ba49d6",
+  };
+  const dataDigitalEyes = {
+    label: "DigitalEyes",
+    data: dataForChart.dataDigitalEyes,
+    fill: false,
+    backgroundColor: "#599aca", 
+    borderColor: "#599aca", 
+  };
+  //data to render in chart line
+  let dataChart = {
+    // Array(3).fill(4);
+    labels:
+    dataForChart.timeSolanart?.length > 0 ? 
+      dataForChart.timeSolanart
+      : dataForChart.timeDigitalEyes,
+      // dataForChart.timeSolanart?.length > 0
+      //   ? Array(dataForChart.timeSolanart?.length).fill("")
+      //   : Array(dataForChart.timeDigitalEyes?.length).fill(""), //could be time from digital eyes aswell
+    datasets: [],
+  };
+  //add data to dataset array if exists
+  if (dataForChart.dataSolanart?.length > 0)
+    dataChart.datasets.push(dataSolanart);
+  if (dataForChart.dataDigitalEyes?.length > 0)
+    dataChart.datasets.push(dataDigitalEyes);
 
+  const options = {
+    maintainAspectRatio: false,
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  };
   return (
     <div>
       <LinkHome />
@@ -190,15 +252,15 @@ function Data() {
         </button>
         {loading && <Spinner />}
       </div>
-
-      <Styles>
+      <LineChart data={dataChart} options={options} />
+      {/* <Styles>
         {digitalEyesData.length > 1 && (
           <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
         )}
         {solanartData.length > 1 && (
           <Table columns={columns("Solanart")} data={solanartData} />
         )}
-      </Styles>
+      </Styles> */}
     </div>
   );
 }

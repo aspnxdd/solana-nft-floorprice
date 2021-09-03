@@ -23,11 +23,12 @@ server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
-  console.log("id", id);
+  
+
 
   try {
     const data = await datafetched.find({ collectionname: id });
-    await console.log("object", data);
+   
     return res.status(200).json({
       success: true,
       data: data,
@@ -57,7 +58,7 @@ async function saveSolanart() {
       const floorPrice = Math.min.apply(Math, prices);
 
       const date = new Date();
-      let today = date.toUTCString();
+      let today = date.toLocaleString();
       // save in DB
       await datafetched.create({
         floorprice: floorPrice,
@@ -100,7 +101,8 @@ async function saveDigitalEyes() {
       const floorPrice = Math.min.apply(Math, prices);
 
       const date = new Date();
-      let today = date.toUTCString();
+      let today = date.toLocaleString();
+      
       // save in DB
       await datafetched.create({
         floorprice: floorPrice,
