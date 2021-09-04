@@ -91,7 +91,7 @@ async function getFloorPrices(id) {
 
   // meanwhile to reconvert it to local string format
   data.forEach((i) => {
-    i.time = i.time.toLocaleString();
+    i.time = i.time.toLocaleString('en-GB', { timeZone: 'UTC' });
   });
   
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");

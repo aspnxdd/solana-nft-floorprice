@@ -56,7 +56,7 @@ async function saveSolanart() {
       const floorPrice = Math.min.apply(Math, prices);
 
       const date = new Date();
-      let today = date.toLocaleString();
+      let today = date.toLocaleString('en-GB', { timeZone: 'UTC' });
       // save in DB
       await datafetched.create({
         floorprice: floorPrice,
@@ -100,7 +100,7 @@ async function saveDigitalEyes() {
       const floorPrice = Math.min.apply(Math, prices);
 
       const date = new Date();
-      let today = date.toLocaleString();
+      let today = date.toLocaleString('en-GB', { timeZone: 'UTC' });
       
       // save in DB
       await datafetched.create({
