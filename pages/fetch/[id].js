@@ -90,8 +90,10 @@ async function getFloorPrices(id) {
   let { data } = await res.json();
 
   // meanwhile to reconvert it to local string format
+  
   data.forEach((i) => {
-    i.time = i.time.toLocaleString('en-GB', { timeZone: 'UTC',hour12:false, timeStyle:"short",dateStyle:"short" });
+    let date = new Date(i.time)
+    i.time = date.toLocaleString('en-GB', { hour12:false, timeStyle:"short",dateStyle:"short" });
   });
   
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
