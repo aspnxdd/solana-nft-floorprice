@@ -145,7 +145,6 @@ function Data() {
   function updateDataChart(data) {
     // function to update the data chart for update and useeffect
     // slice will get latest dataPoints items
-
     let dataForChart = {
       dataSolanart: data.solanartData
         .map((e) => {
@@ -172,18 +171,26 @@ function Data() {
     return dataForChart;
   }
   // quan es renderitza el  hook o pateix canvis
+
+  // table
   useEffect(() => {
-    console.log(2)
     getFloorPrices(router.query.id).then((data) => {
-      // data for Table
-      setData(data);
+      // data for Chart
+      setDataForChart(updateDataChart(data));
+    });
+  }, [router.query]); //run useffect quan aquests paràmetres canviin
+
+  // chart
+  useEffect(() => {
+    console.log(2);
+    getFloorPrices(router.query.id).then((data) => {
       // data for Chart
       setDataForChart(updateDataChart(data));
     });
   }, [router.query, dataPoints]); //run useffect quan aquests paràmetres canviin
 
   function updateData() {
-    clg(1)
+    clg(1);
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
