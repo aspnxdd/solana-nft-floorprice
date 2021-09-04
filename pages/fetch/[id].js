@@ -90,12 +90,16 @@ async function getFloorPrices(id) {
   let { data } = await res.json();
 
   // meanwhile to reconvert it to local string format
-  
+
   data.forEach((i) => {
-    let date = new Date(i.time)
-    i.time = date.toLocaleString('en-GB', { hour12:false, timeStyle:"short",dateStyle:"short" });
+    let date = new Date(i.time);
+    i.time = date.toLocaleString("en-GB", {
+      hour12: false,
+      timeStyle: "short",
+      dateStyle: "short",
+    });
   });
-  
+
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
@@ -133,30 +137,35 @@ function Data() {
     solanartData: [],
     digitalEyesData: [],
   });
-  const [loading, setLoading] = useState(false);
+  // set Data for chart
   const [dataForChart, setDataForChart] = useState({});
 
+  const [loading, setLoading] = useState(false);
+
+  function updateDataChart(data) {
+    // function to update the data chart for update and useeffect
+    let dataForChart = {
+      dataSolanart: data.solanartData.map((e) => {
+        return e.floorprice;
+      }),
+      dataDigitalEyes: data.digitalEyesData.map((e) => {
+        return e.floorprice;
+      }),
+      timeSolanart: data.solanartData.map((e) => {
+        return e.time;
+      }),
+      timeDigitalEyes: data.digitalEyesData.map((e) => {
+        return e.time;
+      }),
+    };
+    return dataForChart;
+  }
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
       setData(data);
-      const dataForChart = {
-        dataSolanart: data.solanartData.map((e) => {
-          return e.floorprice;
-        }),
-        dataDigitalEyes: data.digitalEyesData.map((e) => {
-          return e.floorprice;
-        }),
-        timeSolanart: data.solanartData.map((e) => {
-          return e.time;
-        }),
-        timeDigitalEyes: data.digitalEyesData.map((e) => {
-          return e.time;
-        }),
-      };
 
-  
-      setDataForChart(dataForChart);
+      setDataForChart(updateDataChart(data));
     });
   }, [router.query]);
 
@@ -165,6 +174,8 @@ function Data() {
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
       setData(data);
+
+      setDataForChart(updateDataChart(data));
     });
   }
 
@@ -201,19 +212,19 @@ function Data() {
     label: "DigitalEyes",
     data: dataForChart.dataDigitalEyes,
     fill: false,
-    backgroundColor: "#599aca", 
-    borderColor: "#599aca", 
+    backgroundColor: "#599aca",
+    borderColor: "#599aca",
   };
   //data to render in chart line
   let dataChart = {
     // Array(3).fill(4);
     labels:
-    dataForChart.timeSolanart?.length > 0 ? 
-      dataForChart.timeSolanart
-      : dataForChart.timeDigitalEyes,
-      // dataForChart.timeSolanart?.length > 0
-      //   ? Array(dataForChart.timeSolanart?.length).fill("")
-      //   : Array(dataForChart.timeDigitalEyes?.length).fill(""), //could be time from digital eyes aswell
+      dataForChart.timeSolanart?.length > 0
+        ? dataForChart.timeSolanart
+        : dataForChart.timeDigitalEyes,
+    // dataForChart.timeSolanart?.length > 0
+    //   ? Array(dataForChart.timeSolanart?.length).fill("")
+    //   : Array(dataForChart.timeDigitalEyes?.length).fill(""), //could be time from digital eyes aswell
     datasets: [],
   };
   //add data to dataset array if exists
@@ -254,7 +265,7 @@ function Data() {
         </button>
         {loading && <Spinner />}
       </div>
-      {/* <LineChart data={dataChart} options={options} /> */}
+      <LineChart data={dataChart} options={options} />
       <Styles>
         {digitalEyesData.length > 1 && (
           <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
