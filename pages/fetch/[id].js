@@ -89,8 +89,7 @@ async function getFloorPrices(id) {
   //
   let { data } = await res.json();
 
-  // meanwhile to reconvert it to local string format
-
+  //  to reconvert it to local string format
   data.forEach((i) => {
     let date = new Date(i.time);
     i.time = date.toLocaleString("en-GB", {
@@ -174,6 +173,7 @@ function Data() {
   }
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
+    console.log(2)
     getFloorPrices(router.query.id).then((data) => {
       // data for Table
       setData(data);
@@ -183,6 +183,7 @@ function Data() {
   }, [router.query, dataPoints]); //run useffect quan aquests paràmetres canviin
 
   function updateData() {
+    clg(1)
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
