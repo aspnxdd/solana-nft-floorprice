@@ -148,6 +148,15 @@ button {
     position: static;
     display: block;
     width: auto;
-  
+    margin-bottom: 2rem;
   }
+}
+
+.chart-buttons{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+  align-items: center;
+  
 }

@@ -1,6 +1,6 @@
 import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
@@ -141,40 +141,54 @@ function Data() {
   const [dataForChart, setDataForChart] = useState({});
 
   const [loading, setLoading] = useState(false);
+  const [dataPoints, setDataPoints] = useState(20);
 
   function updateDataChart(data) {
     // function to update the data chart for update and useeffect
+    // slice will get latest dataPoints items
+   
     let dataForChart = {
-      dataSolanart: data.solanartData.map((e) => {
-        return e.floorprice;
-      }),
-      dataDigitalEyes: data.digitalEyesData.map((e) => {
-        return e.floorprice;
-      }),
-      timeSolanart: data.solanartData.map((e) => {
-        return e.time;
-      }),
-      timeDigitalEyes: data.digitalEyesData.map((e) => {
-        return e.time;
-      }),
+      dataSolanart: data.solanartData
+        .map((e) => {
+          return e.floorprice;
+        })
+        .slice(-dataPoints),
+      dataDigitalEyes: data.digitalEyesData
+        .map((e) => {
+          return e.floorprice;
+        })
+        .slice(-dataPoints),
+      timeSolanart: data.solanartData
+        .map((e) => {
+          return e.time;
+        })
+        .slice(-dataPoints),
+      timeDigitalEyes: data.digitalEyesData
+        .map((e) => {
+          return e.time;
+        })
+        .slice(-dataPoints),
     };
+
     return dataForChart;
   }
   // quan es renderitza el  hook o pateix canvis
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
+      // data for Table
       setData(data);
-
+      // data for Chart
       setDataForChart(updateDataChart(data));
     });
-  }, [router.query]);
+  }, [router.query, dataPoints]); //run useffect quan aquests paràmetres canviin
 
   function updateData() {
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
+      // data for Table
       setData(data);
-
+      // data for Chart
       setDataForChart(updateDataChart(data));
     });
   }
@@ -217,14 +231,12 @@ function Data() {
   };
   //data to render in chart line
   let dataChart = {
-    // Array(3).fill(4);
+    // labels (axis X)
     labels:
       dataForChart.timeSolanart?.length > 0
         ? dataForChart.timeSolanart
         : dataForChart.timeDigitalEyes,
-    // dataForChart.timeSolanart?.length > 0
-    //   ? Array(dataForChart.timeSolanart?.length).fill("")
-    //   : Array(dataForChart.timeDigitalEyes?.length).fill(""), //could be time from digital eyes aswell
+    // datasets asix Y
     datasets: [],
   };
   //add data to dataset array if exists
@@ -265,7 +277,16 @@ function Data() {
         </button>
         {loading && <Spinner />}
       </div>
-      <LineChart data={dataChart} options={options} />
+      <div className="div-chart">
+        <div className="chart-buttons">
+        <label> Show data points: </label>
+          <button onClick={() => setDataPoints(10)}> 10</button>
+          <button onClick={() => setDataPoints(20)}> 20</button>
+          <button onClick={() => setDataPoints(50)}> 50</button>
+          <button onClick={() => setDataPoints(0)}> All</button>
+        </div>
+        <LineChart data={dataChart} options={options} />
+      </div>
       <Styles>
         {digitalEyesData.length > 1 && (
           <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
