@@ -93,7 +93,7 @@ async function getFloorPrices(id) {
   data.forEach((i) => {
     i.time = i.time.toLocaleString();
   });
-  console.log(data);
+  
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
@@ -153,7 +153,7 @@ function Data() {
         }),
       };
 
-      console.log("dataForChart", dataForChart);
+  
       setDataForChart(dataForChart);
     });
   }, [router.query]);
@@ -252,15 +252,15 @@ function Data() {
         </button>
         {loading && <Spinner />}
       </div>
-      <LineChart data={dataChart} options={options} />
-      {/* <Styles>
+      {/* <LineChart data={dataChart} options={options} /> */}
+      <Styles>
         {digitalEyesData.length > 1 && (
           <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
         )}
         {solanartData.length > 1 && (
           <Table columns={columns("Solanart")} data={solanartData} />
         )}
-      </Styles> */}
+      </Styles>
     </div>
   );
 }

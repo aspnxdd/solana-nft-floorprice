@@ -23,10 +23,7 @@ server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
-  
-
-
-  try {
+    try {
     const data = await datafetched.find({ collectionname: id });
    
     return res.status(200).json({
@@ -34,6 +31,7 @@ server.get("/load", async (req, res) => {
       data: data,
     });
   } catch (error) {
+    console.log("error get",error)
     res.status(400).json({
       success: false,
     });
@@ -70,6 +68,7 @@ async function saveSolanart() {
 
     return;
   } catch (error) {
+    console.log("error so",error)
     return error;
   }
 }
@@ -114,6 +113,7 @@ async function saveDigitalEyes() {
 
     return;
   } catch (error) {
+    console.log("error de",error)
     return error;
   }
 }
@@ -126,7 +126,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 3600000); //1h
+  }, 1800000); //1h
 });
 
 async function dbConnect() {
