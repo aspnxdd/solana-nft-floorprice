@@ -146,7 +146,7 @@ function Data() {
   function updateDataChart(data) {
     // function to update the data chart for update and useeffect
     // slice will get latest dataPoints items
-   
+
     let dataForChart = {
       dataSolanart: data.solanartData
         .map((e) => {
@@ -279,7 +279,7 @@ function Data() {
       </div>
       <div className="div-chart">
         <div className="chart-buttons">
-        <label> Show data points: </label>
+          <label> Show data points: </label>
           <button onClick={() => setDataPoints(10)}> 10</button>
           <button onClick={() => setDataPoints(20)}> 20</button>
           <button onClick={() => setDataPoints(50)}> 50</button>
