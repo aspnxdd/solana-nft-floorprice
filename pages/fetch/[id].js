@@ -190,7 +190,7 @@ function Data() {
   }, [router.query, dataPoints]); //run useffect quan aquests paràmetres canviin
 
   function updateData() {
-    clg(1);
+    console.log(1);
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
