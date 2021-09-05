@@ -3,6 +3,7 @@ import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+
 import _collections from "./_collections";
 
 // loop through the collections to add marketplace name to array
@@ -36,32 +37,28 @@ export default function CardComponent() {
     <CardsArea>
       {marketplaceArr.map((e) => {
         return (
-          <Link href={`/fetch/${e.url}`}>
+          <Link key={e.name} href={`/fetch/${e.url}`}>
+            <Card>
+              <Img src={`./static/images/${e.img}`}></Img>
+              <Title>{e.name}</Title>
+              <MarketplacesArea>
+                {e.marketplace.includes("digitaleyes") && (
+                  <img
+                    src="/static/images/digitaleyes.svg"
+                    alt="de-logo"
+                    width="40px"
+                  ></img>
+                )}
 
-          
-          <Card key={e.name}>
-            <Img src={`./static/images/${e.img}`}></Img>
-            <Title>{e.name}</Title>
-            <MarketplacesArea>
-            {e.marketplace.includes("digitaleyes") && (
-                    <img
-                      
-                      src="/static/images/digitaleyes.svg"
-                      alt="de-logo"
-                      width="40px"
-                    ></img>
-                  )}
-                  
-                  {e.marketplace.includes("solanart") && (
-                    <img
-                    
-                      src="/static/images/solanart.svg"
-                      alt="so-logo"
-                      width="25px"
-                    ></img>
-                  )}
-            </MarketplacesArea>
-          </Card>
+                {e.marketplace.includes("solanart") && (
+                  <img
+                    src="/static/images/solanart.svg"
+                    alt="so-logo"
+                    width="25px"
+                  ></img>
+                )}
+              </MarketplacesArea>
+            </Card>
           </Link>
         );
       })}
