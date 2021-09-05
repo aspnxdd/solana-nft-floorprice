@@ -120,7 +120,7 @@ async function saveDigitalEyes() {
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
-  console.log("> Ready on http://localhost:3000");
+  console.log("> Ready on http://localhost:8080");
 
   // cada 2h guarda en la DB
   setInterval(() => {

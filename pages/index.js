@@ -4,6 +4,7 @@ import TitleWelcome from "../components/common/TitleWelcome";
 import InfoTwoHours from "../components/common/InfoTwoHours";
 import DonContainer from "../components/donation/DonContainer";
 import LinkHome from "../components/common/LinkHome";
+import CardComponent from "../components/cards/CardComponent";
 
 export default function Home() {
   return (
@@ -25,7 +26,8 @@ export default function Home() {
       <DonContainer />
       <InfoTwoHours />
       <Time />
-      <Links></Links>
+      <CardComponent></CardComponent>
+      {/* <Links></Links> */}
     </div>
   );
 }

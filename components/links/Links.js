@@ -10,11 +10,13 @@ let _collections = [
     url: "solanadogesnfts",
     name: "SolanaDoges",
     marketplace: [],
+    img: "solanadogenft.png"
   },
   {
     url: "thugbirdz",
     name: "Thugbirdz",
     marketplace: [],
+    img: "thugbirdz.png"
   },
   {
     url: "degenapes",
@@ -70,6 +72,7 @@ let _collections = [
     url: "solbear",
     name: "SolBear",
     marketplace: [],
+    img: "solbear.png"
   },
   {
     url: "sollamas-gen2",

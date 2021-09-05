@@ -18,6 +18,6 @@ const Time = () => {
     const handle = setInterval(currentCallback, 100);
     return () => clearInterval(handle);
   }, []);
-  return <div className="current-time">{time}</div>;
+  return <div className="current-time">Current time: {time}</div>;
 };
 export default Time;

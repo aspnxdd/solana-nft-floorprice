@@ -171,7 +171,7 @@ function Data() {
     return dataForChart;
   }
   // quan es renderitza el  hook o pateix canvis
-  // table
+  // useEffect for table
   useEffect(() => {
     getFloorPrices(router.query.id).then((data) => {
       // data for Table
@@ -179,16 +179,19 @@ function Data() {
     });
   }, [router.query]); //run useffect quan aquests paràmetres canviin
 
+  // useEffect for Chart
   useEffect(() => {
     console.log(2);
+    setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       // data for Chart
+      setLoading(false);
       setDataForChart(updateDataChart(data));
     });
   }, [router.query, dataPoints]); //run useffect quan aquests paràmetres canviin
 
   function updateData() {
-    clg(1);
+    console.log(1);
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
