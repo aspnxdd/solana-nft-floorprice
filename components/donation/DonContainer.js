@@ -31,7 +31,7 @@ export default function DonContainer() {
       </Label>
       <div className="images-donation">
 
-      <img className="sol-logo-donations" src="/static/images/solana.svg" alt="sol-logo"></img>
+     
       <img className="qr" src="/static/images/qr.png" alt="qr"></img>
 
       </div>

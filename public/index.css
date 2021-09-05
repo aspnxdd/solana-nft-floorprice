@@ -5,19 +5,23 @@ body {
   font-family: Ubuntu, sans-serif;
   background: rgb(255, 255, 255);
 }
+
 .images-donation {
   display: flex;
   flex-direction: row;
+  padding-left: 4.5rem;
 }
 .qr {
   margin-top: 1rem;
   margin-left: 4rem;
+  margin-bottom: 1rem;
   height: 120px;
   width: 120px;
 }
-.sol-logo-donations {
-  margin-top: 3rem;
-  margin-left: 3rem;
+.sol-logo {
+  margin-top: 0rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
   height: 50px;
   width: 50px;
   animation: spin 5s infinite linear;

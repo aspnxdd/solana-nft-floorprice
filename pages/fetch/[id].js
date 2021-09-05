@@ -10,6 +10,10 @@ import InfoTwoHours from "../../components/common/InfoTwoHours";
 import DonContainer from "../../components/donation/DonContainer";
 import LinkHome from "../../components/common/LinkHome";
 import LineChart from "../../components/chart/LineChart";
+import {
+  HeaderWrapper,
+  TitleSubtitle,
+} from "../../components/common/HeaderWrapper";
 
 const Styles = styled.div`
   display: flex;
@@ -269,17 +273,23 @@ function Data() {
   return (
     <div>
       <LinkHome />
-      <TitleWelcome />
-      <h3>
-        {" "}
-        <div>
-          Here you can track the history of Floor Price for{" "}
-          <b>{collectionNames[router.query.id]} </b>
-        </div>
-      </h3>
-      <DonContainer />
+      <HeaderWrapper>
+        <TitleSubtitle>
+          <TitleWelcome />
+          <h3>
+            {" "}
+            <div>
+              Here you can track the history of Floor Price for{" "}
+              <b>{collectionNames[router.query.id]} </b>
+            </div>
+            <img className="sol-logo" src="/static/images/solana.svg" alt="sol-logo"></img>
+          </h3>
+        </TitleSubtitle>
+          <DonContainer />
+      </HeaderWrapper>
       <InfoTwoHours />
       <Time />
+
       <div style={{ display: "flex", marginBottom: "0rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update

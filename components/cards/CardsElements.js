@@ -1,22 +1,27 @@
 import styled from "styled-components";
 
 export const CardsArea = styled.div `
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     column-gap: 1rem;
     padding-top: 1rem;
     row-gap: 1rem;
+    
+    @media (max-width: 1200px) {
+        margin-right: 1rem;
+        margin-left: 1rem;
+  }
+
 `;
 
 export const Card = styled.div `
     background-color: #fff;
-    cursor: pointer;
-  
-  
+    cursor: pointer; 
     height: 14rem;
     width: 11rem;
     display: flex;
@@ -40,6 +45,7 @@ export const Title = styled.label `
 padding-top: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    cursor: pointer; 
 `;
 
 export const MarketplacesArea = styled.div `

@@ -8,18 +8,18 @@ export const Title = styled.div`
 export const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-left: 1.5rem;
-  position: absolute;
+ margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   align-items: flex-start;
-  background: #d2bf39;
+  background-image: linear-gradient(#2fcfb7, #b448ee);
   color: #2f3f3;
   top: 2rem;
   right: 3rem;
   width: 25rem;
   height: auto;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow-x: auto;
   @media (max-width: 956px) {
     position: static;
@@ -41,7 +41,7 @@ export const Label = styled.label`
 
 export const Address = styled.label`
   cursor: pointer;
-  color: #285fc4;
+  color: #000;
   word-break: break-all;
   &:hover {
     color: #fff;
