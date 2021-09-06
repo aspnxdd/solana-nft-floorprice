@@ -9,7 +9,8 @@ import {
 } from "react-icons/im";
 
 export const SidebarContainer = styled.aside `
-margin-top: -.5rem;
+
+  top:3rem;
   background: #fff;
   height: 100%;
   display: block;

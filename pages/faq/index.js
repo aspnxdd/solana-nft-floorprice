@@ -11,7 +11,7 @@ export default function Faq() {
         sample frequency is 1h but may be changed due to server congestion.</b>
         <h2>1️⃣Who the fuck are you? </h2>
         Im just a boring guy who found out about web development and
-        crypto + NFTs some time ago. I'm from Spain. You can follow me on:{" "}
+        crypto + NFTs some time ago. I&apos;m from Spain. You can follow me on:{" "}
         <a style={{ display:"flex", width: "10rem", flexDirection: "row", alignItems: "center", columnGap:"0.7rem"}} href="https://twitter.com/ESArnau">
           <FaTwitter
             style={{ fontSize: "1.5rem", color: "#1CA0F1"}}
@@ -22,7 +22,7 @@ export default function Faq() {
             style={{ fontSize: "1.5rem", color: "#5865F2"}}
           /> Nivoa#4968
         </a>
-        If you want to support me (econimically+emotionally) you can send me some SOL to EQ4zjzotsMKmQFbXxbkj7WH4M8nzjDZ2r4r3w2stokyn.
+        If you want to support me (economically+emotionally) you can send me some SOL to EQ4zjzotsMKmQFbXxbkj7WH4M8nzjDZ2r4r3w2stokyn
         That would be much appreciated!
         <h2>2️⃣ How to list my project here? </h2>
         Just send me a DM on discord Nivoa#4968
