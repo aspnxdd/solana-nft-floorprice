@@ -43,7 +43,7 @@ export const Img = styled.img `
 `;
 
 export const Title = styled.label `
-padding-top: 1rem;
+    padding-top: 0.2rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     cursor: pointer; 
@@ -53,7 +53,7 @@ export const MarketplacesArea = styled.div `
     height: 1rem;
     width: 5rem;
     margin-top: 0.5rem;
-  
+    margin-bottom: 0.3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;

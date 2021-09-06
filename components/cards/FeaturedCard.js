@@ -13,15 +13,13 @@ import collectionsSolanart from "../../server/collectionsSolanart.json";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
-
 
 import _collections from "./_collections";
 
 // loop through the collections to add marketplace name to array
 
 export default function CardComponent() {
-  console.log(_collections);
+
   function addMarketplace() {
     for (let i = 0; i < _collections.length; i++) {
       collectionsDigitalEyes.forEach((col) => {

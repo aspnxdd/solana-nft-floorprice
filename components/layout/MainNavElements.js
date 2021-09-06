@@ -1,13 +1,11 @@
-import {
-  FaBars
-} from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 import styled from "styled-components";
 
-
-export const Nav = styled.nav `
+export const Nav = styled.nav`
+  font-family: "Press Start 2P";
   background: #fff;
-  height: 3rem;
+  height: 3.5rem;
   display: flex;
   justify-content: space-between;
   padding: 10px 30px;
@@ -17,31 +15,32 @@ export const Nav = styled.nav `
   top: 0;
   left: 0;
   z-index: 9;
-  border-bottom: 1px solid #000;
-  
+  border-bottom: 1px solid #b9b9b9;
+
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
 
-export const NavLink = styled.div `
-
+export const NavLink = styled.div`
   font-size: 1.2rem;
-  display: flex;
+  display: block;
   align-items: center;
   text-decoration: none;
   position: absolute;
   top: 0.8rem;
-
   cursor: pointer;
-  &.active {
-    color: #010606;
-    background: #c2c2c2;
+  margin-top: 0.6rem;
+  &:hover:after {
+    width: 100%;
   }
-  &:hover {
-    transition: color 0.5s ease-in-out;
-    
-    border-bottom: 0.2rem solid #568eeb;
-    
+  &:after {
+    content: "";
+    display: block;
+    margin-top: 5px;
+    width: 0;
+    height: 2px;
+    background: #3e73b3;
+    transition: width 0.3s;
   }
   & > a {
     color: inherit;
@@ -49,22 +48,29 @@ export const NavLink = styled.div `
   }
 `;
 
-export const NavLinkLeft = styled.div `
-  cursor:pointer;
+export const NavLinkLeft = styled.div`
+  cursor: pointer;
+  display: inline-block;
   color: #000;
   font-size: 2rem;
-  display: flex;
+  margin-top: 0.7rem;
   align-items: center;
   text-decoration: none;
   position: absolute;
-  top:0.2rem;
+  top: 0.2rem;
   padding-left: 10px;
   left: 5%;
-  &:hover {
-    transition: color 0.5s ease-in-out;
-    
-    border-bottom: 0.2rem solid #568eeb;
-    
+ 
+  &:hover:after {
+    width: 100%;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3e73b3;
+    transition: width 0.3s;
   }
   & > a {
     color: inherit;
@@ -72,7 +78,7 @@ export const NavLinkLeft = styled.div `
   }
 `;
 
-export const MobileIcon = styled.div `
+export const MobileIcon = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -86,21 +92,19 @@ export const MobileIcon = styled.div `
   }
 `;
 
-export const Bars = styled(FaBars)
-`
-
+export const Bars = styled(FaBars)`
   color: black;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
-   
+
     transform: translate(-100%, 170%);
     font-size: 1.8rem;
     cursor: pointer;
   }
 `;
 
-export const NavMenu = styled.div `
+export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   /* Second Nav */
@@ -113,7 +117,7 @@ export const NavMenu = styled.div `
   }
 `;
 
-export const NavMenuRight = styled.div `
+export const NavMenuRight = styled.div`
   display: flex;
   align-items: center;
   margin-right: 5rem;
@@ -128,11 +132,11 @@ export const NavMenuRight = styled.div `
   }
 `;
 
-export const NavLeftElement = styled.div `
+export const NavLeftElement = styled.div`
   display: flex;
   align-items: center;
   width: 160px;
-  
+
   margin-right: 6rem;
   /* Second Nav */
   /* margin-right: 24px; */
@@ -144,7 +148,7 @@ export const NavLeftElement = styled.div `
   }
 `;
 
-export const NavBtn = styled.nav `
+export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: 24px;
@@ -157,29 +161,29 @@ export const NavBtn = styled.nav `
   }
 `;
 
-export const HoverMenu = styled.div `
-    color: rgb(0, 0, 0);
-    cursor: initial;
-    position: fixed;
-    border-bottom-left-radius: 1em 1em; 
-    border-bottom-right-radius: 1em 1em; 
-    top: 4rem;
-    display: none;
-    align-items: flex-start;
-    width: 30%;
-    left: 15em;
-    opacity: 0;
-    padding-top: 3rem;
-    &:hover{
-      display: block;
-    }
+export const HoverMenu = styled.div`
+  color: rgb(0, 0, 0);
+  cursor: initial;
+  position: fixed;
+  border-bottom-left-radius: 1em 1em;
+  border-bottom-right-radius: 1em 1em;
+  top: 4rem;
+  display: none;
+  align-items: flex-start;
+  width: 30%;
+  left: 15em;
+  opacity: 0;
+  padding-top: 3rem;
+  &:hover {
+    display: block;
+  }
 `;
 
-export const HoverSectionLeft = styled.div `
-  width:100%;
+export const HoverSectionLeft = styled.div`
+  width: 100%;
   height: 23rem;
   border-top-left-radius: 1em 1em;
-  border-bottom-left-radius: 1em 1em; 
+  border-bottom-left-radius: 1em 1em;
   display: flex;
   border-right: 0.1rem solid rgb(218, 223, 232);
   box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
@@ -187,35 +191,32 @@ export const HoverSectionLeft = styled.div `
   align-items: flex-start;
   transition: all 0.5s ease-in-out;
   background: white;
-  & > ul{
+  & > ul {
     list-style: none;
     text-decoration: none;
-  };
-  
-     
+  }
 `;
-export const HoverSectionRight = styled.div `
-  width:100%;
+export const HoverSectionRight = styled.div`
+  width: 100%;
   height: 23rem;
   border-top-right-radius: 1em 1em;
-  border-bottom-right-radius: 1em 1em; 
+  border-bottom-right-radius: 1em 1em;
   box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
   z-index: 9;
-    ${'' /* border-radius: top-left, top-right, bottom-right, bottom-left */}
+  ${"" /* border-radius: top-left, top-right, bottom-right, bottom-left */}
   display: flex;
   align-items: flex-start;
   transition: all 0.5s ease-in-out;
   background: white;
-  & > ul{
+  & > ul {
     list-style: none;
-  };
-  & > a{
+  }
+  & > a {
     text-decoration: none;
   }
 `;
 
-
-export const NavBtnLink = styled.button `
+export const NavBtnLink = styled.button`
   border-radius: 4px;
   background: #256ce1;
   padding: 10px 22px;
@@ -227,7 +228,7 @@ export const NavBtnLink = styled.button `
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
-  font-family: 'Atkinson Hyperlegible';
+  font-family: "Atkinson Hyperlegible";
 
   /* Second Nav */
   margin-left: 24px;
@@ -242,14 +243,13 @@ export const NavBtnLink = styled.button `
   }
 `;
 
-export const Label = styled.h4 `
+export const Label = styled.h4`
   display: flex;
   margin-left: 15%;
   background: white;
 `;
 
-
-export const AllNoneToggle = styled.div `
+export const AllNoneToggle = styled.div`
   display: flex;
   margin-left: 15%;
   margin-bottom: 5%;
@@ -260,5 +260,4 @@ export const AllNoneToggle = styled.div `
   &:hover {
     color: #5a92ed;
   }
-  
 `;

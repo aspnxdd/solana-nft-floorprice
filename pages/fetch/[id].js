@@ -276,7 +276,7 @@ function Data() {
       
       <InfoTwoHours />
       <Time />
-
+      <h3><b>{collectionNames[router.query.id]}</b> </h3>
       <div style={{ display: "flex", marginBottom: "0rem", height: "2rem" }}>
         <button onClick={updateData}>
           <GrUpdate /> Update

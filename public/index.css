@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 html,
 body {
   padding: 0;
@@ -9,14 +12,13 @@ body {
 .images-donation {
   display: flex;
   flex-direction: row;
-  padding-left: 4.5rem;
+  column-gap: 2rem;
 }
-.qr {
+.qr_sol, .qr_bsc {
   margin-top: 1rem;
-  margin-left: 4rem;
+  
   margin-bottom: 1rem;
-  height: 120px;
-  width: 120px;
+  
 }
 .sol-logo {
   margin-top: 0rem;

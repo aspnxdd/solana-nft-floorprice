@@ -6,15 +6,36 @@ import Link from "next/link";
 
 import _collections from "./_collections";
 
+async function getFloorPrices() {
+  const res = await fetch(
+    `${
+      window.origin == "http://localhost:3000"
+        ? "http://localhost:8080"
+        : "https://nft-nextjs.herokuapp.com"
+    }/loadall`
+  );
+  //
+  let { data } = await res.json();
+  return data;
+}
+
 // loop through the collections to add marketplace name to array
 
 export default function CardComponent() {
-  console.log(_collections);
-  function addMarketplace() {
+  async function addMarketplace(dataAll) {
+    console.log(dataAll);
     for (let i = 0; i < _collections.length; i++) {
       collectionsDigitalEyes.forEach((col) => {
         if (col.name == _collections[i].url) {
           _collections[i].marketplace.push("digitaleyes");
+          dataAll.forEach((k) => {
+            if (
+              k.marketplace.includes("digitaleyes") &&
+              k.collectionname == _collections[i].url
+            ) {
+              _collections[i].fp = k.floorprice;
+            }
+          });
         }
       });
     }
@@ -22,6 +43,14 @@ export default function CardComponent() {
       collectionsSolanart.forEach((col) => {
         if (col.name == _collections[i].url) {
           _collections[i].marketplace.push("solanart");
+          dataAll.forEach((k) => {
+            if (
+              k.marketplace.includes("solanart") &&
+              k.collectionname == _collections[i].url
+            ) {
+              _collections[i].fp = k.floorprice;
+            }
+          });
         }
       });
     }
@@ -30,8 +59,10 @@ export default function CardComponent() {
   const [marketplaceArr, setMarketplaceArr] = useState([]);
 
   useEffect(() => {
-    addMarketplace();
-    setMarketplaceArr(_collections);
+    getFloorPrices().then((data) => {
+      addMarketplace(data);
+      setMarketplaceArr(_collections);
+    });
   }, []);
   return (
     <CardsArea>
@@ -40,7 +71,10 @@ export default function CardComponent() {
           <Link key={e.name} href={`/fetch/${e.url}`}>
             <Card>
               <Img src={`./static/images/${e.img}`}></Img>
-              <Title>{e.name}</Title>
+              <Title>
+                {e.name}
+                
+              </Title>
               <MarketplacesArea>
                 {e.marketplace.includes("digitaleyes") && (
                   <img
@@ -58,6 +92,9 @@ export default function CardComponent() {
                   ></img>
                 )}
               </MarketplacesArea>
+              <div style={{display:"flex", columnGap:"0.4rem"}}>
+              Latest FP: {e.fp} <img width="15px" src="/static/images/solana.svg" alt="sol-logo"></img>
+           </div>
             </Card>
           </Link>
         );

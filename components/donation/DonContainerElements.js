@@ -9,6 +9,7 @@ export const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-left: 1.5rem;
  margin-top: 1rem;
+ padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-content: flex-start;

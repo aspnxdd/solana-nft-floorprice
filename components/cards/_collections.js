@@ -6,7 +6,8 @@ let _collections = [{
     featured: true,
     discord: "https://t.co/zeJaS54GOV?amp=1",
     twitter: "https://twitter.com/SolanaDogeNFTs",
-    digitaleyes: "https://digitaleyes.market/collections/SolanaDogeNFTs"
+    digitaleyes: "https://digitaleyes.market/collections/SolanaDogeNFTs",
+    fp: 0,
   },
   {
     url: "thugbirdz",
@@ -14,6 +15,8 @@ let _collections = [{
     marketplace: [],
     img: "thugbirdz.png",
     featured: false,
+    fp: 0,
+    fp: 0,
   },
   {
     url: "degenapes",
@@ -21,6 +24,8 @@ let _collections = [{
     marketplace: [],
     img: "degenape.jpg",
     featured: false,
+    fp: 0,
+    fp: 0,
   },
   {
     url: "abstratica",
@@ -28,6 +33,7 @@ let _collections = [{
     marketplace: [],
     img: "abstratica.gif",
     featured: false,
+    fp: 0,
 
   },
   {
@@ -36,6 +42,7 @@ let _collections = [{
     marketplace: [],
     img: "solpop.jpg",
     featured: false,
+    fp: 0,
   },
   {
     url: "soliens",
@@ -43,6 +50,7 @@ let _collections = [{
     marketplace: [],
     img: "soliens.jpeg",
     featured: false,
+    fp: 0,
   },
   {
     url: "soldalas",
@@ -50,6 +58,7 @@ let _collections = [{
     marketplace: [],
     img: "soldalas.jpg",
     featured: false,
+    fp: 0,
   },
   {
     url: "solanimals",
@@ -57,6 +66,7 @@ let _collections = [{
     marketplace: [],
     img: "solanimal.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "pixelpenguin",
@@ -64,6 +74,7 @@ let _collections = [{
     marketplace: [],
     img: "pixelpenguin.jpg",
     featured: false,
+    fp: 0,
   },
   {
     url: "frakt",
@@ -71,6 +82,7 @@ let _collections = [{
     marketplace: [],
     img: "frakt.jpg",
     featured: false,
+    fp: 0,
   },
   {
     url: "solchihuahua",
@@ -78,6 +90,7 @@ let _collections = [{
     marketplace: [],
     img: "chihuahua.jpeg",
     featured: false,
+    fp: 0,
   },
   {
     url: "smb",
@@ -85,6 +98,7 @@ let _collections = [{
     marketplace: [],
     img: "smb.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "solbear",
@@ -92,6 +106,7 @@ let _collections = [{
     marketplace: [],
     img: "solbear.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "sollamas-gen2",
@@ -99,6 +114,7 @@ let _collections = [{
     marketplace: [],
     img: "sollamas.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "boldbadgers",
@@ -106,6 +122,7 @@ let _collections = [{
     marketplace: [],
     img: "boldbadger.webp",
     featured: false,
+    fp: 0,
   },
   {
     url: "solpunks",
@@ -113,6 +130,7 @@ let _collections = [{
     marketplace: [],
     img: "solpunk.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "solarians",
@@ -120,6 +138,7 @@ let _collections = [{
     marketplace: [],
     img: "solarian.gif",
     featured: false,
+    fp: 0,
   },
   {
     url: "tophatchicks",
@@ -127,6 +146,7 @@ let _collections = [{
     marketplace: [],
     img: "tophatchicks.png",
     featured: false,
+    fp: 0,
   },
   {
     url: "rox",
@@ -134,6 +154,7 @@ let _collections = [{
     marketplace: [],
     img: "rox.jpeg",
     featured: false,
+    fp: 0,
   },
   {
     url: "aurory",
@@ -141,6 +162,7 @@ let _collections = [{
     marketplace: [],
     img: "aurory.png",
     featured: false,
+    fp: 0,
   },
 ];
 

@@ -6,7 +6,6 @@ import DonContainer from "../../components/donation/DonContainer";
 import LinkHome from "../../components/common/LinkHome";
 import CardComponent from "../../components/cards/CardComponent";
 
-import Links from "../../components/links/Links";
 
 function Data() {
   return (
@@ -14,7 +13,7 @@ function Data() {
     <LinkHome />
       <TitleWelcome />
       <h3>
-        <div>
+        <div >
           Here you can track the history of Floor Price for the collections from {" "}
           <a href="https://digitaleyes.market/">
             DigitalEyes

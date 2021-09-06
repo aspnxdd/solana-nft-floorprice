@@ -23,7 +23,7 @@ const MainNav = ({ toggle }) => {
         <NavLeftElement>
           <NavLinkLeft>
             <Link href="/" activeStyle>
-              <b>NFT Floor Price</b>
+              <b>NFT FP</b>
             </Link>
           </NavLinkLeft>
           <MobileIcon onClick={toggle}>

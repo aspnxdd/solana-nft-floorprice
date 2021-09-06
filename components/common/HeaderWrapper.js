@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

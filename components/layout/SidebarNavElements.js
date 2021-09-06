@@ -10,25 +10,26 @@ import {
 
 export const SidebarContainer = styled.aside `
 
-  top:3rem;
+  top:0rem;
   background: #fff;
   height: 100%;
   display: block;
   position: fixed;
-  border-left: 0.2rem solid #000;
+  border-left:  1px solid #b9b9b9;
   transform: ${({isOpen}) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
   right: 0;
   z-index: 999;
   width: ${({isOpen})=>(isOpen ? "50%" : "0")};
   opacity: ${({isOpen})=>(isOpen ? "100%" : "0")};
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out 0s;
   
 `;
 
 export const CloseIcon = styled(ImCross)
 `
-  color: white;
+  color: black;
   font-size: 1.6rem;
+  margin-right:0.8rem;
     
 `;
 
