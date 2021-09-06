@@ -152,7 +152,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 5000); //1h
+  }, 3600000); //1h
 });
 
 async function dbConnect() {
