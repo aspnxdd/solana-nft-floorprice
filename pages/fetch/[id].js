@@ -273,20 +273,7 @@ function Data() {
   return (
     <div>
       <LinkHome />
-      <HeaderWrapper>
-        <TitleSubtitle>
-          <TitleWelcome />
-          <h3>
-            {" "}
-            <div>
-              Here you can track the history of Floor Price for{" "}
-              <b>{collectionNames[router.query.id]} </b>
-            </div>
-            <img className="sol-logo" src="/static/images/solana.svg" alt="sol-logo"></img>
-          </h3>
-        </TitleSubtitle>
-          <DonContainer />
-      </HeaderWrapper>
+      
       <InfoTwoHours />
       <Time />
 

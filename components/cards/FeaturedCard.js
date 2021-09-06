@@ -87,8 +87,12 @@ export default function CardComponent() {
                 <a href={e.discord}>
                   <FaDiscord style={{ fontSize: "1.5rem", color: "#5865F2" }} />
                 </a>
-                <a href={e.website}>
-                  <FiExternalLink style={{ fontSize: "1.5rem", color: "#727272" }} />
+                <a href={e.digitaleyes}>
+                <img
+                        src="/static/images/digitaleyes.svg"
+                        alt="de-logo"
+                        width="30px"
+                      ></img>
                 </a>
               </CollectionLinks>
             </CardContainer>

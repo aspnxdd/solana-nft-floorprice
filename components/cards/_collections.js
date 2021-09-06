@@ -6,7 +6,7 @@ let _collections = [{
     featured: true,
     discord: "https://t.co/zeJaS54GOV?amp=1",
     twitter: "https://twitter.com/SolanaDogeNFTs",
-    website: "https://t.co/9ZSM9CbHkY?amp=1"
+    digitaleyes: "https://digitaleyes.market/collections/SolanaDogeNFTs"
   },
   {
     url: "thugbirdz",
