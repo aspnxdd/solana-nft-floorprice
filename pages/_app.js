@@ -1,12 +1,24 @@
 import "../public/index.css";
 import {ThemeProvider} from "styled-components"
+import MainNav from "../components/layout/MainNav";
+import SidebarNav from "../components/layout/SidebarNav";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  return (
-    // <ThemeProvider theme="light">
+  const [isOpen, setIsOpen] = useState(false);
 
-    <Component {...pageProps} />
-    // </ThemeProvider>
+  const toggle = function () {
+    setIsOpen(!isOpen);
+    console.log("isOpen",isOpen)
+  };
+  return (
+    <div>
+   
+      <MainNav toggle={toggle}/>
+      <SidebarNav isOpen={isOpen} toggle={toggle} />
+      <Component {...pageProps} />
+  
+  </div>
     )
 }
 

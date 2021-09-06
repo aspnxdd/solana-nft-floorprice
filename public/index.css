@@ -59,8 +59,9 @@ a:hover {
 }
 
 p {
-  color: #aaa;
+  color: #000;
   margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 h1 {
@@ -164,3 +165,4 @@ button {
   align-items: center;
   
 }
+

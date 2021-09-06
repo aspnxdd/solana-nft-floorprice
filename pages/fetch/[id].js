@@ -271,8 +271,8 @@ function Data() {
     },
   };
   return (
-    <div>
-      <LinkHome />
+    <div style={{marginTop:"3.5rem"}}>
+   
       
       <InfoTwoHours />
       <Time />
