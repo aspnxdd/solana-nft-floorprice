@@ -4,6 +4,9 @@ let _collections = [{
     marketplace: [],
     img: "solanadogenft.png",
     featured: true,
+    discord: "https://t.co/zeJaS54GOV?amp=1",
+    twitter: "https://twitter.com/SolanaDogeNFTs",
+    website: "https://t.co/9ZSM9CbHkY?amp=1"
   },
   {
     url: "thugbirdz",

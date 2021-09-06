@@ -1,8 +1,20 @@
-import {  CardF, ImgF, TitleF, MarketplacesAreaF, AreaCardF, FeaturedLabel } from "./FeaturedCardElements";
+import {
+  CardContainer,
+  CardF,
+  ImgF,
+  TitleF,
+  MarketplacesAreaF,
+  AreaCardF,
+  FeaturedLabel,
+  CollectionLinks,
+} from "./FeaturedCardElements";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+
 
 import _collections from "./_collections";
 
@@ -34,39 +46,54 @@ export default function CardComponent() {
     setMarketplaceArr(_collections);
   }, []);
   return (
-      <AreaCardF>
-
-      
-   
-    <FeaturedLabel ><b>Featured Collections</b> </FeaturedLabel>
+    <AreaCardF>
+      <FeaturedLabel>
+        <b>Featured Collections</b>{" "}
+      </FeaturedLabel>
       {marketplaceArr.map((e) => {
-          
-        if (e.featured) return (
-          <Link key={e.name} href={`/fetch/${e.url}`}>
-            <CardF>
-              <ImgF src={`./static/images/${e.img}`}></ImgF>
-              <TitleF><b>{e.name}</b></TitleF>
-              <MarketplacesAreaF>
-                {e.marketplace.includes("digitaleyes") && (
-                  <img
-                    src="/static/images/digitaleyes.svg"
-                    alt="de-logo"
-                    width="50px"
-                  ></img>
-                )}
+        if (e.featured)
+          return (
+            <CardContainer key={e.name}>
+              <Link key={e.name} href={`/fetch/${e.url}`}>
+                <CardF>
+                  <ImgF src={`./static/images/${e.img}`}></ImgF>
+                  <TitleF>
+                    <b>{e.name}</b>
+                  </TitleF>
+                  <MarketplacesAreaF>
+                    {e.marketplace.includes("digitaleyes") && (
+                      <img
+                        src="/static/images/digitaleyes.svg"
+                        alt="de-logo"
+                        width="50px"
+                      ></img>
+                    )}
 
-                {e.marketplace.includes("solanart") && (
-                  <img
-                    src="/static/images/solanart.svg"
-                    alt="so-logo"
-                    width="25px"
-                  ></img>
-                )}
-              </MarketplacesAreaF>
-            </CardF>
-          </Link>
-        );
+                    {e.marketplace.includes("solanart") && (
+                      <img
+                        src="/static/images/solanart.svg"
+                        alt="so-logo"
+                        width="25px"
+                      ></img>
+                    )}
+                  </MarketplacesAreaF>
+                </CardF>
+              </Link>
+              <CollectionLinks>
+                <a href={e.twitter}>
+                  <FaTwitter style={{ fontSize: "1.5rem", color: "#1CA0F1" }} />
+                </a>
+
+                <a href={e.discord}>
+                  <FaDiscord style={{ fontSize: "1.5rem", color: "#5865F2" }} />
+                </a>
+                <a href={e.website}>
+                  <FiExternalLink style={{ fontSize: "1.5rem", color: "#727272" }} />
+                </a>
+              </CollectionLinks>
+            </CardContainer>
+          );
       })}
-</AreaCardF>
+    </AreaCardF>
   );
 }

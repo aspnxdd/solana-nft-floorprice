@@ -13,8 +13,9 @@ export const CardsArea = styled.div `
     row-gap: 1rem;
     
     @media (max-width: 1200px) {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        margin-right: -1.5rem;
+        margin-left: 0.5rem;
+        column-gap: 1rem;
   }
 
 `;

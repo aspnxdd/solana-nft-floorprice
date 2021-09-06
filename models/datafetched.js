@@ -14,6 +14,10 @@ const datafetched = new mongoose.Schema({
     marketplace: {
         type: String,
     },
+    created_at:{
+        type: Date,
+        default: Date.now,
+    }
    
     
 })

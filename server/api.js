@@ -24,8 +24,34 @@ server.use(cors(corsOptions));
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
     try {
-    const data = await datafetched.find({ collectionname: id });
+    const data = await datafetched.find({ collectionname: id })
    
+    return res.status(200).json({
+      success: true,
+      data: data,
+    });
+  } catch (error) {
+    console.log("error get",error)
+    res.status(400).json({
+      success: false,
+    });
+  }
+});
+
+server.get("/loadall", async (req, res) => {
+
+    try {
+    let data = [];
+
+    
+    await Promise.all(collectionsAddressSolanart.map(async (e)=>{
+      data.push(await datafetched.findOne({collectionname: e.name}).sort({created_at: -1}))
+    }))
+    
+    await Promise.all(collectionsAddressDigitalEyes.map(async (e)=>{
+      data.push(await datafetched.findOne({collectionname: e.name}).sort({created_at: -1}))
+    }))
+
     return res.status(200).json({
       success: true,
       data: data,
@@ -126,7 +152,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 1800000); //1h
+  }, 5000); //1h
 });
 
 async function dbConnect() {
