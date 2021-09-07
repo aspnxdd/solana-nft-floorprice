@@ -111,7 +111,41 @@
       "address2": "@@@@@@@",
       "uri": "https://rox.cards/api/metaplex-mints",
       "url":"Rox"
+    },
+    {
+      "name": "cryptolizzy",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Crypto%20Lizzy"
+    },
+    {
+      "name": "solanasouls",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Solana%20Souls"
+    },
+    {
+      "name": "solamanders",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Solamanders"
+    },
+    {
+      "name": "solbulls",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Solbulls"
     }
+
+    
+
+ 
+
+    
 
    
   

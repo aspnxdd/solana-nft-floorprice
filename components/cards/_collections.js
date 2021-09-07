@@ -164,6 +164,38 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "cryptolizzy",
+    name: "CryptoLizzy",
+    marketplace: [],
+    img: "cryptolizzy.png",
+    featured: false,
+    fp: 0,
+  },
+  {
+    url: "solanasouls",
+    name: "Solana Souls",
+    marketplace: [],
+    img: "solanasouls.jpg",
+    featured: false,
+    fp: 0,
+  },
+  {
+    url: "solamanders",
+    name: "Solamanders",
+    marketplace: [],
+    img: "solamanders.png",
+    featured: false,
+    fp: 0,
+  },
+  {
+    url: "solbulls",
+    name: "Solbulls",
+    marketplace: [],
+    img: "solbulls.png",
+    featured: false,
+    fp: 0,
+  },
 ];
 
 export default _collections;
