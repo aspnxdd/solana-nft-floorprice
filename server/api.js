@@ -18,6 +18,7 @@ const connection = {};
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
 const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+const DIGITALEYES_URL = "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever-datastore?collection=";
 
 // Connect to MongoDB
 dbConnect();
@@ -78,7 +79,7 @@ async function saveSolanart() {
       );
 
       // Save all valid prices
-      const prices = solanartData.map((e) => e.price).filter(Boolean);
+      const prices = solanartData.filter(e => Boolean(e.price) && e.id !== 473037 && e.id !== 472737).map((e) => e.price);
 
       // Obtain floor price
       const floorPrice = Math.min.apply(Math, prices);
@@ -100,36 +101,20 @@ async function saveSolanart() {
 async function saveDigitalEyes() {
   try {
     // save the data in solarianData
-    const { data: solarianData } = await axios(
-      "https://offers.solarians.click/api/offers"
-    );
-
-    //for each collection, query and return price
     collectionsAddressDigitalEyes.forEach(async function (coll) {
-      //for each item in solarianData
-      const prices = solarianData.map(function (e) {
-        if (
-          (e.Creators[0]?.Address == coll.address && e.Creators[0]?.Verified) ||
-          (e.Creators[4]?.Address == coll.address && e.Creators[4]?.Verified) ||
-          (e.Creators[0]?.Address == coll.address2 &&
-            e.Creators[0]?.Verified) ||
-          e?.URI.includes(coll.uri) //for SolBears specially and solarians
-        ) {
-          return e.Price / 1000000000;
-        }
-      }).filter(Boolean);
-
-      // Obtain floor price
-      const floorPrice = Math.min.apply(Math, prices);
-
+    const { data: solarianData } = await axios(
+      `${DIGITALEYES_URL}${coll.url}`
+    );
+      console.log(solarianData)
+    
       // Save in DB
       await datafetched.create({
-        floorprice: floorPrice,
+        floorprice: solarianData.price_floor/1000000000,
         collectionname: coll.name,
         marketplace: "digitaleyes",
       });
     });
-
+  
     return;
   } catch (error) {
     console.log("error de", error)
@@ -142,10 +127,10 @@ server.listen(process.env.PORT || 8080, (err) => {
   console.log("> Ready on http://localhost:8080");
 
   // cada 2h guarda en la DB
-  setInterval(() => {
+  setTimeout(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 3600000); //1h
+  }, 5000); //1h
 });
 
 async function dbConnect() {

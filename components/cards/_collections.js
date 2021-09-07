@@ -158,7 +158,7 @@ let _collections = [{
   },
   {
     url: "aurory",
-    name: "❌Aurory",
+    name: "Aurory",
     marketplace: [],
     img: "aurory.png",
     featured: false,
