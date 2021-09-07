@@ -146,6 +146,13 @@
       "address2": "@@@@@@@",
       "uri": "@@@",
       "url":"SolCats"
+    },
+    {
+      "name": "bitboat",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"BitBoat"
     }
 
     

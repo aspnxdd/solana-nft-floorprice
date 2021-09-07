@@ -204,6 +204,14 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "bitboat",
+    name: "BitBoat",
+    marketplace: [],
+    img: "bitboat.png",
+    featured: false,
+    fp: 0,
+  },
 ];
 
 export default _collections;
