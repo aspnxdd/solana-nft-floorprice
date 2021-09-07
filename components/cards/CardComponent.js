@@ -27,10 +27,10 @@ export default function CardComponent() {
     for (let i = 0; i < _collections.length; i++) {
       collectionsDigitalEyes.forEach((col) => {
         if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("digitaleyes");
+          _collections[i]?.marketplace.push("digitaleyes");
           dataAll.forEach((k) => {
             if (
-              k.marketplace.includes("digitaleyes") &&
+              k?.marketplace.includes("digitaleyes") &&
               k.collectionname == _collections[i].url
             ) {
               _collections[i].fp = k.floorprice;
@@ -42,10 +42,10 @@ export default function CardComponent() {
     for (let i = 0; i < _collections.length; i++) {
       collectionsSolanart.forEach((col) => {
         if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("solanart");
+          _collections[i]?.marketplace.push("solanart");
           dataAll.forEach((k) => {
             if (
-              k.marketplace.includes("solanart") &&
+              k?.marketplace.includes("solanart") &&
               k.collectionname == _collections[i].url
             ) {
               _collections[i].fp = k.floorprice;
