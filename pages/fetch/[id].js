@@ -91,7 +91,17 @@ async function getFloorPrices(id) {
     }
   );
   //
-  const { data } = await res.json();
+  let { data } = await res.json();
+  data.forEach((e)=>{
+    const date = new Date(e.time);
+   
+    e.time = date.toLocaleString("en-GB", {
+      hour12: false,
+      timeStyle: "short",
+      dateStyle: "short",
+    });
+
+  })
 
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
