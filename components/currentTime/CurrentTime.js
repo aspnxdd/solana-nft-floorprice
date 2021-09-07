@@ -11,8 +11,13 @@ const useCurrentCallback = (callback) => {
 const Time = () => {
   const [time, setTime] = React.useState(0);
   const currentCallback = useCurrentCallback(() => {
+    const date2 = new Date();
     const date = new Date();
-    setTime(date.toLocaleString('en-GB', { timeZone: 'UTC',hour12:false, timeStyle:"short",dateStyle:"short" }));
+    setTime(date.toLocaleString("en-GB", {
+      hour12: false,
+      timeStyle: "short",
+      dateStyle: "short",
+    }));
   });
   React.useEffect(() => {
     const handle = setInterval(currentCallback, 100);

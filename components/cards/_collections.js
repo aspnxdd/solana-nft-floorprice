@@ -172,14 +172,14 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
-  {
-    url: "solanasouls",
-    name: "Solana Souls",
-    marketplace: [],
-    img: "solanasouls.jpg",
-    featured: false,
-    fp: 0,
-  },
+  // {
+  //   url: "solanasouls",
+  //   name: "Solana Souls",
+  //   marketplace: [],
+  //   img: "solanasouls.jpg",
+  //   featured: false,
+  //   fp: 0,
+  // },
   {
     url: "solamanders",
     name: "Solamanders",
