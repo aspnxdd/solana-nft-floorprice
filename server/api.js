@@ -25,7 +25,7 @@ server.get("/load", async (req, res) => {
   const { id } = req.headers;
     try {
     const data = await datafetched.find({ collectionname: id })
-   
+    console.log("data",data)
     return res.status(200).json({
       success: true,
       data: data,
