@@ -9,17 +9,12 @@ const datafetched = new mongoose.Schema({
         type: Number, 
     },
     time: {
-        type: String,
+        type: Date,
+        default: Date.now,
     },
     marketplace: {
         type: String,
-    },
-    created_at:{
-        type: Date,
-        default: Date.now,
-    }
-   
-    
+    }    
 })
 
 module.exports = mongoose.models.datafetched || mongoose.model('datafetched', datafetched)
