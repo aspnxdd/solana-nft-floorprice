@@ -1,19 +1,14 @@
 import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
-import TitleWelcome from "../../components/common/TitleWelcome";
+
 import InfoTwoHours from "../../components/common/InfoTwoHours";
-import DonContainer from "../../components/donation/DonContainer";
-import LinkHome from "../../components/common/LinkHome";
+
 import LineChart from "../../components/chart/LineChart";
-import {
-  HeaderWrapper,
-  TitleSubtitle,
-} from "../../components/common/HeaderWrapper";
 
 const Styles = styled.div`
   display: flex;
