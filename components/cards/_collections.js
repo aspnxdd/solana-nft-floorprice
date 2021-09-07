@@ -196,6 +196,14 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "solcats",
+    name: "SolCats",
+    marketplace: [],
+    img: "solcats.png",
+    featured: false,
+    fp: 0,
+  },
 ];
 
 export default _collections;
