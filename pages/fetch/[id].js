@@ -91,17 +91,7 @@ async function getFloorPrices(id) {
     }
   );
   //
-  let { data } = await res.json();
-
-  //  to reconvert it to local string format
-  data.forEach((i) => {
-    let date = new Date(i.time);
-    i.time = date.toLocaleString("en-GB", {
-      hour12: false,
-      timeStyle: "short",
-      dateStyle: "short",
-    });
-  });
+  const { data } = await res.json();
 
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 

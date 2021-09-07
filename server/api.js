@@ -1,37 +1,44 @@
 const express = require("express");
 const mongoose = require("mongoose");
-let cors = require("cors");
-const connection = {};
-const dev = process.env.NODE_ENV !== "production";
+const cors = require("cors");
 const datafetched = require("../models/datafetched");
 const server = express();
-var axios = require("axios");
-require("dotenv").config();
-let corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200, //
-};
-// declare const
+const axios = require("axios");
+
+const isDev = process.argv[2] === "--development";
+
+if( isDev ) {
+  require("dotenv").config({ path: ".env.development"});
+} else {
+  require("dotenv").config();
+}
+
+const connection = {};
+
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
-const SOLANART_URL =
-  "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
 
+// Connect to MongoDB
 dbConnect();
+
+// Custom options for Cors
+const corsOptions = {
+  optionsSuccessStatus: 200, 
+};
 
 server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
   const { id } = req.headers;
-    try {
-    const data = await datafetched.find({ collectionname: id })
-    console.log("data",data)
+  try {
+    const data = await datafetched.find({ collectionname: id }).sort({ time: 1 })
     return res.status(200).json({
       success: true,
       data: data,
     });
   } catch (error) {
-    console.log("error get",error)
+    console.log("error get", error)
     res.status(400).json({
       success: false,
     });
@@ -39,17 +46,15 @@ server.get("/load", async (req, res) => {
 });
 
 server.get("/loadall", async (req, res) => {
-
-    try {
+  try {
     let data = [];
 
-    
-    await Promise.all(collectionsAddressSolanart.map(async (e)=>{
-      data.push(await datafetched.findOne({collectionname: e.name}).sort({created_at: -1}))
+    await Promise.all(collectionsAddressSolanart.map(async (e) => {
+      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ created_at: -1 }))
     }))
-    
-    await Promise.all(collectionsAddressDigitalEyes.map(async (e)=>{
-      data.push(await datafetched.findOne({collectionname: e.name}).sort({created_at: -1}))
+
+    await Promise.all(collectionsAddressDigitalEyes.map(async (e) => {
+      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ created_at: -1 }))
     }))
 
     return res.status(200).json({
@@ -57,7 +62,7 @@ server.get("/loadall", async (req, res) => {
       data: data,
     });
   } catch (error) {
-    console.log("error get",error)
+    console.log("error get", error)
     res.status(400).json({
       success: false,
     });
@@ -71,22 +76,16 @@ async function saveSolanart() {
       const { data: solanartData } = await axios(
         `${SOLANART_URL}${coll.collectionName}`
       );
-      let prices = solanartData.map(function (e) {
-        return e.price;
-      });
-      // wipe the undefined values
-      prices = prices.filter(function (el) {
-        return el != undefined;
-      });
-      // obtain floor price
+
+      // Save all valid prices
+      const prices = solanartData.map((e) => e.price).filter(Boolean);
+
+      // Obtain floor price
       const floorPrice = Math.min.apply(Math, prices);
 
-      const date = new Date();
-      let today = date.toLocaleString('en-GB', { timeZone: 'UTC',hour12:false, timeStyle:"short",dateStyle:"short" });
-      // save in DB
+      // Save in DB
       await datafetched.create({
         floorprice: floorPrice,
-        time: today,
         collectionname: coll.name,
         marketplace: "solanart",
       });
@@ -94,7 +93,7 @@ async function saveSolanart() {
 
     return;
   } catch (error) {
-    console.log("error so",error)
+    console.log("error so", error)
     return error;
   }
 }
@@ -104,10 +103,11 @@ async function saveDigitalEyes() {
     const { data: solarianData } = await axios(
       "https://offers.solarians.click/api/offers"
     );
+
     //for each collection, query and return price
     collectionsAddressDigitalEyes.forEach(async function (coll) {
       //for each item in solarianData
-      let prices = solarianData.map(function (e) {
+      const prices = solarianData.map(function (e) {
         if (
           (e.Creators[0]?.Address == coll.address && e.Creators[0]?.Verified) ||
           (e.Creators[4]?.Address == coll.address && e.Creators[4]?.Verified) ||
@@ -117,21 +117,14 @@ async function saveDigitalEyes() {
         ) {
           return e.Price / 1000000000;
         }
-      });
-      // wipe the undefined values
-      prices = prices.filter(function (el) {
-        return el != undefined;
-      });
-      // obtain floor price
+      }).filter(Boolean);
+
+      // Obtain floor price
       const floorPrice = Math.min.apply(Math, prices);
 
-      const date = new Date();
-      let today = date.toLocaleString('en-GB', { timeZone: 'UTC',hour12:false, timeStyle:"short",dateStyle:"short" });
-      
-      // save in DB
+      // Save in DB
       await datafetched.create({
         floorprice: floorPrice,
-        time: today,
         collectionname: coll.name,
         marketplace: "digitaleyes",
       });
@@ -139,7 +132,7 @@ async function saveDigitalEyes() {
 
     return;
   } catch (error) {
-    console.log("error de",error)
+    console.log("error de", error)
     return error;
   }
 }
@@ -167,6 +160,6 @@ async function dbConnect() {
     "error",
     console.error.bind(console, "MongoDB connection error:")
   );
-  connection.isConnected = db.connections[0].readyState;
+  connection.isConnected = db.connections[0].readyState === 1;
   console.log("Connected to db", connection.isConnected);
 }

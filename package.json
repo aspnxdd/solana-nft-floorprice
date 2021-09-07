@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server/api.js",
+    "dev:server": "node server/api.js --development",
     "lint": "next lint"
   },
   "dependencies": {
