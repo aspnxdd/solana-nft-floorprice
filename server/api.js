@@ -50,11 +50,11 @@ server.get("/loadall", async (req, res) => {
     let data = [];
 
     await Promise.all(collectionsAddressSolanart.map(async (e) => {
-      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: 1 }))
+      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: -1 }))
     }))
 
     await Promise.all(collectionsAddressDigitalEyes.map(async (e) => {
-      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: 1 }))
+      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: -1 }))
     }))
 
     return res.status(200).json({
