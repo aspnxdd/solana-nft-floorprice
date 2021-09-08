@@ -93,7 +93,7 @@ export default function CardComponent() {
                 )}
               </MarketplacesArea>
               <div style={{display:"flex", columnGap:"0.4rem"}}>
-              Latest FP: {e.fp} <img width="15px" src="/static/images/solana.svg" alt="sol-logo"></img>
+              Latest FP: {Math.round(e.fp * 100) / 100} <img width="15px" src="/static/images/solana.svg" alt="sol-logo"></img>
            </div>
             </Card>
           </Link>

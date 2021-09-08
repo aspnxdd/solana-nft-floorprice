@@ -31,12 +31,13 @@ export default function Ticker() {
     });
   }, []);
   return (
+  
     <Container>
       <LeftSection>SOL/USD</LeftSection>
       <RightSection>
-        <p>{Math.round(price.price * 100) / 100} $</p>
+        <p>{price.price && Math.round(price.price * 100) / 100} $</p>
         <Percent priceChangePercent={Number(price.priceChangePercent)}>
-          {Math.round(price.priceChangePercent * 100) / 100} %
+          {price.priceChangePercent && Math.round(price.priceChangePercent * 100) / 100} %
         </Percent>
       </RightSection>
     </Container>
