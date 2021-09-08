@@ -23,10 +23,10 @@ export const Nav = styled.nav`
 
 export const NavLink = styled.div`
   font-size: 1.2rem;
-  display: block;
+  
   align-items: center;
   text-decoration: none;
-  position: absolute;
+  
   top: 0.8rem;
   cursor: pointer;
   margin-top: 0.6rem;
@@ -107,11 +107,9 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
+  row-gap: 4rem;
+  column-gap: 10rem;
+  padding-right: 5rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -122,11 +120,7 @@ export const NavMenuRight = styled.div`
   align-items: center;
   margin-right: 5rem;
   height: 100%;
-  /* Second Nav */
-  /* ; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -158,61 +152,6 @@ export const NavBtn = styled.nav`
   width: 100vw; */
   @media screen and (max-width: 768px) {
     display: none;
-  }
-`;
-
-export const HoverMenu = styled.div`
-  color: rgb(0, 0, 0);
-  cursor: initial;
-  position: fixed;
-  border-bottom-left-radius: 1em 1em;
-  border-bottom-right-radius: 1em 1em;
-  top: 4rem;
-  display: none;
-  align-items: flex-start;
-  width: 30%;
-  left: 15em;
-  opacity: 0;
-  padding-top: 3rem;
-  &:hover {
-    display: block;
-  }
-`;
-
-export const HoverSectionLeft = styled.div`
-  width: 100%;
-  height: 23rem;
-  border-top-left-radius: 1em 1em;
-  border-bottom-left-radius: 1em 1em;
-  display: flex;
-  border-right: 0.1rem solid rgb(218, 223, 232);
-  box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
-  z-index: 9;
-  align-items: flex-start;
-  transition: all 0.5s ease-in-out;
-  background: white;
-  & > ul {
-    list-style: none;
-    text-decoration: none;
-  }
-`;
-export const HoverSectionRight = styled.div`
-  width: 100%;
-  height: 23rem;
-  border-top-right-radius: 1em 1em;
-  border-bottom-right-radius: 1em 1em;
-  box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
-  z-index: 9;
-  ${"" /* border-radius: top-left, top-right, bottom-right, bottom-left */}
-  display: flex;
-  align-items: flex-start;
-  transition: all 0.5s ease-in-out;
-  background: white;
-  & > ul {
-    list-style: none;
-  }
-  & > a {
-    text-decoration: none;
   }
 `;
 
