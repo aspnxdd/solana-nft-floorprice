@@ -105,8 +105,7 @@ async function saveDigitalEyes() {
     const { data: solarianData } = await axios(
       `${DIGITALEYES_URL}${coll.url}`
     );
-      console.log(solarianData)
-    
+       
       // Save in DB
 
       await datafetched.create({
@@ -128,7 +127,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   console.log("> Ready on http://localhost:8080");
 
   // cada 2h guarda en la DB
-  setTimeout(() => {
+  setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
   }, 3600000); //1h
