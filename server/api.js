@@ -18,7 +18,7 @@ const connection = {};
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
 const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
-const DIGITALEYES_URL = "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever-datastore?collection=";
+const DIGITALEYES_URL = "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
 
 // Connect to MongoDB
 dbConnect();
@@ -83,10 +83,10 @@ async function saveSolanart() {
 
       // Obtain floor price
       const floorPrice = Math.min.apply(Math, prices);
-
+        console.log(1,floorPrice)
       // Save in DB
       await datafetched.create({
-        floorprice: floorPrice,
+        floorprice: Number(floorPrice),
         collectionname: coll.name,
         marketplace: "solanart",
       });
@@ -107,9 +107,9 @@ async function saveDigitalEyes() {
     );
        
       // Save in DB
-
+      console.log("a",solarianData)
       await datafetched.create({
-        floorprice: solarianData.price_floor/1000000000,
+        floorprice: Number(solarianData.price_floor/1000000000),
         collectionname: coll.name,
         marketplace: "digitaleyes",
       });
