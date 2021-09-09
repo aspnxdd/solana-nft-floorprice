@@ -107,7 +107,7 @@ async function saveDigitalEyes() {
     );
        
       // Save in DB
-      console.log("a",solarianData)
+      // console.log("a",solarianData)
       await datafetched.create({
         floorprice: Number(solarianData.price_floor/1000000000),
         collectionname: coll.name,
@@ -130,7 +130,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 3600000); //1h
+  }, 36000); //1h
 });
 
 async function dbConnect() {
