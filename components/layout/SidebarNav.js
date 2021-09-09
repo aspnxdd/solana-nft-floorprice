@@ -19,7 +19,7 @@ const SidebarNav = ({ isOpen, toggle }) => {
           <CloseIcon />
         </IconContainer>
         <SidebarWrapper>
-        <SidebarNavLink gridrow="1">
+        <SidebarNavLink gridrow="0">
         <Ticker></Ticker>
           </SidebarNavLink>
         

@@ -1,0 +1,13 @@
+db.datafetcheds.find({}).forEach((elem) => { 
+   if(elem.floorprice ==0) {
+     db.datafetcheds.remove({ _id: elem._id });
+	console.log(elem);
+   }
+ })
+
+db.datafetcheds.find({}).forEach((elem) => { 
+   if(elem.time.toString().includes("Tue Sep 07")) {
+     db.datafetcheds.remove({ _id: elem._id });
+	console.log(elem);
+   }
+})

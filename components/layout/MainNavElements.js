@@ -23,11 +23,13 @@ export const Nav = styled.nav`
 
 export const NavLink = styled.div`
   font-size: 1.2rem;
-  
+  width: 10rem;
+   max-width:10rem;
   align-items: center;
   text-decoration: none;
+  display: inline-block;
+ 
   
-  top: 0.8rem;
   cursor: pointer;
   margin-top: 0.6rem;
   &:hover:after {
@@ -60,7 +62,7 @@ export const NavLinkLeft = styled.div`
   top: 0.2rem;
   padding-left: 10px;
   left: 5%;
- 
+
   &:hover:after {
     width: 100%;
   }
@@ -110,6 +112,8 @@ export const NavMenu = styled.div`
   row-gap: 4rem;
   column-gap: 10rem;
   padding-right: 5rem;
+  position: relative;
+  margin-left: 6rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -130,8 +134,9 @@ export const NavLeftElement = styled.div`
   display: flex;
   align-items: center;
   width: 160px;
-
-  margin-right: 6rem;
+  float: left;
+  margin-right:8rem;
+  flex: 1;
   /* Second Nav */
   /* margin-right: 24px; */
   /* Third Nav */

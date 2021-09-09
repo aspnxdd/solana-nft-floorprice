@@ -2,10 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 3rem;
-  width: auto;
   display: flex;
   font-size: 15px;
   margin-right: 5rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+ 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    font-size: 1.8rem;
+    margin-top: -3rem;
+  }
   
 `;
 export const LeftSection = styled.section`
@@ -20,8 +28,9 @@ export const LeftSection = styled.section`
 `;
 
 export const RightSection = styled.section`
-  height: auto;
-  width: auto;
+  height: 3rem;
+  min-width: 10rem;
+  
   max-width: 10rem;
   align-items: center;
   background-image: linear-gradient(#2fcfb7, #b448ee);
@@ -36,6 +45,10 @@ export const RightSection = styled.section`
   }
   border: 2px solid #7f7f7f;
   border-radius: 1rem;
+  @media screen and (max-width: 768px) {
+    height: auto;
+    margin-top: 0.5rem;
+  }
 `;
 
 export const Percent = styled.div`
@@ -47,4 +60,9 @@ export const Percent = styled.div`
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   font-size: 14px;
+  @media screen and (max-width: 768px) {
+    height: auto;
+   
+    font-size: 1.8rem;
+  }
 `;
