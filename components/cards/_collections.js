@@ -220,6 +220,14 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "solstash",
+    name: "SolStash",
+    marketplace: [],
+    img: "solstash.jpg",
+    featured: false,
+    fp: 0,
+  },
 ];
 
 export default _collections;
