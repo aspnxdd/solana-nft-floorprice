@@ -160,7 +160,23 @@
       "address2": "@@@@@@@",
       "uri": "@@@",
       "url":"SolStash"
+    },
+    {
+      "name": "kaijucards",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Kaiju%20Cards"
+    },
+    {
+      "name": "piggysolgang",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Piggy%20Sol%20Gang"
     }
+
+    
 
 
     

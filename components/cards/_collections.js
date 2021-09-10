@@ -228,6 +228,22 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "kaijucards",
+    name: "Kaiju Cards",
+    marketplace: [],
+    img: "kaijucards.png",
+    featured: false,
+    fp: 0,
+  },
+  {
+    url: "piggysolgang",
+    name: "Piggy Sol Gang",
+    marketplace: [],
+    img: "piggysolgang.jpg",
+    featured: false,
+    fp: 0,
+  },
 ];
 
 export default _collections;
