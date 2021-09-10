@@ -14,6 +14,14 @@ const datafetched = new mongoose.Schema({
     },
     marketplace: {
         type: String,
+    },
+    numberofowners:{
+        type: Number,
+        default: 0,
+    },
+    numberoftokenslisted:{
+        type: Number,
+        default: 0,
     }    
 })
 

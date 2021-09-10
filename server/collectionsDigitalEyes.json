@@ -5,21 +5,24 @@
       "address": "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
       "address2": "@@@@@@@",
       "uri": "@@@@@@@@",
-      "url": "SolanaDogeNFTs"
+      "url": "SolanaDogeNFTs",
+      "tokens":10000
     },
     {
       "name": "thugbirdz",
       "address": "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
       "address2": "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
       "uri": "@@@@@@@@",
-      "url":"Thugbirdz"
+      "url":"Thugbirdz",
+      "tokens":3333
     },
     {
       "name": "degenapes",
       "address": "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
       "address2": "@@@@@@@",
       "uri": "@@@@@@@@",
-      "url":"Degenerate%20Ape%20Academy"
+      "url":"Degenerate%20Ape%20Academy",
+      "tokens":10000
     },
     {
       "name": "abstratica",
@@ -47,7 +50,8 @@
       "address": "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
       "address2": "@@@@@@@",
       "uri": "@@@@@@@@",
-      "url":"Solanimals"
+      "url":"Solanimals",
+      "tokens":10000
     },
     {
       "name": "soldalas",
@@ -82,14 +86,16 @@
       "address": "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
       "address2": "@@@@@@@",
       "uri": "@@@@@@@@",
-      "url":"Solana%20Monkey%20Business"
+      "url":"Solana%20Monkey%20Business",
+      "tokens":10000
     },
     {
       "name": "solbear",
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
-      "url":"SolBear"
+      "url":"SolBear",
+      "tokens":10000
     },
     {
       "name": "solarians",
@@ -124,28 +130,32 @@
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "@@@",
-      "url":"Solana%20Souls"
+      "url":"Solana%20Souls",
+      "tokens":10000
     },
     {
       "name": "solamanders",
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "@@@",
-      "url":"Solamanders"
+      "url":"Solamanders",
+      "tokens":10000
     },
     {
       "name": "solbulls",
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "@@@",
-      "url":"Solbulls"
+      "url":"Solbulls",
+      "tokens":10000
     },
     {
       "name": "solcats",
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "@@@",
-      "url":"SolCats"
+      "url":"SolCats",
+      "tokens":10000
     },
     {
       "name": "bitboat",
@@ -173,7 +183,8 @@
       "address": "@@@@@@@",
       "address2": "@@@@@@@",
       "uri": "@@@",
-      "url":"Piggy%20Sol%20Gang"
+      "url":"Piggy%20Sol%20Gang",
+      "tokens":10000
     }
 
     

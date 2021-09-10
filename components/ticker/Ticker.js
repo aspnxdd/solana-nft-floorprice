@@ -37,7 +37,7 @@ export default function Ticker() {
       <RightSection>
         <p>{price.price && Math.round(price.price * 100) / 100} $</p>
         <Percent priceChangePercent={Number(price.priceChangePercent)}>
-          {price.priceChangePercent && Math.round(price.priceChangePercent * 100) / 100} %
+          {price.priceChangePercent && Math.round(price.priceChangePercent * 10) / 10} %
         </Percent>
       </RightSection>
     </Container>

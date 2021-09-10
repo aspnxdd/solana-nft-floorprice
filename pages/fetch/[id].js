@@ -5,77 +5,11 @@ import styled from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
-import TitleWelcome from "../../components/common/TitleWelcome";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
-import DonContainer from "../../components/donation/DonContainer";
-import LinkHome from "../../components/common/LinkHome";
 import LineChart from "../../components/chart/LineChart";
-import {
-  HeaderWrapper,
-  TitleSubtitle,
-} from "../../components/common/HeaderWrapper";
+import {Styles} from "../../components/table/TableElements"
+import {Container} from "../../components/chart/ChartElements"
 
-const Styles = styled.div`
-  display: flex;
-  .table-container {
-    margin-right: 8rem;
-    @media (max-width: 981px) {
-      margin-right: 1rem;
-    }
-  }
-  .pagination-div {
-    display: flex;
-    position: relative;
-    top: 1rem;
-
-    left: 2rem;
-  }
-  .pagination-pages {
-    display: block;
-    right: 4rem;
-    & > span > input {
-      width: 2rem;
-    }
-    & > select {
-      width: 6rem;
-    }
-  }
-
-  .pagination-buttons {
-    height: 1rem;
-    display: block;
-    left: 8rem;
-    bottom: 1rem;
-    font-size: 1.2rem;
-  }
-  table {
-    border-spacing: 0;
-    border: 1px solid #c4c4c4;
-    margin-left: 2rem;
-    margin-top: 2.2rem;
-    margin-bottom: 1rem;
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid #c4c4c4;
-      border-right: 1px solid #c4c4c4;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-  }
-`;
 // fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
   const res = await fetch(
@@ -283,7 +217,7 @@ function Data() {
         </button>
         {loading && <Spinner />}
       </div>
-      <div className="div-chart">
+      <Container>
         <div className="chart-buttons">
           <label> Show data points: </label>
           <button onClick={() => setDataPoints(10)}> 10</button>
@@ -292,7 +226,7 @@ function Data() {
           <button onClick={() => setDataPoints(0)}> All</button>
         </div>
         <LineChart data={dataChart} options={options} />
-      </div>
+      </Container>
       <Styles>
         {digitalEyesData.length > 1 && (
           <Table columns={columns("DigitalEyes")} data={digitalEyesData} />

@@ -81,14 +81,22 @@ async function saveSolanart() {
       // Save all valid prices
       const prices = solanartData.filter(e => Boolean(e.price) && e.id !== 473037 && e.id !== 472737).map((e) => e.price);
 
+      // for number of owners
+      const numberOfOwners = new Set();
+      solanartData.map((e)=>{
+        numberOfOwners.add(e.seller_address)
+      });    
+
       // Obtain floor price
       const floorPrice = Math.min.apply(Math, prices);
-        console.log(1,floorPrice)
+       
       // Save in DB
       await datafetched.create({
         floorprice: Number(floorPrice),
         collectionname: coll.name,
         marketplace: "solanart",
+        numberofowners: numberOfOwners.size,
+        numberoftokenslisted: solanartData.length,
       });
     });
 
@@ -105,13 +113,26 @@ async function saveDigitalEyes() {
     const { data: solarianData } = await axios(
       `${DIGITALEYES_URL}${coll.url}`
     );
-       
+    console.log(solarianData)
+         // Save all valid prices
+    
+
+      // // for number of owners
+      // const numberOfOwners = new Set();
+      // solarianData.offers.map((e)=>{
+      //   numberOfOwners.add(e.owner)
+      // });  
+
+
+  
       // Save in DB
       // console.log("a",solarianData)
       await datafetched.create({
         floorprice: Number(solarianData.price_floor/1000000000),
         collectionname: coll.name,
         marketplace: "digitaleyes",
+        // numberofowners: numberOfOwners.size,
+        numberoftokenslisted: solarianData.count,
       });
     });
   
@@ -130,7 +151,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 3600000); //1h
+  }, 1000); //1h
 });
 
 async function dbConnect() {

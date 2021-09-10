@@ -1,39 +1,48 @@
 [
   {
     "name": "degenapes",
-    "collectionName": "degenape"
+    "collectionName": "degenape",
+    "tokens":10000
   },
   {
     "name": "solpunks",
-    "collectionName": "solpunks"
+    "collectionName": "solpunks",
+    "tokens":10000
   },
   {
     "name": "boldbadgers",
-    "collectionName": "boldbadgers"
+    "collectionName": "boldbadgers",
+    "tokens":10000
   },
   {
     "name": "sollamas-gen2",
-    "collectionName": "sollamas-gen2"
+    "collectionName": "sollamas-gen2",
+    "tokens":10000
   },
   {
     "name": "solanimals",
-    "collectionName": "solanimals"
+    "collectionName": "solanimals",
+    "tokens":10000
   },
   {
     "name": "solbear",
-    "collectionName": "solbears"
+    "collectionName": "solbears",
+    "tokens":10000
   },
   {
     "name": "aurory",
-    "collectionName": "aurory"
+    "collectionName": "aurory",
+    "tokens":10000
   },
   {
     "name": "legionpunks",
-    "collectionName": "legionpunks"
+    "collectionName": "legionpunks",
+    "tokens":10000
   },
   {
     "name": "kaijucards",
-    "collectionName": "kaijucards"
+    "collectionName": "kaijucards",
+    "tokens":10000
   }
   
 ]
