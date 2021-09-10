@@ -113,7 +113,7 @@ async function saveDigitalEyes() {
     const { data: solarianData } = await axios(
       `${DIGITALEYES_URL}${coll.url}`
     );
-    console.log(solarianData)
+   
          // Save all valid prices
     
 
@@ -151,7 +151,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   setInterval(() => {
     saveDigitalEyes();
     saveSolanart();
-  }, 1000); //1h
+  }, 3600000); //1h
 });
 
 async function dbConnect() {
