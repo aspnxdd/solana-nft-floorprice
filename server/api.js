@@ -146,7 +146,11 @@ async function saveDigitalEyes() {
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
   console.log("> Ready on http://localhost:8080");
-
+  //to start
+  setTimeout(() => {
+    saveDigitalEyes();
+    saveSolanart();
+  }, 2000); //1h
   // cada 2h guarda en la DB
   setInterval(() => {
     saveDigitalEyes();
