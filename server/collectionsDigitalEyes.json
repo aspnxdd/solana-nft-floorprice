@@ -185,6 +185,22 @@
       "uri": "@@@",
       "url":"Piggy%20Sol%20Gang",
       "tokens":10000
+    },
+    {
+      "name": "gmoot",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Gmoot",
+      "tokens":10000
+    },
+    {
+      "name": "solgen",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"SolGen",
+      "tokens":10000
     }
 
     
