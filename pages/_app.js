@@ -4,11 +4,9 @@ import SidebarNav from "../components/layout/SidebarNav";
 import { useState, useEffect } from "react";
 
 import {ThemeProvider} from "styled-components"
-import { lightTheme, darkTheme, GlobalStyles } from "./themes";
+import { lightTheme, darkTheme, GlobalStyles } from "../components/layout/themes";
 
-function setlocalstorage(theme){
-  localStorage.setItem('theme', theme);
-}
+
 
 function MyApp({ Component, pageProps }) {
   
@@ -16,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   const themeToggler = () =>{
     theme = theme === "light" ? "dark" : "light"
     setTheme(theme)
-    setlocalstorage(theme)
+    localStorage.setItem('theme', theme);
   }
 
   useEffect(() => {
