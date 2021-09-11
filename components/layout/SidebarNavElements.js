@@ -38,6 +38,11 @@ export const IconContainer = styled.div `
   top: 0.9rem;
   right: 1.3rem;
   outline: none;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+   
+  }
 
 `;
 

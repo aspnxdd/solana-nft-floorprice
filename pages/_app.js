@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    const defaultTheme = localStorage.getItem('theme');
+    const defaultTheme = localStorage.getItem('theme') || "light";
     setTheme(defaultTheme)
   }, [])
 

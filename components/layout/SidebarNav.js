@@ -10,17 +10,17 @@ import Link from "next/link";
 import Ticker from "../ticker/Ticker";
 import { FaQuestion } from "react-icons/fa";
 import { BiMoon, BiSun } from "react-icons/bi";
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
-  const [themeIcon, setThemeIcon] = useState(theme)
+  const [themeIcon, setThemeIcon] = useState(theme);
 
   useEffect(() => {
     return () => {
-      setThemeIcon(!themeIcon)
+      setThemeIcon(!themeIcon);
     };
-  }, [themeToggler])
-  
+  }, [themeToggler]);
+
   return (
     <header>
       <SidebarContainer isOpen={isOpen}>
@@ -39,12 +39,12 @@ const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
               </span>
             </Link>
           </SidebarNavLink>
-            <SidebarNavLink gridrow="4">
+          <SidebarNavLink gridrow="4">
             <ThemeToggle onClick={themeToggler}>
               {theme === "light" && <BiMoon />}
               {theme === "dark" && <BiSun />}
             </ThemeToggle>
-            </SidebarNavLink>
+          </SidebarNavLink>
         </SidebarWrapper>
       </SidebarContainer>
     </header>
