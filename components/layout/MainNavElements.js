@@ -73,7 +73,7 @@ export const NavLinkLeft = styled.div`
     width: 0;
     height: 2px;
     background: #3e73b3;
-    ${'' /* transition: width 0.3s; */}
+    transition: width 0.3s;
   }
   & > a {
     color: inherit;
