@@ -262,6 +262,16 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "trippybunnytribe",
+    name: "Trippy Bunny Tribe",
+    marketplace: [],
+    img: "trippybunnytribe.png",
+    featured: false,
+    fp: 0,
+  },
+
+  
 ];
 
 export default _collections;
