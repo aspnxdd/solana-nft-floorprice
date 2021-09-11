@@ -78,7 +78,7 @@ function Data() {
   const [dataForChart, setDataForChart] = useState({});
 
   const [loading, setLoading] = useState(false);
-  const [dataPoints, setDataPoints] = useState(20);
+  const [dataPoints, setDataPoints] = useState(0);
 
   function updateDataChart(data) {
     // function to update the data chart for update and useeffect
