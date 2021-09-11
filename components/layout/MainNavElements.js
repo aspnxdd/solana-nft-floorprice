@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   font-family: "Press Start 2P";
-  background: #fff;
+  background-color: ${e => e.theme.navBackgroundColor};
+  color: ${e => e.theme.navFontColor};
   height: 3.5rem;
   display: flex;
   justify-content: space-between;
@@ -53,7 +54,7 @@ export const NavLink = styled.div`
 export const NavLinkLeft = styled.div`
   cursor: pointer;
   display: inline-block;
-  color: #000;
+  
   font-size: 2rem;
   margin-top: 0.7rem;
   align-items: center;
@@ -72,7 +73,7 @@ export const NavLinkLeft = styled.div`
     width: 0;
     height: 2px;
     background: #3e73b3;
-    transition: width 0.3s;
+    ${'' /* transition: width 0.3s; */}
   }
   & > a {
     color: inherit;
@@ -95,7 +96,7 @@ export const MobileIcon = styled.div`
 `;
 
 export const Bars = styled(FaBars)`
-  color: black;
+  color: ${e => e.theme.navFontColor};
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -111,7 +112,7 @@ export const NavMenu = styled.div`
   align-items: center;
   row-gap: 4rem;
   column-gap: 10rem;
-  padding-right: 5rem;
+  padding-right: 2rem;
   position: relative;
   margin-left: 6rem;
   @media screen and (max-width: 768px) {
@@ -127,6 +128,7 @@ export const NavMenuRight = styled.div`
 
   @media screen and (max-width: 768px) {
     display: none;
+    
   }
 `;
 
@@ -144,6 +146,7 @@ export const NavLeftElement = styled.div`
   white-space: nowrap; */
   @media screen and (max-width: 768px) {
     display: block;
+    
   }
 `;
 
@@ -157,6 +160,7 @@ export const NavBtn = styled.nav`
   width: 100vw; */
   @media screen and (max-width: 768px) {
     display: none;
+    
   }
 `;
 
@@ -204,4 +208,22 @@ export const AllNoneToggle = styled.div`
   &:hover {
     color: #5a92ed;
   }
+`;
+
+export const ThemeToggle = styled.div`
+  height: 3rem;
+  display: flex;
+  font-size: 30px;
+  margin-right: 5rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    font-size: 1.8rem;
+    margin-top: -3rem;
+    
+  }
+  
 `;

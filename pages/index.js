@@ -12,7 +12,7 @@ import {
 
 export default function Home() {
   return (
-    <div  style={{marginBottom:"2rem"}}>
+    <div style={{paddingBottom:"2rem"}}>
       <HeaderWrapper>
         <TitleSubtitle>
           <TitleWelcome />

@@ -6,15 +6,25 @@ import {
   MobileIcon,
   NavLeftElement,
   NavLinkLeft,
+  ThemeToggle
 } from "./MainNavElements";
 import Link from "next/link";
 
 import Ticker from "../ticker/Ticker";
 import { FaQuestion } from "react-icons/fa";
+import { BiMoon, BiSun } from "react-icons/bi";
+import React, {useState, useEffect} from "react";
 
-import React from "react";
+const MainNav = ({ toggle,themeToggler, theme }) => {
 
-const MainNav = ({ toggle }) => {
+  const [themeIcon, setThemeIcon] = useState(theme)
+
+  useEffect(() => {
+    return () => {
+      setThemeIcon(!themeIcon)
+    };
+  }, [themeToggler])
+
   return (
     <header>
       <Nav>
@@ -31,6 +41,7 @@ const MainNav = ({ toggle }) => {
         </NavLeftElement>
 
         <NavMenu>
+        <Ticker ></Ticker>  
      
           <Link href="/faq" activeStyle>
             <NavLink>
@@ -38,7 +49,11 @@ const MainNav = ({ toggle }) => {
               <FaQuestion></FaQuestion>&nbsp;F.A.Q.
             </NavLink>
           </Link>
-        <Ticker ></Ticker>
+        <ThemeToggle onClick={themeToggler}>
+        {theme==="light" && <BiMoon  />}
+        {theme==="dark" && <BiSun  />}
+        </ThemeToggle>
+       
         </NavMenu>
         
       </Nav>

@@ -21,7 +21,7 @@ export const CardsArea = styled.div `
 `;
 
 export const Card = styled.div `
-    background-color: #fff;
+    background-color: ${e => e.theme.cardBackgroundColor};
     cursor: pointer; 
     height: 14rem;
     width: 11rem;

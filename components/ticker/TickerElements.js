@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
- 
+  
   @media screen and (max-width: 768px) {
     flex-direction: column;
     font-size: 1.8rem;
@@ -30,7 +30,7 @@ export const LeftSection = styled.section`
 export const RightSection = styled.section`
   height: 3rem;
   min-width: 10rem;
-  
+  color: black;
   max-width: 10rem;
   align-items: center;
   background-image: linear-gradient(#2fcfb7, #b448ee);
@@ -42,6 +42,7 @@ export const RightSection = styled.section`
   justify-content: space-around;
   & > p {
     margin: 0 0 0 0;
+    color: black;
   }
   border: 2px solid #7f7f7f;
   border-radius: 1rem;

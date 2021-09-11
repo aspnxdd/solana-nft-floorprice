@@ -9,9 +9,9 @@ import {
 } from "react-icons/im";
 
 export const SidebarContainer = styled.aside `
-
+  background: ${e => e.theme.navBackgroundColor};
+  color: ${e => e.theme.navFontColor};
   top:0rem;
-  background: #fff;
   height: 100%;
   display: block;
   position: fixed;
@@ -27,7 +27,7 @@ export const SidebarContainer = styled.aside `
 
 export const CloseIcon = styled(ImCross)
 `
-  color: black;
+  color: ${e => e.theme.navFontColor};
   font-size: 1.6rem;
   margin-right:0.8rem;
     
@@ -43,7 +43,8 @@ export const IconContainer = styled.div `
 
 export const SidebarWrapper = styled.div `
   border-radius: 4px;
-  color: white;
+  background-color: ${e => e.theme.navBackgroundColor};
+  color: ${e => e.theme.navFontColor};
   font-size: 3rem;
   display: inline-grid;
   flex-direction: column;
@@ -66,7 +67,7 @@ export const SidebarNavLink = styled.div `
   font-size: 1.5rem;
   text-decoration: none;
   margin-top: 30%;
-  color: black;
+  color: ${e => e.theme.navFontColor};
   align-items: center;
   white-space: nowrap;
   padding-top: 0.5em;
@@ -108,7 +109,8 @@ export const SidebarLink = styled.div `
 
 export const SidebarMenu = styled(FaBars)
 `
-  color: white;
+  background-color: ${e => e.theme.navBackgroundColor};
+  color: ${e => e.theme.navFontColor};
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -117,4 +119,23 @@ export const SidebarMenu = styled(FaBars)
     font-size: 1.8rem;
     cursor: pointer;
   }
+`;
+
+export const ThemeToggle = styled.div`
+
+  
+  @media screen and (max-width: 768px) {
+    height: 5rem;
+  display: flex;
+
+  margin-right: 5rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;
+    font-size: 3rem;
+  
+    
+  }
+  
 `;

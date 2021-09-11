@@ -4,14 +4,23 @@ import {
   SidebarWrapper,
   CloseIcon,
   SidebarNavLink,
+  ThemeToggle,
 } from "./SidebarNavElements";
 import Link from "next/link";
 import Ticker from "../ticker/Ticker";
 import { FaQuestion } from "react-icons/fa";
+import { BiMoon, BiSun } from "react-icons/bi";
+import React,{useState, useEffect} from "react";
 
-import React from "react";
+const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
+  const [themeIcon, setThemeIcon] = useState(theme)
 
-const SidebarNav = ({ isOpen, toggle }) => {
+  useEffect(() => {
+    return () => {
+      setThemeIcon(!themeIcon)
+    };
+  }, [themeToggler])
+  
   return (
     <header>
       <SidebarContainer isOpen={isOpen}>
@@ -19,10 +28,10 @@ const SidebarNav = ({ isOpen, toggle }) => {
           <CloseIcon />
         </IconContainer>
         <SidebarWrapper>
-        <SidebarNavLink gridrow="0">
-        <Ticker></Ticker>
+          <SidebarNavLink gridrow="0">
+            <Ticker></Ticker>
           </SidebarNavLink>
-        
+
           <SidebarNavLink gridrow="2">
             <Link href="/faq" activeStyle>
               <span>
@@ -30,6 +39,12 @@ const SidebarNav = ({ isOpen, toggle }) => {
               </span>
             </Link>
           </SidebarNavLink>
+            <SidebarNavLink gridrow="4">
+            <ThemeToggle onClick={themeToggler}>
+              {theme === "light" && <BiMoon />}
+              {theme === "dark" && <BiSun />}
+            </ThemeToggle>
+            </SidebarNavLink>
         </SidebarWrapper>
       </SidebarContainer>
     </header>
