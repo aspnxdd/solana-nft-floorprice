@@ -23,7 +23,7 @@ async function getFloorPrices() {
 
 export default function CardComponent() {
   async function addMarketplace(dataAll) {
-    console.log(dataAll);
+    console.log("d",dataAll);
     for (let i = 0; i < _collections.length; i++) {
       collectionsDigitalEyes.forEach((col) => {
         if (col.name == _collections[i].url) {
