@@ -180,9 +180,8 @@ function Data() {
   let dataChart = {
     // labels (axis X)
     labels:
-      dataForChart.timeSolanart?.length > 0
-        ? dataForChart.timeSolanart
-        : dataForChart.timeDigitalEyes,
+      
+      dataForChart.timeSolanart?.length > dataForChart.timeDigitalEyes?.length ? dataForChart.timeSolanart : dataForChart.timeDigitalEyes,
     // datasets asix Y
     datasets: [],
   };
