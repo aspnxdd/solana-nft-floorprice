@@ -79,7 +79,7 @@ async function saveSolanart() {
       );
 
       // Save all valid prices
-      const prices = solanartData.filter(e => Boolean(e.price) && e.id !== 473037 && e.id !== 472737 && e.id !== 576575 && e.id !== 576821 && e.id!==576368).map((e) => e.price);
+      const prices = solanartData.filter(e => Boolean(e.price) && e.id !== 473037 && e.id !== 472737 && e.id !== 576575 && e.id !== 576821 && e.id!==576368 && e.id!==576352).map((e) => e.price);
 
       // for number of owners
       const numberOfOwners = new Set();
