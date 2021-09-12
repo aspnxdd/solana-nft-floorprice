@@ -202,7 +202,7 @@ async function fetchDe(fullData, collUrl, next_cursor) {
 
 async function saveDigitalEyes() {
   try {
-    const clusterData = collectionsAddressDigitalEyes.filter((_, index) => index + collectionsAddressSolanart.length % WORKERS_LENGTH === cluster.worker.id - 1)
+    const clusterData = collectionsAddressDigitalEyes.filter((_, index) => index % WORKERS_LENGTH === cluster.worker.id - 1)
     // console.log("clusterData",clusterData)
     // save the data in solarianData
     clusterData.forEach(async function (coll) {
