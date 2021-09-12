@@ -275,12 +275,12 @@ if (cluster.isPrimary) {
 
   console.log(`${[process.pid]} Worker  started - ${cluster.worker.id} `);
   // to start
-  cron.schedule("0 11 */1 * * *", () => {
+  cron.schedule("0 0 */1 * * *", () => {
     // cron.schedule("*/30 * * * * *", () => {
     console.log("running a task every hour");
+    saveDigitalEyes();
+    saveSolanart();
   });
-  saveDigitalEyes();
-  saveSolanart();
 
 }
 
