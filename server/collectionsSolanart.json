@@ -43,6 +43,17 @@
     "name": "kaijucards",
     "collectionName": "kaijucards",
     "tokens":10000
+  },
+  {
+    "name": "abstratica",
+    "collectionName": "abstratica",
+    "tokens":10000
+  },
+  {
+    "name": "thugbirdz",
+    "collectionName": "thugbirdz",
+    "tokens":3333
   }
+  
   
 ]
