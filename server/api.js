@@ -6,7 +6,7 @@ const server = express();
 const axios = require("axios");
 const cron = require("node-cron");
 const cluster = require('cluster');
-const http = require('http');
+
 const process = require('process');
 
 const isDev = process.argv[2] === "--development";
@@ -28,7 +28,7 @@ const SOLANART_URL =
 let DIGITALEYES_URL =
   "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
 
-const WORKERS_LENGTH = collectionsAddressSolanart.length + collectionsAddressDigitalEyes.length;
+const WORKERS_LENGTH = 1//collectionsAddressSolanart.length + collectionsAddressDigitalEyes.length;
 console.log(WORKERS_LENGTH)
 
 
