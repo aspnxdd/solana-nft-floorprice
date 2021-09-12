@@ -39,7 +39,7 @@ const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
               </span>
             </Link>
           </SidebarNavLink>
-          <SidebarNavLink gridrow="4">
+          <SidebarNavLink gridrow="3">
             <ThemeToggle onClick={themeToggler}>
               {theme === "light" && <BiMoon />}
               {theme === "dark" && <BiSun />}

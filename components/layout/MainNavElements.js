@@ -115,6 +115,7 @@ export const NavMenu = styled.div`
   padding-right: 2rem;
   position: relative;
   margin-left: 6rem;
+  margin-right: 1rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -218,7 +219,7 @@ export const ThemeToggle = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-  
+  position: relative;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     font-size: 1.8rem;
