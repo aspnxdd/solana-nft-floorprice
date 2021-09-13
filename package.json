@@ -2,9 +2,7 @@
   "name": "nft-doge-floor-price",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "14.x"
-  },
+ 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
