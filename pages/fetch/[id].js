@@ -1,7 +1,7 @@
 import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
 import React, { useEffect, useState, useRef } from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
@@ -9,6 +9,7 @@ import InfoTwoHours from "../../components/common/InfoTwoHours";
 import LineChart from "../../components/chart/LineChart";
 import {Styles} from "../../components/table/TableElements"
 import {Container} from "../../components/chart/ChartElements"
+import { Line } from "react-chartjs-2";
 
 // fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
@@ -81,13 +82,13 @@ function Data() {
   const [dataPoints, setDataPoints] = useState(0);
 
   function updateDataChart(data) {
+    // if (data.solanartData.length  != data.digitalEyesData.length ) 
     // function to update the data chart for update and useeffect
     // slice will get latest dataPoints items
+   
+ 
     let dataForChart = {
-      dataSolanart: data.solanartData
-        .map((e) => {
-          return e.floorprice;
-        })
+      dataSolanart: data.solanartData.map(e => {return e.floorprice })
         .slice(-dataPoints),
       dataDigitalEyes: data.digitalEyesData
         .map((e) => {
@@ -105,7 +106,21 @@ function Data() {
         })
         .slice(-dataPoints),
     };
+    // fix chart if 1 dataset is smaller than the other one
+    if(dataForChart.dataSolanart.length < dataForChart.dataDigitalEyes.length) {
+      dataForChart.dataSolanart.reverse()
+      dataForChart.dataSolanart.length = dataForChart.dataDigitalEyes.length
+      dataForChart.dataSolanart.reverse()
+    }
 
+    if(dataForChart.dataSolanart.length > dataForChart.dataDigitalEyes.length) {
+      dataForChart.dataDigitalEyes.reverse()
+      dataForChart.dataDigitalEyes.length = dataForChart.dataSolanart.length
+      dataForChart.dataDigitalEyes.reverse()
+    }
+
+
+    console.log("dataForChart",dataForChart)
     return dataForChart;
   }
   // quan es renderitza el  hook o pateix canvis
@@ -163,25 +178,38 @@ function Data() {
     aurory: "Aurory",
   };
   const dataSolanart = {
+    type: "line",
     label: "Solanart",
     data: dataForChart.dataSolanart,
     fill: false,
     backgroundColor: "#ba49d6",
     borderColor: "#ba49d6",
+    tension: 0.2,
+    order: 1,
+    offset: true,
+    clip: true,
+    stack: "line",
+  
   };
   const dataDigitalEyes = {
+    type: "line",
     label: "DigitalEyes",
     data: dataForChart.dataDigitalEyes,
     fill: false,
     backgroundColor: "#599aca",
     borderColor: "#599aca",
+    tension: 0.2,
+    order: 2,
+    stack: "line"
   };
   //data to render in chart line
+
   let dataChart = {
     // labels (axis X)
     labels:
       
       dataForChart.timeSolanart?.length > dataForChart.timeDigitalEyes?.length ? dataForChart.timeSolanart : dataForChart.timeDigitalEyes,
+      
     // datasets asix Y
     datasets: [],
   };
@@ -192,15 +220,39 @@ function Data() {
     dataChart.datasets.push(dataDigitalEyes);
 
   const options = {
+    borderWidth:5,
+    indexAxis: 'x', 
+  
+    autoSkip: false,
+    
+    spanGaps: true,
+    stackWeight: 3,
     maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
+          stacked: true,
+          position: "right",
+          
           ticks: {
             beginAtZero: true,
+            major: true,
+            callback: (tick) => (Number(tick) % 10 === 0 ? tick : null) // Replace null with "" to show gridline
           },
         },
       ],
+      xAxes: [
+        {
+          
+          ticks: {
+            callback: (tick) => (Number(tick) % 10 === 0 ? tick : null) // Replace null with "" to show gridline
+          },
+          reverse: true,
+          
+          
+        },
+      ],
+     
     },
   };
   return (
