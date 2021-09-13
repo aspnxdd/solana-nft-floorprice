@@ -6,23 +6,26 @@ const server = express();
 const axios = require("axios");
 const cron = require("node-cron");
 
+
 const isDev = process.argv[2] === "--development";
 
-if( isDev ) {
-  require("dotenv").config({ path: ".env.development"});
+if (isDev) {
+  require("dotenv").config({
+    path: ".env.development"
+  });
 } else {
   require("dotenv").config();
 }
 
 const connection = {};
-
+dbConnect();
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
-const SOLANART_URL = "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
-const DIGITALEYES_URL = "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
+const SOLANART_URL =
+  "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+let DIGITALEYES_URL =
+  "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
 
-// Connect to MongoDB
-dbConnect();
 
 // Custom options for Cors
 const corsOptions = {
@@ -32,15 +35,23 @@ const corsOptions = {
 server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
-  const { id } = req.headers;
+  const {
+    id
+  } = req.headers;
   try {
-    const data = await datafetched.find({ collectionname: id }).sort({ time: 1 })
+    const data = await datafetched
+      .find({
+        collectionname: id
+      })
+      .sort({
+        time: 1
+      });
     return res.status(200).json({
       success: true,
       data: data,
     });
   } catch (error) {
-    console.log("error get", error)
+    console.log("error get", error);
     res.status(400).json({
       success: false,
     });
@@ -51,20 +62,40 @@ server.get("/loadall", async (req, res) => {
   try {
     let data = [];
 
-    await Promise.all(collectionsAddressSolanart.map(async (e) => {
-      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: -1 }))
-    }))
+    await Promise.all(
+      collectionsAddressSolanart.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name
+          })
+          .sort({
+            time: -1
+          })
+        );
+      })
+    );
 
-    await Promise.all(collectionsAddressDigitalEyes.map(async (e) => {
-      data.push(await datafetched.findOne({ collectionname: e.name }).sort({ time: -1 }))
-    }))
+    await Promise.all(
+      collectionsAddressDigitalEyes.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name
+          })
+          .sort({
+            time: -1
+          })
+        );
+      })
+    );
 
     return res.status(200).json({
       success: true,
       data: data,
     });
   } catch (error) {
-    console.log("error get", error)
+    console.log("error get", error);
     res.status(400).json({
       success: false,
     });
@@ -73,88 +104,164 @@ server.get("/loadall", async (req, res) => {
 
 async function saveSolanart() {
   try {
+    
     // save the data in solarianData
     collectionsAddressSolanart.forEach(async function (coll) {
-      const { data: solanartData } = await axios(
+      const {
+        data: solanartData
+      } = await axios(
         `${SOLANART_URL}${coll.collectionName}`
       );
 
+      let floorprice = 999999;
+      let priceSum = 0;
+      let numberOfOwners = new Set();
+
       // Save all valid prices
-      const prices = solanartData.filter(e => Boolean(e.price) && e.id !== 473037 && e.id !== 472737 && e.id !== 576575 && e.id !== 576821 && e.id!==576368 && e.id!==576352).map((e) => e.price);
+      solanartData
+        .filter(
+          (e) =>
+          Boolean(e.price) &&
+          e.id !== 473037 &&
+          e.id !== 472737 &&
+          e.id !== 576575 &&
+          e.id !== 576821 &&
+          e.id !== 576368 &&
+          e.id !== 576352
+        )
+        .forEach((e) => {
+          const price = e.price;
+          floorprice = price < floorprice ? price : floorprice;
+          priceSum += price;
+          numberOfOwners.add(e.owner);
+        });
 
-      // for number of owners
-      const numberOfOwners = new Set();
-      solanartData.map((e)=>{
-        numberOfOwners.add(e.seller_address)
-      });    
+      // Obtain avrg price
+      let dataNfts = {};
+      solanartData.forEach(({
+        seller_address
+      }) => {
+        if (!dataNfts[seller_address]) dataNfts[seller_address] = 0;
+        dataNfts[seller_address]++;
+      });
 
-      // Obtain floor price
-      const floorPrice = Math.min.apply(Math, prices);
-       
+      let filteredData = {};
+      Object.keys(dataNfts).forEach((address) => {
+        let seller_address = dataNfts[address];
+        if (!filteredData[seller_address]) filteredData[seller_address] = 0;
+        filteredData[seller_address]++;
+      });
+
       // Save in DB
       await datafetched.create({
-        floorprice: Number(floorPrice),
+        floorprice: floorprice,
         collectionname: coll.name,
         marketplace: "solanart",
         numberofowners: numberOfOwners.size,
         numberoftokenslisted: solanartData.length,
+        numberofnftperowner: filteredData,
+        avrgPrice: Math.round((priceSum / solanartData.length) * 100) / 100,
       });
     });
 
     return;
   } catch (error) {
-    console.log("error so", error)
+    console.log("error so", error);
     return error;
   }
 }
+
+async function fetchDe(fullData, collUrl, next_cursor) {
+  const {
+    data: solarianData
+  } = await axios(
+    `${DIGITALEYES_URL}${collUrl}${next_cursor}`
+  );
+  let floor_price = solarianData.price_floor;
+
+  fullData = [...fullData, ...solarianData.offers];
+
+  if (solarianData.next_cursor) {
+    return await fetchDe(
+      fullData,
+      collUrl,
+      `&cursor=${solarianData.next_cursor}`
+    );
+  } else {
+    return {
+      fullData,
+      floor_price
+    };
+  }
+}
+
 async function saveDigitalEyes() {
   try {
+
     // save the data in solarianData
     collectionsAddressDigitalEyes.forEach(async function (coll) {
-    const { data: solarianData } = await axios(
-      `${DIGITALEYES_URL}${coll.url}`
-    );
-   
-         // Save all valid prices
-    
+      const {
+        fullData,
+        floor_price
+      } = await fetchDe([], coll.url, "");
 
-      // // for number of owners
-      // const numberOfOwners = new Set();
-      // solarianData.offers.map((e)=>{
-      //   numberOfOwners.add(e.owner)
-      // });  
+      let priceSum = 0;
+      let numberOfOwners = new Set();
 
+      fullData.forEach((e) => {
+        const price = e.price / 1000000000;
+        priceSum += price;
+        numberOfOwners.add(e.owner);
+      });
+      // for numberofnftperowner-----------------------------
+      let dataNfts = {};
+      fullData.forEach(({
+        owner
+      }) => {
+        if (!dataNfts[owner]) dataNfts[owner] = 0;
+        dataNfts[owner]++;
+      });
 
-  
+      let filteredData = {};
+      Object.keys(dataNfts).forEach((address) => {
+        let owner = dataNfts[address];
+        if (!filteredData[owner]) filteredData[owner] = 0;
+        filteredData[owner]++;
+      });
+      //------------------------------------------------
+
       // Save in DB
-      // console.log("a",solarianData)
+
       await datafetched.create({
-        floorprice: Number(solarianData.price_floor/1000000000),
+        floorprice: Number(floor_price / 1000000000),
         collectionname: coll.name,
         marketplace: "digitaleyes",
-        // numberofowners: numberOfOwners.size,
-        numberoftokenslisted: solarianData.count,
+        numberofowners: numberOfOwners.size,
+        numberoftokenslisted: fullData.length,
+        numberofnftperowner: filteredData,
+        avrgPrice: Math.round((priceSum / fullData.length) * 100) / 100,
       });
+      console.log("saved")
     });
-  
+
     return;
   } catch (error) {
-    console.log("error de", error)
+    console.log("error de", error);
     return error;
   }
 }
+
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
   console.log("> Ready on http://localhost:8080");
-  //to start
 
-  // cada 1h guarda en la DB
-  cron.schedule("0 */1 * * *", () => {
-    // cron.schedule("*/30 * * * * *", () => {
+  // to start
+  cron.schedule("* 25 */1 * * *", () => {
+  // cron.schedule("*/30 * * * * *", () => {
     console.log("running a task every hour");
-    saveDigitalEyes();
-    saveSolanart();
+  saveDigitalEyes();
+  saveSolanart();
   });
 });
 

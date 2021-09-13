@@ -185,10 +185,7 @@ function Data() {
     backgroundColor: "#ba49d6",
     borderColor: "#ba49d6",
     tension: 0.2,
-    order: 1,
-    offset: true,
-    clip: true,
-    stack: "line",
+   
   
   };
   const dataDigitalEyes = {
@@ -199,8 +196,7 @@ function Data() {
     backgroundColor: "#599aca",
     borderColor: "#599aca",
     tension: 0.2,
-    order: 2,
-    stack: "line"
+    
   };
   //data to render in chart line
 
@@ -221,37 +217,20 @@ function Data() {
 
   const options = {
     borderWidth:5,
-    indexAxis: 'x', 
-  
-    autoSkip: false,
-    
-    spanGaps: true,
-    stackWeight: 3,
     maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
-          stacked: true,
-          position: "right",
+         
           
           ticks: {
             beginAtZero: true,
-            major: true,
-            callback: (tick) => (Number(tick) % 10 === 0 ? tick : null) // Replace null with "" to show gridline
+            
+            
           },
         },
       ],
-      xAxes: [
-        {
-          
-          ticks: {
-            callback: (tick) => (Number(tick) % 10 === 0 ? tick : null) // Replace null with "" to show gridline
-          },
-          reverse: true,
-          
-          
-        },
-      ],
+      
      
     },
   };
