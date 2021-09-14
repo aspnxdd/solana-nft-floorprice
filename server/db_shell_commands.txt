@@ -6,8 +6,41 @@ db.datafetcheds.find({}).forEach((elem) => {
  })
 
 db.datafetcheds.find({}).forEach((elem) => { 
-   if(elem.time.toString().includes("Tue Sep 07")) {
+   if(elem.time.toString().includes("Sun Sep 12 2021 21:00" || "Mon Sep 13 2021 22:00" || "Mon Sep 13 2021 07:00")) {
      db.datafetcheds.remove({ _id: elem._id });
 	console.log(elem);
    }
 })
+
+db.datafetcheds.find({}).forEach((elem) => { 
+   if(elem.time.toString().includes("Sun Sep 12 2021 21:00")) {
+     db.datafetcheds.remove({ _id: elem._id });
+	console.log(elem);
+   }
+})
+
+db.datafetcheds.find({}).forEach((elem) => { 
+ if(elem.time.toString().includes("Mon Sep 13 2021 09:00")) {
+db.datafetcheds.remove({ _id: elem._id });
+	console.log(elem);
+}
+})
+
+
+
+
+db.datafetcheds.find({}).forEach((elem) => {
+    if (elem.numberofnftperowner == 0) {
+        db.datafetcheds.update({ _id: elem._id },
+            {"$set": {
+                numberofnftperowner: null
+            }
+        }
+        );
+        console.log(elem);
+    }
+})
+
+
+
+
