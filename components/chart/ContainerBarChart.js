@@ -82,7 +82,7 @@ export default function ContainerBarChart({ data }) {
       },
       title: {
         display: true,
-        text: "Number of NFT per owner",
+        text: "Number of NFT per owner (listed)",
         font: {
           size: 26,
         },

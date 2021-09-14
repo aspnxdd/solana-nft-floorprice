@@ -62,7 +62,7 @@ export default function ContainerLineChart({ data, param }) {
 
   let title = "";
   if (param === "floorprice") title = "Floor Price History";
-  if (param === "numberofowners") title = "Number of owners";
+  if (param === "numberofowners") title = "Number of owners (listed)";
   if (param === "numberoftokenslisted") title = "Number of tokens listed";
 
   const options = {
