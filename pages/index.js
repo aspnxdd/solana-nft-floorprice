@@ -14,6 +14,8 @@ export default function Home() {
   return (
     <div style={{paddingBottom:"2rem"}}>
       <HeaderWrapper>
+      <div style={{width: "25%"}}>
+
         <TitleSubtitle>
           <TitleWelcome />
 
@@ -29,6 +31,7 @@ export default function Home() {
             <img className="sol-logo" src="/static/images/solana.svg" alt="sol-logo"></img>
           </h3>
         </TitleSubtitle>
+      </div>
         
       <FeaturedCard></FeaturedCard>
         <DonContainer />
