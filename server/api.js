@@ -125,7 +125,8 @@ async function saveSolanart() {
             e.id !== 576821 &&
             e.id !== 576368 &&
             e.id !== 576352 &&
-            e.id !== 593521
+            e.id !== 593521 &&
+            e.id !== 593494
         )
         .forEach((e) => {
           const price = e.price;
