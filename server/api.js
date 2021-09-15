@@ -170,7 +170,12 @@ async function fetchDe(fullData, collUrl, next_cursor) {
   const { data: solarianData } = await axios(
     `${DIGITALEYES_URL}${collUrl}${next_cursor}`
   );
-  let floor_price = solarianData.price_floor;
+  let _fp = solarianData.price_floor;
+
+  let floor_price = 0;
+  if(_fp != null || _fp!=0) floor_price=_fp;
+  console.log("floor_price",floor_price)
+  console.log("fp",_fp)
 
   fullData = [...fullData, ...solarianData.offers];
 
@@ -196,9 +201,11 @@ async function saveDigitalEyes() {
 
       let priceSum = 0;
       let numberOfOwners = new Set();
+      let fp = 999999;
 
       fullData.forEach((e) => {
         const price = e.price / 1000000000;
+        fp = price < fp ? price: fp;
         priceSum += price;
         numberOfOwners.add(e.owner);
       });
@@ -220,7 +227,7 @@ async function saveDigitalEyes() {
 
       // Save in DB
       await datafetched.create({
-        floorprice: Number(floor_price / 1000000000),
+        floorprice: Number(fp),
         collectionname: coll.name,
         marketplace: "digitaleyes",
         numberofowners: numberOfOwners.size,
@@ -243,11 +250,11 @@ server.listen(process.env.PORT || 8080, (err) => {
   console.log("> Ready on http://localhost:8080");
 
   // to start
-  cron.schedule("0 */1 * * *", () => {
+  
     console.log("running a task every hour");
     saveDigitalEyes();
     saveSolanart();
-  });
+  
 });
 
 async function dbConnect() {
