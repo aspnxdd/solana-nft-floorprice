@@ -53,7 +53,7 @@ export const TopWrapper = styled.div`
     position: static;
     display: block;
     width: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
     margin-right: 2rem;
     margin-left: 1rem;
   }
@@ -73,7 +73,7 @@ export const InfoContainer = styled.div`
     display: block;
     width: auto;
     margin-bottom: 2rem;
-
+    height: 35rem;
     margin-left: 1rem;
   }
 `;
@@ -81,7 +81,11 @@ export const InfoContainer = styled.div`
 export const Info = styled.div`
   width: 60%;
   height: 18rem;
-  padding-bottom: 4rem;
+ 
+  @media screen and (max-width: 768px) {
+    height: 20rem;
+    margin-bottom: -5rem;
+  }
 `;
 
 export const Img = styled.div`
@@ -90,13 +94,29 @@ export const Img = styled.div`
   right: 5rem;
   width: 47%;
   height: 15rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 3.5rem;
+  }
 `;
 export const Marketplaces = styled.div`
   display: flex;
-  
   padding-left: 2rem;
-  
-  
   column-gap: 1rem;
-  align-items: center
+  align-items: center;
+`;
+export const Area = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+  row-gap: 6rem;
+  }
+`;
+export const UpdateBtn = styled.div`
+  display: flex;
+  height: 2rem;
+  
+  @media screen and (max-width: 768px) {
+  padding-top: 6rem;
+  margin-bottom: -5rem;
+  }
 `;

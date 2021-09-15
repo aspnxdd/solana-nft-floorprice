@@ -10,7 +10,9 @@ import {
   InfoContainer,
   Img,
   Info,
-  Marketplaces
+  Marketplaces,
+  Area,
+  UpdateBtn
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
@@ -18,6 +20,9 @@ import _collections from "../../components/cards/_collections";
 
 // Fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
+  
+
+  console.log("id", id);
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
@@ -88,6 +93,11 @@ function Data() {
 
   // useEffect for Chart
   useEffect(() => {
+    if (router.query.id) {
+    localStorage.setItem("id", router.query.id);
+  } else {
+    router.query.id = localStorage.getItem("id");
+  }
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       // data for Chart
@@ -112,35 +122,35 @@ function Data() {
   //data to render in chart line
 
   return (
-    <div>
+    <Area>
       <TopWrapper>
         <InfoContainer>
-        <Info>
-          <InfoTwoHours />
-          <Time />
-          <h2 style={{ marginLeft: "2rem", height: "2rem" }}>
-            <b>{infoData?.name}</b>{" "}
-          </h2>
-          <Marketplaces>
-          {infoData?.digitaleyes &&
-          <a href={infoData.digitaleyes}>
-                <img
-                        src="/static/images/digitaleyes.svg"
-                        alt="de-logo"
-                        width="50px"
-                      ></img>
+          <Info>
+            <InfoTwoHours />
+            <Time />
+            <h2 style={{ marginLeft: "2rem", height: "2rem" }}>
+              <b>{infoData?.name}</b>{" "}
+            </h2>
+            <Marketplaces>
+              {infoData?.digitaleyes && (
+                <a href={infoData.digitaleyes}>
+                  <img
+                    src="/static/images/digitaleyes.svg"
+                    alt="de-logo"
+                    width="50px"
+                  ></img>
                 </a>
-                }
-                {infoData?.solanart &&
+              )}
+              {infoData?.solanart && (
                 <a href={infoData.solanart}>
-                <img
-                        src="/static/images/solanart.svg"
-                        alt="de-logo"
-                        width="40px"
-                      ></img>
+                  <img
+                    src="/static/images/solanart.svg"
+                    alt="de-logo"
+                    width="40px"
+                  ></img>
                 </a>
-                }
-          </Marketplaces>
+              )}
+            </Marketplaces>
           </Info>
 
           <Img>
@@ -152,12 +162,12 @@ function Data() {
           </Img>
         </InfoContainer>
       </TopWrapper>
-      <div style={{ display: "flex", marginBottom: "0rem", height: "2rem" }}>
+      <UpdateBtn>
         <button onClick={updateData}>
           <GrUpdate /> Update
         </button>
         {loading && <Spinner />}
-      </div>
+      </UpdateBtn>
       <Wrapper>
         <ContainerLineChart
           data={dataForChart}
@@ -181,7 +191,7 @@ function Data() {
           <Table columns={columns("Solanart")} data={solanartData} />
         )}
       </Styles> */}
-    </div>
+    </Area>
   );
 }
 export default Data;
