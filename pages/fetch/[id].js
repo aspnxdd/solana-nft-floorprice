@@ -12,7 +12,7 @@ import {
   Info,
   Marketplaces,
   Area,
-  UpdateBtn
+  UpdateBtn,
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
@@ -20,8 +20,6 @@ import _collections from "../../components/cards/_collections";
 
 // Fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
-  
-
   console.log("id", id);
   const res = await fetch(
     `${
@@ -52,52 +50,24 @@ function Data() {
   const [loading, setLoading] = useState(false);
   const [infoData, setInfoData] = useState({});
   // setData modifica valor de data
-  const [{ solanartData, digitalEyesData }, setData] = useState({
-    solanartData: [],
-    digitalEyesData: [],
-  });
+
   const [dataForChart, setDataForChart] = useState({
     solanartData: [],
     digitalEyesData: [],
   });
-  //enviamos el id de la href "/fetch/xxxx"
   const router = useRouter();
+  //enviamos el id de la href "/fetch/xxxx"
 
-  const columns = (title) => {
-    return [
-      {
-        Header: title,
-        columns: [
-          {
-            Header: "Floor Price",
-            accessor: "floorprice", //key in data
-          },
-          {
-            Header: "Time",
-            accessor: "time",
-          },
-        ],
-      },
-    ];
-  };
 
   // quan es renderitza el  hook o pateix canvis
-
-  // useEffect for table
-  useEffect(() => {
-    getFloorPrices(router.query.id).then((data) => {
-      // data for Table
-      setData(data);
-    });
-  }, [router.query]); //run useffect quan aquests paràmetres canviin
 
   // useEffect for Chart
   useEffect(() => {
     if (router.query.id) {
-    localStorage.setItem("id", router.query.id);
-  } else {
-    router.query.id = localStorage.getItem("id");
-  }
+      localStorage.setItem("id", router.query.id);
+    } else {
+      router.query.id = localStorage.getItem("id");
+    }
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       // data for Chart
@@ -113,13 +83,8 @@ function Data() {
       setLoading(false);
       // data for Table
       setData(data);
-      // data for Chart
-      // setDataForChart(updateDataChartFloorPrice(data));
-      // updateDataChartNumberOfTokensListed(data)
     });
   }
-
-  //data to render in chart line
 
   return (
     <Area>

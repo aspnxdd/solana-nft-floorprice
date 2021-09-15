@@ -6,7 +6,6 @@ const server = express();
 const axios = require("axios");
 const cron = require("node-cron");
 
-
 const isDev = process.argv[2] === "--development";
 
 if (isDev) {
@@ -22,10 +21,9 @@ const connection = {};
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
 const SOLANART_URL =
-"https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
+  "https://ksfclzmasu.medianet.work/nft_for_sale?collection=";
 let DIGITALEYES_URL =
-"https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
-
+  "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
 
 dbConnect();
 
@@ -219,8 +217,8 @@ async function saveDigitalEyes() {
       });
       //------------------------------------------------
 
-      // Save in DB
 
+      // Save in DB
       await datafetched.create({
         floorprice: Number(floor_price / 1000000000),
         collectionname: coll.name,
@@ -246,7 +244,6 @@ server.listen(process.env.PORT || 8080, (err) => {
 
   // to start
   cron.schedule("0 */1 * * *", () => {
-    // cron.schedule("*/30 * * * * *", () => {
     console.log("running a task every hour");
     saveDigitalEyes();
     saveSolanart();

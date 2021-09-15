@@ -8,13 +8,14 @@ import FeaturedCard from "../components/cards/FeaturedCard";
 import {
   HeaderWrapper,
   TitleSubtitle,
+  TextWrapper
 } from "../components/common/HeaderWrapper";
 
 export default function Home() {
   return (
     <div style={{paddingBottom:"2rem"}}>
       <HeaderWrapper>
-      <div style={{width: "25%"}}>
+      <TextWrapper >
 
         <TitleSubtitle>
           <TitleWelcome />
@@ -31,9 +32,11 @@ export default function Home() {
             <img className="sol-logo" src="/static/images/solana.svg" alt="sol-logo"></img>
           </h3>
         </TitleSubtitle>
-      </div>
-        
+      </TextWrapper>
+     
+
       <FeaturedCard></FeaturedCard>
+   
         <DonContainer />
       </HeaderWrapper>
 

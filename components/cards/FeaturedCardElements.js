@@ -108,3 +108,12 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 `;
+
+export const FeaturedDiv = styled.div `
+margin-left: 0.8rem;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+column-gap: 1rem;
+`;

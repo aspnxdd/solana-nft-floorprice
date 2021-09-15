@@ -7,6 +7,7 @@ import {
   AreaCardF,
   FeaturedLabel,
   CollectionLinks,
+  FeaturedDiv
 } from "./FeaturedCardElements";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
@@ -48,6 +49,7 @@ export default function CardComponent() {
       <FeaturedLabel>
         <b>Featured Collections</b>{" "}
       </FeaturedLabel>
+      <FeaturedDiv>
       {marketplaceArr.map((e) => {
         if (e.featured)
           return (
@@ -103,6 +105,7 @@ export default function CardComponent() {
             </CardContainer>
           );
       })}
+      </FeaturedDiv>
     </AreaCardF>
   );
 }

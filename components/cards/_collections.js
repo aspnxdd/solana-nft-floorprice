@@ -27,8 +27,8 @@ let _collections = [{
     marketplace: [],
     img: "degenape.jpg",
     featured: false,
-    digitaleyes:"https://digitaleyes.market/collections/Degenerate%20Ape%20Academy",
-    solanart:"https://solanart.io/collections/degenape",
+    digitaleyes: "https://digitaleyes.market/collections/Degenerate%20Ape%20Academy",
+    solanart: "https://solanart.io/collections/degenape",
     fp: 0,
   },
   {
@@ -38,8 +38,8 @@ let _collections = [{
     img: "abstratica.gif",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Abstratica",
-    solanart:"https://solanart.io/collections/abstratica"
+    digitaleyes: "https://digitaleyes.market/collections/Abstratica",
+    solanart: "https://solanart.io/collections/abstratica"
 
   },
   {
@@ -49,7 +49,7 @@ let _collections = [{
     img: "solpop.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Solpops"
+    digitaleyes: "https://digitaleyes.market/collections/Solpops"
   },
   {
     url: "soliens",
@@ -58,7 +58,7 @@ let _collections = [{
     img: "soliens.jpeg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Soliens"
+    digitaleyes: "https://digitaleyes.market/collections/Soliens"
   },
   {
     url: "soldalas",
@@ -67,7 +67,7 @@ let _collections = [{
     img: "soldalas.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Soldalas"
+    digitaleyes: "https://digitaleyes.market/collections/Soldalas"
   },
   {
     url: "solanimals",
@@ -76,8 +76,8 @@ let _collections = [{
     img: "solanimal.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Solanimals",
-    solanart:"https://solanart.io/collections/solanimals"
+    digitaleyes: "https://digitaleyes.market/collections/Solanimals",
+    solanart: "https://solanart.io/collections/solanimals"
   },
   {
     url: "pixelpenguin",
@@ -86,7 +86,7 @@ let _collections = [{
     img: "pixelpenguin.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Pixel%20Penguins"
+    digitaleyes: "https://digitaleyes.market/collections/Pixel%20Penguins"
   },
   {
     url: "frakt",
@@ -95,8 +95,8 @@ let _collections = [{
     img: "frakt.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Frakt",
-    solanart:"https://solanart.io/collections/frakt"
+    digitaleyes: "https://digitaleyes.market/collections/Frakt",
+    solanart: "https://solanart.io/collections/frakt"
   },
   {
     url: "solchihuahua",
@@ -105,7 +105,7 @@ let _collections = [{
     img: "chihuahua.jpeg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/ChihuahuaSol"
+    digitaleyes: "https://digitaleyes.market/collections/ChihuahuaSol"
   },
   {
     url: "smb",
@@ -123,8 +123,8 @@ let _collections = [{
     img: "solbear.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/SolBear",
-    solanart:"https://solanart.io/collections/solbears"
+    digitaleyes: "https://digitaleyes.market/collections/SolBear",
+    solanart: "https://solanart.io/collections/solbears"
   },
   {
     url: "sollamas-gen2",
@@ -142,7 +142,7 @@ let _collections = [{
     img: "boldbadger.webp",
     featured: false,
     fp: 0,
-    solanart:"https://solanart.io/collections/boldbadgers"
+    solanart: "https://solanart.io/collections/boldbadgers"
   },
   {
     url: "solpunks",
@@ -150,7 +150,7 @@ let _collections = [{
     marketplace: [],
     img: "solpunk.png",
     featured: false,
-    solanart:"https://solanart.io/collections/solpunks",
+    solanart: "https://solanart.io/collections/solpunks",
     fp: 0,
   },
   {
@@ -160,7 +160,7 @@ let _collections = [{
     img: "solarian.gif",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Solarians"
+    digitaleyes: "https://digitaleyes.market/collections/Solarians"
   },
   {
     url: "tophatchicks",
@@ -169,7 +169,7 @@ let _collections = [{
     img: "tophatchicks.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Top%20Hat%20Chicks"
+    digitaleyes: "https://digitaleyes.market/collections/Top%20Hat%20Chicks"
   },
   {
     url: "rox",
@@ -178,7 +178,7 @@ let _collections = [{
     img: "rox.jpeg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Rox"
+    digitaleyes: "https://digitaleyes.market/collections/Rox"
   },
   {
     url: "aurory",
@@ -187,7 +187,7 @@ let _collections = [{
     img: "aurory.png",
     featured: false,
     fp: 0,
-    solanart:"https://solanart.io/collections/aurory"
+    solanart: "https://solanart.io/collections/aurory"
   },
   {
     url: "cryptolizzy",
@@ -196,7 +196,7 @@ let _collections = [{
     img: "cryptolizzy.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Crypto%20Lizzy"
+    digitaleyes: "https://digitaleyes.market/collections/Crypto%20Lizzy"
   },
   {
     url: "solanasouls",
@@ -205,7 +205,7 @@ let _collections = [{
     img: "solanasouls.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Solana%20Souls"
+    digitaleyes: "https://digitaleyes.market/collections/Solana%20Souls"
   },
   {
     url: "solamanders",
@@ -223,7 +223,7 @@ let _collections = [{
     img: "solbulls.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Solbulls"
+    digitaleyes: "https://digitaleyes.market/collections/Solbulls"
   },
   {
     url: "solcats",
@@ -232,7 +232,7 @@ let _collections = [{
     img: "solcats.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/SolCats"
+    digitaleyes: "https://digitaleyes.market/collections/SolCats"
   },
   {
     url: "bitboat",
@@ -241,7 +241,7 @@ let _collections = [{
     img: "bitboat.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/BitBoat"
+    digitaleyes: "https://digitaleyes.market/collections/BitBoat"
   },
   {
     url: "legionpunks",
@@ -250,7 +250,7 @@ let _collections = [{
     img: "legionpunks.png",
     featured: false,
     fp: 0,
-    solanart:"https://solanart.io/collections/legionpunks"
+    solanart: "https://solanart.io/collections/legionpunks"
   },
   {
     url: "solstash",
@@ -259,7 +259,7 @@ let _collections = [{
     img: "solstash.jpg",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Stash"
+    digitaleyes: "https://digitaleyes.market/collections/Stash"
   },
   {
     url: "kaijucards",
@@ -268,8 +268,8 @@ let _collections = [{
     img: "kaijucards.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Kaiju%20Cards",
-    solanart:"https://solanart.io/collections/kaijucards"
+    digitaleyes: "https://digitaleyes.market/collections/Kaiju%20Cards",
+    solanart: "https://solanart.io/collections/kaijucards"
 
 
   },
@@ -287,9 +287,10 @@ let _collections = [{
     name: "Gmoot",
     marketplace: [],
     img: "gmoot.png",
-    featured: false,
+    featured: true,
     fp: 0,
-    digitaleyes: "https://digitaleyes.market/collections/Gmoot"
+    digitaleyes: "https://digitaleyes.market/collections/Gmoot",
+    twitter:"https://twitter.com/iamgmoot"
   },
   {
     url: "solgen",
@@ -308,9 +309,9 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Trippy%20Bunny%20Tribe",
-    
+
     solanart: "https://solanart.io/collections/trippybunny",
-    
+
   },
   {
     url: "boogle",
@@ -331,9 +332,9 @@ let _collections = [{
     digitaleyes: "https://digitaleyes.market/collections/ShroomZ",
   },
 
-  
 
-  
+
+
 ];
 
 export default _collections;

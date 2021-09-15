@@ -1,24 +1,26 @@
-import { createGlobalStyle } from "styled-components";
+import {
+    createGlobalStyle
+} from "styled-components";
 
 export const lightTheme = {
-    body:"#fff",
+    body: "#fff",
     fontColor: "#000",
-    cardBackgroundColor:"#fff",
+    cardBackgroundColor: "#fff",
     navBackgroundColor: "#fff",
-    chartBorderColor: "#a2a2a2" 
+    chartBorderColor: "#a2a2a2"
 };
 
 export const darkTheme = {
-    body:"#15202b",
+    body: "#15202b",
     fontColor: "#fff",
-    cardBackgroundColor:"#445260",
+    cardBackgroundColor: "#445260",
     navBackgroundColor: "#445260",
     navFontColor: "#fff",
     chartBorderColor: "fff",
-    a:"#88cbe1" , 
+    a: "#88cbe1",
 };
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle `
 
     body {
         background-color: ${(e)=> e.theme.body};
