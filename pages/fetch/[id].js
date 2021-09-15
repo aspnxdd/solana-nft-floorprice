@@ -1,23 +1,22 @@
-import Table from "../../components/table/Table";
 import Time from "../../components/currentTime/CurrentTime";
-import React, { useEffect, useState, useRef } from "react";
-import styled, { withTheme } from "styled-components";
+import React, { useEffect, useState } from "react";
 import { GrUpdate } from "react-icons/gr";
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
-import LineChart from "../../components/chart/LineChart";
-import { Styles } from "../../components/table/TableElements";
 import {
   Wrapper,
   TopWrapper,
   InfoContainer,
+  Img,
+  Info,
+  Marketplaces
 } from "../../components/chart/ChartElements";
-import { Line } from "react-chartjs-2";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
+import _collections from "../../components/cards/_collections";
 
-// fetch data from server, send id to query in mongo
+// Fetch data from server, send id to query in mongo
 async function getFloorPrices(id) {
   const res = await fetch(
     `${
@@ -33,15 +32,6 @@ async function getFloorPrices(id) {
   );
   //
   let { data } = await res.json();
-  // data.forEach((e) => {
-  //   const date = new Date(e.time);
-
-  //   e.time = date.toLocaleString("en-GB", {
-  //     hour12: false,
-  //     timeStyle: "short",
-  //     dateStyle: "short",
-  //   });
-  // });
 
   const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
 
@@ -55,6 +45,7 @@ async function getFloorPrices(id) {
 
 function Data() {
   const [loading, setLoading] = useState(false);
+  const [infoData, setInfoData] = useState({});
   // setData modifica valor de data
   const [{ solanartData, digitalEyesData }, setData] = useState({
     solanartData: [],
@@ -101,7 +92,7 @@ function Data() {
     getFloorPrices(router.query.id).then((data) => {
       // data for Chart
       setLoading(false);
-
+      setInfoData(_collections.find((e) => e.url == [router.query.id]));
       setDataForChart(data);
     });
   }, [router.query]); //run useffect quan aquests paràmetres canviin
@@ -118,45 +109,48 @@ function Data() {
     });
   }
 
-  const collectionNames = {
-    solanadogesnfts: "SolanaDoges",
-    thugbirdz: "Thugbirdz",
-    degenapes: "Degen Ape Academy",
-    abstratica: "Abstratica",
-    solpops: "Solpops",
-    soliens: "Soliens",
-    soldalas: "Soldalas",
-    solanimals: "Solanimals",
-    pixelpenguin: "PixelPenguins",
-    frakt: "Frakt",
-    solchihuahua: "SolChihuahua",
-    smb: "SMB",
-    solbear: "SolBear",
-    solarians: "Solarians",
-    boldbadgers: "Boldbadgers",
-    "sollamas-gen2": "Sollamas",
-    tophatchicks: "TopHatChicks",
-    solpunks: "Solpunks",
-    rox: "Rox",
-    aurory: "Aurory",
-    boogle: "Boogle",
-    gmoot: "Gmoot"
-  };
-
   //data to render in chart line
 
   return (
     <div>
       <TopWrapper>
-      <InfoContainer>
-        <InfoTwoHours />
-        <Time />
-        <h3>
-          <b>{collectionNames[router.query.id]}</b>{" "}
-        </h3>
-        </InfoContainer>
-       
+        <InfoContainer>
+        <Info>
+          <InfoTwoHours />
+          <Time />
+          <h2 style={{ marginLeft: "2rem", height: "2rem" }}>
+            <b>{infoData?.name}</b>{" "}
+          </h2>
+          <Marketplaces>
+          {infoData?.digitaleyes &&
+          <a href={infoData.digitaleyes}>
+                <img
+                        src="/static/images/digitaleyes.svg"
+                        alt="de-logo"
+                        width="50px"
+                      ></img>
+                </a>
+                }
+                {infoData?.solanart &&
+                <a href={infoData.solanart}>
+                <img
+                        src="/static/images/solanart.svg"
+                        alt="de-logo"
+                        width="40px"
+                      ></img>
+                </a>
+                }
+          </Marketplaces>
+          </Info>
 
+          <Img>
+            <img
+              src={`/static/images/${infoData.img}`}
+              alt="so-logo"
+              width="200px"
+            ></img>
+          </Img>
+        </InfoContainer>
       </TopWrapper>
       <div style={{ display: "flex", marginBottom: "0rem", height: "2rem" }}>
         <button onClick={updateData}>

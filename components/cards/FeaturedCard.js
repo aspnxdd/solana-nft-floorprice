@@ -71,7 +71,7 @@ export default function CardComponent() {
                       <img
                         src="/static/images/solanart.svg"
                         alt="so-logo"
-                        width="25px"
+                        width="30px"
                       ></img>
                     )}
                   </MarketplacesAreaF>
@@ -88,6 +88,13 @@ export default function CardComponent() {
                 <a href={e.digitaleyes}>
                 <img
                         src="/static/images/digitaleyes.svg"
+                        alt="de-logo"
+                        width="30px"
+                      ></img>
+                </a>
+                <a href={e.solanart}>
+                <img
+                        src="/static/images/solanart.svg"
                         alt="de-logo"
                         width="30px"
                       ></img>

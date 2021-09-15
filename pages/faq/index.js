@@ -29,6 +29,9 @@ export default function Faq() {
         <h2>3️⃣ How to get my collection featured? </h2>
         Send me a
         DM on Discord Nivoa#4968 we can talk there!
+        <h2>4️⃣ Any other cool websites like this one in Solana ecosystem? </h2>
+        Yes!💎
+        Go have a look at <a href="https://solanafloor.com/">Solanafloor</a> and <a href="https://solanalysis.com/"> Solanalysis</a>
       </p>
     </div>
   );

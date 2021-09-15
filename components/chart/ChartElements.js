@@ -5,8 +5,9 @@ export const Container = styled.div`
   height: 30rem;
   padding-right: 1rem;
   padding-bottom: 4rem;
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid;
   border-radius: 1rem;
+  border-color: ${(e) => e.theme.chartBorderColor};
   @media screen and (max-width: 768px) {
     position: static;
     display: block;
@@ -59,11 +60,13 @@ export const TopWrapper = styled.div`
 `;
 
 export const InfoContainer = styled.div`
+  display: flex;
   width: 47%;
   height: 15rem;
   padding-right: 1rem;
   padding-bottom: 4rem;
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid;
+  border-color: ${(e) => e.theme.chartBorderColor};
   border-radius: 1rem;
   @media screen and (max-width: 768px) {
     position: static;
@@ -73,4 +76,27 @@ export const InfoContainer = styled.div`
 
     margin-left: 1rem;
   }
+`;
+
+export const Info = styled.div`
+  width: 60%;
+  height: 18rem;
+  padding-bottom: 4rem;
+`;
+
+export const Img = styled.div`
+  margin-top: 1rem;
+  padding-left: 3rem;
+  right: 5rem;
+  width: 47%;
+  height: 15rem;
+`;
+export const Marketplaces = styled.div`
+  display: flex;
+  
+  padding-left: 2rem;
+  
+  
+  column-gap: 1rem;
+  align-items: center
 `;

@@ -5,6 +5,7 @@ export const lightTheme = {
     fontColor: "#000",
     cardBackgroundColor:"#fff",
     navBackgroundColor: "#fff",
+    chartBorderColor: "#a2a2a2" 
 };
 
 export const darkTheme = {
@@ -13,6 +14,8 @@ export const darkTheme = {
     cardBackgroundColor:"#445260",
     navBackgroundColor: "#445260",
     navFontColor: "#fff",
+    chartBorderColor: "fff",
+    a:"#88cbe1" , 
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -24,6 +27,9 @@ export const GlobalStyles = createGlobalStyle`
 
     p{
         color: ${e => e.theme.fontColor};
+    }
+    a{
+        color: ${e => e.theme.a};
     }
 
    
