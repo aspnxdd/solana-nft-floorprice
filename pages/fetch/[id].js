@@ -139,6 +139,8 @@ function Data() {
     solpunks: "Solpunks",
     rox: "Rox",
     aurory: "Aurory",
+    boogle: "Boogle",
+    gmoot: "Gmoot"
   };
 
   //data to render in chart line

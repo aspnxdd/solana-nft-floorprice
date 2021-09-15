@@ -209,7 +209,17 @@
       "uri": "@@@",
       "url":"Trippy%20Bunny%20Tribe",
       "tokens":10000
+    },
+    {
+      "name": "boogle",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Boogle",
+      "tokens":100
     }
+
+ 
 
     
 

@@ -270,6 +270,14 @@ let _collections = [{
     featured: false,
     fp: 0,
   },
+  {
+    url: "boogle",
+    name: "Boogle",
+    marketplace: [],
+    img: "boogle.jpg",
+    featured: false,
+    fp: 0,
+  },
 
   
 ];
