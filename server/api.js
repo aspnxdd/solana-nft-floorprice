@@ -250,11 +250,11 @@ server.listen(process.env.PORT || 8080, (err) => {
   console.log("> Ready on http://localhost:8080");
 
   // to start
-  
+  cron.schedule("0 */1 * * *", () => {
     console.log("running a task every hour");
     saveDigitalEyes();
     saveSolanart();
-  
+  });
 });
 
 async function dbConnect() {
