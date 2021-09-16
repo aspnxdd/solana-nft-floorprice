@@ -331,6 +331,36 @@ let _collections = [{
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/ShroomZ",
   },
+  {
+    url: "solsleepyzzz",
+    name: "SolSleepyzzz",
+    marketplace: [],
+    img: "solsleepyzzz.png",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/SolSleepyzzz",
+  },
+  {
+    url: "enigmaexpanses",
+    name: "Enigma Expanses",
+    marketplace: [],
+    img: "enigmaexpanses.jpg",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Enigma%20Expanses",
+  },
+  {
+    url: "kiddomonkeys",
+    name: "Kiddo Monkeys",
+    marketplace: [],
+    img: "kiddomonkeys.jpg",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Kiddo%20Monkeys",
+  },
+
+  
+  
 
 
 

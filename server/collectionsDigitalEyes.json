@@ -225,7 +225,32 @@
       "uri": "@@@",
       "url":"ShroomZ",
       "tokens":1000
+    },
+    {
+      "name": "solsleepyzzz",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"SolSleepyzzz",
+      "tokens":1000
+    },
+    {
+      "name": "enigmaexpanses",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Enigma%20Expanses",
+      "tokens":1000
+    },
+    {
+      "name": "kiddomonkeys",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Kiddo%20Monkeys",
+      "tokens":1000
     }
+
 
  
 
