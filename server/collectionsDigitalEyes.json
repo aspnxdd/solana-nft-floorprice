@@ -249,8 +249,17 @@
       "uri": "@@@",
       "url":"Kiddo%20Monkeys",
       "tokens":1000
+    },
+    {
+      "name": "pandastreet",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Panda%20Street",
+      "tokens":7777
     }
 
+    
 
  
 

@@ -358,6 +358,17 @@ let _collections = [{
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Kiddo%20Monkeys",
   },
+  {
+    url: "pandastreet",
+    name: "Panda Street",
+    marketplace: [],
+    img: "pandastreet.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Panda%20Street"
+  },
+
+  
 
   
   
