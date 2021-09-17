@@ -376,6 +376,15 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/The%20Sneks"
   },
+  {
+    url: "polyline",
+    name: "Polyline",
+    marketplace: [],
+    img: "polyline.gif",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Polyline"
+  },
 
  
 
