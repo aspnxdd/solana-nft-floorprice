@@ -367,6 +367,17 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Panda%20Street"
   },
+  {
+    url: "sneks",
+    name: "Sneks",
+    marketplace: [],
+    img: "sneks.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/The%20Sneks"
+  },
+
+ 
 
   
 

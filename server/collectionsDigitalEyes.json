@@ -257,6 +257,14 @@
       "uri": "@@@",
       "url":"Panda%20Street",
       "tokens":7777
+    },
+    {
+      "name": "sneks",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"The%20Sneks",
+      "tokens":10000
     }
 
     
