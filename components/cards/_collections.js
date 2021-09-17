@@ -280,7 +280,8 @@ let _collections = [{
     img: "piggysolgang.jpg",
     featured: false,
     fp: 0,
-    digitaleyes: "https://digitaleyes.market/collections/Piggy%20Sol%20Gang"
+    digitaleyes: "https://digitaleyes.market/collections/Piggy%20Sol%20Gang",
+    solanart:"https://solanart.io/collections/piggysolgang"
   },
   {
     url: "gmoot",
@@ -374,7 +375,8 @@ let _collections = [{
     img: "sneks.png",
     featured: false,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/The%20Sneks"
+    digitaleyes:"https://digitaleyes.market/collections/The%20Sneks",
+    solanart:"https://solanart.io/collections/thesneks"
   },
   {
     url: "polyline",
