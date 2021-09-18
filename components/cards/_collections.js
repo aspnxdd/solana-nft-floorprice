@@ -387,6 +387,15 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Polyline"
   },
+  {
+    url: "litjesus",
+    name: "Lit Jesus",
+    marketplace: [],
+    img: "litjesus.jpg",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Lit%20Jesus"
+  },
 
  
 
