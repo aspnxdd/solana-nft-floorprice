@@ -396,6 +396,15 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Lit%20Jesus"
   },
+  {
+    url: "0xbanana",
+    name: "0xBanana",
+    marketplace: [],
+    img: "oxbanana.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/0xBanana"
+  },
 
  
 

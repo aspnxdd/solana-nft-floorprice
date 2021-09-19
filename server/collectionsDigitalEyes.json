@@ -281,7 +281,17 @@
       "uri": "@@@",
       "url":"Lit%20Jesus",
       "tokens":10000
+    },
+    {
+      "name": "0xbanana",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"0xBanana",
+      "tokens":10000
     }
+
+    
 
     
 
