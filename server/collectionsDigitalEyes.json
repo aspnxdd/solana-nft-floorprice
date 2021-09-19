@@ -289,6 +289,22 @@
       "uri": "@@@",
       "url":"0xBanana",
       "tokens":10000
+    },
+    {
+      "name": "turtles",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"Turtles",
+      "tokens":3333
+    },
+    {
+      "name": "solpanda",
+      "address": "@@@@@@@",
+      "address2": "@@@@@@@",
+      "uri": "@@@",
+      "url":"SolPanda%20NFT",
+      "tokens":8888
     }
 
     

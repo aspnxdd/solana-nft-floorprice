@@ -405,7 +405,24 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/0xBanana"
   },
-
+  {
+    url: "turtles",
+    name: "Turtles",
+    marketplace: [],
+    img: "turtles.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Turtles"
+  },
+  {
+    url: "solpanda",
+    name: "SolPanda",
+    marketplace: [],
+    img: "solpanda.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/SolPanda%20NFT"
+  }
  
 
   
