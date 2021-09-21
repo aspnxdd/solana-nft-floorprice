@@ -1,330 +1,263 @@
-   [
-    
-    {
-      "name": "solanadogesnfts",
-      "address": "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url": "SolanaDogeNFTs",
-      "tokens":10000
-    },
-    {
-      "name": "thugbirdz",
-      "address": "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
-      "address2": "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
-      "uri": "@@@@@@@@",
-      "url":"Thugbirdz",
-      "tokens":3333
-    },
-    {
-      "name": "degenapes",
-      "address": "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Degenerate%20Ape%20Academy",
-      "tokens":10000
-    },
-    {
-      "name": "abstratica",
-      "address": "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Abstratica"
-    },
-    {
-      "name": "frakt",
-      "address": "6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Frakt"
-    },
-    {
-      "name": "pixelpenguin",
-      "address": "HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Pixel%20Penguins"
-    },
-    {
-      "name": "solanimals",
-      "address": "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Solanimals",
-      "tokens":10000
-    },
-    {
-      "name": "soldalas",
-      "address": "8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Soldalas"
-    },
-    {
-      "name": "soliens",
-      "address": "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Soliens"
-    },
-    {
-      "name": "solpops",
-      "address": "Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Solpops"
-    },
-    {
-      "name": "solchihuahua",
-      "address": "5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"ChihuahuaSol"
-    },
-    {
-      "name": "smb",
-      "address": "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@",
-      "url":"Solana%20Monkey%20Business",
-      "tokens":10000
-    },
-    {
-      "name": "solbear",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
-      "url":"SolBear",
-      "tokens":10000
-    },
-    {
-      "name": "solarians",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "https://solarians.click/api/metaplex-mints",
-      "url":"Solarians"
-    },
-    {
-      "name": "tophatchicks",
-      "address": "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
-      "address2": "@@@@@@@",
-      "uri": "@@@@@@@@@@@@",
-      "url":"Top%20Hat%20Chicks"
-    },
-    {
-      "name": "rox",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "https://rox.cards/api/metaplex-mints",
-      "url":"Rox"
-    },
-    {
-      "name": "cryptolizzy",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Crypto%20Lizzy"
-    },
-    {
-      "name": "solanasouls",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Solana%20Souls",
-      "tokens":10000
-    },
-    {
-      "name": "solamanders",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Solamanders",
-      "tokens":10000
-    },
-    {
-      "name": "solbulls",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Solbulls",
-      "tokens":10000
-    },
-    {
-      "name": "solcats",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"SolCats",
-      "tokens":10000
-    },
-    {
-      "name": "bitboat",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"BitBoat"
-    },
-    {
-      "name": "solstash",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Stash"
-    },
-    {
-      "name": "kaijucards",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Kaiju%20Cards"
-    },
-    {
-      "name": "piggysolgang",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Piggy%20Sol%20Gang",
-      "tokens":10000
-    },
-    {
-      "name": "gmoot",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Gmoot",
-      "tokens":10000
-    },
-    {
-      "name": "solgen",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"SolGen",
-      "tokens":10000
-    },
-    {
-      "name": "trippybunnytribe",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Trippy%20Bunny%20Tribe",
-      "tokens":10000
-    },
-    {
-      "name": "boogle",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Boogle",
-      "tokens":100
-    },
-    {
-      "name": "shroomz",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"ShroomZ",
-      "tokens":1000
-    },
-    {
-      "name": "solsleepyzzz",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"SolSleepyzzz",
-      "tokens":1000
-    },
-    {
-      "name": "enigmaexpanses",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Enigma%20Expanses",
-      "tokens":1000
-    },
-    {
-      "name": "kiddomonkeys",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Kiddo%20Monkeys",
-      "tokens":1000
-    },
-    {
-      "name": "pandastreet",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Panda%20Street",
-      "tokens":7777
-    },
-    {
-      "name": "sneks",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"The%20Sneks",
-      "tokens":10000
-    },
-    {
-      "name": "polyline",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Polyline",
-      "tokens":10000
-    },
-    {
-      "name": "litjesus",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Lit%20Jesus",
-      "tokens":10000
-    },
-    {
-      "name": "0xbanana",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"0xBanana",
-      "tokens":10000
-    },
-    {
-      "name": "turtles",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"Turtles",
-      "tokens":3333
-    },
-    {
-      "name": "solpanda",
-      "address": "@@@@@@@",
-      "address2": "@@@@@@@",
-      "uri": "@@@",
-      "url":"SolPanda%20NFT",
-      "tokens":8888
-    }
+[
+  {
+    "name": "solanadogesnfts",
+    "address": "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "SolanaDogeNFTs",
+    "tokens": 10000
+  },
+  {
+    "name": "thugbirdz",
+    "address": "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
+    "address2": "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
+    "uri": "@@@@@@@@",
+    "url": "Thugbirdz",
+    "tokens": 3333
+  },
+  {
+    "name": "degenapes",
+    "address": "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "Degenerate%20Ape%20Academy",
+    "tokens": 10000
+  },
+  {
+    "name": "abstratica",
+    "address": "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
 
- 
+    "uri": "@@@@@@@@",
+    "url": "Abstratica"
+  },
+  {
+    "name": "frakt",
+    "address": "6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "Frakt"
+  },
+  {
+    "name": "pixelpenguin",
+    "address": "HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "Pixel%20Penguins"
+  },
+  {
+    "name": "solanimals",
+    "address": "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
 
+    "uri": "@@@@@@@@",
+    "url": "Solanimals",
+    "tokens": 10000
+  },
+  {
+    "name": "soldalas",
+    "address": "8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "Soldalas"
+  },
+  {
+    "name": "soliens",
+    "address": "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
 
- 
+    "uri": "@@@@@@@@",
+    "url": "Soliens"
+  },
+  {
+    "name": "solpops",
+    "address": "Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
 
-    
+    "uri": "@@@@@@@@",
+    "url": "Solpops"
+  },
+  {
+    "name": "solchihuahua",
+    "address": "5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
 
-   
-  
-  
+    "uri": "@@@@@@@@",
+    "url": "ChihuahuaSol"
+  },
+  {
+    "name": "smb",
+    "address": "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
+
+    "uri": "@@@@@@@@",
+    "url": "Solana%20Monkey%20Business",
+    "tokens": 10000
+  },
+  {
+    "name": "solbear",
+
+    "uri": "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
+    "url": "SolBear",
+    "tokens": 10000
+  },
+  {
+    "name": "solarians",
+
+    "uri": "https://solarians.click/api/metaplex-mints",
+    "url": "Solarians"
+  },
+  {
+    "name": "tophatchicks",
+    "address": "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
+
+    "uri": "@@@@@@@@@@@@",
+    "url": "Top%20Hat%20Chicks"
+  },
+  {
+    "name": "rox",
+
+    "uri": "https://rox.cards/api/metaplex-mints",
+    "url": "Rox"
+  },
+  {
+    "name": "cryptolizzy",
+
+    "url": "Crypto%20Lizzy"
+  },
+  {
+    "name": "solanasouls",
+
+    "url": "Solana%20Souls",
+    "tokens": 10000
+  },
+  {
+    "name": "solamanders",
+
+    "url": "Solamanders",
+    "tokens": 10000
+  },
+  {
+    "name": "solbulls",
+
+    "url": "Solbulls",
+    "tokens": 10000
+  },
+  {
+    "name": "solcats",
+
+    "url": "SolCats",
+    "tokens": 10000
+  },
+  {
+    "name": "bitboat",
+
+    "url": "BitBoat"
+  },
+  {
+    "name": "solstash",
+
+    "url": "Stash"
+  },
+  {
+    "name": "kaijucards",
+
+    "url": "Kaiju%20Cards"
+  },
+  {
+    "name": "piggysolgang",
+
+    "url": "Piggy%20Sol%20Gang",
+    "tokens": 10000
+  },
+  {
+    "name": "gmoot",
+
+    "url": "Gmoot",
+    "tokens": 10000
+  },
+  {
+    "name": "solgen",
+
+    "url": "SolGen",
+    "tokens": 10000
+  },
+  {
+    "name": "trippybunnytribe",
+
+    "url": "Trippy%20Bunny%20Tribe",
+    "tokens": 10000
+  },
+  {
+    "name": "boogle",
+
+    "url": "Boogle",
+    "tokens": 100
+  },
+  {
+    "name": "shroomz",
+
+    "url": "ShroomZ",
+    "tokens": 1000
+  },
+  {
+    "name": "solsleepyzzz",
+
+    "url": "SolSleepyzzz",
+    "tokens": 1000
+  },
+  {
+    "name": "enigmaexpanses",
+
+    "url": "Enigma%20Expanses",
+    "tokens": 1000
+  },
+  {
+    "name": "kiddomonkeys",
+
+    "url": "Kiddo%20Monkeys",
+    "tokens": 1000
+  },
+  {
+    "name": "pandastreet",
+
+    "url": "Panda%20Street",
+    "tokens": 7777
+  },
+  {
+    "name": "sneks",
+
+    "url": "The%20Sneks",
+    "tokens": 10000
+  },
+  {
+    "name": "polyline",
+    "url": "Polyline",
+    "tokens": 10000
+  },
+  {
+    "name": "litjesus",
+    "url": "Lit%20Jesus",
+    "tokens": 10000
+  },
+  {
+    "name": "0xbanana",
+    "url": "0xBanana",
+    "tokens": 10000
+  },
+  {
+    "name": "turtles",
+    "url": "Turtles",
+    "tokens": 3333
+  },
+  {
+    "name": "solpanda",
+    "url": "SolPanda%20NFT",
+    "tokens": 8888
+  },
+  {
+    "name": "solpanda",
+
+    "url": "SolPanda%20NFT",
+    "tokens": 8888
+  },
+  {
+    "name": "konwi",
+    "url": "Konwi's",
+    "tokens": 20
+  }
 ]

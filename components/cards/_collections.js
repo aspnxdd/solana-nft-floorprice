@@ -422,6 +422,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/SolPanda%20NFT"
+  },
+  {
+    url: "konwi",
+    name: "Konwi's",
+    marketplace: [],
+    img: "konwi.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Konwi's"
   }
  
 
