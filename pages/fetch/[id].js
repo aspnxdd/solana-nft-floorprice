@@ -59,6 +59,7 @@ function Data() {
 
   // useEffect for Chart
   useEffect(() => {
+    console.log(21,router)
     if(router.query.id){
       console.log(22,router)
       setLoading(true);
