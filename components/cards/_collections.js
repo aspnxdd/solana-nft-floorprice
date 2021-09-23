@@ -288,7 +288,7 @@ let _collections = [{
     name: "Gmoot",
     marketplace: [],
     img: "gmoot.png",
-    featured: true,
+    featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Gmoot",
     twitter:"https://twitter.com/iamgmoot"
@@ -410,7 +410,7 @@ let _collections = [{
     name: "Turtles",
     marketplace: [],
     img: "turtles.png",
-    featured: false,
+    featured: true,
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Turtles"
   },
