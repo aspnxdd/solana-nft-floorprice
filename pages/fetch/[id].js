@@ -56,26 +56,20 @@ function Data() {
     digitalEyesData: [],
   });
   const router = useRouter();
-  //enviamos el id de la href "/fetch/xxxx"
-
-
-  // quan es renderitza el  hook o pateix canvis
 
   // useEffect for Chart
   useEffect(() => {
-    if (router.query.id) {
-      localStorage.setItem("id", router.query.id);
-    } else {
-      router.query.id = localStorage.getItem("id");
+    if(router.query.id){
+      console.log(22,router)
+      setLoading(true);
+      getFloorPrices(router.query.id).then((data) => {
+        // data for Chart
+        setLoading(false);
+        setInfoData(_collections.find((e) => e.url == [router.query.id]));
+        setDataForChart(data);
+      });
     }
-    setLoading(true);
-    getFloorPrices(router.query.id).then((data) => {
-      // data for Chart
-      setLoading(false);
-      setInfoData(_collections.find((e) => e.url == [router.query.id]));
-      setDataForChart(data);
-    });
-  }, [router.query]); //run useffect quan aquests paràmetres canviin
+  }, [router.query]); 
 
   function updateData() {
     setLoading(true);
@@ -148,14 +142,7 @@ function Data() {
         ></ContainerLineChart>
         <ContainerBarChart data={dataForChart}></ContainerBarChart>
       </Wrapper>
-      {/* <Styles>
-        {digitalEyesData.length > 1 && (
-          <Table columns={columns("DigitalEyes")} data={digitalEyesData} />
-        )}
-        {solanartData.length > 1 && (
-          <Table columns={columns("Solanart")} data={solanartData} />
-        )}
-      </Styles> */}
+    
     </Area>
   );
 }
