@@ -56,10 +56,11 @@ function Data() {
     digitalEyesData: [],
   });
   const router = useRouter();
+  console.log(31, router)
 
   // useEffect for Chart
   useEffect(() => {
-    console.log(21,router)
+    console.log(12,router)
     if(router.query.id){
       console.log(22,router)
       setLoading(true);
@@ -70,7 +71,7 @@ function Data() {
         setDataForChart(data);
       });
     }
-  }, [router.query]); 
+  }, [router.query.id]); 
 
   function updateData() {
     setLoading(true);
