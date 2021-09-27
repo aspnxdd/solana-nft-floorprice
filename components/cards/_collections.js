@@ -440,7 +440,17 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/TrashyPandas"
+  },
+  {
+    url: "solanapenguins",
+    name: "Solana Penguins",
+    marketplace: [],
+    img: "solanapenguins.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Solana%20Penguins"
   }
+ 
  
 
   
