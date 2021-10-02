@@ -449,6 +449,24 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Solana%20Penguins"
+  },
+  {
+    url: "inversebearmarket",
+    name: "Inverse Bear Market",
+    marketplace: [],
+    img: "inversebearmarket.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Inverse%20Bear%20Market"
+  },
+  {
+    url: "coolbeans",
+    name: "Cool Beans",
+    marketplace: [],
+    img: "coolbeans.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Cool%20Beans"
   }
  
  

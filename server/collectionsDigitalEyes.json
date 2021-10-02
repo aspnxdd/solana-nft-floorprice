@@ -269,5 +269,15 @@
     "name": "solanapenguins",
     "url": "Solana%20Penguins",
     "tokens": 6666
+  },
+  {
+    "name": "inversebearmarket",
+    "url": "Inverse%20Bear%20Market",
+    "tokens": 2534
+  },
+  {
+    "name": "coolbeans",
+    "url": "Cool%20Beans",
+    "tokens": 2534
   }
 ]
