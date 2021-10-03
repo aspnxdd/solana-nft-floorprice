@@ -68,6 +68,11 @@
     "name": "sneks",
     "collectionName": "thesneks",
     "tokens":10000
+  },
+  {
+    "name": "turtles",
+    "collectionName": "turtles",
+    "tokens":10000
   }
 
   

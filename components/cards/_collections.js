@@ -412,7 +412,8 @@ let _collections = [{
     img: "turtles.png",
     featured: true,
     fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Turtles"
+    digitaleyes:"https://digitaleyes.market/collections/Turtles",
+    solanart:"https://solanart.io/collections/turtles"
   },
   {
     url: "solpanda",
@@ -471,6 +472,15 @@ let _collections = [{
   {
     url: "grimsyndicate",
     name: "Grym Sindicate",
+    marketplace: [],
+    img: "grimsyndicate.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/Grim%20Syndicate"
+  },
+  {
+    url: "grimsyndicate",
+    name: "Grim Sindicate",
     marketplace: [],
     img: "grimsyndicate.png",
     featured: false,
