@@ -471,7 +471,7 @@ let _collections = [{
   },
 
   {
-    url: "grimsyndicate",
+    url: "grimsindicate",
     name: "Grim Sindicate",
     marketplace: [],
     img: "grimsyndicate.png",
