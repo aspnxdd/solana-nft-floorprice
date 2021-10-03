@@ -469,15 +469,7 @@ let _collections = [{
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/Cool%20Beans"
   },
-  {
-    url: "grimsyndicate",
-    name: "Grym Sindicate",
-    marketplace: [],
-    img: "grimsyndicate.png",
-    featured: false,
-    fp: 0,
-    digitaleyes:"https://digitaleyes.market/collections/Grim%20Syndicate"
-  },
+
   {
     url: "grimsyndicate",
     name: "Grim Sindicate",
