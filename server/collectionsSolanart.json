@@ -73,6 +73,11 @@
     "name": "turtles",
     "collectionName": "turtles",
     "tokens":10000
+  },
+  {
+    "name": "meerkat",
+    "collectionName": "meerkatmillionairescc",
+    "tokens":10000
   }
 
   
