@@ -129,9 +129,9 @@ export default function ContainerLineChart({ data, param }) {
     <Container>
       <div className="chart-buttons">
         <label> Show data points: </label>
-        <button onClick={() => setDataPoints(10)}> 10</button>
-        <button onClick={() => setDataPoints(20)}> 20</button>
-        <button onClick={() => setDataPoints(50)}> 50</button>
+        <button onClick={() => setDataPoints(24)}> 1D</button>
+        <button onClick={() => setDataPoints(24*7)}> 1W</button>
+        <button onClick={() => setDataPoints(24*7*30)}> 1M</button>
         <button onClick={() => setDataPoints(0)}> All</button>
       </div>
       <LineChart data={dataChart} options={options} />
