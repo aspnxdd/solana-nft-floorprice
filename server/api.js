@@ -21,7 +21,7 @@ const connection = {};
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
 const SOLANART_URL =
-  "https://tlsktfahct.medianetwork.cloud/nft_for_sale?collection=";
+  "https://qzlsklfacc.medianetwork.cloud/nft_for_sale?collection=";
 let DIGITALEYES_URL =
   "https://us-central1-digitaleyes-prod.cloudfunctions.net/offers-retriever?collection=";
 
