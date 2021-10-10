@@ -78,6 +78,11 @@
     "name": "meerkat",
     "collectionName": "meerkatmillionairescc",
     "tokens":10000
+  },
+  {
+    "name": "roguesharks",
+    "collectionName": "roguesharks",
+    "tokens":5000
   }
 
   

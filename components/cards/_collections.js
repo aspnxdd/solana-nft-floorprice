@@ -487,8 +487,37 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Meerkat%20Millionaires%20Country%20Club",
-    solanart:"https://solanart.io/collections/meerkatmillionairescc"
+    solanart: "https://solanart.io/collections/meerkatmillionairescc"
+  },
+  {
+    url: "roguesharks",
+    name: "Rogue Sharks",
+    marketplace: [],
+    img: "roguesharks.png",
+    featured: false,
+    fp: 0,
+    solanart: "https://solanart.io/collections/roguesharks"
+  },
+  {
+    url: "bionicthugbirdz",
+    name: "Bionic Thugbirdz",
+    marketplace: [],
+    img: "bionicthugbirdz.png",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Bionic%20Thugbirdz"
+  },
+  {
+    url: "fastfoodthugbirdz",
+    name: "FF Thugbirdz",
+    marketplace: [],
+    img: "fastfoodthugbirdz.png",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Fast%20Food%20Thugbirdz"
   }
+
+
 
 
 
