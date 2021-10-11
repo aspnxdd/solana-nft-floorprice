@@ -515,6 +515,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Fast%20Food%20Thugbirdz"
+  },
+  {
+    url: "sloot",
+    name: "sLoot",
+    marketplace: [],
+    img: "sloot.jpeg",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/sLoot"
   }
 
 
