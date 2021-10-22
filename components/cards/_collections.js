@@ -524,6 +524,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/sLoot"
+  },
+  {
+    url: "solmees",
+    name: "Solana Mees",
+    marketplace: [],
+    img: "solanamees.jpeg",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Solana%20Mees"
   }
 
 
