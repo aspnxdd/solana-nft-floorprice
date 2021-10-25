@@ -536,7 +536,7 @@ let _collections = [{
   },
   {
     url: "goldensolmeesawards",
-    name: "Golden Solmee Awards",
+    name: "Golden Solmee A.",
     marketplace: [],
     img: "goldensolmeesawards.jpeg",
     featured: false,
