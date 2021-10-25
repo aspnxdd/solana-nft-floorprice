@@ -309,6 +309,11 @@
     "name": "solmees",
     "url": "Solana%20Mees",
     "tokens": 20000  
+  },
+  {
+    "name": "goldensolmeesawards",
+    "url": "Golden%20SolMee%20Awards",
+    "tokens": 20000  
   }
 
 ]

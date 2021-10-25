@@ -533,6 +533,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Solana%20Mees"
+  },
+  {
+    url: "goldensolmeesawards",
+    name: "Golden Solmee Awards",
+    marketplace: [],
+    img: "goldensolmeesawards.jpeg",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Golden%20SolMee%20Awards"
   }
 
 
