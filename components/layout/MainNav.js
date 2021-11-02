@@ -7,6 +7,7 @@ import {
   NavLeftElement,
   NavLinkLeft,
   ThemeToggle,
+  SearchBarMenu,
 } from "./MainNavElements";
 import Link from "next/link";
 
@@ -14,6 +15,7 @@ import Ticker from "../ticker/Ticker";
 import { FaQuestion } from "react-icons/fa";
 import { BiMoon, BiSun } from "react-icons/bi";
 import React, { useState, useEffect } from "react";
+import SearchBar from "./SearchBar";
 
 const MainNav = ({ toggle, themeToggler, theme }) => {
   const [themeIcon, setThemeIcon] = useState(theme);
@@ -38,7 +40,9 @@ const MainNav = ({ toggle, themeToggler, theme }) => {
             <Bars />
           </MobileIcon>
         </NavLeftElement>
-
+      <SearchBarMenu> 
+        <SearchBar></SearchBar>
+      </SearchBarMenu>
         <NavMenu>
           <Ticker></Ticker>
 

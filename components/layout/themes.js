@@ -7,7 +7,10 @@ export const lightTheme = {
     fontColor: "#000",
     cardBackgroundColor: "#fff",
     navBackgroundColor: "#fff",
-    chartBorderColor: "#a2a2a2"
+    chartBorderColor: "#a2a2a2",
+    search: "#fff",
+    searchBorder: "#6e6e6e",
+    searchResults: "#fff"
 };
 
 export const darkTheme = {
@@ -18,6 +21,9 @@ export const darkTheme = {
     navFontColor: "#fff",
     chartBorderColor: "fff",
     a: "#88cbe1",
+    search: "#406182",
+    searchBorder: "#233547",
+    searchResults: "#406182"
 };
 
 export const GlobalStyles = createGlobalStyle `

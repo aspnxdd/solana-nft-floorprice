@@ -1,4 +1,3 @@
-
 import TitleWelcome from "../components/common/TitleWelcome";
 
 import DonContainer from "../components/donation/DonContainer";
@@ -8,38 +7,38 @@ import FeaturedCard from "../components/cards/FeaturedCard";
 import {
   HeaderWrapper,
   TitleSubtitle,
-  TextWrapper
+  TextWrapper,
 } from "../components/common/HeaderWrapper";
 
 export default function Home() {
   return (
-    <div style={{paddingBottom:"2rem"}}>
+    <div style={{ paddingBottom: "2rem" }}>
       <HeaderWrapper>
-      <TextWrapper >
+        <TextWrapper>
+          <TitleSubtitle>
+            <TitleWelcome />
+            <br></br> <br></br>
+            <h3>
+              <div>
+                Here you can track the history of Floor Price for the
+                collections from{" "}
+                <a href="https://digitaleyes.market/">DigitalEyes</a> and{" "}
+                <a href="https://solanart.io/">Solanart</a>
+              </div>
+              <img
+                className="sol-logo"
+                src="/static/images/solana.svg"
+                alt="sol-logo"
+              ></img>
+            </h3>
+          </TitleSubtitle>
+        </TextWrapper>
 
-        <TitleSubtitle>
-          <TitleWelcome />
+        <FeaturedCard></FeaturedCard>
 
-          <br></br> <br></br>
-          <h3> 
-            <div>
-            
-              Here you can track the history of Floor Price for the collections
-              from <a href="https://digitaleyes.market/">DigitalEyes</a> and{" "}
-              <a href="https://solanart.io/">Solanart</a>
-           
-            </div>
-            <img className="sol-logo" src="/static/images/solana.svg" alt="sol-logo"></img>
-          </h3>
-        </TitleSubtitle>
-      </TextWrapper>
-     
-
-      <FeaturedCard></FeaturedCard>
-   
         <DonContainer />
       </HeaderWrapper>
-
+      
       <CardComponent></CardComponent>
       {/* <Links></Links> */}
     </div>

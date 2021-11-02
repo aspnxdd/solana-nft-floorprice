@@ -1,8 +1,10 @@
-import { FaBars } from "react-icons/fa";
+import {
+  FaBars
+} from "react-icons/fa";
 
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const Nav = styled.nav `
   font-family: "Press Start 2P";
   background-color: ${e => e.theme.navBackgroundColor};
   color: ${e => e.theme.navFontColor};
@@ -22,7 +24,7 @@ export const Nav = styled.nav`
   /* justify-content: flex-start; */
 `;
 
-export const NavLink = styled.div`
+export const NavLink = styled.div `
   font-size: 1.2rem;
   width: 10rem;
    max-width:10rem;
@@ -51,7 +53,7 @@ export const NavLink = styled.div`
   }
 `;
 
-export const NavLinkLeft = styled.div`
+export const NavLinkLeft = styled.div `
   cursor: pointer;
   display: inline-block;
   
@@ -79,9 +81,14 @@ export const NavLinkLeft = styled.div`
     color: inherit;
     text-decoration: none;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-left: -1rem;
+  }
 `;
 
-export const MobileIcon = styled.div`
+export const MobileIcon = styled.div `
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -95,7 +102,8 @@ export const MobileIcon = styled.div`
   }
 `;
 
-export const Bars = styled(FaBars)`
+export const Bars = styled(FaBars)
+`
   color: ${e => e.theme.navFontColor};
   @media screen and (max-width: 768px) {
     display: block;
@@ -107,7 +115,21 @@ export const Bars = styled(FaBars)`
   }
 `;
 
-export const NavMenu = styled.div`
+export const NavMenu = styled.div `
+  display: flex;
+  align-items: center;
+  row-gap: 4rem;
+  column-gap: 10rem;
+  padding-right: 2rem;
+  position: relative;
+  margin-left: 18rem;
+  margin-right: 1rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SearchBarMenu = styled.div `
   display: flex;
   align-items: center;
   row-gap: 4rem;
@@ -115,13 +137,25 @@ export const NavMenu = styled.div`
   padding-right: 2rem;
   position: relative;
   margin-left: 6rem;
-  margin-right: 1rem;
+  margin-right: 10rem;
+  position: relative;
+  
   @media screen and (max-width: 768px) {
-    display: none;
+    display: flex;
+    align-items: center;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    margin-left: 0rem;
+    margin-right: 10rem;
+    padding-left: -10rem;
+    padding-right: 10rem;
+    width: 5rem;
   }
+ 
+  
 `;
 
-export const NavMenuRight = styled.div`
+export const NavMenuRight = styled.div `
   display: flex;
   align-items: center;
   margin-right: 5rem;
@@ -133,7 +167,7 @@ export const NavMenuRight = styled.div`
   }
 `;
 
-export const NavLeftElement = styled.div`
+export const NavLeftElement = styled.div `
   display: flex;
   align-items: center;
   width: 160px;
@@ -151,7 +185,7 @@ export const NavLeftElement = styled.div`
   }
 `;
 
-export const NavBtn = styled.nav`
+export const NavBtn = styled.nav `
   display: flex;
   align-items: center;
   margin-right: 24px;
@@ -165,7 +199,7 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled.button`
+export const NavBtnLink = styled.button `
   border-radius: 4px;
   background: #256ce1;
   padding: 10px 22px;
@@ -192,13 +226,13 @@ export const NavBtnLink = styled.button`
   }
 `;
 
-export const Label = styled.h4`
+export const Label = styled.h4 `
   display: flex;
   margin-left: 15%;
   background: white;
 `;
 
-export const AllNoneToggle = styled.div`
+export const AllNoneToggle = styled.div `
   display: flex;
   margin-left: 15%;
   margin-bottom: 5%;
@@ -211,7 +245,7 @@ export const AllNoneToggle = styled.div`
   }
 `;
 
-export const ThemeToggle = styled.div`
+export const ThemeToggle = styled.div `
   height: 3rem;
   display: flex;
   font-size: 30px;
