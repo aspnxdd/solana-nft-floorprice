@@ -73,11 +73,9 @@ export const Row = styled.div `
     display: flex;
     align-items: center;
     width: 14rem;
-    
-   
     border-radius: 1rem;
     &:hover{
-        background-color: white;
+        background-color: ${(e) => e.theme.searchBorder};
     }
 
 `
