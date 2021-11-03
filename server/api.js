@@ -35,9 +35,7 @@ const corsOptions = {
 server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
-  const {
-    id
-  } = req.headers;
+  const { id } = req.headers;
   try {
     const data = await datafetched
       .find({
@@ -66,18 +64,13 @@ server.get("/loadall", async (req, res) => {
       collectionsAddressSolanart.map(async (e) => {
         data.push(
           await datafetched
-          .findOne({
-            $and: [{
-                collectionname: e.name,
-              },
-              {
-                marketplace: "solanart"
-              },
-            ]
-          })
-          .sort({
-            time: -1,
-          })
+            .findOne({
+              collectionname: e.name,
+              marketplace: "solanart"
+            })
+            .sort({
+              time: -1,
+            })
         );
       })
     );
@@ -86,18 +79,13 @@ server.get("/loadall", async (req, res) => {
       collectionsAddressDigitalEyes.map(async (e) => {
         data.push(
           await datafetched
-          .findOne({
-            $and: [{
-                collectionname: e.name,
-              },
-              {
-                marketplace: "digitaleyes"
-              },
-            ]
-          })
-          .sort({
-            time: -1,
-          })
+            .findOne({
+              collectionname: e.name,
+              marketplace: "digitaleyes"
+            })
+            .sort({
+              time: -1,
+            })
         );
       })
     );
@@ -118,9 +106,7 @@ async function saveSolanart() {
   try {
     // save the data in solarianData
     collectionsAddressSolanart.forEach(async function (coll) {
-      const {
-        data: solanartData
-      } = await axios(
+      const { data: solanartData } = await axios(
         `${SOLANART_URL}${coll.collectionName}`
       );
 
@@ -132,17 +118,17 @@ async function saveSolanart() {
       solanartData
         .filter(
           (e) =>
-          Boolean(e.price) &&
-          e.id !== 473037 &&
-          e.id !== 472737 &&
-          e.id !== 576575 &&
-          e.id !== 576821 &&
-          e.id !== 576368 &&
-          e.id !== 576352 &&
-          e.id !== 593521 &&
-          e.id !== 593494 &&
-          e.id !== 655958 &&
-          e.id !== 663018
+            Boolean(e.price) &&
+            e.id !== 473037 &&
+            e.id !== 472737 &&
+            e.id !== 576575 &&
+            e.id !== 576821 &&
+            e.id !== 576368 &&
+            e.id !== 576352 &&
+            e.id !== 593521 &&
+            e.id !== 593494 &&
+            e.id !== 655958 &&
+            e.id !== 663018
         )
         .forEach((e) => {
           const price = e.price;
@@ -153,9 +139,7 @@ async function saveSolanart() {
 
       // Obtain avrg price
       let dataNfts = {};
-      solanartData.forEach(({
-        seller_address
-      }) => {
+      solanartData.forEach(({ seller_address }) => {
         if (!dataNfts[seller_address]) dataNfts[seller_address] = 0;
         dataNfts[seller_address]++;
       });
@@ -187,17 +171,15 @@ async function saveSolanart() {
 }
 
 async function fetchDe(fullData, collUrl, next_cursor) {
-  const {
-    data: solarianData
-  } = await axios(
+  const { data: solarianData } = await axios(
     `${DIGITALEYES_URL}${collUrl}${next_cursor}`
   );
   let _fp = solarianData.price_floor;
 
   let floor_price = 0;
-  if (_fp != null || _fp != 0) floor_price = _fp;
-  console.log("floor_price", floor_price)
-  console.log("fp", _fp)
+  if(_fp != null || _fp!=0) floor_price=_fp;
+  console.log("floor_price",floor_price)
+  console.log("fp",_fp)
 
   fullData = [...fullData, ...solarianData.offers];
 
@@ -219,10 +201,7 @@ async function saveDigitalEyes() {
   try {
     // save the data in solarianData
     collectionsAddressDigitalEyes.forEach(async function (coll) {
-      const {
-        fullData,
-        floor_price
-      } = await fetchDe([], coll.url, "");
+      const { fullData, floor_price } = await fetchDe([], coll.url, "");
 
       let priceSum = 0;
       let numberOfOwners = new Set();
@@ -230,15 +209,13 @@ async function saveDigitalEyes() {
 
       fullData.forEach((e) => {
         const price = e.price / 1000000000;
-        fp = price < fp ? price : fp;
+        fp = price < fp ? price: fp;
         priceSum += price;
         numberOfOwners.add(e.owner);
       });
       // for numberofnftperowner-----------------------------
       let dataNfts = {};
-      fullData.forEach(({
-        owner
-      }) => {
+      fullData.forEach(({ owner }) => {
         if (!dataNfts[owner]) dataNfts[owner] = 0;
         dataNfts[owner]++;
       });

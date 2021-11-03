@@ -10,8 +10,8 @@ async function getFloorPrices() {
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
-      ? "https://nft-nextjs.herokuapp.com"
-        //? "http://localhost:8080"
+      // ? "https://nft-nextjs.herokuapp.com"
+        ? "http://localhost:8080"
         : "https://nft-nextjs.herokuapp.com"
     }/loadall`
   );
