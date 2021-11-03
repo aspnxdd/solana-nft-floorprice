@@ -66,6 +66,7 @@ server.get("/loadall", async (req, res) => {
           await datafetched
             .findOne({
               collectionname: e.name,
+              marketplace: "solanart"
             })
             .sort({
               time: -1,
@@ -80,6 +81,7 @@ server.get("/loadall", async (req, res) => {
           await datafetched
             .findOne({
               collectionname: e.name,
+              marketplace: "digitaleyes"
             })
             .sort({
               time: -1,

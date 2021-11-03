@@ -10,7 +10,8 @@ async function getFloorPrices() {
   const res = await fetch(
     `${
       window.origin == "http://localhost:3000"
-        ? "http://localhost:8080"
+      ? "https://nft-nextjs.herokuapp.com"
+        //? "http://localhost:8080"
         : "https://nft-nextjs.herokuapp.com"
     }/loadall`
   );
@@ -23,7 +24,7 @@ async function getFloorPrices() {
 
 export default function CardComponent() {
   async function addMarketplace(dataAll) {
-    console.log("_collections",_collections);
+    console.log("dataAll",dataAll);
     for (let i = 0; i < _collections.length; i++) {
       collectionsDigitalEyes.forEach((col) => {
         if (col.name == _collections[i].url) {
@@ -33,7 +34,10 @@ export default function CardComponent() {
               k?.marketplace.includes("digitaleyes") &&
               k.collectionname == _collections[i].url
             ) {
-              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice) _collections[i].fp = k.floorprice;
+              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice){
+                console.log(1,_collections[i])
+                _collections[i].fp = k.floorprice;
+              }
             }
           });
         }
@@ -49,7 +53,10 @@ export default function CardComponent() {
               k.collectionname == _collections[i].url 
               
             ) {
-              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice)_collections[i].fp = k.floorprice;
+              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice){
+                console.log(2,_collections[i])
+                _collections[i].fp = k.floorprice;
+              }
             }
           });
         }
