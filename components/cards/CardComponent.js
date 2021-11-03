@@ -33,7 +33,7 @@ export default function CardComponent() {
               k?.marketplace.includes("digitaleyes") &&
               k.collectionname == _collections[i].url
             ) {
-              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice)_collections[i].fp = k.floorprice;
+              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice) _collections[i].fp = k.floorprice;
             }
           });
         }

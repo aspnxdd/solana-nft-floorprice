@@ -52,7 +52,7 @@ const SearchBar = () => {
     setSearchResults([]);
     _searchResults = [];
     _collections.forEach((e) => {
-      if (e.url.includes(search) && search !== "") _searchResults.push(e);
+      if (e.url.includes(search.toLowerCase()) && search !== "") _searchResults.push(e);
       console.log("searchResults", searchResults);
     });
     setSearchResults(_searchResults);
