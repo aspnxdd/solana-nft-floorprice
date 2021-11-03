@@ -46,10 +46,10 @@ export default function CardComponent() {
           dataAll.forEach((k) => {
             if (
               k?.marketplace.includes("solanart") &&
-              k.collectionname == _collections[i].url &&
-              _collections[i].fp < k.floorprice
+              k.collectionname == _collections[i].url 
+              
             ) {
-               _collections[i].fp = k.floorprice;
+              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice)_collections[i].fp = k.floorprice;
             }
           });
         }
