@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "./ChartElements";
+import { Container,TimeButton } from "./ChartElements";
 import LineChart from "../../components/chart/LineChart";
 import "chartjs-adapter-luxon";
 
@@ -128,11 +128,13 @@ export default function ContainerLineChart({ data, param }) {
   return (
     <Container>
       <div className="chart-buttons">
-        <label> Show data points: </label>
-        <button onClick={() => setDataPoints(24)}> 1D</button>
-        <button onClick={() => setDataPoints(24*7)}> 1W</button>
-        <button onClick={() => setDataPoints(24*7*30)}> 1M</button>
-        <button onClick={() => setDataPoints(0)}> All</button>
+       
+        <TimeButton onClick={() => setDataPoints(24)}> 1D</TimeButton>
+        <TimeButton onClick={() => setDataPoints(24*7)}> 1W</TimeButton>
+        <TimeButton onClick={() => setDataPoints(24*7*30)}> 1M</TimeButton>
+        <TimeButton onClick={() => setDataPoints(24*7*30*2)}> 2M</TimeButton>
+        <TimeButton onClick={() => setDataPoints(24*7*30*3)}> 3M</TimeButton>
+        <TimeButton onClick={() => setDataPoints(0)}> All</TimeButton>
       </div>
       <LineChart data={dataChart} options={options} />
     </Container>

@@ -120,3 +120,40 @@ export const UpdateBtn = styled.div`
   margin-bottom: -5rem;
   }
 `;
+
+export const TimeButton =  styled.button`
+ 
+  border-radius: 4px;
+  background: #256ce1;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  outline: none;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.8rem;
+  width: 6rem;
+  border-color: ${e => e.theme.timeBtnBorder};
+  /* Second Nav */
+  margin-left: 3rem;
+  &:hover {
+    transition: background 0.5s ease-in-out;
+    background: ${e => e.theme.timeBtnBackground}; 
+    color:#256ce1;
+    border: 1px solid;
+  }
+ 
+  & > a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 2rem;
+    padding: 1rem 0.8rem;
+    margin-left: 1.2rem;
+  }
+
+`

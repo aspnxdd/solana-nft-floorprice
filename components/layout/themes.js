@@ -10,7 +10,9 @@ export const lightTheme = {
     chartBorderColor: "#a2a2a2",
     search: "#fff",
     searchBorder: "#6e6e6e",
-    searchResults: "#fff"
+    searchResults: "#fff",
+    timeBtnBorder: "#fff",
+    timeBtnBackground: "#fff"
 };
 
 export const darkTheme = {
@@ -23,7 +25,9 @@ export const darkTheme = {
     a: "#88cbe1",
     search: "#406182",
     searchBorder: "#233547",
-    searchResults: "#406182"
+    searchResults: "#406182",
+    timeBtnBorder: "#000",
+    timeBtnBackground: "#15202b"
 };
 
 export const GlobalStyles = createGlobalStyle `

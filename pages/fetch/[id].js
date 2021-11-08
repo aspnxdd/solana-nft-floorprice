@@ -1,6 +1,6 @@
 import Time from "../../components/currentTime/CurrentTime";
 import React, { useEffect, useState } from "react";
-import { GrUpdate } from "react-icons/gr";
+
 import Spinner from "../../components/spinner/Spinner";
 import { useRouter } from "next/router";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
@@ -13,6 +13,7 @@ import {
   Marketplaces,
   Area,
   UpdateBtn,
+  TimeButton
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
@@ -124,9 +125,9 @@ function Data() {
         </InfoContainer>
       </TopWrapper>
       <UpdateBtn>
-        <button onClick={updateData}>
-          <GrUpdate /> Update
-        </button>
+        <TimeButton onClick={updateData}>
+          🔄Update
+        </TimeButton>
         {loading && <Spinner />}
       </UpdateBtn>
       <Wrapper>

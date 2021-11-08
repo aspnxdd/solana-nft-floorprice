@@ -9,7 +9,7 @@ export default function Faq() {
         <b>Hello, the purpose of this website is to keep track of the previous
         floor prices datapoints of the different collections from SOLANA listed. The
         sample frequency is 1h but may be changed due to server congestion.</b>
-        <h2>1️⃣Who the fuck are you? </h2>
+        <h2>1️⃣Who are you? </h2>
         Im just a boring guy who found out about web development and
         crypto + NFTs some time ago. I&apos;m from Spain. You can follow me on:{" "}
         <a style={{ display:"flex", width: "10rem", flexDirection: "row", alignItems: "center", columnGap:"0.7rem"}} href="https://twitter.com/ESArnau">
