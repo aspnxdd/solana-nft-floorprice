@@ -67,9 +67,9 @@ export default function ContainerLineChart({ data, param }) {
 
   const options = {
     interaction: {
-      mode: "x",
-
-      intersect: false,
+      mode: "index",
+      axis: "xy",
+      intersect: true,
     },
 
     plugins: {
