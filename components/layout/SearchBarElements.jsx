@@ -23,7 +23,7 @@ export const SearchBarInput = styled.input `
     border: 4px solid;
     border-color: ${(e) => e.theme.searchBorder};
     border-radius: 1rem;
-    font-family: Ubuntu;
+    font-family: "Sofia Pro";
     display: flex;
     height: 3rem;
     width: 16rem;
@@ -35,7 +35,7 @@ export const SearchBarResults = styled.div `
      color: rgb(0, 0, 0);
     cursor: initial;
     position: fixed;
-    font-family: Ubuntu;
+    font-family: "Sofia Pro";
     display: block;
     border-radius: 1em; 
     border: 4px solid;

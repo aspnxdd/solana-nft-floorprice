@@ -5,7 +5,7 @@ import {
 import styled from "styled-components";
 
 export const Nav = styled.nav `
-  font-family: "Press Start 2P";
+  font-family: "Sofia Pro";
   background-color: ${e => e.theme.navBackgroundColor};
   color: ${e => e.theme.navFontColor};
   height: 3.5rem;
@@ -56,7 +56,7 @@ export const NavLink = styled.div `
 export const NavLinkLeft = styled.div `
   cursor: pointer;
   display: inline-block;
-  
+  font-family:"Press Start 2P";
   font-size: 2rem;
   margin-top: 0.7rem;
   align-items: center;

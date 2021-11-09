@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-  
+ 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     font-size: 1.8rem;
@@ -24,6 +24,7 @@ export const LeftSection = styled.section`
   align-items: center;
   padding-right: 1rem;
   padding-left: 1rem;
+  font-size: 20px;
  
 `;
 
