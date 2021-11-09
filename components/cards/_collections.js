@@ -564,16 +564,6 @@ let _collections = [{
 
 
 
-
-
-
-
-
-
-
-
-
-
 ];
 
 export default _collections;

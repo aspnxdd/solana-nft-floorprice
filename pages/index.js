@@ -22,8 +22,9 @@ export default function Home() {
               <div>
                 Here you can track the history of Floor Price for the
                 collections from{" "}
-                <a href="https://digitaleyes.market/">DigitalEyes</a> and{" "}
-                <a href="https://solanart.io/">Solanart</a>
+                <a href="https://digitaleyes.market/">DigitalEyes</a>, {" "} 
+                <a href="https://solanart.io/">Solanart</a> and{" "}
+                <a href="https://magiceden.io/">MagicEden</a>
               </div>
               <img
                 className="sol-logo"
