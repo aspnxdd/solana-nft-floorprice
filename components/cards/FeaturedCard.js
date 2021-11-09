@@ -11,6 +11,7 @@ import {
 } from "./FeaturedCardElements";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
+import collectionsMagicEden from "../../server/collectionsMagicEden.json"
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
@@ -33,6 +34,13 @@ export default function CardComponent() {
       collectionsSolanart.forEach((col) => {
         if (col.name == _collections[i].url) {
           _collections[i].marketplace.push("solanart");
+        }
+      });
+    }
+    for (let i = 0; i < _collections.length; i++) {
+      collectionsMagicEden.forEach((col) => {
+        if (col.name == _collections[i].url) {
+          _collections[i].marketplace.push("magiceden");
         }
       });
     }
@@ -76,6 +84,14 @@ export default function CardComponent() {
                         width="30px"
                       ></img>
                     )}
+
+                    {e.marketplace.includes("magiceden") && (
+                      <img
+                        src="/static/images/magiceden.png"
+                        alt="me-logo"
+                        width="30px"
+                      ></img>
+                    )}
                   </MarketplacesAreaF>
                 </CardF>
               </Link>
@@ -98,6 +114,13 @@ export default function CardComponent() {
                 <img
                         src="/static/images/solanart.svg"
                         alt="de-logo"
+                        width="30px"
+                      ></img>
+                </a>
+                <a href={e.magiceden}>
+                <img
+                        src="/static/images/magiceden.png"
+                        alt="me-logo"
                         width="30px"
                       ></img>
                 </a>

@@ -1,225 +1,164 @@
 [
   {
     "name": "solanadogesnfts",
-    "address": "HwMBMB6QpPJNyFnbVtt2UKVmJQPGnKKsMfaxNUyWahmc",
-
-    "uri": "@@@@@@@@",
     "url": "SolanaDogeNFTs",
     "tokens": 10000
   },
   {
     "name": "thugbirdz",
-    "address": "CzrE3LhijwcmvsXZa8YavqgR9EzW3UGqoSWZKwGpZVqM",
-    "address2": "AvkbtawpmMSy571f71WsWEn41ATHg5iHw27LoYJdk8QA",
-    "uri": "@@@@@@@@",
     "url": "Thugbirdz",
     "tokens": 3333
   },
   {
     "name": "degenapes",
-    "address": "DC2mkgwhy56w3viNtHDjJQmc7SGu2QX785bS4aexojwX",
-
-    "uri": "@@@@@@@@",
     "url": "Degenerate%20Ape%20Academy",
     "tokens": 10000
   },
   {
     "name": "abstratica",
-    "address": "absF5t1MP7dXFhbgUgaTi7ffJM2WhBg1cmrY5s7h3By",
-
-    "uri": "@@@@@@@@",
-    "url": "Abstratica"
+    "url": "Abstratica",
+    "tokens":10000
   },
   {
     "name": "frakt",
-    "address": "6wPYbuGRXZjVw2tCeTxwRiQU7AzFDTeFEKuUFpJZpcix",
-
-    "uri": "@@@@@@@@",
     "url": "Frakt"
   },
   {
     "name": "pixelpenguin",
-    "address": "HrmSkref9wZ5UMRH8AxaQtAQbEA1SyhVpBLKe7Vz2zcP",
 
-    "uri": "@@@@@@@@",
     "url": "Pixel%20Penguins"
   },
   {
     "name": "solanimals",
-    "address": "5Fc7Zy7HgRatL8XhX5uqsUFEjGPop1uJXKrp3Ws7m1Tn",
-
-    "uri": "@@@@@@@@",
     "url": "Solanimals",
     "tokens": 10000
   },
   {
     "name": "soldalas",
-    "address": "8KUU21MBhtJBXnPMEpq7HZ3egoymHopizCydw12uNKfC",
-
-    "uri": "@@@@@@@@",
     "url": "Soldalas"
   },
   {
     "name": "soliens",
-    "address": "Ak2TGuzxce5HMV6Z6KJR5nKKRUvAt5go8172JQYHgPbb",
-
-    "uri": "@@@@@@@@",
     "url": "Soliens"
   },
   {
     "name": "solpops",
-    "address": "Fe6JTzvUk8pu3oYoH7UgRKvUnQw3DPbhSdxZCRh9YRxi",
-
-    "uri": "@@@@@@@@",
     "url": "Solpops"
   },
   {
     "name": "solchihuahua",
-    "address": "5q9UPUMoJ2zGrgHk4xjpzf5TF8hcuowbmYkVCX2f3Bnt",
-
-    "uri": "@@@@@@@@",
     "url": "ChihuahuaSol"
   },
   {
     "name": "smb",
-    "address": "9uBX3ASjxWvNBAD1xjbVaKA74mWGZys3RGSF7DdeDD3F",
-
-    "uri": "@@@@@@@@",
     "url": "Solana%20Monkey%20Business",
     "tokens": 10000
   },
   {
     "name": "solbear",
-    "uri": "QmS2BZecgTM5jy1PWzFbxcP6jDsLoq5EbGNmmwCPbi7YNH",
     "url": "SolBear",
     "tokens": 10000
   },
   {
     "name": "solarians",
-
-    "uri": "https://solarians.click/api/metaplex-mints",
     "url": "Solarians"
   },
   {
     "name": "tophatchicks",
-    "address": "8PiT6FmWusujEEBaNhXHapddGBPyB1QK3iukK5cvYZQV",
-
-    "uri": "@@@@@@@@@@@@",
     "url": "Top%20Hat%20Chicks"
   },
   {
     "name": "rox",
-
-    "uri": "https://rox.cards/api/metaplex-mints",
     "url": "Rox"
   },
   {
     "name": "cryptolizzy",
-
     "url": "Crypto%20Lizzy"
   },
   {
     "name": "solanasouls",
-
     "url": "Solana%20Souls",
     "tokens": 10000
   },
   {
     "name": "solamanders",
-
     "url": "Solamanders",
     "tokens": 10000
   },
   {
     "name": "solbulls",
-
     "url": "Solbulls",
     "tokens": 10000
   },
   {
     "name": "solcats",
-
     "url": "SolCats",
     "tokens": 10000
   },
   {
     "name": "bitboat",
-
     "url": "BitBoat"
   },
   {
     "name": "solstash",
-
     "url": "Stash"
   },
   {
     "name": "kaijucards",
-
     "url": "Kaiju%20Cards"
   },
   {
     "name": "piggysolgang",
-
     "url": "Piggy%20Sol%20Gang",
     "tokens": 10000
   },
   {
     "name": "gmoot",
-
     "url": "Gmoot",
     "tokens": 10000
   },
   {
     "name": "solgen",
-
     "url": "SolGen",
     "tokens": 10000
   },
   {
     "name": "trippybunnytribe",
-
     "url": "Trippy%20Bunny%20Tribe",
     "tokens": 10000
   },
   {
     "name": "boogle",
-
     "url": "Boogle",
     "tokens": 100
   },
   {
     "name": "shroomz",
-
     "url": "ShroomZ",
     "tokens": 1000
   },
   {
     "name": "solsleepyzzz",
-
     "url": "SolSleepyzzz",
     "tokens": 1000
   },
   {
     "name": "enigmaexpanses",
-
     "url": "Enigma%20Expanses",
     "tokens": 1000
   },
   {
     "name": "kiddomonkeys",
-
     "url": "Kiddo%20Monkeys",
     "tokens": 1000
   },
   {
     "name": "pandastreet",
-
     "url": "Panda%20Street",
     "tokens": 7777
   },
   {
     "name": "sneks",
-
     "url": "The%20Sneks",
     "tokens": 10000
   },

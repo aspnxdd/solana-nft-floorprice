@@ -103,7 +103,7 @@ height: 1rem;
 width: 5rem;
 margin-top: 1rem;
 cursor: pointer; 
-column-gap: 1.5rem;
+column-gap: 0.5rem;
 display: flex;
 justify-content: space-around;
 align-items: center;

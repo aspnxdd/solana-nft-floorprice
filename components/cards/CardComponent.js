@@ -1,6 +1,7 @@
 import { CardsArea, Card, Img, Title, MarketplacesArea } from "./CardsElements";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
+import collectionsMagicEden from "../../server/collectionsMagicEden.json";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -62,6 +63,25 @@ export default function CardComponent() {
         }
       });
     }
+    for (let i = 0; i < _collections.length; i++) {
+      collectionsMagicEden.forEach((col) => {
+        if (col.name == _collections[i].url) {
+          _collections[i]?.marketplace.push("magiceden");
+          dataAll.forEach((k) => {
+            if (
+              k?.marketplace.includes("magiceden") &&
+              k.collectionname == _collections[i].url 
+              
+            ) {
+              if(_collections[i].fp == 0 || _collections[i].fp > k.floorprice){
+                console.log(2,_collections[i])
+                _collections[i].fp = k.floorprice;
+              }
+            }
+          });
+        }
+      });
+    }
   }
 
   const [marketplaceArr, setMarketplaceArr] = useState([]);
@@ -96,6 +116,14 @@ export default function CardComponent() {
                   <img
                     src="/static/images/solanart.svg"
                     alt="so-logo"
+                    width="25px"
+                  ></img>
+                )}
+
+                {e.marketplace.includes("magiceden") && (
+                  <img
+                    src="/static/images/magiceden.png"
+                    alt="me-logo"
                     width="25px"
                   ></img>
                 )}

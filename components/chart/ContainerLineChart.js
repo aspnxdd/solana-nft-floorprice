@@ -14,6 +14,7 @@ export default function ContainerLineChart({ data, param }) {
     let dataForChart = {
       dataSolanart: data.solanartData.slice(-dataPoints),
       dataDigitalEyes: data.digitalEyesData.slice(-dataPoints),
+      dataMagicEden: data.magicEdenData.slice(-dataPoints)
     };
 
     return dataForChart;
@@ -44,6 +45,20 @@ export default function ContainerLineChart({ data, param }) {
   
 
   };
+
+  const dataMagicEden = {
+    type: "line",
+    label: "MagicEden",
+    order: 1,
+    data: dataForChart.dataMagicEden.map((o) => ({ x: o.time, y: o[param] })),
+    fill: false,
+    backgroundColor: "#f44c9f",
+    borderColor: "#f44c9f",
+    tension: 0.2,
+    spanGaps: true,
+  
+
+  };
   //data to render in chart line
 
   let dataChart = {
@@ -58,6 +73,8 @@ export default function ContainerLineChart({ data, param }) {
     dataChart.datasets.push(dataDigitalEyes);
   if (dataForChart.dataSolanart?.length > 0)
     dataChart.datasets.push(dataSolanart);
+  if (dataForChart.dataMagicEden?.length > 0)
+   dataChart.datasets.push(dataMagicEden);
   //add data to dataset array if exists
 
   let title = "";

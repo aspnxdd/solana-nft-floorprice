@@ -12,8 +12,9 @@ import {
   Info,
   Marketplaces,
   Area,
+  UpdateBtnDiv,
   UpdateBtn,
-  TimeButton
+  
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
@@ -41,9 +42,12 @@ async function getFloorPrices(id) {
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
 
+  const magicEdenData = data.filter((e) => e.marketplace === "magiceden");
+    console.log("magicEdenData",magicEdenData)
   return {
     digitalEyesData,
     solanartData,
+    magicEdenData
   };
 }
 
@@ -55,30 +59,33 @@ function Data() {
   const [dataForChart, setDataForChart] = useState({
     solanartData: [],
     digitalEyesData: [],
+    magicEdenData: []
   });
   const router = useRouter();
-  console.log(31, router)
+ 
 
   // useEffect for Chart
   useEffect(() => {
-    console.log(12,router)
+    
     if(router.query.id){
-      console.log(22,router)
+      
       setLoading(true);
       getFloorPrices(router.query.id).then((data) => {
         // data for Chart
         setLoading(false);
+
         setInfoData(_collections.find((e) => e.url == [router.query.id]));
+        
         setDataForChart(data);
       });
     }
+    
   }, [router.query.id]); 
 
   function updateData() {
     setLoading(true);
     getFloorPrices(router.query.id).then((data) => {
       setLoading(false);
-      // data for Table
       setData(data);
     });
   }
@@ -107,7 +114,16 @@ function Data() {
                 <a href={infoData.solanart}>
                   <img
                     src="/static/images/solanart.svg"
-                    alt="de-logo"
+                    alt="so-logo"
+                    width="40px"
+                  ></img>
+                </a>
+              )}
+              {infoData?.magiceden && (
+                <a href={infoData.magiceden}>
+                  <img
+                    src="/static/images/magiceden.png"
+                    alt="me-logo"
                     width="40px"
                   ></img>
                 </a>
@@ -124,12 +140,12 @@ function Data() {
           </Img>
         </InfoContainer>
       </TopWrapper>
-      <UpdateBtn>
-        <TimeButton onClick={updateData}>
+      <UpdateBtnDiv>
+        <UpdateBtn onClick={updateData}>
           🔄Update
-        </TimeButton>
+        </UpdateBtn>
         {loading && <Spinner />}
-      </UpdateBtn>
+      </UpdateBtnDiv>
       <Wrapper>
         <ContainerLineChart
           data={dataForChart}

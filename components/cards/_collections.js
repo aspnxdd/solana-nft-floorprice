@@ -7,6 +7,7 @@ let _collections = [{
     discord: "https://t.co/zeJaS54GOV?amp=1",
     twitter: "https://twitter.com/SolanaDogeNFTs",
     digitaleyes: "https://digitaleyes.market/collections/SolanaDogeNFTs",
+    magiceden:"https://magiceden.io/marketplace/solanadoge",
     fp: 0,
   },
   {
@@ -19,6 +20,7 @@ let _collections = [{
     twitter: "https://twitter.com/thugbirdz",
     digitaleyes: "https://digitaleyes.market/collections/Thugbirdz",
     solanart: "https://solanart.io/collections/thugbirdz",
+    magiceden: "https://magiceden.io/marketplace/thugbirdz",
     fp: 0,
   },
   {
@@ -29,6 +31,7 @@ let _collections = [{
     featured: false,
     digitaleyes: "https://digitaleyes.market/collections/Degenerate%20Ape%20Academy",
     solanart: "https://solanart.io/collections/degenape",
+    magiceden:"https://magiceden.io/marketplace/degenerate_ape_academy",
     fp: 0,
   },
   {
@@ -114,7 +117,8 @@ let _collections = [{
     img: "smb.png",
     featured: false,
     fp: 0,
-    digitaleyes: "https://digitaleyes.market/collections/Solana%20Monkey%20Business"
+    digitaleyes: "https://digitaleyes.market/collections/Solana%20Monkey%20Business",
+    magiceden:"https://magiceden.io/marketplace/solana_monkey_business"
   },
   {
     url: "solbear",
@@ -151,6 +155,7 @@ let _collections = [{
     img: "solpunk.png",
     featured: false,
     solanart: "https://solanart.io/collections/solpunks",
+    magiceden:"https://magiceden.io/marketplace/solpunks",
     fp: 0,
   },
   {
@@ -187,7 +192,8 @@ let _collections = [{
     img: "aurory.png",
     featured: false,
     fp: 0,
-    solanart: "https://solanart.io/collections/aurory"
+    solanart: "https://solanart.io/collections/aurory",
+    magiceden:"https://magiceden.io/marketplace/aurory"
   },
   {
     url: "cryptolizzy",
@@ -281,7 +287,8 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Piggy%20Sol%20Gang",
-    solanart: "https://solanart.io/collections/piggysolgang"
+    solanart: "https://solanart.io/collections/piggysolgang",
+    magiceden:"https://magiceden.io/marketplace/piggy_sol_gang",
   },
   {
     url: "gmoot",
@@ -291,7 +298,8 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Gmoot",
-    twitter: "https://twitter.com/iamgmoot"
+    twitter: "https://twitter.com/iamgmoot",
+    magiceden:"https://magiceden.io/marketplace/gmoot"
   },
   {
     url: "solgen",
@@ -310,7 +318,6 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Trippy%20Bunny%20Tribe",
-
     solanart: "https://solanart.io/collections/trippybunny",
 
   },
@@ -413,7 +420,8 @@ let _collections = [{
     featured: true,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Turtles",
-    solanart: "https://solanart.io/collections/turtles"
+    solanart: "https://solanart.io/collections/turtles",
+    magiceden:"https://magiceden.io/marketplace/turtles"
   },
   {
     url: "solpanda",
@@ -542,7 +550,17 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Golden%20SolMee%20Awards"
+  },
+  {
+    url: "babyapes",
+    name: "Baby Apes",
+    marketplace: [],
+    img: "babyapes.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/babyapes"
   }
+
 
 
 

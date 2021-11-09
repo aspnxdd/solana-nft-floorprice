@@ -47,6 +47,7 @@ server.get("/load", async (req, res) => {
       .sort({
         time: 1,
       });
+      console.log("data",data)
     return res.status(200).json({
       success: true,
       data: data,
@@ -85,6 +86,21 @@ server.get("/loadall", async (req, res) => {
           .findOne({
             collectionname: e.name,
             marketplace: "digitaleyes"
+          })
+          .sort({
+            time: -1,
+          })
+        );
+      })
+    );
+
+    await Promise.all(
+      collectionsAddressMagicEden.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name,
+            marketplace: "magiceden"
           })
           .sort({
             time: -1,
