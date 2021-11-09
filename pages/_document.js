@@ -12,8 +12,7 @@ class MyDocument extends Document {
         <Head>
             <title>Solana NFT Floor Price</title>
             <link rel="shortcut icon" href="/static/images/logo.png" />
-            <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
-                
+
 
             <meta name="viewport" content="width=device-width, initial-scale=1.0, 
 user-scalable=no"></meta>
