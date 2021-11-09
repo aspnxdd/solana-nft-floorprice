@@ -559,8 +559,68 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/babyapes"
+  },
+  {
+    url: "goblinlaboratory",
+    name: "goblinlaboratory",
+    marketplace: [],
+    img: "goblinlaboratory.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/goblin_laboratory",
+    digitaleyes: "https://digitaleyes.market/collections/goblinlaboratory",
+    solanart: "https://solanart.io/collections/goblinlaboratory"
+  },
+  {
+    url: "solanasamuraijourney",
+    name: "solanasamuraijourney",
+    marketplace: [],
+    img: "solanasamuraijourney.gif",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/solana_samurai_journey",
+    digitaleyes: "https://digitaleyes.market/collections/SSJ%20Solana%20Samurai%20Journey"
   }
-
+  ,
+  {
+    url: "nechromatics",
+    name: "Nechromatics",
+    marketplace: [],
+    img: "Nechromatics.png",
+    featured: false,
+    fp: 0,
+    digitaleyes: "https://digitaleyes.market/collections/Nechromatics"
+  },
+  {
+    url: "nftreessolana",
+    name: "nftreessolana",
+    marketplace: [],
+    img: "nftreessolana.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/nftrees_solana",
+    digitaleyes: "https://digitaleyes.market/collections/NFTrees%20Solana"
+  },
+  {
+    url: "meremarbles",
+    name: "meremarbles",
+    marketplace: [],
+    img: "meremarbles.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/mere_marbles",
+    digitaleyes: "https://digitaleyes.market/collections/Mere%20Marbles"
+  },
+  {
+    url: "bannurs",
+    name: "bannurs",
+    marketplace: [],
+    img: "bannurs.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/bannurs",
+    digitaleyes: "https://digitaleyes.market/collections/Bannurs"
+  }
 
 
 

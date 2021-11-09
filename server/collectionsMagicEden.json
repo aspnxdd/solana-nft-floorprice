@@ -44,18 +44,37 @@
     "url": "piggy_sol_gang",
     "tokens":10000
   },
-  {
-    "name": "aurory",
-    "url": "aurory",
-    "tokens":10000
-  },
+
   {
     "name": "solanadogesnfts",
     "url": "solanadoge",
     "tokens":10000
+  },
+  {
+    "name": "meremarbles",
+    "url": "mere_marbles",
+    "tokens":1111
+  },
+  {
+    "name": "solanasamuraijourney",
+    "url": "solana_samurai_journey",
+    "tokens":500
+  },
+  {
+    "name": "bannurs",
+    "url": "bannurs",
+    "tokens":2001
+  },
+  {
+    "name": "goblinlaboratory",
+    "url": "goblin_laboratory",
+    "tokens":10000
+  },
+  {
+    "name": "nftrees_solana",
+    "url": "nftrees_solana",
+    "tokens":10000
   }
-  
-  
   
   
 ]

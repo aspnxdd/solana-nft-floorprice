@@ -251,7 +251,35 @@
     "name": "goldensolmeesawards",
     "url": "Golden%20SolMee%20Awards",
     "tokens": 20000  
+  },
+  {
+    "name": "solanasamuraijourney",
+    "url": "SSJ%20Solana%20Samurai%20Journey",
+    "tokens": 500  
+  },
+  {
+    "name": "Nechromatics",
+    "url": "Nechromatics",
+    "tokens": 100  
+  },
+  {
+    "name": "meremarbles",
+    "url": "Mere%20Marbles",
+    "tokens": 1111  
+  },
+  {
+    "name": "nftreessolana",
+    "url": "NFTrees%20Solana",
+    "tokens": 1111  
+  },
+  {
+    "name": "bannurs",
+    "url": "Bannurs",
+    "tokens": 2001  
+  },
+  {
+    "name": "goblinlaboratory",
+    "url": "goblinlaboratory",
+    "tokens": 10000 
   }
-
 ]
-
