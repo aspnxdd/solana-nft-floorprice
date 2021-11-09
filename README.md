@@ -5,7 +5,7 @@
 
 This website aims to keep track of the floor price history from Solana NFT collections. The sample frequency is at 1hour at the moment.
 
-So far it fetches data from two of the largest NFT Marketplaces in Solana Ecosystem: [Solanart](https://solanart.io) and [DigitalEyes](https://digitaleyes.market/)
+So far it fetches data from two of the largest NFT Marketplaces in Solana Ecosystem: [Solanart](https://solanart.io), [DigitalEyes](https://digitaleyes.market/) and [MagicEden](https://magiceden.io/)
 
 If you need a collection to be added, just message me on Discord: Nivoa#4968 :)
 
