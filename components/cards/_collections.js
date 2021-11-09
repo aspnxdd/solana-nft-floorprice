@@ -583,7 +583,7 @@ let _collections = [{
   }
   ,
   {
-    url: "nechromatics",
+    url: "Nechromatics",
     name: "Nechromatics",
     marketplace: [],
     img: "Nechromatics.png",
