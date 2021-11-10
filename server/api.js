@@ -316,6 +316,7 @@ async function saveMagicEden() {
         if (!filteredData[owner]) filteredData[owner] = 0;
         filteredData[owner]++;
       });
+      console.log(2, filteredData)
       //------------------------------------------------
 
 

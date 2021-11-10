@@ -17,6 +17,7 @@ export default function ContainerBarChart({ data }) {
     if (data.digitalEyesData.length > 0 || data.solanartData.length > 0) {
       const solanartData = data.solanartData?.slice(-1);
       const digitalEyesData = data.digitalEyesData?.slice(-1);
+      const magicEdenData = data.magicEdenData?.slice(-1);
      
 
       let dataForChart = {
@@ -26,11 +27,17 @@ export default function ContainerBarChart({ data }) {
         dataDigitalEyes: digitalEyesData[0]
           ? Object.values(digitalEyesData[0]?.numberofnftperowner)
           : [],
+        dataMagicEden: magicEdenData[0]
+          ? Object.values(magicEdenData[0]?.numberofnftperowner)
+          : [],
         labelSolanart: solanartData[0]
           ? Object.keys(solanartData[0]?.numberofnftperowner)
           : [],
         labelDigitalEyes: digitalEyesData[0]
           ? Object.keys(digitalEyesData[0]?.numberofnftperowner)
+          : [],
+        labelMagicEden: magicEdenData[0]
+          ? Object.keys(magicEdenData[0]?.numberofnftperowner)
           : [],
       };
       
@@ -56,6 +63,16 @@ export default function ContainerBarChart({ data }) {
           backgroundColor: "#599aca",
           borderColor: "#599aca",
         };
+        const dataMagicEden = {
+          label: "MagicEden",
+          data: dataForChart.dataMagicEden?.map((o, i) => ({
+            x: dataForChart.labelMagicEden[i],
+            y: o,
+          })),
+          key: "magiceden",
+          backgroundColor: "#f44c9f",
+          borderColor: "#f44c9f",
+        };
 
         //add data to dataset array if exists
         if (dataForChart.dataSolanart?.length > 0)
@@ -63,6 +80,9 @@ export default function ContainerBarChart({ data }) {
 
         if (dataForChart.dataDigitalEyes?.length > 0)
           dataChart.datasets.push(dataDigitalEyes);
+
+        if (dataForChart.dataMagicEden?.length > 0)
+          dataChart.datasets.push(dataMagicEden);
       }
     }
 
