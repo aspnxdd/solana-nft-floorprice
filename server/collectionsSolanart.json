@@ -88,6 +88,11 @@
     "name": "goblinlaboratory",
     "collectionName": "goblinlaboratory",
     "tokens": 10000 
+  },
+  {
+    "name": "theslowpatrol",
+    "collectionName": "theslowpatrol",
+    "tokens": 8888 
   }
   
 ]

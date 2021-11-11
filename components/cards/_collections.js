@@ -620,6 +620,17 @@ let _collections = [{
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/bannurs",
     digitaleyes: "https://digitaleyes.market/collections/Bannurs"
+  },
+  {
+    url: "theslowpatrol",
+    name: "The Slow Patrol",
+    marketplace: [],
+    img: "theslowpatrol.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://www.magiceden.io/marketplace?collection_symbol=the_slow_patrol&r=theslowpatrol",
+    solanart: "https://solanart.io/collections/theslowpatrol",
+    digitaleyes:"https://digitaleyes.market/collections/The%20Slow%20Patrol"
   }
 
 

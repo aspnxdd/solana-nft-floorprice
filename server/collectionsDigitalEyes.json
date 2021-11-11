@@ -281,5 +281,10 @@
     "name": "goblinlaboratory",
     "url": "Goblin%20Laboratory",
     "tokens": 10000 
+  },
+  {
+    "name": "theslowpatrol",
+    "url": "The%20Slow%20Patrol",
+    "tokens": 8888 
   }
 ]
