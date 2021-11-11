@@ -97,6 +97,7 @@ export default function CardComponent() {
       {marketplaceArr.map((e) => {
         return (
           <Link key={e.name} href={`/fetch/${e.url}`}>
+          <a style={{color:"#fff"}}>
             <Card>
               <Img src={`./static/images/${e.img}`}></Img>
               <Title>
@@ -132,6 +133,7 @@ export default function CardComponent() {
               Latest FP: {Math.round(e.fp * 100) / 100} <img width="15px" src="/static/images/solana.svg" alt="sol-logo"></img>
            </div>
             </Card>
+            </a>
           </Link>
         );
       })}

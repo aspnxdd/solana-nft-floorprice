@@ -63,6 +63,7 @@ export default function CardComponent() {
           return (
             <CardContainer key={e.name}>
               <Link key={e.name} href={`/fetch/${e.url}`}>
+              <a style={{color:"#fff"}}>
                 <CardF>
                   <ImgF src={`./static/images/${e.img}`}></ImgF>
                   <TitleF>
@@ -94,6 +95,7 @@ export default function CardComponent() {
                     )}
                   </MarketplacesAreaF>
                 </CardF>
+                </a>
               </Link>
               <CollectionLinks>
                 <a href={e.twitter}>
