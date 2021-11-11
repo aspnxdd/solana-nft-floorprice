@@ -289,12 +289,12 @@ async function saveMagicEden() {
       const {
         data: magicEdenData
       } = await axios.get(URL);
+      magicEdenData.results = magicEdenData.results.filter(e=>e.price > 0)
 
       console.log("asdf", magicEdenData.results)
       let priceSum = 0;
       let numberOfOwners = new Set();
       let fp = 999999;
-
       magicEdenData.results.forEach((e) => {
         const price = e.price;
         fp = price < fp ? price : fp;
