@@ -11,7 +11,7 @@ export const CardsArea = styled.div `
     column-gap: 1rem;
     padding-top: 1rem;
     row-gap: 1rem;
-    
+    margin-bottom: 1rem;
     @media (max-width: 1200px) {
         margin-right: -1.5rem;
         margin-left: 0.5rem;

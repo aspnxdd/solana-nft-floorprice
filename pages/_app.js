@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import {ThemeProvider} from "styled-components"
 import { lightTheme, darkTheme, GlobalStyles } from "../components/layout/themes";
 
-
+import Footer from "../components/common/Footer";
 
 function MyApp({ Component, pageProps }) {
   
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       
       <SidebarNav isOpen={isOpen} toggle={toggle} theme={theme} themeToggler={themeToggler} />
       <Component {...pageProps} />
-  
+      <Footer></Footer>
     </ThemeProvider>
   </div>
     )

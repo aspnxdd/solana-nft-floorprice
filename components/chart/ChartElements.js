@@ -110,6 +110,7 @@ export const Area = styled.div`
   @media screen and (max-width: 768px) {
   row-gap: 6rem;
   }
+  margin-bottom: 23rem;
 `;
 export const UpdateBtnDiv = styled.div`
   display: flex;
