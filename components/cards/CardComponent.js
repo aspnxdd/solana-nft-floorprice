@@ -97,7 +97,7 @@ export default function CardComponent() {
       {marketplaceArr.map((e) => {
         return (
           <Link key={e.name} href={`/fetch/${e.url}`}>
-          <a style={{color:"#fff"}}>
+          <a>
             <Card>
               <Img src={`./static/images/${e.img}`}></Img>
               <Title>
