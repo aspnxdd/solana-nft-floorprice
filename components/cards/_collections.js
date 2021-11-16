@@ -631,6 +631,16 @@ let _collections = [{
     magiceden:"https://www.magiceden.io/marketplace?collection_symbol=the_slow_patrol&r=theslowpatrol",
     solanart: "https://solanart.io/collections/theslowpatrol",
     digitaleyes:"https://digitaleyes.market/collections/The%20Slow%20Patrol"
+  },
+  {
+    url: "superfruit",
+    name: "Super Fruit",
+    marketplace: [],
+    img: "superfruit.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/super_fruit"
+   
   }
 
 
