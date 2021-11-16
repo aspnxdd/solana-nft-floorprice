@@ -633,7 +633,7 @@ let _collections = [{
     digitaleyes:"https://digitaleyes.market/collections/The%20Slow%20Patrol"
   },
   {
-    url: "superfruit",
+    url: "supefruit",
     name: "Super Fruit",
     marketplace: [],
     img: "superfruit.png",
