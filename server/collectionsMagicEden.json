@@ -84,6 +84,11 @@
     "name": "supefruit",
     "url": "super_fruit",
     "tokens":8888
+  },
+  {
+    "name": "pawnshop_gnomies",
+    "url": "pawnshop_gnomies",
+    "tokens":5555
   }
   
   

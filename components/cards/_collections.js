@@ -640,7 +640,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/super_fruit"
-   
+  },
+  {
+    url: "pawnshop_gnomies",
+    name: "Pawnshop Gnomies",
+    marketplace: [],
+    img: "pawnshop_gnomies.jpg",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/pawnshop_gnomies"
   }
 
 
