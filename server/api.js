@@ -47,7 +47,7 @@ server.get("/load", async (req, res) => {
       .sort({
         time: 1,
       });
-      console.log("data",data)
+    console.log("data", data)
     return res.status(200).json({
       success: true,
       data: data,
@@ -280,22 +280,43 @@ async function saveDigitalEyes() {
 }
 
 
+async function fetchMe(fullData, collUrl, next_cursor) {
+  const {
+    data: magicEdenData
+  } = await axios(
+    `https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22${collUrl}%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%2C%22%24skip%22%3A${next_cursor}%2C%22%24limit%22%3A20%7D`
+  );
+
+  fullData = [...fullData, ...magicEdenData.results];
+
+  if (magicEdenData.results.length > 0) {
+    return await fetchMe(
+      fullData,
+      collUrl,
+      String(Number(next_cursor) + 20));
+  } else {
+    return {
+      fullData,
+    };
+  }
+}
+
 async function saveMagicEden() {
   try {
-    // save the data in solarianData
     collectionsAddressMagicEden.forEach(async function (coll) {
-      // const URL = `${MAGICEDEN_URL_1}${coll.url}${MAGICEDEN_URL_2}`
-      const URL = `https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22${coll.url}%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%2C%22%24skip%22%3A0%2C%22%24limit%22%3A20%7D`
-      const {
-        data: magicEdenData
-      } = await axios.get(URL);
-      magicEdenData.results = magicEdenData.results.filter(e=>e.price > 0)
+      let {
+        fullData,
+      } = await fetchMe([], coll.url, "0");
 
-      console.log("asdf", magicEdenData.results)
+      console.log("leng", fullData.length)
+      fullData = fullData.filter(e => e.price > 0)
+
+      // console.log("asdf", magicEdenData.results)
       let priceSum = 0;
       let numberOfOwners = new Set();
       let fp = 999999;
-      magicEdenData.results.forEach((e) => {
+
+      fullData.forEach((e) => {
         const price = e.price;
         fp = price < fp ? price : fp;
         priceSum += price;
@@ -303,20 +324,20 @@ async function saveMagicEden() {
       });
       // for numberofnftperowner-----------------------------
       let dataNfts = {};
-      magicEdenData.results.forEach(({
+      fullData.forEach(({
         owner
       }) => {
         if (!dataNfts[owner]) dataNfts[owner] = 0;
         dataNfts[owner]++;
       });
-      console.log(1, dataNfts)
+      // console.log(1, dataNfts)
       let filteredData = {};
       Object.keys(dataNfts).forEach((address) => {
         let owner = dataNfts[address];
         if (!filteredData[owner]) filteredData[owner] = 0;
         filteredData[owner]++;
       });
-      console.log(2, filteredData)
+      // console.log(2, filteredData)
       //------------------------------------------------
 
 
@@ -326,9 +347,9 @@ async function saveMagicEden() {
         collectionname: coll.name,
         marketplace: "magiceden",
         numberofowners: numberOfOwners.size,
-        numberoftokenslisted: magicEdenData.results.length,
+        numberoftokenslisted: fullData.length,
         numberofnftperowner: filteredData,
-        avrgPrice: Math.round((priceSum / magicEdenData.results.length) * 100) / 100,
+        avrgPrice: Math.round((priceSum / fullData.length) * 100) / 100,
       });
       console.log("saved");
     });
