@@ -303,6 +303,7 @@ async function fetchMe(fullData, collUrl, next_cursor) {
 
 async function saveMagicEden() {
   try {
+    // loop through all the API fetch data
     collectionsAddressMagicEden.forEach(async function (coll) {
       let {
         fullData,
@@ -330,16 +331,13 @@ async function saveMagicEden() {
         if (!dataNfts[owner]) dataNfts[owner] = 0;
         dataNfts[owner]++;
       });
-      // console.log(1, dataNfts)
+
       let filteredData = {};
       Object.keys(dataNfts).forEach((address) => {
         let owner = dataNfts[address];
         if (!filteredData[owner]) filteredData[owner] = 0;
         filteredData[owner]++;
       });
-      // console.log(2, filteredData)
-      //------------------------------------------------
-
 
       // Save in DB
       await datafetched.create({

@@ -89,7 +89,13 @@
     "name": "pawnshop_gnomies",
     "url": "pawnshop_gnomies",
     "tokens":5555
+  },
+  {
+    "name": "solana_troll_camp",
+    "url": "solana_troll_camp",
+    "tokens":5555
   }
+
   
   
 ]

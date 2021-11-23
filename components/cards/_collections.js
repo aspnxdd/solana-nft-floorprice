@@ -649,6 +649,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/pawnshop_gnomies"
+  },
+  {
+    url: "solana_troll_camp",
+    name: "Solana Troll Camp",
+    marketplace: [],
+    img: "solana_troll_camp.jpg",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/solana_troll_camp"
   }
 
 
