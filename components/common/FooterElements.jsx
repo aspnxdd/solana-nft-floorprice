@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-
-export const Container = styled.div `
+export const Container = styled.footer `
     font-family: "Sofia Pro";
     background-color: #000;
     height: 7rem;
@@ -11,12 +10,12 @@ export const Container = styled.div `
     overflow: hidden;
     bottom: 0;
     left: 0;
-    z-index: 9;
+    
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
     row-gap:1rem;
-    
   `;
 
 export const Socials = styled.div `

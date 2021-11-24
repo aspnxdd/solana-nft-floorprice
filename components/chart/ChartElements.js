@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div `
   width: 47%;
   height: 30rem;
   padding-right: 1rem;
@@ -18,19 +18,16 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+export const Wrapper = styled.div `
+  margin: 2rem;
   width: 100%;
-  height: 40rem;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   column-gap: 2rem;
   row-gap: 2rem;
   @media screen and (max-width: 768px) {
-    position: static;
+    
     display: block;
     width: auto;
     margin-bottom: 2rem;
@@ -39,7 +36,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const TopWrapper = styled.div`
+export const TopWrapper = styled.div `
   margin-left: 2rem;
   margin-right: 2rem;
   margin-top: 4rem;
@@ -59,7 +56,7 @@ export const TopWrapper = styled.div`
   }
 `;
 
-export const InfoContainer = styled.div`
+export const InfoContainer = styled.div `
   display: flex;
   width: 47%;
   height: 15rem;
@@ -78,17 +75,16 @@ export const InfoContainer = styled.div`
   }
 `;
 
-export const Info = styled.div`
+export const Info = styled.div `
   width: 60%;
   height: 18rem;
- 
   @media screen and (max-width: 768px) {
     height: 20rem;
     margin-bottom: -5rem;
   }
 `;
 
-export const Img = styled.div`
+export const Img = styled.div `
   margin-top: 1rem;
   padding-left: 3rem;
   right: 5rem;
@@ -98,32 +94,32 @@ export const Img = styled.div`
     margin-top: 3.5rem;
   }
 `;
-export const Marketplaces = styled.div`
+export const Marketplaces = styled.div `
   display: flex;
   padding-left: 2rem;
   column-gap: 1rem;
   align-items: center;
 `;
-export const Area = styled.div`
+export const Area = styled.div `
   display: flex;
   flex-direction: column;
+  
+  
   @media screen and (max-width: 768px) {
-  row-gap: 6rem;
+    row-gap: 6rem;
+    
   }
-  margin-bottom: 23rem;
 `;
-export const UpdateBtnDiv = styled.div`
+export const UpdateBtnDiv = styled.div `
   display: flex;
   height: 2rem;
-  
   @media screen and (max-width: 768px) {
   padding-top: 6rem;
   margin-bottom: -5rem;
   }
 `;
 
-export const UpdateBtn =  styled.button`
- 
+export const UpdateBtn = styled.button `
   border-radius: 4px;
   background: #256ce1;
   padding: 10px 22px;
@@ -159,7 +155,7 @@ export const UpdateBtn =  styled.button`
 
 `
 
-export const TimeButton =  styled.button`
+export const TimeButton = styled.button `
  
   border-radius: 4px;
   background: #256ce1;

@@ -4,6 +4,8 @@ import { AiFillGithub, AiFillTwitterCircle } from "react-icons/ai";
 
 export default function Footer() {
   return (
+    
+
     <Container>
       <Socials>
         <a href="https://github.com/aspnxdd/solana-nft-floorprice">
@@ -17,5 +19,6 @@ export default function Footer() {
         <a href={`/faq`}> FAQ</a>
       </Links>
     </Container>
+    
   );
 }
