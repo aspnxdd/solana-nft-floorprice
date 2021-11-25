@@ -94,8 +94,10 @@
     "name": "solana_troll_camp",
     "url": "solana_troll_camp",
     "tokens":5555
+  },
+  {
+    "name": "culture_vultures",
+    "url": "culture_vultures",
+    "tokens":1118
   }
-
-  
-  
 ]

@@ -658,6 +658,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/solana_troll_camp"
+  },
+   {
+    url: "culture_vultures",
+    name: "Culture Vulture$",
+    marketplace: [],
+    img: "culture_vultures.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/culture_vultures"
   }
 
 
