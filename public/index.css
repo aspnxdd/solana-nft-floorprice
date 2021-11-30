@@ -9,6 +9,7 @@ body {
   margin: 0;
   font-family: Ubuntu, sans-serif;
   height: 100%;
+  width:100vw;
 
   
 }
@@ -162,6 +163,9 @@ button {
     display: block;
     width: auto;
     margin-bottom: 2rem;
+  }
+  body{
+    width: 120vw;
   }
 }
 

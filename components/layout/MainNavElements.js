@@ -26,7 +26,6 @@ export const Nav = styled.nav `
 
 export const NavLink = styled.div `
   font-size: 1.2rem;
-  width: 10rem;
    max-width:10rem;
   align-items: center;
   text-decoration: none;

@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div `
   justify-content: space-around;
   @media (max-width: 1200px) {
     row-gap: 1rem;
-    column-gap: 225rem;
+    ${'' /* column-gap: 225rem; */}
     margin-left: 0rem;
     flex-direction: column;
   }

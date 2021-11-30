@@ -17,6 +17,9 @@ export const CardsArea = styled.div `
         margin-left: 0.5rem;
         column-gap: 1rem;
   }
+  a{
+      color:${e => e.theme.fontColor};
+  }
 
 `;
 
@@ -31,8 +34,14 @@ export const Card = styled.div `
     justify-content:  flex-start;
     border: 4px solid rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
+    transition: all;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
     &:hover{
         border: 4px solid #3984ce;
+        
+        transform: scale(1.05);
+        
     }
 `;
 export const Img = styled.img `

@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
- 
+  
   @media screen and (max-width: 768px) {
     flex-direction: column;
     font-size: 1.8rem;
@@ -30,9 +30,8 @@ export const LeftSection = styled.section`
 
 export const RightSection = styled.section`
   height: 3rem;
-  min-width: 10rem;
   color: black;
-  max-width: 10rem;
+  width: 6rem;
   align-items: center;
   background-image: linear-gradient(#2fcfb7, #b448ee);
   display: flex;
@@ -50,6 +49,8 @@ export const RightSection = styled.section`
   @media screen and (max-width: 768px) {
     height: auto;
     margin-top: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   }
 `;
 
@@ -65,6 +66,6 @@ export const Percent = styled.div`
   @media screen and (max-width: 768px) {
     height: auto;
    
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;

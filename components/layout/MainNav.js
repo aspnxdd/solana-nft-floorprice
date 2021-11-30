@@ -12,7 +12,6 @@ import {
 import Link from "next/link";
 
 import Ticker from "../ticker/Ticker";
-import { FaQuestion } from "react-icons/fa";
 import { BiMoon, BiSun } from "react-icons/bi";
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
@@ -48,8 +47,8 @@ const MainNav = ({ toggle, themeToggler, theme }) => {
 
           <Link href="/faq" activeStyle>
             <NavLink>
-              {" "}
-              <FaQuestion></FaQuestion>&nbsp;F.A.Q.
+             
+              F.A.Q.
             </NavLink>
           </Link>
           <ThemeToggle onClick={themeToggler}>

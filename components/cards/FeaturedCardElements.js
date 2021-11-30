@@ -29,7 +29,7 @@ export const FeaturedLabel = styled.div `
 export const CardF = styled.div `
     position: relative;
     overflow: hidden;
-    background-color: #383838;
+    background-color: ${e => e.theme.featuredCardBackgroundColor};
     cursor: pointer; 
     height: 16rem;
     width: 12rem;
@@ -39,7 +39,12 @@ export const CardF = styled.div `
     justify-content:  flex-start;
     border: 4px solid rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
-    
+    transition: all;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+    }
     &:after{
         content: "";
         position: absolute;
@@ -63,6 +68,7 @@ export const CardF = styled.div `
     opacity: 1;
     top: -30%;
     left: -30%;
+    
     transition-property: left, top, opacity;
     transition-duration: 0.7s, 0.7s, 0.15s;
     transition-timing-function: ease;

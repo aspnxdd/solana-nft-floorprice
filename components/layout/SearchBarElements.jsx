@@ -29,6 +29,7 @@ export const SearchBarInput = styled.input `
     width: 16rem;
     outline: none;
     color: ${(e) => e.theme.fontColor};
+    padding-left:1rem;
 `
 
 export const SearchBarResults = styled.div `
@@ -52,6 +53,9 @@ export const SearchBarResults = styled.div `
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
+    max-height: 20vw;
+    overflow-y: auto;
+    overflow-x:hidden;
     @media screen and (max-width: 768px) {
         left: 8.5rem;
         width: 13rem;

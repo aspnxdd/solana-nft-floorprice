@@ -99,7 +99,7 @@ export default function CardComponent() {
           <Link key={e.name} href={`/fetch/${e.url}`}>
           <a>
             <Card>
-              <Img src={`./static/images/${e.img}`}></Img>
+              <Img loading="lazy" src={`./static/images/${e.img}`}></Img>
               <Title>
                 {e.name}
                 
