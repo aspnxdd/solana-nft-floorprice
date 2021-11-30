@@ -103,7 +103,7 @@ export const Marketplaces = styled.div `
 export const Area = styled.div `
   display: flex;
   flex-direction: column;
-  
+  width:98%;
   
   @media screen and (max-width: 768px) {
     row-gap: 6rem;
