@@ -667,6 +667,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden:"https://magiceden.io/marketplace/culture_vultures"
+  },
+  {
+    url: "angryworms",
+    name: "AngryWorms",
+    marketplace: [],
+    img: "angryworms.png",
+    featured: false,
+    fp: 0,
+    digitaleyes:"https://digitaleyes.market/collections/AngryWorms"
   }
 
 
