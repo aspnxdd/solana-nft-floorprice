@@ -676,6 +676,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     digitaleyes:"https://digitaleyes.market/collections/AngryWorms"
+  },
+  {
+    url: "skull_division",
+    name: "Skull Division",
+    marketplace: [],
+    img: "skull_division.png",
+    featured: false,
+    fp: 0,
+    magiceden:"https://magiceden.io/marketplace/skull_division"
   }
 
 
