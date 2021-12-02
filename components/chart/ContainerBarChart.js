@@ -14,11 +14,14 @@ export default function ContainerBarChart({ data }) {
     };
     // wait till all data is fetched
 
-    if (data.digitalEyesData.length > 0 || data.solanartData.length > 0) {
+    if (
+      data.digitalEyesData.length > 0 ||
+      data.solanartData.length > 0 ||
+      data.magicEdenData.length > 0
+    ) {
       const solanartData = data.solanartData?.slice(-1);
       const digitalEyesData = data.digitalEyesData?.slice(-1);
       const magicEdenData = data.magicEdenData?.slice(-1);
-     
 
       let dataForChart = {
         dataSolanart: solanartData[0]
@@ -40,7 +43,6 @@ export default function ContainerBarChart({ data }) {
           ? Object.keys(magicEdenData[0]?.numberofnftperowner)
           : [],
       };
-      
 
       if (dataForChart) {
         const dataSolanart = {
