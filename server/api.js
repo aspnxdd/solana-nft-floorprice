@@ -69,9 +69,9 @@ server.get("/load", async (req, res) => {
 });
 
 server.get("/loadall", async (req, res) => {
-
+  console.log("inside loadall")
   const data = await redisClient.get("getall")
-  console.log(data)
+  console.log("getalldata",data)
   if (data) {
     return res.status(200).json({
       success: true,
