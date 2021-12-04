@@ -10,11 +10,7 @@ const Redis = require("redis")
 const isDev = process.argv[2] === "--development";
 
 
-const redisClient = Redis.createClient(process.env.REDIS_URL, {
-  tls: {
-    rejectUnauthorized: false
-  }
-});
+const redisClient = Redis.createClient(process.env.REDIS_URL);
 redisClient.connect();
 console.log(redisClient)
 if (isDev) {
