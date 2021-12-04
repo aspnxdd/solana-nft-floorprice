@@ -10,7 +10,7 @@ const Redis = require("redis")
 const isDev = process.argv[2] === "--development";
 
 
-createClient({
+const redisClient = Redis.createClient({
   url: process.env.REDIS_URL
 });
 redisClient.on('error', (err) => console.log('Redis Client Error', err));
