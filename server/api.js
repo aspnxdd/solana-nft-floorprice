@@ -5,21 +5,14 @@ const datafetched = require("../models/datafetched");
 const server = express();
 const axios = require("axios");
 const cron = require("node-cron");
-const Redis = require("redis")
 
 const isDev = process.argv[2] === "--development";
 
-
-const redisClient = Redis.createClient(process.env.REDIS_URL);
-redisClient.connect();
-console.log(redisClient)
 if (isDev) {
-
   require("dotenv").config({
     path: ".env.development",
   });
 } else {
-
   require("dotenv").config();
 }
 
@@ -68,78 +61,64 @@ server.get("/load", async (req, res) => {
 });
 
 server.get("/loadall", async (req, res) => {
+  try {
+    let data = [];
 
-  const data = await redisClient.get("getall")
-  console.log(data)
-  if (data) {
+    await Promise.all(
+      collectionsAddressSolanart.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name,
+            marketplace: "solanart"
+          })
+          .sort({
+            time: -1,
+          })
+        );
+      })
+    );
+
+    await Promise.all(
+      collectionsAddressDigitalEyes.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name,
+            marketplace: "digitaleyes"
+          })
+          .sort({
+            time: -1,
+          })
+        );
+      })
+    );
+
+    await Promise.all(
+      collectionsAddressMagicEden.map(async (e) => {
+        data.push(
+          await datafetched
+          .findOne({
+            collectionname: e.name,
+            marketplace: "magiceden"
+          })
+          .sort({
+            time: -1,
+          })
+        );
+      })
+    );
+
     return res.status(200).json({
       success: true,
-      data: JSON.parse(data),
+      data: data,
     });
-  } else {
-    try {
-      let data = [];
-
-      await Promise.all(
-        collectionsAddressSolanart.map(async (e) => {
-          data.push(
-            await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "solanart"
-            })
-            .sort({
-              time: -1,
-            })
-          );
-        })
-      );
-
-      await Promise.all(
-        collectionsAddressDigitalEyes.map(async (e) => {
-          data.push(
-            await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "digitaleyes"
-            })
-            .sort({
-              time: -1,
-            })
-          );
-        })
-      );
-
-      await Promise.all(
-        collectionsAddressMagicEden.map(async (e) => {
-          data.push(
-            await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "magiceden"
-            })
-            .sort({
-              time: -1,
-            })
-          );
-        })
-      );
-
-      await redisClient.setEx("getall", 1800, JSON.stringify(data))
-      return res.status(200).json({
-        success: true,
-        data: data,
-      });
-    } catch (error) {
-      console.log("error get", error);
-      res.status(400).json({
-        success: false,
-      });
-    }
+  } catch (error) {
+    console.log("error get", error);
+    res.status(400).json({
+      success: false,
+    });
   }
-
-
-
 });
 
 async function saveSolanart() {
