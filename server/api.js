@@ -22,8 +22,7 @@ if (isDev) {
   require("dotenv").config({
     path: ".env.development",
   });
-} 
-else {
+} else {
   require("dotenv").config();
 }
 
@@ -50,32 +49,41 @@ server.get("/load", async (req, res) => {
   const {
     id
   } = req.headers;
-  try {
-    const data = await datafetched
-      .find({
-        collectionname: id,
-      })
-      .sort({
-        time: 1,
-      });
-    console.log("data", data)
+  const data = await redisClient.get("load")
+
+  if (data != null) {
     return res.status(200).json({
       success: true,
-      data: data,
+      data: JSON.parse(data),
     });
-  } catch (error) {
-    console.log("error get", error);
-    res.status(400).json({
-      success: false,
-    });
+  } else {
+    try {
+      const data = await datafetched
+        .find({
+          collectionname: id,
+        })
+        .sort({
+          time: 1,
+        });
+        await redisClient.setEx("load", 1800, JSON.stringify(data))
+      return res.status(200).json({
+        success: true,
+        data: data,
+      });
+    } catch (error) {
+      console.log("error get", error);
+      res.status(400).json({
+        success: false,
+      });
+    }
   }
 });
 
 server.get("/loadall", async (req, res) => {
-  console.log("inside loadall")
-  const data = await redisClient.get("getall")
-  console.log("getalldata",data)
-  if (data!=null) {
+
+  const data = await redisClient.get("loadall")
+
+  if (data != null) {
     return res.status(200).json({
       success: true,
       data: JSON.parse(data),
@@ -129,7 +137,7 @@ server.get("/loadall", async (req, res) => {
         })
       );
 
-      await redisClient.setEx("getall", 1800, JSON.stringify(data))
+      await redisClient.setEx("loadall", 1800, JSON.stringify(data))
       return res.status(200).json({
         success: true,
         data: data,
@@ -386,7 +394,7 @@ async function saveMagicEden() {
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
-  console.log("port",process.env.PORT)
+  console.log("port", process.env.PORT)
   // to start
   cron.schedule("0 */1 * * *", () => {
     console.log("running a task every hour");
