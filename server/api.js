@@ -9,15 +9,21 @@ const Redis = require("redis")
 
 const isDev = process.argv[2] === "--development";
 
-const redisClient = Redis.createClient()
+
+const redisClient = Redis.createClient(process.env.REDIS_URL, {
+  tls: {
+    rejectUnauthorized: false
+  }
+});
 redisClient.connect();
 console.log(redisClient)
-
 if (isDev) {
+
   require("dotenv").config({
     path: ".env.development",
   });
 } else {
+
   require("dotenv").config();
 }
 
@@ -68,7 +74,7 @@ server.get("/load", async (req, res) => {
 server.get("/loadall", async (req, res) => {
 
   const data = await redisClient.get("getall")
-
+  console.log(data)
   if (data) {
     return res.status(200).json({
       success: true,
