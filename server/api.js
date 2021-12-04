@@ -49,8 +49,10 @@ server.get("/load", async (req, res) => {
   const {
     id
   } = req.headers;
+  console.log("inside load")
   const data = await redisClient.get("load")
-
+  console.log("after load")
+  console.log(data)
   if (data != null) {
     return res.status(200).json({
       success: true,
@@ -65,7 +67,7 @@ server.get("/load", async (req, res) => {
         .sort({
           time: 1,
         });
-        await redisClient.setEx("load", 1800, JSON.stringify(data))
+      await redisClient.setEx("load", 1800, JSON.stringify(data))
       return res.status(200).json({
         success: true,
         data: data,
@@ -138,6 +140,7 @@ server.get("/loadall", async (req, res) => {
       );
 
       await redisClient.setEx("loadall", 1800, JSON.stringify(data))
+
       return res.status(200).json({
         success: true,
         data: data,
