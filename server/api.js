@@ -11,6 +11,7 @@ const isDev = process.argv[2] === "--development";
 
 
 const redisClient = Redis.createClient(process.env.REDIS_URL);
+redisClient.on('error', (err) => console.log('Redis Client Error', err));
 redisClient.connect();
 console.log(redisClient)
 
