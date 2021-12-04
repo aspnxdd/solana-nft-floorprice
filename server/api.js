@@ -20,9 +20,9 @@ if (isDev) {
     path: ".env.development",
   });
 } 
-// else {
-//   require("dotenv").config();
-// }
+else {
+  require("dotenv").config();
+}
 
 const connection = {};
 
@@ -383,7 +383,7 @@ async function saveMagicEden() {
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
-  console.log("> Ready on http://localhost:8080");
+  console.log("port",process.env.PORT)
   // to start
   cron.schedule("0 */1 * * *", () => {
     console.log("running a task every hour");
