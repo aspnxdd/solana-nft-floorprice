@@ -27,8 +27,6 @@ export const Container = styled.div`
     right: 0px;
     width: 24rem;
     height: auto;
-    
-   
   }
  
 `;

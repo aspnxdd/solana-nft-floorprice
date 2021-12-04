@@ -16,7 +16,6 @@ export default function ContainerLineChart({ data, param }) {
       dataDigitalEyes: data.digitalEyesData.slice(-dataPoints),
       dataMagicEden: data.magicEdenData.slice(-dataPoints)
     };
-
     return dataForChart;
   }
 
@@ -56,8 +55,6 @@ export default function ContainerLineChart({ data, param }) {
     borderColor: "#f44c9f",
     tension: 0.2,
     spanGaps: true,
-  
-
   };
   //data to render in chart line
 
@@ -145,7 +142,6 @@ export default function ContainerLineChart({ data, param }) {
   return (
     <Container>
       <div className="chart-buttons">
-       
         <TimeButton onClick={() => setDataPoints(24)}> 1D</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7)}> 1W</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7*30)}> 1M</TimeButton>

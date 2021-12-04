@@ -27,8 +27,14 @@ export default function DonContainer() {
 
   function copyToClipboard(address) {
     var type = "text/plain";
-    var blob = new Blob([address], { type });
-    var data = [new ClipboardItem({ [type]: blob })];
+    var blob = new Blob([address], {
+      type,
+    });
+    var data = [
+      new ClipboardItem({
+        [type]: blob,
+      }),
+    ];
     navigator.clipboard.write(data).then(() => {
       if (address == sol_address) toggleSol();
 
@@ -36,35 +42,31 @@ export default function DonContainer() {
 
       return;
     });
-   
   }
 
   return (
     <Container>
-      <h1>Donations</h1>
+      <h1> Donations </h1>{" "}
       <Title>
         If you have found NFT Floor Price app useful, please consider leaving a{" "}
-        <b>Solana</b> or <b>BSC</b> tip.
+        <b> Solana </b> or <b>BSC</b> tip.{" "}
       </Title>
-
       <Label>
-        <b>Solana Wallet address:</b>{" "}
+        <b> Solana Wallet address: </b>{" "}
         <Address onClick={() => copyToClipboard(sol_address)}>
-          {sol_address}
-        </Address>
+          {" "}
+          {sol_address}{" "}
+        </Address>{" "}
         {solMssg}{" "}
-      </Label>
+      </Label>{" "}
       <Label>
-        <b>BSC Wallet address:</b>{" "}
+        <b> BSC Wallet address: </b>{" "}
         <Address onClick={() => copyToClipboard(bsc_address)}>
-          {bsc_address}
-        </Address>
+          {" "}
+          {bsc_address}{" "}
+        </Address>{" "}
         {bscMssg}{" "}
       </Label>
-      <div className="images-donation">
-        {/* <img className="qr_sol" height="100px" src="/static/images/qr_sol.png" alt="qr_sol"></img>
-      <img className="qr_bsc" height="90px" src="/static/images/qr_bsc.png" alt="qr_bsc"></img> */}
-      </div>
     </Container>
   );
 }
