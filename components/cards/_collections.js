@@ -684,6 +684,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden: "https://magiceden.io/marketplace/skull_division"
+  },
+  {
+    url: "fenix_danjon",
+    name: "Fenix Danjon",
+    marketplace: [],
+    img: "fenix_danjon.gif",
+    featured: false,
+    fp: 0,
+    magiceden: "https://magiceden.io/marketplace/fenix_danjon"
   }
 ];
 
