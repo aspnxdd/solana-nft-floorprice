@@ -7,6 +7,8 @@ export const Form = styled.form `
   flex-direction: column;
   align-items: center;
   font-family: "Sofia Pro";
+  height: 67vh;
+
   & > div {
     display: flex;
     flex-direction: column;
@@ -20,6 +22,7 @@ export const Form = styled.form `
   }
   & button{
     font-family: "Sofia Pro";
+    cursor: pointer;
     margin-left: 0rem;
     margin-top:2rem;
     border-radius: 50px;  
