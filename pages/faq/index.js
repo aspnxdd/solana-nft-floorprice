@@ -1,4 +1,5 @@
 import { FaDiscord, FaTwitter } from "react-icons/fa";
+import Link from "next/link"
 
 export default function Faq() {
   return (
@@ -25,7 +26,7 @@ export default function Faq() {
         If you want to support me (economically+emotionally) you can send me some SOL to EQ4zjzotsMKmQFbXxbkj7WH4M8nzjDZ2r4r3w2stokyn
         That would be much appreciated!
         <h2>2️⃣ How to list my project here? </h2>
-        Complete the form <a href="/newlisting">here</a>
+        Complete the form <Link href="/newlisting"><a >here</a></Link>.
         <h2>3️⃣ How to get my collection featured? </h2>
         Send me a
         DM on Discord Nivoa#4968 we can talk there!
