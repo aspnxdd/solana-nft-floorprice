@@ -44,10 +44,13 @@ const MainNav = ({ toggle, themeToggler, theme }) => {
       </SearchBarMenu>
         <NavMenu>
           <Ticker></Ticker>
-
+          <Link href="/newlisting" activeStyle>
+            <NavLink>
+              Add  collection!
+            </NavLink>
+          </Link>
           <Link href="/faq" activeStyle>
             <NavLink>
-             
               F.A.Q.
             </NavLink>
           </Link>

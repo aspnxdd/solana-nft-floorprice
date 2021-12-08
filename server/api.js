@@ -49,10 +49,9 @@ server.get("/load", async (req, res) => {
   const {
     id
   } = req.headers;
-  console.log("inside load")
+ 
   const data = await redisClient.get(`load-${id}`)
-  console.log("after load")
-  console.log(data)
+ 
   if (data != null) {
     return res.status(200).json({
       success: true,

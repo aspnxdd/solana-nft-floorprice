@@ -31,7 +31,13 @@ const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
           <SidebarNavLink gridrow="0">
             <Ticker></Ticker>
           </SidebarNavLink>
-
+          <SidebarNavLink gridrow="3">
+            <Link href="/newlisting" activeStyle>
+              <span>
+                Add collection
+              </span>
+            </Link>
+          </SidebarNavLink>
           <SidebarNavLink gridrow="2">
             <Link href="/faq" activeStyle>
               <span>
@@ -39,7 +45,7 @@ const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
               </span>
             </Link>
           </SidebarNavLink>
-          <SidebarNavLink gridrow="3">
+          <SidebarNavLink gridrow="4">
             <ThemeToggle onClick={themeToggler}>
               {theme === "light" && <BiMoon />}
               {theme === "dark" && <BiSun />}
