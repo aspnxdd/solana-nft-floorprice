@@ -417,7 +417,7 @@ let _collections = [{
     name: "Turtles",
     marketplace: [],
     img: "turtles.png",
-    featured: true,
+    featured: false,
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Turtles",
     solanart: "https://solanart.io/collections/turtles",
@@ -681,7 +681,7 @@ let _collections = [{
     name: "Skull Division",
     marketplace: [],
     img: "skull_division.png",
-    featured: false,
+    featured: true,
     fp: 0,
     magiceden: "https://magiceden.io/marketplace/skull_division"
   },
