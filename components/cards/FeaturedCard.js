@@ -105,27 +105,27 @@ export default function CardComponent() {
                 <a href={e.discord}>
                   <FaDiscord style={{ fontSize: "1.5rem", color: "#5865F2" }} />
                 </a>
-                <a href={e.digitaleyes}>
+                {e.digitaleyes && <a href={e.digitaleyes}>
                 <img
                         src="/static/images/digitaleyes.svg"
                         alt="de-logo"
                         width="30px"
                       ></img>
-                </a>
-                <a href={e.solanart}>
+                </a>}
+                {e.solanart && <a href={e.solanart}>
                 <img
                         src="/static/images/solanart.svg"
                         alt="de-logo"
                         width="30px"
                       ></img>
-                </a>
-                <a href={e.magiceden}>
+                </a>}
+                {e.magiceden && <a href={e.magiceden}>
                 <img
                         src="/static/images/magiceden.png"
                         alt="me-logo"
                         width="30px"
                       ></img>
-                </a>
+                </a>}
               </CollectionLinks>
             </CardContainer>
           );

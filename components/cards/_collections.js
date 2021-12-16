@@ -685,7 +685,8 @@ let _collections = [{
     twitter:"https://twitter.com/SkullDiv",
     discord:"https://discord.gg/SkullDiv",
     fp: 0,
-    magiceden: "https://magiceden.io/marketplace/skull_division"
+    magiceden: "https://magiceden.io/marketplace/skull_division",
+    digitaleyes:"https://digitaleyes.market/collections/Skull%20Division"
   },
   {
     url: "fenix_danjon",
