@@ -682,6 +682,8 @@ let _collections = [{
     marketplace: [],
     img: "skull_division.png",
     featured: true,
+    twitter:"https://twitter.com/SkullDiv",
+    discord:"https://discord.gg/SkullDiv",
     fp: 0,
     magiceden: "https://magiceden.io/marketplace/skull_division"
   },
