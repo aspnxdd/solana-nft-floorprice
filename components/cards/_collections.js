@@ -696,6 +696,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden: "https://magiceden.io/marketplace/fenix_danjon"
+  },
+  {
+    url: "lucky_kittens",
+    name: "Lucky Kittens",
+    marketplace: [],
+    img: "lucky_kittens.jpg",
+    featured: false,
+    fp: 0,
+    magiceden: "https://magiceden.io/marketplace/lucky_kittens"
   }
 ];
 
