@@ -705,6 +705,15 @@ let _collections = [{
     featured: false,
     fp: 0,
     magiceden: "https://magiceden.io/marketplace/lucky_kittens"
+  },
+  {
+    url: "rascals_nft",
+    name: "Rascals NFT",
+    marketplace: [],
+    img: "rascals_nft.jpg",
+    featured: false,
+    fp: 0,
+    magiceden: "https://magiceden.io/marketplace/rascals_nft"
   }
 ];
 
