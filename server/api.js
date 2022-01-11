@@ -5,18 +5,16 @@ const datafetched = require("../models/datafetched");
 const server = express();
 const axios = require("axios");
 const cron = require("node-cron");
-const Redis = require("redis")
+const Redis = require("redis");
 
 const isDev = process.argv[2] === "--development";
 
-
 const redisClient = Redis.createClient({
-  url: process.env.REDIS_URL
+  url: process.env.REDIS_URL,
 });
-redisClient.on('error', (err) => console.log('Redis Client Error', err));
+redisClient.on("error", (err) => console.log("Redis Client Error", err));
 redisClient.connect();
-console.log(redisClient)
-
+console.log(redisClient);
 
 if (isDev) {
   require("dotenv").config({
@@ -46,12 +44,10 @@ const corsOptions = {
 server.use(cors(corsOptions));
 
 server.get("/load", async (req, res) => {
-  const {
-    id
-  } = req.headers;
- 
-  const data = await redisClient.get(`load-${id}`)
- 
+  const { id } = req.headers;
+
+  const data = await redisClient.get(`load-${id}`);
+
   if (data != null) {
     return res.status(200).json({
       success: true,
@@ -66,7 +62,7 @@ server.get("/load", async (req, res) => {
         .sort({
           time: 1,
         });
-      await redisClient.setEx(`load-${id}`, 1800, JSON.stringify(data))
+      await redisClient.setEx(`load-${id}`, 1800, JSON.stringify(data));
       return res.status(200).json({
         success: true,
         data: data,
@@ -81,8 +77,7 @@ server.get("/load", async (req, res) => {
 });
 
 server.get("/loadall", async (req, res) => {
-
-  const data = await redisClient.get("loadall")
+  const data = await redisClient.get("loadall");
 
   if (data != null) {
     return res.status(200).json({
@@ -97,13 +92,13 @@ server.get("/loadall", async (req, res) => {
         collectionsAddressSolanart.map(async (e) => {
           data.push(
             await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "solanart"
-            })
-            .sort({
-              time: -1,
-            })
+              .findOne({
+                collectionname: e.name,
+                marketplace: "solanart",
+              })
+              .sort({
+                time: -1,
+              })
           );
         })
       );
@@ -112,13 +107,13 @@ server.get("/loadall", async (req, res) => {
         collectionsAddressDigitalEyes.map(async (e) => {
           data.push(
             await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "digitaleyes"
-            })
-            .sort({
-              time: -1,
-            })
+              .findOne({
+                collectionname: e.name,
+                marketplace: "digitaleyes",
+              })
+              .sort({
+                time: -1,
+              })
           );
         })
       );
@@ -127,18 +122,18 @@ server.get("/loadall", async (req, res) => {
         collectionsAddressMagicEden.map(async (e) => {
           data.push(
             await datafetched
-            .findOne({
-              collectionname: e.name,
-              marketplace: "magiceden"
-            })
-            .sort({
-              time: -1,
-            })
+              .findOne({
+                collectionname: e.name,
+                marketplace: "magiceden",
+              })
+              .sort({
+                time: -1,
+              })
           );
         })
       );
 
-      await redisClient.setEx("loadall", 1800, JSON.stringify(data))
+      await redisClient.setEx("loadall", 1800, JSON.stringify(data));
 
       return res.status(200).json({
         success: true,
@@ -151,18 +146,13 @@ server.get("/loadall", async (req, res) => {
       });
     }
   }
-
-
-
 });
 
 async function saveSolanart() {
   try {
     // save the data in solarianData
     collectionsAddressSolanart.forEach(async function (coll) {
-      const {
-        data: solanartData
-      } = await axios(
+      const { data: solanartData } = await axios(
         `${SOLANART_URL}${coll.collectionName}`
       );
 
@@ -174,17 +164,17 @@ async function saveSolanart() {
       solanartData
         .filter(
           (e) =>
-          Boolean(e.price) &&
-          e.id !== 473037 &&
-          e.id !== 472737 &&
-          e.id !== 576575 &&
-          e.id !== 576821 &&
-          e.id !== 576368 &&
-          e.id !== 576352 &&
-          e.id !== 593521 &&
-          e.id !== 593494 &&
-          e.id !== 655958 &&
-          e.id !== 663018
+            Boolean(e.price) &&
+            e.id !== 473037 &&
+            e.id !== 472737 &&
+            e.id !== 576575 &&
+            e.id !== 576821 &&
+            e.id !== 576368 &&
+            e.id !== 576352 &&
+            e.id !== 593521 &&
+            e.id !== 593494 &&
+            e.id !== 655958 &&
+            e.id !== 663018
         )
         .forEach((e) => {
           const price = e.price;
@@ -195,9 +185,7 @@ async function saveSolanart() {
 
       // Obtain avrg price
       let dataNfts = {};
-      solanartData.forEach(({
-        seller_address
-      }) => {
+      solanartData.forEach(({ seller_address }) => {
         if (!dataNfts[seller_address]) dataNfts[seller_address] = 0;
         dataNfts[seller_address]++;
       });
@@ -229,17 +217,15 @@ async function saveSolanart() {
 }
 
 async function fetchDe(fullData, collUrl, next_cursor) {
-  const {
-    data: solarianData
-  } = await axios(
+  const { data: solarianData } = await axios(
     `${DIGITALEYES_URL}${collUrl}${next_cursor}`
   );
   let _fp = solarianData.price_floor;
 
   let floor_price = 0;
   if (_fp != null || _fp != 0) floor_price = _fp;
-  console.log("floor_price", floor_price)
-  console.log("fp", _fp)
+  console.log("floor_price", floor_price);
+  console.log("fp", _fp);
 
   fullData = [...fullData, ...solarianData.offers];
 
@@ -261,10 +247,7 @@ async function saveDigitalEyes() {
   try {
     // save the data in solarianData
     collectionsAddressDigitalEyes.forEach(async function (coll) {
-      const {
-        fullData,
-        floor_price
-      } = await fetchDe([], coll.url, "");
+      const { fullData, floor_price } = await fetchDe([], coll.url, "");
 
       let priceSum = 0;
       let numberOfOwners = new Set();
@@ -278,9 +261,7 @@ async function saveDigitalEyes() {
       });
       // for numberofnftperowner-----------------------------
       let dataNfts = {};
-      fullData.forEach(({
-        owner
-      }) => {
+      fullData.forEach(({ owner }) => {
         if (!dataNfts[owner]) dataNfts[owner] = 0;
         dataNfts[owner]++;
       });
@@ -292,7 +273,6 @@ async function saveDigitalEyes() {
         filteredData[owner]++;
       });
       //------------------------------------------------
-
 
       // Save in DB
       await datafetched.create({
@@ -314,21 +294,15 @@ async function saveDigitalEyes() {
   }
 }
 
-
 async function fetchMe(fullData, collUrl, next_cursor) {
-  const {
-    data: magicEdenData
-  } = await axios(
+  const { data: magicEdenData } = await axios(
     `https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22${collUrl}%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%2C%22%24skip%22%3A${next_cursor}%2C%22%24limit%22%3A20%7D`
   );
 
   fullData = [...fullData, ...magicEdenData.results];
-
+  console.log("x", collUrl);
   if (magicEdenData.results.length > 0) {
-    return await fetchMe(
-      fullData,
-      collUrl,
-      String(Number(next_cursor) + 20));
+    return await fetchMe(fullData, collUrl, String(Number(next_cursor) + 20));
   } else {
     return {
       fullData,
@@ -339,13 +313,21 @@ async function fetchMe(fullData, collUrl, next_cursor) {
 async function saveMagicEden() {
   try {
     // loop through all the API fetch data
-    collectionsAddressMagicEden.forEach(async function (coll) {
-      let {
-        fullData,
-      } = await fetchMe([], coll.url, "0");
+    collectionsAddressMagicEden.forEach((coll, index) => {
+      setTimeout(async function(){
+        
+         
+     
+      
+   
+      let { fullData } = await fetchMe([], coll.url, "0");
 
-      console.log("leng", fullData.length)
-      fullData = fullData.filter(e => e.price > 0)
+
+        console.log("fullData", fullData);
+      
+
+      if (fullData.length == 0) return;
+      fullData = fullData.filter((e) => e.price > 0);
 
       // console.log("asdf", magicEdenData.results)
       let priceSum = 0;
@@ -360,9 +342,7 @@ async function saveMagicEden() {
       });
       // for numberofnftperowner-----------------------------
       let dataNfts = {};
-      fullData.forEach(({
-        owner
-      }) => {
+      fullData.forEach(({ owner }) => {
         if (!dataNfts[owner]) dataNfts[owner] = 0;
         dataNfts[owner]++;
       });
@@ -385,8 +365,8 @@ async function saveMagicEden() {
         avrgPrice: Math.round((priceSum / fullData.length) * 100) / 100,
       });
       console.log("saved");
+    },5000 *index)
     });
-
     return;
   } catch (error) {
     console.log("error de", error);
@@ -396,13 +376,13 @@ async function saveMagicEden() {
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
-  console.log("port", process.env.PORT)
+  console.log("port", process.env.PORT);
   // to start
   cron.schedule("0 */1 * * *", () => {
-    console.log("running a task every hour");
-    saveDigitalEyes();
-    saveSolanart();
-    saveMagicEden();
+  console.log("running a task every hour");
+  saveDigitalEyes();
+  saveSolanart();
+  saveMagicEden();
   });
 });
 
