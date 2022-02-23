@@ -14,7 +14,6 @@ import {
   Area,
   UpdateBtnDiv,
   UpdateBtn,
-  
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
@@ -47,7 +46,6 @@ async function getFloorPrices(id) {
   return {
     digitalEyesData,
     solanartData,
-    // magicEdenData
   };
 }
 
@@ -59,28 +57,23 @@ function Data() {
   const [dataForChart, setDataForChart] = useState({
     solanartData: [],
     digitalEyesData: [],
-    // magicEdenData: []
   });
   const router = useRouter();
- 
 
   // useEffect for Chart
   useEffect(() => {
-    
-    if(router.query.id){
-      
+    if (router.query.id) {
       setLoading(true);
       getFloorPrices(router.query.id).then((data) => {
         // data for Chart
         setLoading(false);
 
         setInfoData(_collections.find((e) => e.url == [router.query.id]));
-        
+
         setDataForChart(data);
       });
     }
-    
-  }, [router.query.id]); 
+  }, [router.query.id]);
 
   function updateData() {
     setLoading(true);
@@ -119,15 +112,6 @@ function Data() {
                   ></img>
                 </a>
               )}
-              {/* {infoData?.magiceden && (
-                <a href={infoData.magiceden}>
-                  <img
-                    src="/static/images/magiceden.png"
-                    alt="me-logo"
-                    width="40px"
-                  ></img>
-                </a>
-              )} */}
             </Marketplaces>
           </Info>
 
@@ -141,9 +125,7 @@ function Data() {
         </InfoContainer>
       </TopWrapper>
       <UpdateBtnDiv>
-        <UpdateBtn onClick={updateData}>
-          🔄Update
-        </UpdateBtn>
+        <UpdateBtn onClick={updateData}>🔄Update</UpdateBtn>
         {loading && <Spinner />}
       </UpdateBtnDiv>
       <Wrapper>
@@ -161,7 +143,6 @@ function Data() {
         ></ContainerLineChart>
         <ContainerBarChart data={dataForChart}></ContainerBarChart>
       </Wrapper>
-    
     </Area>
   );
 }
