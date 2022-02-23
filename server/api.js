@@ -28,7 +28,7 @@ const connection = {};
 
 const collectionsAddressSolanart = require("./collectionsSolanart");
 const collectionsAddressDigitalEyes = require("./collectionsDigitalEyes");
-const collectionsAddressMagicEden = require("./collectionsMagicEden.json");
+// const collectionsAddressMagicEden = require("./collectionsMagicEden.json");
 const SOLANART_URL =
   "https://qzlsklfacc.medianetwork.cloud/nft_for_sale?collection=";
 let DIGITALEYES_URL =
@@ -118,20 +118,20 @@ server.get("/loadall", async (req, res) => {
         })
       );
 
-      await Promise.all(
-        collectionsAddressMagicEden.map(async (e) => {
-          data.push(
-            await datafetched
-              .findOne({
-                collectionname: e.name,
-                marketplace: "magiceden",
-              })
-              .sort({
-                time: -1,
-              })
-          );
-        })
-      );
+      // await Promise.all(
+      //   collectionsAddressMagicEden.map(async (e) => {
+      //     data.push(
+      //       await datafetched
+      //         .findOne({
+      //           collectionname: e.name,
+      //           marketplace: "magiceden",
+      //         })
+      //         .sort({
+      //           time: -1,
+      //         })
+      //     );
+      //   })
+      // );
 
       await redisClient.setEx("loadall", 1800, JSON.stringify(data));
 
@@ -294,85 +294,85 @@ async function saveDigitalEyes() {
   }
 }
 
-async function fetchMe(fullData, collUrl, next_cursor) {
-  const { data: magicEdenData } = await axios(
-    `https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22${collUrl}%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%2C%22%24skip%22%3A${next_cursor}%2C%22%24limit%22%3A20%7D`
-  );
+// async function fetchMe(fullData, collUrl, next_cursor) {
+//   const { data: magicEdenData } = await axios(
+//     `https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22${collUrl}%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%2C%22%24skip%22%3A${next_cursor}%2C%22%24limit%22%3A20%7D`
+//   );
 
-  fullData = [...fullData, ...magicEdenData.results];
-  console.log("x", collUrl);
-  if (magicEdenData.results.length > 0) {
-    return await fetchMe(fullData, collUrl, String(Number(next_cursor) + 20));
-  } else {
-    return {
-      fullData,
-    };
-  }
-}
+//   fullData = [...fullData, ...magicEdenData.results];
+//   console.log("x", collUrl);
+//   if (magicEdenData.results.length > 0) {
+//     return await fetchMe(fullData, collUrl, String(Number(next_cursor) + 20));
+//   } else {
+//     return {
+//       fullData,
+//     };
+//   }
+// }
 
-async function saveMagicEden() {
-  try {
-    // loop through all the API fetch data
-    collectionsAddressMagicEden.forEach((coll, index) => {
-      setTimeout(async function(){
+// async function saveMagicEden() {
+//   try {
+//     // loop through all the API fetch data
+//     collectionsAddressMagicEden.forEach((coll, index) => {
+//       setTimeout(async function(){
         
          
      
       
    
-      let { fullData } = await fetchMe([], coll.url, "0");
+//       let { fullData } = await fetchMe([], coll.url, "0");
 
 
-        console.log("fullData", fullData);
+//         console.log("fullData", fullData);
       
 
-      if (fullData.length == 0) return;
-      fullData = fullData.filter((e) => e.price > 0);
+//       if (fullData.length == 0) return;
+//       fullData = fullData.filter((e) => e.price > 0);
 
-      // console.log("asdf", magicEdenData.results)
-      let priceSum = 0;
-      let numberOfOwners = new Set();
-      let fp = 999999;
+//       // console.log("asdf", magicEdenData.results)
+//       let priceSum = 0;
+//       let numberOfOwners = new Set();
+//       let fp = 999999;
 
-      fullData.forEach((e) => {
-        const price = e.price;
-        fp = price < fp ? price : fp;
-        priceSum += price;
-        numberOfOwners.add(e.owner);
-      });
-      // for numberofnftperowner-----------------------------
-      let dataNfts = {};
-      fullData.forEach(({ owner }) => {
-        if (!dataNfts[owner]) dataNfts[owner] = 0;
-        dataNfts[owner]++;
-      });
+//       fullData.forEach((e) => {
+//         const price = e.price;
+//         fp = price < fp ? price : fp;
+//         priceSum += price;
+//         numberOfOwners.add(e.owner);
+//       });
+//       // for numberofnftperowner-----------------------------
+//       let dataNfts = {};
+//       fullData.forEach(({ owner }) => {
+//         if (!dataNfts[owner]) dataNfts[owner] = 0;
+//         dataNfts[owner]++;
+//       });
 
-      let filteredData = {};
-      Object.keys(dataNfts).forEach((address) => {
-        let owner = dataNfts[address];
-        if (!filteredData[owner]) filteredData[owner] = 0;
-        filteredData[owner]++;
-      });
+//       let filteredData = {};
+//       Object.keys(dataNfts).forEach((address) => {
+//         let owner = dataNfts[address];
+//         if (!filteredData[owner]) filteredData[owner] = 0;
+//         filteredData[owner]++;
+//       });
 
-      // Save in DB
-      await datafetched.create({
-        floorprice: Number(fp),
-        collectionname: coll.name,
-        marketplace: "magiceden",
-        numberofowners: numberOfOwners.size,
-        numberoftokenslisted: fullData.length,
-        numberofnftperowner: filteredData,
-        avrgPrice: Math.round((priceSum / fullData.length) * 100) / 100,
-      });
-      console.log("saved");
-    },5000 *index)
-    });
-    return;
-  } catch (error) {
-    console.log("error de", error);
-    return error;
-  }
-}
+//       // Save in DB
+//       await datafetched.create({
+//         floorprice: Number(fp),
+//         collectionname: coll.name,
+//         marketplace: "magiceden",
+//         numberofowners: numberOfOwners.size,
+//         numberoftokenslisted: fullData.length,
+//         numberofnftperowner: filteredData,
+//         avrgPrice: Math.round((priceSum / fullData.length) * 100) / 100,
+//       });
+//       console.log("saved");
+//     },5000 *index)
+//     });
+//     return;
+//   } catch (error) {
+//     console.log("error de", error);
+//     return error;
+//   }
+// }
 
 server.listen(process.env.PORT || 8080, (err) => {
   if (err) throw err;
@@ -382,7 +382,7 @@ server.listen(process.env.PORT || 8080, (err) => {
   console.log("running a task every hour");
   saveDigitalEyes();
   saveSolanart();
-  saveMagicEden();
+  // saveMagicEden();
   });
 });
 

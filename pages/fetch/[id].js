@@ -42,12 +42,12 @@ async function getFloorPrices(id) {
 
   const solanartData = data.filter((e) => e.marketplace === "solanart");
 
-  const magicEdenData = data.filter((e) => e.marketplace === "magiceden");
-    console.log("magicEdenData",magicEdenData)
+  // const magicEdenData = data.filter((e) => e.marketplace === "magiceden");
+  //   console.log("magicEdenData",magicEdenData)
   return {
     digitalEyesData,
     solanartData,
-    magicEdenData
+    // magicEdenData
   };
 }
 
@@ -59,7 +59,7 @@ function Data() {
   const [dataForChart, setDataForChart] = useState({
     solanartData: [],
     digitalEyesData: [],
-    magicEdenData: []
+    // magicEdenData: []
   });
   const router = useRouter();
  
@@ -119,7 +119,7 @@ function Data() {
                   ></img>
                 </a>
               )}
-              {infoData?.magiceden && (
+              {/* {infoData?.magiceden && (
                 <a href={infoData.magiceden}>
                   <img
                     src="/static/images/magiceden.png"
@@ -127,7 +127,7 @@ function Data() {
                     width="40px"
                   ></img>
                 </a>
-              )}
+              )} */}
             </Marketplaces>
           </Info>
 

@@ -11,7 +11,7 @@ export default function NewListing() {
       numberOfTokens: 3333,
       digitalEyes: "",
       solanart: "",
-      magicEden: "",
+      // magicEden: "",
       answer: "",
     },
     onSubmit: () => {
@@ -21,7 +21,7 @@ export default function NewListing() {
       numberOfTokens: ${formik.values.numberOfTokens}%0A
       digitalEyes: ${formik.values.digitalEyes}%0A
       solanart: ${formik.values.solanart}%0A
-      magicEden: ${formik.values.magicEden}
+ 
      `;
       window.location = `mailto:esarnau21@gmail.com?subject=${Subject}&body=${Message}`;
     },
@@ -52,14 +52,14 @@ export default function NewListing() {
           onChange={formik.handleChange}
           value={formik.values.numberOfTokens}
         />
-        <label htmlFor="magicEden">MagicEden URL</label>
+        {/* <label htmlFor="magicEden">MagicEden URL</label>
         <input
           id="magicEden"
           name="magicEden"
           type="text"
           onChange={formik.handleChange}
           value={formik.values.magicEden}
-        />
+        /> */}
         <label htmlFor="solanart">Solanart URL</label>
         <input
           id="solanart"

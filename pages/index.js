@@ -24,7 +24,7 @@ export default function Home() {
                 collections from{" "}
                 <a className="a" href="https://digitaleyes.market/">DigitalEyes</a>, {" "} 
                 <a className="a" href="https://solanart.io/">Solanart</a> and{" "}
-                <a className="a" href="https://magiceden.io/">MagicEden</a>
+                {/* <a className="a" href="https://magiceden.io/">MagicEden</a> */}
               </div>
               <img
                 className="sol-logo"

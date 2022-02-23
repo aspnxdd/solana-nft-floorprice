@@ -14,7 +14,7 @@ export default function ContainerLineChart({ data, param }) {
     let dataForChart = {
       dataSolanart: data.solanartData.slice(-dataPoints),
       dataDigitalEyes: data.digitalEyesData.slice(-dataPoints),
-      dataMagicEden: data.magicEdenData.slice(-dataPoints)
+      // dataMagicEden: data.magicEdenData.slice(-dataPoints)
     };
     return dataForChart;
   }

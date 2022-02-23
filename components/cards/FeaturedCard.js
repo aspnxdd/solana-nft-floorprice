@@ -37,13 +37,13 @@ export default function CardComponent() {
         }
       });
     }
-    for (let i = 0; i < _collections.length; i++) {
-      collectionsMagicEden.forEach((col) => {
-        if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("magiceden");
-        }
-      });
-    }
+    // for (let i = 0; i < _collections.length; i++) {
+    //   collectionsMagicEden.forEach((col) => {
+    //     if (col.name == _collections[i].url) {
+    //       _collections[i].marketplace.push("magiceden");
+    //     }
+    //   });
+    // }
   }
 
   const [marketplaceArr, setMarketplaceArr] = useState([]);
@@ -86,13 +86,13 @@ export default function CardComponent() {
                       ></img>
                     )}
 
-                    {e.marketplace.includes("magiceden") && (
+                    {/* {e.marketplace.includes("magiceden") && (
                       <img
                         src="/static/images/magiceden.png"
                         alt="me-logo"
                         width="30px"
                       ></img>
-                    )}
+                    )} */}
                   </MarketplacesAreaF>
                 </CardF>
                 </a>
@@ -119,13 +119,13 @@ export default function CardComponent() {
                         width="30px"
                       ></img>
                 </a>}
-                {e.magiceden && <a href={e.magiceden}>
+                {/* {e.magiceden && <a href={e.magiceden}>
                 <img
                         src="/static/images/magiceden.png"
                         alt="me-logo"
                         width="30px"
                       ></img>
-                </a>}
+                </a>} */}
               </CollectionLinks>
             </CardContainer>
           );
