@@ -118,10 +118,10 @@ export const NavMenu = styled.div `
   display: flex;
   align-items: center;
   row-gap: 4rem;
-  column-gap: 10rem;
+  column-gap: 8rem;
   padding-right: 2rem;
   position: relative;
-  margin-left: 18rem;
+  margin-left: 18 rem;
   margin-right: 1rem;
   @media screen and (max-width: 768px) {
     display: none;

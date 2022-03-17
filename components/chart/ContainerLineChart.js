@@ -11,18 +11,20 @@ export default function ContainerLineChart({ data, param }) {
   const dataForChart = updateDataChart(data, param);
 
   function updateDataChart(data) {
+    console.log("dd",data)
     let dataForChart = {
-      dataSolanart: data.solanartData.slice(-dataPoints),
-      dataDigitalEyes: data.digitalEyesData.slice(-dataPoints),
+      dataSolanart: data.solanartData?.data?.slice(-dataPoints),
+      dataDigitalEyes: data.digitalEyesData?.data?.slice(-dataPoints),
       // dataMagicEden: data.magicEdenData.slice(-dataPoints)
     };
     return dataForChart;
   }
+  console.log("dataForChart",dataForChart)
 
   const dataSolanart = {
     type: "line",
     label: "Solanart",
-    data: dataForChart.dataSolanart.map((o) => ({ x: o.time, y: o[param] })),
+    data: dataForChart.dataSolanart?.map((o) => ({ x: new Date(Number(o.time.$date.$numberLong)),  y: o[param] })),
     order: 2,
     fill: false,
     backgroundColor: "#ba49d6",
@@ -35,7 +37,7 @@ export default function ContainerLineChart({ data, param }) {
     type: "line",
     label: "DigitalEyes",
     order: 1,
-    data: dataForChart.dataDigitalEyes.map((o) => ({ x: o.time, y: o[param] })),
+    data: dataForChart.dataDigitalEyes?.map((o) => ({ x: new Date(Number(o.time.$date.$numberLong)), y: o[param] })),
     fill: false,
     backgroundColor: "#599aca",
     borderColor: "#599aca",
@@ -44,6 +46,7 @@ export default function ContainerLineChart({ data, param }) {
   
 
   };
+  console.log("dataDigitalEyes",dataDigitalEyes)
 
   // const dataMagicEden = {
   //   type: "line",
@@ -73,11 +76,11 @@ export default function ContainerLineChart({ data, param }) {
   // if (dataForChart.dataMagicEden?.length > 0)
   //  dataChart.datasets.push(dataMagicEden);
   //add data to dataset array if exists
-
+  console.log("dataChart",dataChart)
   let title = "";
-  if (param === "floorprice") title = "Floor Price History";
-  if (param === "numberofowners") title = "Number of owners (listed)";
-  if (param === "numberoftokenslisted") title = "Number of tokens listed";
+  if (param === "price") title = "Floor Price History";
+  if (param === "number_of_owners") title = "Number of owners (listed)";
+  if (param === "number_of_tokens_listed") title = "Number of tokens listed";
 
   const options = {
     interaction: {

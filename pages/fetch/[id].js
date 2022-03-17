@@ -35,11 +35,12 @@ async function getFloorPrices(id) {
     }
   );
   //
-  let { data } = await res.json();
-
-  const digitalEyesData = data.filter((e) => e.marketplace === "digitaleyes");
-
-  const solanartData = data.filter((e) => e.marketplace === "solanart");
+  let  data  = await res.json();
+  console.log("data",data)
+  const digitalEyesData = data.filter((e) => e.marketplace === "de")[0];
+  
+  const solanartData = data.filter((e) => e.marketplace === "so")[0];
+  console.log("digitalEyesData",digitalEyesData)
 
   // const magicEdenData = data.filter((e) => e.marketplace === "magiceden");
   //   console.log("magicEdenData",magicEdenData)
@@ -131,17 +132,17 @@ function Data() {
       <Wrapper>
         <ContainerLineChart
           data={dataForChart}
-          param={"floorprice"}
+          param={"price"}
         ></ContainerLineChart>
         <ContainerLineChart
           data={dataForChart}
-          param={"numberofowners"}
+          param={"number_of_owners"}
         ></ContainerLineChart>
         <ContainerLineChart
           data={dataForChart}
-          param={"numberoftokenslisted"}
+          param={"number_of_tokens_listed"}
         ></ContainerLineChart>
-        <ContainerBarChart data={dataForChart}></ContainerBarChart>
+        <ContainerBarChart    data={dataForChart}></ContainerBarChart>
       </Wrapper>
     </Area>
   );

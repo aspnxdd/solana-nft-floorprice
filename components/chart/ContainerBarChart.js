@@ -13,31 +13,32 @@ export default function ContainerBarChart({ data }) {
       labels: ["1"],
     };
     // wait till all data is fetched
-
+    console.log("data",data)
     if (
-      data.digitalEyesData.length > 0 ||
-      data.solanartData.length > 0 
+      data.digitalEyesData?.data?.length > 0 ||
+      data.solanartData?.data?.length > 0 
       // data.magicEdenData.length > 0
     ) {
-      const solanartData = data.solanartData?.slice(-1);
-      const digitalEyesData = data.digitalEyesData?.slice(-1);
+      const solanartData = data.solanartData?.data?.slice(-1);
+      const digitalEyesData = data.digitalEyesData?.data?.slice(-1);
+      console.log("digitalEyesData",digitalEyesData)
       // const magicEdenData = data.magicEdenData?.slice(-1);
 
       let dataForChart = {
-        dataSolanart: solanartData[0]
-          ? Object.values(solanartData[0]?.numberofnftperowner)
+        dataSolanart: solanartData
+          ? Object.values(solanartData[0]?.number_of_nft_per_owner)
           : [],
-        dataDigitalEyes: digitalEyesData[0]
-          ? Object.values(digitalEyesData[0]?.numberofnftperowner)
+        dataDigitalEyes: digitalEyesData
+          ? Object.values(digitalEyesData[0]?.number_of_nft_per_owner)
           : [],
         // dataMagicEden: magicEdenData[0]
         //   ? Object.values(magicEdenData[0]?.numberofnftperowner)
         //   : [],
-        labelSolanart: solanartData[0]
-          ? Object.keys(solanartData[0]?.numberofnftperowner)
+        labelSolanart: solanartData
+          ? Object.keys(solanartData[0]?.number_of_nft_per_owner)
           : [],
-        labelDigitalEyes: digitalEyesData[0]
-          ? Object.keys(digitalEyesData[0]?.numberofnftperowner)
+        labelDigitalEyes: digitalEyesData
+          ? Object.keys(digitalEyesData[0]?.number_of_nft_per_owner)
           : [],
         // labelMagicEden: magicEdenData[0]
         //   ? Object.keys(magicEdenData[0]?.numberofnftperowner)
