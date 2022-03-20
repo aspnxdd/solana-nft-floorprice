@@ -26,7 +26,7 @@ async function getFloorPrices(id) {
     `${
       window.origin == "http://localhost:3000"
         ? "http://localhost:8080"
-        : "https://nft-nextjs.herokuapp.com"
+        : "https://nft-api-rust.herokuapp.com"
     }/load`,
     {
       headers: {
