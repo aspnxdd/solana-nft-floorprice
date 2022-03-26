@@ -18,7 +18,6 @@ export const Nav = styled.nav `
   top: 0;
   left: 0;
   z-index: 9;
-  border-bottom: 1px solid #b9b9b9;
 
   /* Third Nav */
   /* justify-content: flex-start; */
@@ -80,7 +79,7 @@ export const NavLinkLeft = styled.div `
     color: inherit;
     text-decoration: none;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     font-size: 1rem;
     margin-top: 1rem;
     margin-left: -1rem;
@@ -90,7 +89,7 @@ export const NavLinkLeft = styled.div `
 export const MobileIcon = styled.div `
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: block;
     position: absolute;
     top: -2.5rem;
@@ -104,7 +103,7 @@ export const MobileIcon = styled.div `
 export const Bars = styled(FaBars)
 `
   color: ${e => e.theme.navFontColor};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: block;
     position: absolute;
 
@@ -123,7 +122,7 @@ export const NavMenu = styled.div `
   position: relative;
   margin-left: 18 rem;
   margin-right: 1rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: none;
   }
 `;
@@ -139,7 +138,7 @@ export const SearchBarMenu = styled.div `
   margin-right: 10rem;
   position: relative;
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: flex;
     align-items: center;
     row-gap: 1rem;
@@ -160,7 +159,7 @@ export const NavMenuRight = styled.div `
   margin-right: 5rem;
   height: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: none;
     
   }
@@ -178,7 +177,7 @@ export const NavLeftElement = styled.div `
   /* Third Nav */
   /* width: 100vw;
   white-space: nowrap; */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: block;
     
   }
@@ -192,7 +191,7 @@ export const NavBtn = styled.nav `
   /* Third Nav */
   /* justify-content: flex-end;
   width: 100vw; */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: none;
     
   }
@@ -253,7 +252,7 @@ export const ThemeToggle = styled.div `
   justify-content: center;
   align-items: center;
   position: relative;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     flex-direction: column;
     font-size: 1.8rem;
     margin-top: -3rem;

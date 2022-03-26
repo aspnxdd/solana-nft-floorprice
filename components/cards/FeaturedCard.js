@@ -11,47 +11,17 @@ import {
 } from "./FeaturedCardElements";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
-import collectionsMagicEden from "../../server/collectionsMagicEden.json"
+// import collectionsMagicEden from "../../server/collectionsMagicEden.json"
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 
-import _collections from "./_collections";
+import collections from "./collections";
 
 // loop through the collections to add marketplace name to array
 
-export default function CardComponent() {
+export default function CardComponent({marketplaceArr}) {
 
-  function addMarketplace() {
-    for (let i = 0; i < _collections.length; i++) {
-      collectionsDigitalEyes.forEach((col) => {
-        if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("digitaleyes");
-        }
-      });
-    }
-    for (let i = 0; i < _collections.length; i++) {
-      collectionsSolanart.forEach((col) => {
-        if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("solanart");
-        }
-      });
-    }
-    // for (let i = 0; i < _collections.length; i++) {
-    //   collectionsMagicEden.forEach((col) => {
-    //     if (col.name == _collections[i].url) {
-    //       _collections[i].marketplace.push("magiceden");
-    //     }
-    //   });
-    // }
-  }
-
-  const [marketplaceArr, setMarketplaceArr] = useState([]);
-
-  useEffect(() => {
-    addMarketplace();
-    setMarketplaceArr(_collections);
-  }, []);
   return (
     <AreaCardF>
       <FeaturedLabel>
@@ -70,7 +40,7 @@ export default function CardComponent() {
                     <b>{e.name}</b>
                   </TitleF>
                   <MarketplacesAreaF>
-                    {e.marketplace.includes("digitaleyes") && (
+                  {e.digitaleyes && (
                       <img
                         src="/static/images/digitaleyes.svg"
                         alt="de-logo"
@@ -78,7 +48,8 @@ export default function CardComponent() {
                       ></img>
                     )}
 
-                    {e.marketplace.includes("solanart") && (
+                  {e.solanart && (
+                    
                       <img
                         src="/static/images/solanart.svg"
                         alt="so-logo"

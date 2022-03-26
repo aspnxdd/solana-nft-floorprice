@@ -7561,7 +7561,7 @@
 102C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\performance-now\test\performance-now.coffee130215937180000000 0
 88C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\es-abstract\2020\ToNumeric.js121436361000000000 0
 101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\performance-now\src\performance-now.coffee130215937180000000 0
-101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\list_collections.js121436361000000000 0
+101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\listcollections.js121436361000000000 0
 76C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\pbkdf2\browser.js121436361000000000 0
 113C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\eslint-plugin-jsx-a11y\lib\rules\no-redundant-roles.js121436361000000000 0
 113C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\jsx-ast-utils\lib\values\expressions\BindExpression.js121436361000000000 0
@@ -10315,7 +10315,7 @@
 81C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\lodash\fp\identical.js121436361000000000 0
 89C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\loader-utils\lib\getOptions.js121436361000000000 0
 95C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\core-js-pure\features\map\emplace.js121436361000000000 0
-101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\src\operations\list_collections.ts121436361000000000 0
+101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\src\operations\listcollections.ts121436361000000000 0
 101C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\fast-json-stable-stringify\test\to-json.js121436361000000000 0
 95C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\src\operations\map_reduce.ts121436361000000000 0
 80C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\lodash\_baseCreate.js121436361000000000 0
@@ -10491,7 +10491,7 @@
 98C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\is_capped.js.map121436361000000000 0
 77C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\esrecurse\.babelrc121436361000000000 0
 80C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\bson\lib\timestamp.js121436361000000000 0
-105C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\list_collections.js.map121436361000000000 0
+105C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\listcollections.js.map121436361000000000 0
 100C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\core-js-pure\modules\es.date.to-string.js121436361000000000 0
 95C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\map_reduce.js121436361000000000 0
 102C:\Users\arnau\Documents\nft-doge-floor-price\node_modules\mongodb\lib\operations\options_operation.js121436361000000000 0
@@ -19583,7 +19583,7 @@
 79C:\Users\arnau\Documents\nft-doge-floor-price\components\cards\CardsElements.js132758538903462431 0
 78C:\Users\arnau\Documents\nft-doge-floor-price\components\cards\FeaturedCard.js132762074986524141 0
 86C:\Users\arnau\Documents\nft-doge-floor-price\components\cards\FeaturedCardElements.js132762075717194346 0
-78C:\Users\arnau\Documents\nft-doge-floor-price\components\cards\_collections.js132767162204415131 0
+78C:\Users\arnau\Documents\nft-doge-floor-price\components\cards\collections.js132767162204415131 0
 71C:\Users\arnau\Documents\nft-doge-floor-price\.next\build-manifest.json132767300042262512 0
 60C:\Users\arnau\Documents\nft-doge-floor-price\.next\BUILD_ID132767300073851176 0
 57C:\Users\arnau\Documents\nft-doge-floor-price\.next\cache132760348106925054 1

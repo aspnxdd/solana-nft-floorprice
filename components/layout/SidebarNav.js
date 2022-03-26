@@ -12,14 +12,20 @@ import { FaQuestion } from "react-icons/fa";
 import { BiMoon, BiSun } from "react-icons/bi";
 import React, { useState, useEffect } from "react";
 
-const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
+const SidebarNav = ({  themeToggler, theme }) => {
+
   const [themeIcon, setThemeIcon] = useState(theme);
 
   useEffect(() => {
-    return () => {
+   
       setThemeIcon(!themeIcon);
-    };
+   
   }, [themeToggler]);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header>
@@ -41,7 +47,7 @@ const SidebarNav = ({ isOpen, toggle, themeToggler, theme }) => {
           <SidebarNavLink gridrow="2">
             <Link href="/faq" activeStyle>
               <span>
-                <FaQuestion></FaQuestion>&nbsp;F.A.Q.
+                <FaQuestion/> {" "}F.A.Q.
               </span>
             </Link>
           </SidebarNavLink>

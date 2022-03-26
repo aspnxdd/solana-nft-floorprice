@@ -13,7 +13,9 @@ export const lightTheme = {
     searchBorder: "#6e6e6e",
     searchResults: "#fff",
     timeBtnBorder: "#fff",
-    timeBtnBackground: "#fff"
+    timeBtnBackground: "#fff",
+    containerBackground : "#e4e4e4"
+
 };
 
 export const darkTheme = {
@@ -29,7 +31,8 @@ export const darkTheme = {
     searchBorder: "#233547",
     searchResults: "#406182",
     timeBtnBorder: "#000",
-    timeBtnBackground: "#15202b"
+    timeBtnBackground: "#15202b",
+    containerBackground : "#1e272f"
 };
 
 export const GlobalStyles = createGlobalStyle `

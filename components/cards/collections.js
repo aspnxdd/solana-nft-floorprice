@@ -1,4 +1,4 @@
-let _collections = [{
+let collections = [{
     url: "solanadogesnfts",
     name: "SolanaDoges",
     marketplace: [],
@@ -322,15 +322,6 @@ let _collections = [{
 
   },
   {
-    url: "boogle",
-    name: "Boogle",
-    marketplace: [],
-    img: "boogle.jpg",
-    featured: false,
-    fp: 0,
-    digitaleyes: "https://digitaleyes.market/collections/Boogle",
-  },
-  {
     url: "shroomz",
     name: "ShroomZ",
     marketplace: [],
@@ -551,15 +542,15 @@ let _collections = [{
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/Golden%20SolMee%20Awards"
   },
-  {
-    url: "babyapes",
-    name: "Baby Apes",
-    marketplace: [],
-    img: "babyapes.png",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/babyapes"
-  },
+  // {
+  //   url: "babyapes",
+  //   name: "Baby Apes",
+  //   marketplace: [],
+  //   img: "babyapes.png",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/babyapes"
+  // },
   {
     url: "goblinlaboratory",
     name: "goblinlaboratory",
@@ -631,42 +622,42 @@ let _collections = [{
     solanart: "https://solanart.io/collections/theslowpatrol",
     digitaleyes: "https://digitaleyes.market/collections/The%20Slow%20Patrol"
   },
-  {
-    url: "supefruit",
-    name: "Super Fruit",
-    marketplace: [],
-    img: "superfruit.png",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/super_fruit"
-  },
-  {
-    url: "pawnshop_gnomies",
-    name: "Pawnshop Gnomies",
-    marketplace: [],
-    img: "pawnshop_gnomies.jpg",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/pawnshop_gnomies"
-  },
-  {
-    url: "solana_troll_camp",
-    name: "Solana Troll Camp",
-    marketplace: [],
-    img: "solana_troll_camp.jpg",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/solana_troll_camp"
-  },
-  {
-    url: "culture_vultures",
-    name: "Culture Vulture$",
-    marketplace: [],
-    img: "culture_vultures.png",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/culture_vultures"
-  },
+  // {
+  //   url: "supefruit",
+  //   name: "Super Fruit",
+  //   marketplace: [],
+  //   img: "superfruit.png",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/super_fruit"
+  // },
+  // {
+  //   url: "pawnshop_gnomies",
+  //   name: "Pawnshop Gnomies",
+  //   marketplace: [],
+  //   img: "pawnshop_gnomies.jpg",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/pawnshop_gnomies"
+  // },
+  // {
+  //   url: "solana_troll_camp",
+  //   name: "Solana Troll Camp",
+  //   marketplace: [],
+  //   img: "solana_troll_camp.jpg",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/solana_troll_camp"
+  // },
+  // {
+  //   url: "culture_vultures",
+  //   name: "Culture Vulture$",
+  //   marketplace: [],
+  //   img: "culture_vultures.png",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/culture_vultures"
+  // },
   {
     url: "angryworms",
     name: "AngryWorms",
@@ -676,45 +667,34 @@ let _collections = [{
     fp: 0,
     digitaleyes: "https://digitaleyes.market/collections/AngryWorms"
   },
-  {
-    url: "skull_division",
-    name: "Skull Division",
-    marketplace: [],
-    img: "skull_division.png",
-    featured: true,
-    twitter:"https://twitter.com/SkullDiv",
-    discord:"https://discord.gg/SkullDiv",
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/skull_division",
-    digitaleyes:"https://digitaleyes.market/collections/Skull%20Division"
-  },
-  {
-    url: "fenix_danjon",
-    name: "Fenix Danjon",
-    marketplace: [],
-    img: "fenix_danjon.gif",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/fenix_danjon"
-  },
-  {
-    url: "lucky_kittens",
-    name: "Lucky Kittens",
-    marketplace: [],
-    img: "lucky_kittens.jpg",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/lucky_kittens"
-  },
-  {
-    url: "rascals_nft",
-    name: "Rascals NFT",
-    marketplace: [],
-    img: "rascals_nft.jpg",
-    featured: false,
-    fp: 0,
-    magiceden: "https://magiceden.io/marketplace/rascals_nft"
-  }
+
+  // {
+  //   url: "fenix_danjon",
+  //   name: "Fenix Danjon",
+  //   marketplace: [],
+  //   img: "fenix_danjon.gif",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/fenix_danjon"
+  // },
+  // {
+  //   url: "lucky_kittens",
+  //   name: "Lucky Kittens",
+  //   marketplace: [],
+  //   img: "lucky_kittens.jpg",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/lucky_kittens"
+  // },
+  // {
+  //   url: "rascals_nft",
+  //   name: "Rascals NFT",
+  //   marketplace: [],
+  //   img: "rascals_nft.jpg",
+  //   featured: false,
+  //   fp: 0,
+  //   magiceden: "https://magiceden.io/marketplace/rascals_nft"
+  // }
 ];
 
-export default _collections;
+export default collections;

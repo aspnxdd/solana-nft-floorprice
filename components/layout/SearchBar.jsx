@@ -5,83 +5,65 @@ import {
   Img,
   Row,
 } from "./SearchBarElements";
-import { useEffect, useState, useRef } from "react";
-import _collections from "../cards/_collections";
+import { useEffect, useState, useRef, useCallback } from "react";
+import collections from "../cards/collections";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-// custom hook to hide div
-function useComponentVisible(initialIsVisible) {
-  const [isComponentVisible, setIsComponentVisible] =
-    useState(initialIsVisible);
-  const ref = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
-      setIsComponentVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  });
-
-  return { ref, isComponentVisible, setIsComponentVisible };
-}
+import useComponentVisible from "./useComponentVisible";
 
 const SearchBar = () => {
   const { asPath } = useRouter();
-  console.log(asPath); // '/blog/xyz'
 
   const { ref, isComponentVisible, setIsComponentVisible } =
-    useComponentVisible(true);
+    useComponentVisible();
   const [searchResults, setSearchResults] = useState([]);
   const searchbar = useRef(null);
 
-  const [search, setSearch] = useState("");
-  let _searchResults = [];
-  let imgpath = "./static/images/";
-  if (asPath !== "/") imgpath = "/static/images/";
+  const [search, setSearch] = useState(null);
+
+  const imgpath = asPath !== "/" ? "/static/images/" : "./static/images/";
 
   // query results
   useEffect(() => {
     setIsComponentVisible(true);
-    setSearchResults([]);
-    _searchResults = [];
-    _collections.forEach((e) => {
-      if (e.url.includes(search.toLowerCase()) && search !== "") _searchResults.push(e);
-      console.log("searchResults", searchResults);
-    });
-    setSearchResults(_searchResults);
+    const results = new Array();
+    if (search) {
+      for (const e of collections) {
+        if (e.url.includes(search.toLowerCase()) && search !== null)
+          results.push(e);
+      }
+    }
+    setSearchResults(results);
   }, [search]);
 
   // wipe results when losing focus
   useEffect(() => {
-    if (!isComponentVisible) searchbar.current.value = "";
+    if (!isComponentVisible) searchbar.current.value = null;
   }, [isComponentVisible]);
 
   // wipe results when changing page
   useEffect(() => {
-    searchbar.current.value = "";
+    searchbar.current.value = null;
     setIsComponentVisible(false);
   }, [asPath]);
 
+  const onSetSearch = useCallback(
+    (event) => setSearch(event.target.value),
+    [setSearch]
+  );
   return (
     <>
       <Container>
         <SearchBarInput
           ref={searchbar}
           placeholder="Search collection..."
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={onSetSearch}
         />
       </Container>
 
       {searchResults.length > 0 && isComponentVisible && (
         <SearchBarResults ref={ref}>
-          <div>
+          <>
             {searchResults.map((e) => {
               return (
                 <Link href={`/fetch/${e.url}`} key={e.url}>
@@ -92,7 +74,7 @@ const SearchBar = () => {
                 </Link>
               );
             })}
-          </div>
+          </>
         </SearchBarResults>
       )}
     </>

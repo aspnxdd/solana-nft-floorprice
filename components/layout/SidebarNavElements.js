@@ -1,55 +1,48 @@
-import {
-  FaBars
-} from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 import styled from "styled-components";
 
-import {
-  ImCross
-} from "react-icons/im";
+import { ImCross } from "react-icons/im";
 
-export const SidebarContainer = styled.aside `
-  background: ${e => e.theme.navBackgroundColor};
-  color: ${e => e.theme.navFontColor};
-  top:0rem;
+export const SidebarContainer = styled.aside`
+  background: ${(e) => e.theme.navBackgroundColor};
+  color: ${(e) => e.theme.navFontColor};
+  top: 0rem;
   height: 100%;
   display: block;
   position: fixed;
-  border-left:  1px solid #b9b9b9;
-  transform: ${({isOpen}) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
   right: 0;
   z-index: 999;
-  width: ${({isOpen})=>(isOpen ? "50%" : "0")};
-  opacity: ${({isOpen})=>(isOpen ? "100%" : "0")};
+  width: ${({ isOpen }) => (isOpen ? "50%" : "0")};
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   transition: all 0.3s ease-in-out 0s;
-  
+  @media screen and (min-width: 768px) {
+    width: ${({ isOpen }) => (isOpen ? "30%" : "0")};
+  }
 `;
 
-export const CloseIcon = styled(ImCross)
-`
-  color: ${e => e.theme.navFontColor};
+export const CloseIcon = styled(ImCross)`
+  color: ${(e) => e.theme.navFontColor};
   font-size: 1.6rem;
-  margin-right:0.8rem;
-    
+  margin-right: 0.8rem;
 `;
 
-export const IconContainer = styled.div `
+export const IconContainer = styled.div`
   position: absolute;
   top: 0.9rem;
   right: 1.3rem;
   outline: none;
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: block;
-   
   }
-
 `;
 
-export const SidebarWrapper = styled.div `
+export const SidebarWrapper = styled.div`
   border-radius: 4px;
-  background-color: ${e => e.theme.navBackgroundColor};
-  color: ${e => e.theme.navFontColor};
+  background-color: ${(e) => e.theme.navBackgroundColor};
+  color: ${(e) => e.theme.navFontColor};
   font-size: 3rem;
   display: inline-grid;
   flex-direction: column;
@@ -62,17 +55,16 @@ export const SidebarWrapper = styled.div `
   grid-template-rows: repeat(4, 1fr);
   grid-auto-flow: row;
   gap: 2rem;
-  
-  `;
+`;
 
-export const SidebarNavLink = styled.div `
+export const SidebarNavLink = styled.div`
   grid-column: 1;
   grid-row: ${(e) => e.gridrow};
   border-radius: 4px;
   font-size: 1.5rem;
   text-decoration: none;
   margin-top: 30%;
-  color: ${e => e.theme.navFontColor};
+  color: ${(e) => e.theme.navFontColor};
   align-items: center;
   white-space: nowrap;
   padding-top: 0.5em;
@@ -81,11 +73,12 @@ export const SidebarNavLink = styled.div `
     color: #010606;
     background: #c2c2c2;
   }
-  &:hover, active {
+  &:hover,
+  active {
     transition: all 0.5s ease-in-out;
     background: #fff;
     color: #010606;
-    & > div { 
+    & > div {
       display: flex;
       opacity: 1;
       transition: opacity 1s ease;
@@ -97,11 +90,9 @@ export const SidebarNavLink = styled.div `
   }
 `;
 
-
-
-export const SidebarLink = styled.div `
+export const SidebarLink = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     display: block;
     position: absolute;
     top: -1rem;
@@ -112,14 +103,13 @@ export const SidebarLink = styled.div `
   }
 `;
 
-export const SidebarMenu = styled(FaBars)
-`
-  background-color: ${e => e.theme.navBackgroundColor};
-  color: ${e => e.theme.navFontColor};
-  @media screen and (max-width: 768px) {
+export const SidebarMenu = styled(FaBars)`
+  background-color: ${(e) => e.theme.navBackgroundColor};
+  color: ${(e) => e.theme.navFontColor};
+  @media screen and (max-width: 1747px) {
     display: block;
     position: absolute;
-   
+
     transform: translate(-100%, 170%);
     font-size: 1.8rem;
     cursor: pointer;
@@ -127,20 +117,15 @@ export const SidebarMenu = styled(FaBars)
 `;
 
 export const ThemeToggle = styled.div`
-
-  
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1747px) {
     height: 5rem;
-  display: flex;
+    display: flex;
 
-  margin-right: 5rem;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+    margin-right: 5rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     font-size: 3rem;
-  
-    
   }
-  
 `;

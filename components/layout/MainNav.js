@@ -16,7 +16,8 @@ import { BiMoon, BiSun } from "react-icons/bi";
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
 
-const MainNav = ({ toggle, themeToggler, theme }) => {
+const MainNav = ({ themeToggler, theme }) => {
+  
   const [themeIcon, setThemeIcon] = useState(theme);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const MainNav = ({ toggle, themeToggler, theme }) => {
             </Link>
           </NavLinkLeft>
 
-          <MobileIcon onClick={toggle}>
+          <MobileIcon>
             <Bars />
           </MobileIcon>
         </NavLeftElement>

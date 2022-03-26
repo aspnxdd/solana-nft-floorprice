@@ -11,6 +11,9 @@ export const HeaderWrapper = styled.div `
     ${'' /* column-gap: 225rem; */}
     margin-left: 0rem;
     flex-direction: column;
+    align-items: center
+
+
   }
 `;
 

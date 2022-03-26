@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
-  width: 47%;
+export const Container = styled.div`
+  width: 44rem;
   height: 30rem;
   padding-right: 1rem;
   padding-bottom: 4rem;
-  border: 4px solid;
   border-radius: 1rem;
-  border-color: ${(e) => e.theme.chartBorderColor};
+  background-color: ${(e) => e.theme.containerBackground};
+  span {
+    
+    display: flex;
+    justify-content: center;
+    margin-right: 0.5rem;
+    align-items: center;
+    width: auto;
+  }
   @media screen and (max-width: 768px) {
     position: static;
     display: block;
@@ -16,9 +23,19 @@ export const Container = styled.div `
     margin-right: 0.2rem;
     margin-left: 0rem;
   }
+  span {
+    padding-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+  
+  }
 `;
 
-export const Wrapper = styled.div `
+export const Wrapper = styled.div`
   margin: 2rem;
   width: 100%;
   height: 100%;
@@ -26,8 +43,9 @@ export const Wrapper = styled.div `
   flex-wrap: wrap;
   column-gap: 2rem;
   row-gap: 2rem;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 768px) {
-    
     display: block;
     width: auto;
     margin-bottom: 2rem;
@@ -36,7 +54,7 @@ export const Wrapper = styled.div `
   }
 `;
 
-export const TopWrapper = styled.div `
+export const TopWrapper = styled.div`
   margin-left: 2rem;
   margin-right: 2rem;
   margin-top: 4rem;
@@ -45,6 +63,8 @@ export const TopWrapper = styled.div `
   display: flex;
   flex-wrap: wrap;
   column-gap: 2rem;
+  align-items: center;
+  justify-content: center;
   row-gap: 2rem;
   @media screen and (max-width: 768px) {
     position: static;
@@ -56,70 +76,76 @@ export const TopWrapper = styled.div `
   }
 `;
 
-export const InfoContainer = styled.div `
+export const InfoContainer = styled.div`
   display: flex;
-  width: 47%;
+  width: 44rem;
   height: 15rem;
   padding-right: 1rem;
   padding-bottom: 4rem;
-  border: 4px solid;
-  border-color: ${(e) => e.theme.chartBorderColor};
+  padding-top: 1rem;
+  margin-top: 1rem;
   border-radius: 1rem;
+  background-color: ${(e) => e.theme.containerBackground};
   @media screen and (max-width: 768px) {
-    position: static;
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: auto;
     margin-bottom: 2rem;
     height: 35rem;
     margin-left: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
-export const Info = styled.div `
+export const Info = styled.div`
   width: 60%;
   height: 18rem;
   @media screen and (max-width: 768px) {
     height: 20rem;
+    width: 100%;
+
     margin-bottom: -5rem;
   }
 `;
 
-export const Img = styled.div `
+export const Img = styled.div`
   margin-top: 1rem;
-  padding-left: 3rem;
   right: 5rem;
-  width: 47%;
   height: 15rem;
   @media screen and (max-width: 768px) {
-    margin-top: 3.5rem;
+    margin-top: 6rem;
   }
 `;
-export const Marketplaces = styled.div `
+export const Marketplaces = styled.div`
   display: flex;
   padding-left: 2rem;
   column-gap: 1rem;
   align-items: center;
 `;
-export const Area = styled.div `
+export const Area = styled.div`
   display: flex;
   flex-direction: column;
-  width:98%;
-  
+  width: 98%;
+
   @media screen and (max-width: 768px) {
     row-gap: 6rem;
-    
   }
 `;
-export const UpdateBtnDiv = styled.div `
+export const UpdateBtnDiv = styled.div`
   display: flex;
   height: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 768px) {
-  padding-top: 6rem;
-  margin-bottom: -5rem;
+    padding-top: 6rem;
+    margin-bottom: -5rem;
+    margin-top: 2rem;
   }
 `;
 
-export const UpdateBtn = styled.button `
+export const UpdateBtn = styled.button`
   border-radius: 4px;
   background: #256ce1;
   padding: 10px 22px;
@@ -132,16 +158,16 @@ export const UpdateBtn = styled.button `
   transition: all 0.2s ease-in-out;
   font-size: 0.8rem;
   width: 6rem;
-  border-color: ${e => e.theme.timeBtnBorder};
+  border-color: ${(e) => e.theme.timeBtnBorder};
   /* Second Nav */
   margin-left: 3rem;
   &:hover {
     transition: background 0.5s ease-in-out;
-    background: ${e => e.theme.timeBtnBackground}; 
-    color:#256ce1;
+    background: ${(e) => e.theme.timeBtnBackground};
+    color: #256ce1;
     border: 1px solid;
   }
- 
+
   & > a {
     color: inherit;
     text-decoration: none;
@@ -152,11 +178,9 @@ export const UpdateBtn = styled.button `
     padding: 1rem 0.8rem;
     margin-left: 1.2rem;
   }
+`;
 
-`
-
-export const TimeButton = styled.button `
- 
+export const TimeButton = styled.button`
   border-radius: 4px;
   background: #256ce1;
   padding: 10px 22px;
@@ -169,16 +193,16 @@ export const TimeButton = styled.button `
   transition: all 0.2s ease-in-out;
   font-size: 0.8rem;
   width: 6rem;
-  border-color: ${e => e.theme.timeBtnBorder};
+  border-color: ${(e) => e.theme.timeBtnBorder};
   /* Second Nav */
   margin-left: 3rem;
   &:hover {
     transition: background 0.5s ease-in-out;
-    background: ${e => e.theme.timeBtnBackground}; 
-    color:#256ce1;
+    background: ${(e) => e.theme.timeBtnBackground};
+    color: #256ce1;
     border: 1px solid;
   }
- 
+
   & > a {
     color: inherit;
     text-decoration: none;
@@ -189,5 +213,4 @@ export const TimeButton = styled.button `
     padding: 1rem 0.8rem;
     margin-left: 1.2rem;
   }
-
-`
+`;

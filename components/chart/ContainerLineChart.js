@@ -4,22 +4,19 @@ import LineChart from "../../components/chart/LineChart";
 import "chartjs-adapter-luxon";
 
 export default function ContainerLineChart({ data, param }) {
-  // set Data for chart
 
   const [dataPoints, setDataPoints] = useState(20);
 
   const dataForChart = updateDataChart(data, param);
 
   function updateDataChart(data) {
-    console.log("dd",data)
-    let dataForChart = {
+    const dataForChart = {
       dataSolanart: data.solanartData?.data?.slice(-dataPoints),
       dataDigitalEyes: data.digitalEyesData?.data?.slice(-dataPoints),
       // dataMagicEden: data.magicEdenData.slice(-dataPoints)
     };
     return dataForChart;
   }
-  console.log("dataForChart",dataForChart)
 
   const dataSolanart = {
     type: "line",
@@ -46,27 +43,14 @@ export default function ContainerLineChart({ data, param }) {
   
 
   };
-  console.log("dataDigitalEyes",dataDigitalEyes)
 
-  // const dataMagicEden = {
-  //   type: "line",
-  //   label: "MagicEden",
-  //   order: 1,
-  //   data: dataForChart.dataMagicEden.map((o) => ({ x: o.time, y: o[param] })),
-  //   fill: false,
-  //   backgroundColor: "#f44c9f",
-  //   borderColor: "#f44c9f",
-  //   tension: 0.2,
-  //   spanGaps: true,
-  // };
-  //data to render in chart line
 
-  let dataChart = {
+  const dataChart = {
     // labels (axis X)
-    labels: [],
+    labels: new Array(),
 
     // datasets asix Y
-    datasets: [],
+    datasets: new Array(),
   };
 
   if (dataForChart.dataDigitalEyes?.length > 0)
@@ -77,10 +61,14 @@ export default function ContainerLineChart({ data, param }) {
   //  dataChart.datasets.push(dataMagicEden);
   //add data to dataset array if exists
   console.log("dataChart",dataChart)
-  let title = "";
-  if (param === "price") title = "Floor Price History";
-  if (param === "number_of_owners") title = "Number of owners (listed)";
-  if (param === "number_of_tokens_listed") title = "Number of tokens listed";
+  const titles = {
+    price:"Floor Price History",
+    number_of_owners:"Number of owners (listed)",
+    number_of_tokens_listed:"Number of tokens listed"
+  }
+
+  const title = titles[param] ?? null;
+  
 
   const options = {
     interaction: {
@@ -144,14 +132,14 @@ export default function ContainerLineChart({ data, param }) {
 
   return (
     <Container>
-      <div className="chart-buttons">
+      <span>
         <TimeButton onClick={() => setDataPoints(24)}> 1D</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7)}> 1W</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7*30)}> 1M</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7*30*2)}> 2M</TimeButton>
         <TimeButton onClick={() => setDataPoints(24*7*30*3)}> 3M</TimeButton>
         <TimeButton onClick={() => setDataPoints(0)}> All</TimeButton>
-      </div>
+      </span>
       <LineChart data={dataChart} options={options} />
     </Container>
   );

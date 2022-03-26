@@ -2,7 +2,6 @@ import "../public/index.css";
 import MainNav from "../components/layout/MainNav";
 import SidebarNav from "../components/layout/SidebarNav";
 import { useState, useEffect } from "react";
-
 import { ThemeProvider } from "styled-components";
 import {
   lightTheme,
@@ -25,23 +24,13 @@ function MyApp({ Component, pageProps }) {
     setTheme(defaultTheme);
   }, []);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = function () {
-    setIsOpen(!isOpen);
-    console.log("isOpen", isOpen);
-  };
   return (
     <div>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
 
-        <MainNav toggle={toggle} theme={theme} themeToggler={themeToggler} />
-        <SidebarNav
-          isOpen={isOpen}
-          toggle={toggle}
-          theme={theme}
-          themeToggler={themeToggler}
-        />
+        <MainNav theme={theme} themeToggler={themeToggler} />
+        <SidebarNav theme={theme} themeToggler={themeToggler} />
         <Component {...pageProps} />
 
         <Footer />

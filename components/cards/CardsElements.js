@@ -15,7 +15,9 @@ export const CardsArea = styled.div `
     @media (max-width: 1200px) {
         margin-right: -1.5rem;
         margin-left: 0.5rem;
-        column-gap: 1rem;
+        column-gap: 2rem;
+    row-gap: 1.5rem;
+
   }
   a{
       color:${e => e.theme.fontColor};

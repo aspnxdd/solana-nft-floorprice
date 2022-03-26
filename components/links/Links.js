@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import collectionsDigitalEyes from "../../server/collectionsDigitalEyes.json";
 import collectionsSolanart from "../../server/collectionsSolanart.json";
 
-let _collections = [
+let collections = [
   {
     url: "solanadogesnfts",
     name: "SolanaDoges",
@@ -116,19 +116,19 @@ let _collections = [
 
 export default function Links() {
   function addMarketplace() {
-    for (let i = 0; i < _collections.length; i++) {
+    for (let i = 0; i < collections.length; i++) {
       
       collectionsDigitalEyes.forEach((col) => {
-        if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("digitaleyes");
+        if (col.name == collections[i].url) {
+          collections[i].marketplace.push("digitaleyes");
         }
       });
     }
-    for (let i = 0; i < _collections.length; i++) {
+    for (let i = 0; i < collections.length; i++) {
    
       collectionsSolanart.forEach((col) => {
-        if (col.name == _collections[i].url) {
-          _collections[i].marketplace.push("solanart");
+        if (col.name == collections[i].url) {
+          collections[i].marketplace.push("solanart");
         }
       });
     }
@@ -138,7 +138,7 @@ export default function Links() {
 
   useEffect(() => {
     addMarketplace();
-    setMarketplaceArr(_collections);
+    setMarketplaceArr(collections);
   
   }, []);
   return (
