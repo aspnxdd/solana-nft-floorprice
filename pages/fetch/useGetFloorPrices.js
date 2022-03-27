@@ -43,7 +43,6 @@ export default function useGetFloorPrices() {
 
   const dataToReturn = useMemo(() => {
     setLoading(false);
-
     setInfoData(collections.find((e) => e.url == [router.query.id]));
     setDataForChart(data);
     return {

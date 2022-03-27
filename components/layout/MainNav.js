@@ -17,13 +17,9 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
 
 const MainNav = ({ themeToggler, theme }) => {
-  
   const [themeIcon, setThemeIcon] = useState(theme);
-
   useEffect(() => {
-    return () => {
-      setThemeIcon(!themeIcon);
-    };
+    setThemeIcon(!themeIcon);
   }, [themeToggler]);
 
   return (
@@ -40,24 +36,19 @@ const MainNav = ({ themeToggler, theme }) => {
             <Bars />
           </MobileIcon>
         </NavLeftElement>
-      <SearchBarMenu> 
-        <SearchBar></SearchBar>
-      </SearchBarMenu>
+        <SearchBarMenu>
+          <SearchBar></SearchBar>
+        </SearchBarMenu>
         <NavMenu>
           <Ticker></Ticker>
           <Link href="/newlisting" activeStyle>
-            <NavLink>
-              Add  collection!
-            </NavLink>
+            <NavLink>Add collection!</NavLink>
           </Link>
           <Link href="/faq" activeStyle>
-            <NavLink>
-              F.A.Q.
-            </NavLink>
+            <NavLink>F.A.Q.</NavLink>
           </Link>
           <ThemeToggle onClick={themeToggler}>
-            {theme === "light" && <BiMoon />}
-            {theme === "dark" && <BiSun />}
+            {theme === "light" ? <BiMoon /> : <BiSun />}
           </ThemeToggle>
         </NavMenu>
       </Nav>
