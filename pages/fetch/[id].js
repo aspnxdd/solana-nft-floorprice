@@ -11,7 +11,7 @@ import {
 } from "../../components/chart/ChartElements";
 import ContainerLineChart from "../../components/chart/ContainerLineChart";
 import ContainerBarChart from "../../components/chart/ContainerBarChart";
-import useGetFloorPrices from "./useGetFloorPrices";
+import useGetFloorPrices from "../../hooks/useGetFloorPrices";
 import InfoTwoHours from "../../components/common/InfoTwoHours";
 
 function Data() {

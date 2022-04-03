@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import collections from "../../components/cards/collections";
+import collections from "../components/cards/collections";
 import { useRouter } from "next/router";
 
 export default function useGetFloorPrices() {

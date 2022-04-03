@@ -1,21 +1,6 @@
 import { Title, Container, Label, Address } from "./DonContainerElements";
 
-import { useState } from "react";
-
-const useMessage = () => {
-  const [message, setMessage] = useState("");
-
-  function toggle() {
-    if (message == "") {
-      setMessage("Copied!");
-      setTimeout(() => {
-        setMessage("");
-      }, 1000);
-    }
-  }
-
-  return [message, toggle];
-};
+import { useMessage } from "../../hooks/useMessage"
 
 export default function DonContainer() {
   const sol_address = "EQ4zjzotsMKmQFbXxbkj7WH4M8nzjDZ2r4r3w2stokyn";
