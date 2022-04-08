@@ -60,8 +60,7 @@ export default function Home() {
             <TitleWelcome />
             <h3>
               <div>
-                Here you can track the history of Floor Price for the
-                collections from{" "}
+                Here you can track the history of Floor Price for the collections from{" "}
                 <a className="a" href="https://digitaleyes.market/">
                   DigitalEyes
                 </a>{" "}
